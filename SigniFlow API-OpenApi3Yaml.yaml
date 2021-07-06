@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: SigniFlow API
-  description: SigniFlow Rest API used to automate workflow creation and management.
+  description: '# SigniFlow API used to automate esignature workflow creation and management.'
   contact:
     name: SigniFlow Support
     url: 'https://www.signiflow.com/contact'
@@ -16,6 +16,14 @@ servers:
     description: Pre-Production
   - url: 'https://au.signiflow.com/API/SignFlowAPIServiceRest.svc'
     description: Australia Cloud
+  - url: 'https://eu.signiflow.com/API/SignFlowAPIServiceRest.svc'
+    description: Europe Cloud
+  - url: 'https://flow.signflow.co.za/API/SignFlowAPIServiceRest.svc'
+    description: South Africa Cloud
+  - url: 'https://latam.signiflow.com/API/SignFlowAPIServiceRest.svc'
+    description: South America Cloud
+  - url: 'https://uk.signiflow.com/API/SignFlowAPIServiceRest.svc'
+    description: United Kingdom Cloud
   - url: 'https://us.signiflow.com/API/SignFlowAPIServiceRest.svc'
     description: United States Cloud
 paths:
