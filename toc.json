@@ -20,17 +20,17 @@
         },
         {
           "type": "item",
-          "title": "Upload Document, Add Signers, Add Fields, Release Workflow",
+          "title": "Scenario 1",
           "uri": "docs/quick-starts.md"
         },
         {
           "type": "item",
-          "title": "Upload Document, Add Signers, Get Link to manualy add fields",
+          "title": "Scenario 2",
           "uri": "docs/quick-starts.md"
         },
         {
           "type": "item",
-          "title": "Upload Document, Add Signers, Add Fields, Get Link to Sign",
+          "title": "Scenario 3",
           "uri": "docs/quick-starts.md"
         }
       ]
