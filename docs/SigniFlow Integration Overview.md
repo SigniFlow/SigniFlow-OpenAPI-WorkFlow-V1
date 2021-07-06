@@ -18,7 +18,7 @@
 For creating a workflow, the following functions can be used in order:
 
 
-##### 1.    [Login](../../SigniFlow%20API-OpenApi3Yaml.yaml/paths/~1Login/post)
+##### 1.    [Login](../SigniFlow%20API-OpenApi3Yaml.yaml/paths/~1Login/post)
 
 This function authenticates the user and generates a token that will be used to make calls to the other API functions.
 <br>
