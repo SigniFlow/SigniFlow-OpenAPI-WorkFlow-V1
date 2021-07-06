@@ -28,6 +28,11 @@
     {
       "type": "divider",
       "title": "APIS"
+    },
+    {
+      "type": "item",
+      "title": "SigniFlow OpenAPI v1",
+      "uri": "SigniFlow API-OpenAPI3Yaml.yaml"
     }
   ]
 }
