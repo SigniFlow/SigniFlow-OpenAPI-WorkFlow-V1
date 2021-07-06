@@ -1,0 +1,33 @@
+{
+  "items": [
+    {
+      "type": "divider",
+      "title": "GETTING STARTED"
+    },
+    {
+      "type": "item",
+      "title": "Obtaining Credentials",
+      "uri": "docs/obtaining-credentials.md"
+    },
+    {
+      "type": "group",
+      "title": "Group",
+      "items": [
+        {
+          "type": "item",
+          "title": "Nested Item",
+          "uri": "docs/nested-item.md"
+        }
+      ]
+    },
+    {
+      "type": "item",
+      "title": "External Link",
+      "uri": "https://stoplight.io"
+    },
+    {
+      "type": "divider",
+      "title": "APIS"
+    }
+  ]
+}
