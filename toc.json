@@ -11,12 +11,27 @@
     },
     {
       "type": "group",
-      "title": "Group",
+      "title": "Quick Starts",
       "items": [
         {
           "type": "item",
-          "title": "Nested Item",
-          "uri": "docs/nested-item.md"
+          "title": "Overview",
+          "uri": "docs/quick-starts.md"
+        },
+        {
+          "type": "item",
+          "title": "Upload Document, Add Signers, Add Fields, Release Workflow",
+          "uri": "docs/quick-starts.md"
+        },
+        {
+          "type": "item",
+          "title": "Upload Document, Add Signers, Get Link to manualy add fields",
+          "uri": "docs/quick-starts.md"
+        },
+        {
+          "type": "item",
+          "title": "Upload Document, Add Signers, Add Fields, Get Link to Sign",
+          "uri": "docs/quick-starts.md"
         }
       ]
     },

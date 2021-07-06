@@ -731,7 +731,7 @@ components:
     LoginResponse:
       title: Login Response
       type: object
-      description: '### The response returned when a user Logs in.'
+      description: '#### The response returned when a user Logs in.'
       x-examples:
         Login Response Example:
           value:
@@ -750,7 +750,7 @@ components:
         - ResultField
         - TokenField
     LoginRequest:
-      description: '### The request sent when a user Logs in.'
+      description: '#### The request sent when a user Logs in.'
       type: object
       x-examples:
         Login Request Example:
@@ -828,7 +828,7 @@ components:
     TokenField:
       title: TokenField
       type: object
-      description: '### Authentication Token'
+      description: '#### Authentication Token'
       x-examples:
         Token Example:
           value:
@@ -881,7 +881,7 @@ components:
         - 0
         - 1
       description: |
-        ### Sets an Auto Expire that will expire the document if not completed by the Due Date</p>
+        #### Sets an Auto Expire that will expire the document if not completed by the Due Date</p>
 
         `0 = No
         1 = Yes`
@@ -903,7 +903,7 @@ components:
         - 2
       type: integer
       description: |-
-        ### Priority of the workflow. 
+        #### Priority of the workflow. 
 
         `0 = Low
         1 = Normal
@@ -920,7 +920,7 @@ components:
         - 5
       type: integer
       description: |
-        ### Document Extension 
+        #### Document Extension 
 
         `
         0 = pdf
@@ -936,7 +936,7 @@ components:
         `
       example: 0
     GetDocumentRequest:
-      description: '### The request sent when a user wants to download a document.'
+      description: '#### The request sent when a user wants to download a document.'
       type: object
       x-examples:
         Get Document Request Example:
