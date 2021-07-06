@@ -32,7 +32,7 @@
     {
       "type": "item",
       "title": "SigniFlow OpenAPI v1",
-      "uri": "SigniFlow-OpenAPI-v1.yaml/paths/~1Login"
+      "uri": "reference/SigniFlow-OpenAPI-v1.yaml"
     }
   ]
 }
