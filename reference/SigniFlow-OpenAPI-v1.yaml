@@ -785,57 +785,6 @@ components:
       required:
         - UserNameField
         - PasswordField
-    CreateWorkflowRequest:
-      title: CreateWorkflowRequest
-      type: object
-      description: ''
-      properties:
-        AdditionalDataField:
-          type: string
-          description: Sets additional data to be embedded in PDF Meta
-          example: '""'
-        AutoExpireField:
-          $ref: '#/components/schemas/AutoExpire'
-        AutoRemindField:
-          $ref: '#/components/schemas/AutoRemind'
-        DocField:
-          type: string
-          description: Base64 Encoded String of document
-          example: String content
-        DocNameField:
-          type: string
-          description: Name of document to display in SigniFlow
-          example: String content
-        DueDateField:
-          type: string
-          description: 'Due date for the document, use in conjunction with Auto Expire'
-          format: date-time
-        ExtensionField:
-          $ref: '#/components/schemas/DocExtension'
-        MessageField:
-          type: string
-          description: Custom message to display to recipients
-          example: String content
-        PriorityField:
-          $ref: '#/components/schemas/Priority'
-        SLAField:
-          type: integer
-          description: Deprecated field
-          format: int32
-          example: 0
-        TokenField:
-          $ref: '#/components/schemas/TokenField'
-      required:
-        - AdditionalDataField
-        - AutoExpireField
-        - AutoRemindField
-        - DocField
-        - DocNameField
-        - ExtensionField
-        - MessageField
-        - PriorityField
-        - SLAField
-        - TokenField
     TokenField:
       title: TokenField
       type: object
@@ -856,6 +805,16 @@ components:
           description: User API Token
       required:
         - TokenField
+    ActionField:
+      type: integer
+      title: ActionField
+      description: |-
+        #### Is the action taken by a user in a workflow on this step.
+
+        `0 = SignDocument
+        1 = ViewDocument
+        2 = ApproveDocument`
+      example: 0
     AutoRemind:
       title: AutoRemind
       enum:
@@ -869,22 +828,6 @@ components:
         1 = Yes`
       example: 0
       x-examples: {}
-    CreateWorkflowResponse:
-      title: CreateWorkflowResponse
-      type: object
-      properties:
-        DocIDField:
-          type: integer
-          description: Document ID created in SigniFlow
-          format: int32
-          example: 2147483
-        ResultField:
-          type: string
-          description: Displays the result of the call.
-          example: success
-      required:
-        - DocIDField
-        - ResultField
     AutoExpire:
       type: integer
       title: AutoExpire
@@ -946,6 +889,73 @@ components:
         9 = gif
         `
       example: 0
+    CreateWorkflowRequest:
+      title: CreateWorkflowRequest
+      type: object
+      description: ''
+      properties:
+        AdditionalDataField:
+          type: string
+          description: Sets additional data to be embedded in PDF Meta
+          example: '""'
+        AutoExpireField:
+          $ref: '#/components/schemas/AutoExpire'
+        AutoRemindField:
+          $ref: '#/components/schemas/AutoRemind'
+        DocField:
+          type: string
+          description: Base64 Encoded String of document
+          example: String content
+        DocNameField:
+          type: string
+          description: Name of document to display in SigniFlow
+          example: String content
+        DueDateField:
+          type: string
+          description: 'Due date for the document, use in conjunction with Auto Expire'
+          format: date-time
+        ExtensionField:
+          $ref: '#/components/schemas/DocExtension'
+        MessageField:
+          type: string
+          description: Custom message to display to recipients
+          example: String content
+        PriorityField:
+          $ref: '#/components/schemas/Priority'
+        SLAField:
+          type: integer
+          description: Deprecated field
+          format: int32
+          example: 0
+        TokenField:
+          $ref: '#/components/schemas/TokenField'
+      required:
+        - AdditionalDataField
+        - AutoExpireField
+        - AutoRemindField
+        - DocField
+        - DocNameField
+        - ExtensionField
+        - MessageField
+        - PriorityField
+        - SLAField
+        - TokenField
+    CreateWorkflowResponse:
+      title: CreateWorkflowResponse
+      type: object
+      properties:
+        DocIDField:
+          type: integer
+          description: Document ID created in SigniFlow
+          format: int32
+          example: 2147483
+        ResultField:
+          type: string
+          description: Displays the result of the call.
+          example: success
+      required:
+        - DocIDField
+        - ResultField
     GetDocumentRequest:
       description: '#### The request sent when a user wants to download a document.'
       type: object
@@ -961,7 +971,7 @@ components:
         DocIDField:
           type: number
           example: 12347
-          description: Document ID.
+          description: Document ID generated by SigniFlow.
         TokenField:
           $ref: '#/components/schemas/TokenField'
       required:
