@@ -1,12 +1,12 @@
 # ![hello](../assets/images/hello.png) Welcome Developers
 
+<img src="../assets/images/hello.png">
+
 Getting started with the OpenAPI
 
 The SigniFlow OpenAPI API is intended to manage the initiation, cancellation and removal of document workflows created within the SigniFlow system. The API will also manage the security control within the SigniFlow system and generation of workflow steps. 
 
-
-
-## SigniFlow Signature API
+##  ![hello](../assets/images/hello.png) SigniFlow Signature API
 
 TURN YOUR ONLINE APPLICATION INTO ITS OWN CRYPTOGRAPHIC SIGNATURE ENGINE AND HAVE YOUR CUSTOMERS SIGN ONLINE IN YOUR APP.
 The fastest cryptographic signature API on the market. The ‘Signature API’ is a high-speed, convenient, purpose-built API that can be integrated with any web service where it is required for the signatory to digitally sign a document, using a third-party application.
