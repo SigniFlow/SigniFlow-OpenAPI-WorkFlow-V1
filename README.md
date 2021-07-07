@@ -1,7 +1,7 @@
 # OpenAPI-Spec-V1
 SigniFlow OPENAPI used to automate workflow creation and management.
 
-![alt text](assets/images/OpenAPI.png)
+![OPEN API LOGO](assets/images/OpenAPI.png)
 
 # SigniFlow OpenAPI Specifications  
 

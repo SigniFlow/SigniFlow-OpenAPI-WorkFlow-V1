@@ -1,7 +1,9 @@
 # Welcome Developers
 
-Getting started with the REST API
-The SigniFlow JSON API is intended to manage the initiation, cancellation and removal of document workflows created within the SigniFlow system. The API will also manage the security control within the SigniFlow system and generation of workflow steps. The API is hosted within the following location, Development Environment: https://preprod.signiflow.com/
+![hello](../assets/images/hello.png) Getting started with the OpenAPI
+
+The SigniFlow OpenAPI API is intended to manage the initiation, cancellation and removal of document workflows created within the SigniFlow system. The API will also manage the security control within the SigniFlow system and generation of workflow steps. 
+
 
 
 ## SigniFlow Signature API
