@@ -17,24 +17,24 @@ Create A Workflow But The Most Simple Way Is Displayed Here:
 ![create-a-workflow](../assets/images/creating-a-workflow.png)
 
 * [/Login](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post)
-  * Pass Through Your Account Username And Password.
-  * Receive Back A [Token](../../reference/SigniFlow-OpenAPI-v1.yaml/components/schemas/TokenField) Which Is Used For Further Processes.
+  * ➡️ Pass Through: Your Account Username And Password.
+  * ⬅️ Receive Back: A [Token](../../reference/SigniFlow-OpenAPI-v1.yaml/components/schemas/TokenField) Which Is Used For Further Processes.
 
 * [/CreateWorkflow](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1CreateWorkflow/post) 
-  * Pass Through: Your Token, Your Document (Base64 Encoded) & Other Information About The Workflow.
-  * Receive Back A Document ID
+  * ➡️ Pass Through: Your Token, Your Document (Base64 Encoded) & Other Information About The Workflow.
+  * ⬅️ ️Receive Back: A Document ID
 
 * [/AddWorkflowStep](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1AddWorkflowStepV2/post) 
-  * Pass Through: The Document ID, Your Token & Information About The Person Being Added.
-  * Receive Back Data Regarding The Step Added.
+  * ➡️ Pass Through: The Document ID, Your Token & Information About The Person Being Added.
+  * ⬅️ Receive Back: Data Regarding The Step Added.
 
 * [/DocPrepperAddFields](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1DocPrepperAddFieldsFlowID/post) 
-  * Pass Through: The Document ID, Your Token & Information About The Field Being Added.
-  * Receive Back Data Regarding The Field Added.
+  * ➡️ Pass Through: The Document ID, Your Token & Information About The Field Being Added.
+  * ⬅️ Receive Back: Data Regarding The Field Added.
 
 * [/InitiateFlow](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1InitiateFlow/post) 
-  * Pass  Through: The Document ID, Your Token
-  * Receive Back Data Regarding The Workflow.
+  * ➡️ Pass Through: The Document ID, Your Token
+  * ⬅️ Receive Back: Data Regarding The Workflow.
 
 ---
 ### Download Your Document
@@ -43,23 +43,25 @@ Keep A Backup Of Your Documents As They Are Updated Or Completed, Feel Safe Know
 
 ![download-document](../assets/images/download-document.png)
 
-Login -> Pass Through Your API Account Username And Password.
--> Receive Back a Token Which Is Used For Further Processes.
+* [/Login](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post)
+  * ➡️ Pass Through: Your API Account Username And Password.
+  * Receive Back: a Token Which Is Used For Further Processes.
 
-GetDoc ->Pass Through: Your API Token, Your Document ID.
-->Receive Back a Document As A Base64 Encoded String As
-Well As Other Information About The Document.
+* [/GetDoc](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post)
+  * ➡️ Pass Through: Your API Token, Your Document ID.
+  * ⬅️ Receive Back: a Document As A Base64 Encoded String As Well As Other Information About The Document.
 ---
 ### Get Your Dash Board Information
 
 ![dashboard](../assets/images/dashboard.png)
 
-Login -> Pass Through Your API Account Username And Password.
--> Receive Back a Token Which Is Used For Further Processes.
+* [/Login](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post)
+  * ➡️ Pass Through: Your API Account Username And Password.
+  * Receive Back: a Token Which Is Used For Further Processes.
 
-GetPrepperTemplateList ->Pass Through Your API Token.
-->Receive Back All Of Your Dashboard Values Including How Many
-Documents You can Still Create.
+* [/GetPrepperTemplateList](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post) 
+  * ➡️ Pass Through: Your API Token.
+  * ⬅️ Receive Back: All Of Your Dashboard Values Including How Many Documents You can Still Create.
 
 ![person 6](../assets/images/person-6.png)
 
@@ -75,11 +77,14 @@ Get All Your PrepperTemplates To Allow You To Select One To Apply To A WorkFlow.
 
 ![download-document](../assets/images/download-document.png)
 
-Login -> Pass Through Your API Account Username And Password.
--> Receive Back a Token Which Is Used For Further Processes.
+* [Login](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post)
+  * ➡️ Pass Through: Your API Account Username And Password.
+  * ⬅️ Receive Back: a Token Which Is Used For Further Processes.
 
-GetPrepperTemplateList ->Pass Through A Template Folder ID And Your API Token.
-->Receive Back A List Of Prepper Templates.
+* [/GetPrepperTemplateList](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post) 
+  * ➡️ Pass Through: A Template Folder ID And Your API Token.
+  * ⬅️ Receive Back: A List Of Prepper Templates.
+
 ---
 ### Creating a Workflow with a Doc Prepper Template
 
@@ -88,20 +93,26 @@ create a workflow but the most simple way is displayed here:
 
 ![workflow-with-prepper-template](../assets/images/workflow-with-prepper-template.png)
 
-Login -> Pass Through Your API Account Username And Password.
--> Receive Back a Token Which Is Used For Further Processes.
+* [/Login](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post)
+  * ➡️ Pass Through: Your API Account Username And Password.
+  * ⬅️ Receive Back: a Token Which Is Used For Further Processes.
 
-Create Docflow ->Pass Through: Your API Token, Your Document (Base64 Encoded) & Other Information About The Workflow.
-->Receive Back a Document ID
+* [/Create Docflow](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post) 
+  * ➡️ Pass Through: Your API Token, Your Document (Base64 Encoded) & Other Information About The Workflow.
+  * ⬅️ Receive Back: a Document ID
 
-AddWorkflowStep ->Pass Through: The Document ID, Your API Token & Information About The Person Being Added.
-->Receive Back Data Regarding The Step Added.
+* [/AddWorkflowStep](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post) 
+  * ➡️ Pass Through: The Document ID, Your API Token & Information About The Person Being Added.
+  * ⬅️ Receive Back: Data Regarding The Step Added.
 
-ApplyPrepperTemplate ->Pass Through: The Document ID, Your API Token & a Template ID.
-->Receive Back Data Regarding The Field Added.
+* [/ApplyPrepperTemplate](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post) 
+  * ➡️ Pass Through: The Document ID, Your API Token & a Template ID.
+  * ⬅️ Receive Back: Data Regarding The Field Added.
 
-InitiateFlow ->Pass Through: The Document ID, Your API Token
-->Receive Back API Token from the login API.
+* [/InitiateFlow](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post) 
+  * ➡️ Pass Through: The Document ID, Your API Token
+  * ⬅️ Receive Back: API Token from the login API.
+
 ---
 ## Some Advanced Features
 ---
@@ -110,30 +121,33 @@ InitiateFlow ->Pass Through: The Document ID, Your API Token
 
 ![full-workflow](../assets/images/full-workflow.png)
 
-Login -> Pass Through Your API Account Username And Password.
--> Receive Back A Token Which Is Used For Further Processes.
+* [/Login](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post)
+  * ➡️ Pass Through: Your API Account Username And Password.
+  * ⬅️ Receive Back: A Token Which Is Used For Further Processes.
 
-FullWorkflow ->Pass Through: Your API Token, Your Document (Base64 Encoded),
-All Users Who Will Be Included In The Workflow As Well As Where Their
-Fields Should Be Placed & Other Information About The Workflow.
-->Receive Back A Document ID And Other Information Regarding The
-Workflow.
+* [/FullWorkflow](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post)
+  * ➡️ Pass Through: Your API Token, Your Document (Base64 Encoded), All Users Who Will Be Included In The Workflow As Well As Where Their Fields Should Be Placed & Other Information About The Workflow. 
+  * ⬅️ Receive Back: A Document ID And Other Information Regarding The Workflow.
 
 ---
+
 ### Finding The Position Of Your Fields
 
 ![find-fields](../assets/images/find-fields.png)
 
 If You Are Not Sure Where Your Fields Should Be Placed, Place White Text Where You Want Your Field To Be.
 
-Login -> Pass Through Your API Account Username And Password.
--> Receive Back a Token Which Is Used For Further Processes.
+* [/Login](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post)
+  * ➡️ Pass Through: Your API Account Username And Password.
+  * ⬅️ Receive Back: a Token Which Is Used For Further Processes.
 
-CreateWorkflow ->Pass Through: Your API Token, Your Document (Base64 Encoded) & Other Information About The Workflow.
-->Receive Back a Document ID
+* [/CreateWorkflow](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post) 
+  * ➡️ Pass Through: Your API Token, Your Document (Base64 Encoded) & Other Information About The Workflow.
+  * ⬅️ Receive Back: a Document ID
 
-GetDocumentTagField -> Pass Through The Document ID, The Text To Search For And API Token.
--> Receive Back List Of Positions Where The Text Was Found.
+* [/GetDocumentTagField](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post) 
+  * ➡️ Pass Through: The Document ID, The Text To Search For And API Token.
+  * ⬅️ Receive Back: List Of Positions Where The Text Was Found.
 
 ![person 4](../assets/images/person-4.png)
 
