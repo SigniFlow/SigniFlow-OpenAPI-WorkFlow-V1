@@ -1,4 +1,4 @@
-# Obtaining Credentials
+# 🔑 Obtaining Credentials
 ## Overview
 Making API calls to the SgniFlow system requires a user account.
 
