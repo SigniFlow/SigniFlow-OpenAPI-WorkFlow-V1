@@ -11,7 +11,9 @@ The SigniFlow OpenAPI API is intended to manage the initiation, cancellation and
 ---
 ### Creating a workflow
 
-Creating A Workflow Is The Core Of SigniFlow There Are Multiple Ways In Which You Can
+<!-- theme: info -->
+
+> Creating A Workflow Is The Core Of SigniFlow There Are Multiple Ways In Which You Can
 Create A Workflow But The Most Simple Way Is Displayed Here:
 
 ![create-a-workflow](../assets/images/creating-a-workflow.png)
@@ -39,13 +41,15 @@ Create A Workflow But The Most Simple Way Is Displayed Here:
 ---
 ### Download Your Document
 
-Keep A Backup Of Your Documents As They Are Updated Or Completed, Feel Safe Knowing SigniFlow Keeps A Full Audit Of All Actions Taken On A Document Which Allows Us To Verify Any Downloaded Document With Our Backup.
+<!-- theme: info -->
+
+> Keep A Backup Of Your Documents As They Are Updated Or Completed, Feel Safe Knowing SigniFlow Keeps A Full Audit Of All Actions Taken On A Document Which Allows Us To Verify Any Downloaded Document With Our Backup.
 
 ![download-document](../assets/images/download-document.png)
 
 * [/Login](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post)
   * ➡️ Pass Through: Your API Account Username And Password.
-  * Receive Back: a Token Which Is Used For Further Processes.
+  * ⬅️ Receive Back: a Token Which Is Used For Further Processes.
 
 * [/GetDoc](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post)
   * ➡️ Pass Through: Your API Token, Your Document ID.
@@ -57,7 +61,7 @@ Keep A Backup Of Your Documents As They Are Updated Or Completed, Feel Safe Know
 
 * [/Login](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post)
   * ➡️ Pass Through: Your API Account Username And Password.
-  * Receive Back: a Token Which Is Used For Further Processes.
+  * ⬅️ Receive Back: a Token Which Is Used For Further Processes.
 
 * [/GetPrepperTemplateList](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post) 
   * ➡️ Pass Through: Your API Token.
@@ -73,7 +77,9 @@ Keep A Backup Of Your Documents As They Are Updated Or Completed, Feel Safe Know
 
 ### Fetch All Prepper Templates
 
-Get All Your PrepperTemplates To Allow You To Select One To Apply To A WorkFlow.
+<!-- theme: info -->
+
+> Get All Your PrepperTemplates To Allow You To Select One To Apply To A WorkFlow.
 
 ![download-document](../assets/images/download-document.png)
 
@@ -88,7 +94,9 @@ Get All Your PrepperTemplates To Allow You To Select One To Apply To A WorkFlow.
 ---
 ### Creating a Workflow with a Doc Prepper Template
 
-Creating a workflow is the core of SigniFlow there are multiple ways in which you can
+<!-- theme: info -->
+
+> Creating a workflow is the core of SigniFlow there are multiple ways in which you can
 create a workflow but the most simple way is displayed here:
 
 ![workflow-with-prepper-template](../assets/images/workflow-with-prepper-template.png)
@@ -135,7 +143,9 @@ create a workflow but the most simple way is displayed here:
 
 ![find-fields](../assets/images/find-fields.png)
 
-If You Are Not Sure Where Your Fields Should Be Placed, Place White Text Where You Want Your Field To Be.
+<!-- theme: info -->
+
+> If You Are Not Sure Where Your Fields Should Be Placed, Place White Text Where You Want Your Field To Be.
 
 * [/Login](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post)
   * ➡️ Pass Through: Your API Account Username And Password.
@@ -154,8 +164,9 @@ If You Are Not Sure Where Your Fields Should Be Placed, Place White Text Where Y
 ---
 ## Signing Ceremonies
 --- 
+<!-- theme: success -->
 
-**TURN YOUR ONLINE APPLICATION INTO ITS OWN CRYPTOGRAPHIC SIGNATURE ENGINE AND HAVE YOUR CUSTOMERS SIGN ONLINE IN YOUR APP.**
+> **TURN YOUR ONLINE APPLICATION INTO ITS OWN CRYPTOGRAPHIC SIGNATURE ENGINE AND HAVE YOUR CUSTOMERS SIGN ONLINE IN YOUR APP.**
 
 The fastest cryptographic signature API on the market. The ‘Signature Ceremony API’ is a high-speed, convenient, purpose-built API that can be integrated with any web service where it is required for the signatory to digitally sign a document, using a third-party application.
 
@@ -164,4 +175,17 @@ Unlike standard SigniFlow APIs the ‘Signature Ceremony API’ does not utilise
 
 Trust in the form of authentication is transferred to the third-party application by reference, and only the signature operation is performed by the Signature API. It is therefore expected that the application performs multi-factor authentication of the user, before calling the API.
 
-### Multiple Signers Ceremony
+<!-- theme: info -->
+> ### A thing to know
+>
+> When SigningCeremony is integrated into the customer’s system where no workflow of a document is needed.
+
+
+* [/SigningCeremonyV2](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1SigningCeremonyV2/post) 
+  * This function takes in the signers information, the document and signature along with the trust reference of how and
+where you authenticated the user. This function also can add fields such as Initials, Checkboxes, and textboxes to a
+document, it will then sign the document. It will return a result field along with the signed document.
+* [/MultipleSignersSigningCeremony](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1MultipleSignersSigningCeremony/post) 
+  * This function takes in a list of signers information, the document and signatures along with the trust reference of
+how and where you authenticated the users in the list, it will then sign the document. It will return a result field along
+with the signed document.

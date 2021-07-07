@@ -2,7 +2,9 @@
 ## Overview
 Making API calls to the SigniFlow system requires a user account.
 
-SigniFlow maintains 8 cloud enviroments around the globe, you can sign up for a trial account on any of these servers.
+<!-- theme: info -->
+
+> SigniFlow maintains 8 cloud enviroments around the globe, you can sign up for a trial account on any of these servers.
 
 ## 🌎 Cloud Server List
 
@@ -27,6 +29,9 @@ Alternativly please reach out to our support desk for assistance with an API Acc
 
 All API Methods require a [Token](../../reference/SigniFlow-OpenAPI-v1.yaml/components/schemas/TokenField), the Token is retrieved by making a request to the [/Login](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post) Method.
 
+<!-- theme: warning -->
+
+> 
 [Token](../../reference/SigniFlow-OpenAPI-v1.yaml/components/schemas/TokenField) is set to expire 15 minutes after the last API call has been made, you can test the validity of a token with the [/TokenValidate](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1TokenValidate) Method, and Extend the token using [/TokenExtend](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1TokenExtend)
 
 ---
