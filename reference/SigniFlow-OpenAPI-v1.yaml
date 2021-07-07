@@ -1010,7 +1010,7 @@ components:
         - DocIDField
         - TokenField
     GetDocumentResponse:
-      description: '### The response returned when a user wants to download a document.'
+      description: '#### The response returned when a user wants to download a document.'
       type: object
       x-examples:
         Get Document Response Example:
@@ -1046,7 +1046,7 @@ components:
         - ExtensionField
         - ResultField
     AddWorkflowStepV2Request:
-      description: Add a step to the Workflow request.
+      description: '#### Add a step to the Workflow request.'
       type: object
       x-examples:
         Add Workflow Step V2 Request Example:
@@ -1110,7 +1110,7 @@ components:
         - ProxyAllowedField
         - TokenField
     AddWokflowStepV2Response:
-      description: Add a step to a Workflow response.
+      description: '#### Add a step to a Workflow response.'
       type: object
       x-examples:
         Add Workflow Step V2 Response Example:
@@ -1118,7 +1118,7 @@ components:
             DocIDField: 1111111
             FlowIDField: 1111112
             FlowStepsField:
-              - ActionField: string
+              - ActionField: 0
                 EmailField: John@domain.com
                 FlowIDField: 2222222
             ResultField: success
@@ -1165,7 +1165,7 @@ components:
         - FlowStepsField
         - ResultField
     ApplyPrepperTemplateRequest:
-      description: Used to send a request for applying a template.
+      description: '#### Used to send a request for applying a template.'
       type: object
       x-examples:
         Apply Prepper Template Response Example:
@@ -1192,7 +1192,7 @@ components:
         - PrepperTemplateIDField
         - TokenField
     ApplyPrepperTemplateResponse:
-      description: Used to get the response afetr applying a template.
+      description: '#### Used to get the response afetr applying a template.'
       type: object
       x-examples:
         Apply Prepper Template Response Example:
@@ -1208,7 +1208,7 @@ components:
       required:
         - ResultField
     CancelFlowRequest:
-      description: The request sent when a workflow is cancelled.
+      description: '#### The request sent when a workflow is cancelled.'
       type: object
       x-examples:
         Cancel Flow Request Example:
@@ -1230,7 +1230,7 @@ components:
         - DocIDField
         - TokenField
     CancelFlowResponse:
-      description: The response returned when a user cancelled a workflow.
+      description: '#### The response returned when a user cancelled a workflow.'
       type: object
       x-examples:
         Cancel Flow Response Example:
@@ -1252,7 +1252,7 @@ components:
         - DocIDField
         - ResultField
     CreatePortfolioRequest:
-      description: Used to request a portfolio.
+      description: '#### Used to request a portfolio.'
       type: object
       x-examples:
         Create Portfolio Request Example:
@@ -1280,7 +1280,7 @@ components:
         - PortfolioNameField
         - TokenIDField
     CreatePortfolioResponse:
-      description: The response received after a portfolio is created.
+      description: '#### The response received after a portfolio is created.'
       type: object
       x-examples:
         Create Portfolio Response Example:
@@ -1302,7 +1302,7 @@ components:
         - PortfolioIDField
         - ResultField
     DeleteDocRequest:
-      description: This is the request used to delete a document.
+      description: '#### This is the request used to delete a document.'
       type: object
       x-examples:
         Delete Document Request Example:
@@ -1323,7 +1323,7 @@ components:
         - DocIDField
         - TokenField
     DeleteDocResponse:
-      description: This is the response that will be returned when a document is deleted.
+      description: '#### This is the response that will be returned when a document is deleted.'
       type: object
       x-examples:
         Delete Document Response Example:
