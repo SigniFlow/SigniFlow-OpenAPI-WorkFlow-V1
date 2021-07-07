@@ -129,7 +129,7 @@ paths:
   /AddWorkflowStepV2:
     post:
       summary: Add a Workflow step
-      operationId: post-AddWorkflowStepV2
+      operationId: post-AddWorkflowStep
       responses:
         '200':
           description: Add A Workflow Step Response Model
@@ -248,11 +248,11 @@ paths:
         - WorkFlow
   /DocPrepperAddFieldsFlowID:
     post:
-      summary: Document Prepper Add Fields FlowID
-      operationId: post-DocPrepperAddFieldsFlowID
+      summary: Document Prepper Add Fields
+      operationId: post-DocPrepperAddField
       responses:
         '200':
-          description: Document Prepper Add Fields FlowID Response Model
+          description: Document Prepper Add Fields Response Model
           content:
             application/json:
               schema:
@@ -262,7 +262,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/DocPrepperAddFieldsFlowIDRequest'
-        description: Document Prepper Add Fields FlowID Request Model
+        description: Document Prepper Add Fields Request Model
       description: Used to add fields to a document using the user's FlowID.
       tags:
         - WorkFlow

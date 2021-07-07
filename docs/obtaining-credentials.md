@@ -4,7 +4,7 @@ Making API calls to the SgniFlow system requires a user account.
 
 SigniFlow maintains 8 cloud enviroments around the globe, you can sign up for a trial account on any of these servers.
 
-## Cloud Server List
+## 🌎 Cloud Server List
 
 * [Australia Cloud](https://au.signiflow.com)
 * [Europe Cloud](https://eu.signiflow.com)
@@ -13,7 +13,7 @@ SigniFlow maintains 8 cloud enviroments around the globe, you can sign up for a 
 * [United States Cloud](https://us.signiflow.com)
 * [United Kingdom Cloud](https://uk.signiflow.com)
 
-## Support Contact
+## 🙋 Support Contact
 
 Alternativly please reach out to our support desk for assistance with an API Account.
 
@@ -22,9 +22,12 @@ Alternativly please reach out to our support desk for assistance with an API Acc
 * Academy : [Online Help](https://www.signiflow.com/academy/)
 * Videos : [YouTube](https://www.youtube.com/c/SigniFlow)
 
-## API Token
+## 🎟️ Token
 
-All API Methods require a [APIToken](../../reference/SigniFlow-OpenAPI-v1.yaml/components/schemas/TokenField), the Token is retrieved by making a request to the [/Login](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post) Method.
+All API Methods require a [Token](../../reference/SigniFlow-OpenAPI-v1.yaml/components/schemas/TokenField), the Token is retrieved by making a request to the [/Login](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post) Method.
 
-[APIToken](../../reference/SigniFlow-OpenAPI-v1.yaml/components/schemas/TokenField) is set to expire 15 minutes after the last API call has been made, you can test the validity of a token with the [/TokenValidate](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1TokenValidate) Method, and Extend the token using [/TokenExtend](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1TokenExtend)
+[Token](../../reference/SigniFlow-OpenAPI-v1.yaml/components/schemas/TokenField) is set to expire 15 minutes after the last API call has been made, you can test the validity of a token with the [/TokenValidate](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1TokenValidate) Method, and Extend the token using [/TokenExtend](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1TokenExtend)
 
+---
+
+![person 1](../assets/images/person-1.png)
