@@ -808,7 +808,7 @@ components:
     ActionField:
       type: integer
       title: ActionField
-      description: |-
+      description: |
         #### Is the action taken by a user in a workflow on this step.
 
         `0 = SignDocument
@@ -825,7 +825,7 @@ components:
         - 1
       type: integer
       description: |-
-        #### Sets an Auto Reminder email to go out daily to workflow participants that have not signed the document
+        #### Sets an Auto Reminder email to go out daily to workflow participants that have not signed the document.
 
         `0 = No
         1 = Yes`
@@ -842,7 +842,7 @@ components:
         - 0
         - 1
       description: |
-        #### Sets an Auto Expire that will expire the document if not completed by the Due Date</p>
+        #### Sets an Auto Expire that will expire the document if not completed by the Due Date.
 
         `0 = No
         1 = Yes`
@@ -864,7 +864,7 @@ components:
         - 2
       type: integer
       description: |-
-        #### Priority of the workflow. 
+        #### The priority level of the workflow. 
 
         `0 = Low
         1 = Normal
