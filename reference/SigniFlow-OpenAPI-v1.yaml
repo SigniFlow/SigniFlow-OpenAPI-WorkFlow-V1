@@ -31,11 +31,18 @@ paths:
   /Login:
     post:
       summary: Login
-      description: Generates a API Token for the User
+      description: '#### Generates a API Token for the User'
       operationId: Login
-      parameters: []
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+            example: application/json
+          in: header
+          name: Content-Type
+          required: true
       requestBody:
-        description: Login Request Model
+        description: '##### Login Request Model'
         content:
           application/json:
             schema:
@@ -46,16 +53,21 @@ paths:
         required: true
       responses:
         '200':
-          description: Login Response Model
-          headers: {}
+          description: '##### Login Response Model'
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                default: application/json
+                example: application/json
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/LoginResponse'
               examples:
-                Success:
+                Example:
                   value:
-                    ResultField: Success
+                    ResultField: success
                     TokenField:
                       TokenExpiryField: '2019-08-24T14:15:22Z'
                       TokenField: aaa111
@@ -68,7 +80,7 @@ paths:
       operationId: post-Logout
       responses:
         '200':
-          description: Logout Response Model
+          description: '##### Logout Response Model'
           content:
             application/json:
               schema:
@@ -80,7 +92,13 @@ paths:
                     TokenField:
                       TokenExpiryField: '2019-08-24T14:15:22Z'
                       TokenField: aaa111
-      description: Used to log out a user from SigniFlow.
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                default: application/json
+                example: application/json
+      description: '#### Used to log out a user from SigniFlow.'
       requestBody:
         content:
           application/json:
@@ -89,26 +107,35 @@ paths:
             examples:
               Example:
                 value:
-                  TokenField: aaaaa1111111
-        description: Logout Request Model
+                  TokenField: aaa111
+        description: '##### Logout Request Model'
       tags:
         - Authentication
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+            example: application/json
+          in: header
+          name: Content-Type
+          required: true
   /CreateWorkflow:
     post:
       summary: Create Workflow
-      description: Used to start a new workflow by passing a Base64 encoded document to SigniFlow
+      description: '#### Used to start a new workflow by passing a Base64 encoded document to SigniFlow'
       operationId: CreateWorkflow
       parameters: []
       requestBody:
-        description: Create Workflow Request Model
+        description: '##### Create Workflow Request Model'
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/CreateWorkflowRequest'
+            examples: {}
         required: true
       responses:
         '200':
-          description: Create Workflow Response Model
+          description: '##### Create Workflow Response Model'
           headers: {}
           content:
             application/json:
@@ -764,7 +791,7 @@ components:
       description: '#### The request sent when a user Logs in.'
       type: object
       x-examples:
-        Login Request Example:
+        Example:
           value:
             UserNameField: email@domain.com
             PasswordField: Password
@@ -790,7 +817,7 @@ components:
       type: object
       description: '#### Authentication Token'
       x-examples:
-        Token Example:
+        Example:
           value:
             TokenExpiryField: '2019-08-24T14:15:22Z'
             TokenField: aaa111
@@ -806,7 +833,7 @@ components:
       required:
         - TokenField
     ActionField:
-      type: string
+      type: integer
       title: ActionField
       description: |
         #### Is the action taken by a user in a workflow on this step.
@@ -814,27 +841,26 @@ components:
         `0 = SignDocument
         1 = ViewDocument
         2 = ApproveDocument`
-      example: 0
-      x-examples:
-        Approve Document:
-          value: 2
+      default: 0
+      enum:
+        - 0
+        - 1
+        - 2
+      minimum: 0
+      maximum: 2
     AutoRemind:
+      type: integer
       title: AutoRemind
       enum:
         - 0
         - 1
-      type: integer
       description: |-
         #### Sets an Auto Reminder email to go out daily to workflow participants that have not signed the document.
 
         `0 = No
         1 = Yes`
-      example: 0
-      x-examples:
-        'No':
-          value: 0
-        'Yes':
-          value: 1
+      minimum: 0
+      maximum: 1
     AutoExpire:
       type: integer
       title: AutoExpire
@@ -846,34 +872,27 @@ components:
 
         `0 = No
         1 = Yes`
-      example: 0
-      x-examples:
-        'No':
-          value: 0
-        'Yes':
-          value: 1
       minimum: 0
       maximum: 1
       exclusiveMinimum: false
       exclusiveMaximum: false
     Priority:
+      type: integer
       title: Priority
       enum:
         - 0
         - 1
         - 2
-      type: integer
       description: |-
         #### The priority level of the workflow. 
 
         `0 = Low
         1 = Normal
         2 = High`
-      example: 0
-      x-examples:
-        Low:
-          value: 0
+      minimum: 0
+      maximum: 2
     DocExtension:
+      type: integer
       title: DocExtension
       enum:
         - 0
@@ -882,7 +901,10 @@ components:
         - 3
         - 4
         - 5
-      type: integer
+        - 6
+        - 7
+        - 8
+        - 9
       description: |
         #### Document Extension 
 
@@ -898,11 +920,28 @@ components:
         8 = jpg
         9 = gif
         `
-      example: 0
+      minimum: 0
+      maximum: 9
     CreateWorkflowRequest:
       title: Create Workflow Request
       type: object
       description: '#### The request sent to create a document workflow.'
+      x-examples:
+        Example:
+          value:
+            AdditionalDataField: ''
+            AutoExpireField: 0
+            AutoRemindField: 0
+            DocField: Base64 Encoded Document
+            DocNameField: Document Name
+            DueDateField: '2019-08-24T14:15:22Z'
+            ExtensionField: 0
+            MessageField: Message to participants
+            PriorityField: 0
+            SLAField: 0
+            TokenField:
+              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenField: aaa111
       properties:
         AdditionalDataField:
           type: string
@@ -928,15 +967,17 @@ components:
           $ref: '#/components/schemas/DocExtension'
         MessageField:
           type: string
-          description: Custom message to display to recipients
+          description: Custom message to display to participants
           example: String content
         PriorityField:
           $ref: '#/components/schemas/Priority'
         SLAField:
           type: integer
-          description: Deprecated field
-          format: int32
+          description: 'Deprecated field, Pass 0'
           example: 0
+          minimum: 0
+          maximum: 0
+          default: 0
         TokenField:
           $ref: '#/components/schemas/TokenField'
       required:
@@ -950,27 +991,11 @@ components:
         - PriorityField
         - SLAField
         - TokenField
-      x-examples:
-        Create Workflow Request Example:
-          value:
-            AdditionalDataField: '""'
-            AutoExpireField: 0
-            AutoRemindField: 0
-            DocField: String content
-            DocNameField: String content
-            DueDateField: '2019-08-24T14:15:22Z'
-            ExtensionField: 0
-            MessageField: String content
-            PriorityField: 0
-            SLAField: 0
-            TokenField:
-              TokenExpiryField: '2019-08-24T14:15:22Z'
-              TokenField: aaa111
     CreateWorkflowResponse:
       title: Create Workflow Response
       type: object
       x-examples:
-        Create Workflow Response Example:
+        Example:
           value:
             DocIDField: 2147483647
             ResultField: success
@@ -978,7 +1003,7 @@ components:
       properties:
         DocIDField:
           type: integer
-          description: Document ID created in SigniFlow
+          description: Document Id created in SigniFlow
           format: int32
           example: 2147483647
         ResultField:
@@ -992,7 +1017,7 @@ components:
       description: '#### The request sent when a user wants to download a document.'
       type: object
       x-examples:
-        Get Document Request Example:
+        Example:
           value:
             DocIDField: 2147483647
             TokenField:
@@ -1049,14 +1074,14 @@ components:
       description: '#### Add a step to the Workflow request.'
       type: object
       x-examples:
-        Add Workflow Step V2 Request Example:
+        Example:
           value:
             ActionField: 0
-            CellField: string
+            CellField: '1121231234'
             DocIDField: '2147483647'
             EmailField: email@domain.com
             FirstNameField: John
-            LanguageCodeField: ENG
+            LanguageCodeField: en
             LastNameField: Smith
             ProxyAllowedField: 0
             TokenField:
@@ -1069,6 +1094,7 @@ components:
         CellField:
           type: string
           minLength: 1
+          description: Mobile number of participant
         DocIDField:
           type: string
           minLength: 1
@@ -1077,23 +1103,28 @@ components:
         EmailField:
           type: string
           minLength: 1
-          description: User email address.
+          description: Participant email address.
           format: email
           example: email@domain.com
         FirstNameField:
           type: string
           minLength: 1
-          description: User firstname.
+          description: Participant firstname.
           example: John
         LanguageCodeField:
           type: string
           minLength: 1
-          description: User language code.
+          description: |-
+            Participant 2 Digit ISO Language Code
+            `en = English
+            es = Spanish
+            fr = French
+            ect`
           example: ENG
         LastNameField:
           type: string
           minLength: 1
-          description: User last name.
+          description: Participant last name.
           example: Smith
         ProxyAllowedField:
           $ref: '#/components/schemas/ProxyAllowedField'
@@ -1113,7 +1144,7 @@ components:
       description: '#### Add a step to a Workflow response.'
       type: object
       x-examples:
-        Add Workflow Step V2 Response Example:
+        Example:
           value:
             DocIDField: 2147483647
             FlowIDField: 1111112
@@ -1145,7 +1176,7 @@ components:
                 type: string
                 minLength: 1
                 example: John@domain.com
-                description: User email address field.
+                description: Participant email address field.
               FlowIDField:
                 type: number
                 example: 2222222
@@ -1168,7 +1199,7 @@ components:
       description: '#### Used to send a request for applying a template.'
       type: object
       x-examples:
-        Apply Prepper Template Response Example:
+        Example:
           value:
             DocIDField: 2147483647
             PrepperTemplateIDField: 21344
@@ -1195,7 +1226,7 @@ components:
       description: '#### Used to get the response afetr applying a template.'
       type: object
       x-examples:
-        Apply Prepper Template Response Example:
+        Example:
           value:
             ResultField: success
       title: Apply Prepper Template Response
@@ -1211,7 +1242,7 @@ components:
       description: '#### The request sent when a workflow is cancelled.'
       type: object
       x-examples:
-        Cancel Flow Request Example:
+        Example:
           value:
             DocIDField: '2147483647'
             TokenField:
@@ -1233,7 +1264,7 @@ components:
       description: '#### The response returned when a user cancelled a workflow.'
       type: object
       x-examples:
-        Cancel Flow Response Example:
+        Example:
           value:
             DocIDField: 2147483647
             ResultField: success
@@ -1252,10 +1283,10 @@ components:
         - DocIDField
         - ResultField
     CreatePortfolioRequest:
-      description: '#### Used to request a portfolio.'
+      description: '#### Used to create a portfolio.'
       type: object
       x-examples:
-        Create Portfolio Request Example:
+        Example:
           value:
             DocIDField: 2147483647
             PortfolioNameField: Application Portfolio
@@ -1271,7 +1302,7 @@ components:
         PortfolioNameField:
           type: string
           minLength: 1
-          description: Portfolio name field.
+          description: Portfolio name displayed in SigniFlow
           example: Application Portfolio
         TokenIDField:
           $ref: '#/components/schemas/TokenField'
@@ -1283,7 +1314,7 @@ components:
       description: '#### The response received after a portfolio is created.'
       type: object
       x-examples:
-        Create Portfolio Response Example:
+        Example:
           value:
             PortfolioIDField: 13342
             ResultField: success
@@ -1305,7 +1336,7 @@ components:
       description: '#### This is the request used to delete a document.'
       type: object
       x-examples:
-        Delete Document Request Example:
+        Example:
           value:
             DocIDField: 2147483647
             TokenField:
@@ -1326,7 +1357,7 @@ components:
       description: '#### This is the response that will be returned when a document is deleted.'
       type: object
       x-examples:
-        Delete Document Response Example:
+        Example:
           value:
             ResultField: success
       title: Delete Document Response
@@ -1339,10 +1370,10 @@ components:
       required:
         - ResultField
     DocPrepperAddAdvancedFieldsRequest:
-      description: A request sent to add advanced fields to a document.
+      description: '#### A request sent to add advanced fields to a document.'
       type: object
       x-examples:
-        Document Prepper Add Advanced Fields Request Example:
+        Example:
           value:
             FieldInfoListField:
               - AdvancedFieldTypeField: 0
@@ -1420,15 +1451,21 @@ components:
                 type: string
                 minLength: 1
                 example: Arial
-                description: Font Family.
+                description: Font family of the text in the field
               FontSizeField:
                 type: number
                 example: 12
+                description: Font size of the text in the field
               HeightField:
                 type: string
                 minLength: 1
                 example: '30'
-                description: Field height.
+                description: Field height
+              WidthField:
+                type: string
+                minLength: 1
+                example: '15'
+                description: Field Width
               LinkToField:
                 type: string
                 minLength: 1
@@ -1450,21 +1487,16 @@ components:
               ValueField:
                 type: string
                 minLength: 1
-              WidthField:
-                type: string
-                minLength: 1
-                example: '15'
-                description: Field Width.
               XCoordinateField:
                 type: string
                 minLength: 1
                 example: '60'
-                description: X-coordinates of field.
+                description: X-coordinates of field on the page
               YCoordinateField:
                 type: string
                 minLength: 1
                 example: '120'
-                description: Y-coordinates of field.
+                description: Y-coordinates of field on the page
             required:
               - AdvancedFieldTypeField
               - DocIDField
@@ -1472,13 +1504,13 @@ components:
               - FontFamilyField
               - FontSizeField
               - HeightField
+              - WidthField
               - LinkToField
               - NameField
               - PageNumberField
               - SearchableField
               - UserEmailField
               - ValueField
-              - WidthField
               - XCoordinateField
               - YCoordinateField
         TokenField:
@@ -1487,10 +1519,10 @@ components:
         - FieldInfoListField
         - TokenField
     DocPrepperAddAdvancedFieldsResponse:
-      description: This is the response when adding advanced fields to a document.
+      description: '#### This is the response when adding advanced fields to a document.'
       type: object
       x-examples:
-        Document Prepper Add Advanced Fields Response Example:
+        Example:
           value:
             AdvancedFieldResponseListField:
               - DocFieldIDField: 11111
@@ -1526,10 +1558,10 @@ components:
         - AdvancedFieldResponseListField
         - ResultField
     DocPrepperAddFieldsFlowIDRequest:
-      description: The request sent when fields are added to a document using a FlowID.
+      description: '#### The request sent when fields are added to a document using a FlowID.'
       type: object
       x-examples:
-        Document Prepper Add Fields FlowID Request Example:
+        Example:
           value:
             DocFieldTypeField: 5
             DocIDField: 12344
@@ -1618,7 +1650,7 @@ components:
         - XCoordinateField
         - YCoordinateField
     DocPrepperAddFieldsFlowIDResponse:
-      description: The response retuenrd when fields are added to a document using a FlowID.
+      description: '#### The response retuenrd when fields are added to a document using a FlowID.'
       type: object
       x-examples:
         Document Prepper Add Fields FlowID Response Example:
@@ -1690,7 +1722,7 @@ components:
         - XCoordinateField
         - YCoordinateField
     DownloadPortfolioRequest:
-      description: The request sent when a user wants to download a portfolio.
+      description: '#### The request sent when a user wants to download a portfolio.'
       type: object
       x-examples:
         Download Portfolio Request Example:
@@ -1711,7 +1743,7 @@ components:
         - PortfolioIDField
         - TokenField
     DownloadPortfolioResponse:
-      description: The response returned when a user wants to download a portfolio.
+      description: '#### The response returned when a user wants to download a portfolio.'
       type: object
       x-examples:
         Download Portfolio Response Example:
@@ -1745,7 +1777,7 @@ components:
         - PortfolioNameField
         - ResultField
     FullWorkflowRequest:
-      description: Request a fullworkflow of a document.
+      description: '#### Request a fullworkflow of a document.'
       type: object
       x-examples:
         FullWorkflow Request Example:
@@ -2133,7 +2165,7 @@ components:
         - TokenField
         - WorkflowUsersListField
     FullWorkflowResponse:
-      description: The response returned on FullWorkflow.
+      description: '#### The response returned on FullWorkflow.'
       type: object
       x-examples:
         FullWorkflow Response Example:
@@ -2169,7 +2201,7 @@ components:
         - ResultField
         - StatusField
     GetAuditDocumentRequest:
-      description: A request sent to get an audit document.
+      description: '#### A request sent to get an audit document.'
       type: object
       x-examples:
         Example:
@@ -2189,7 +2221,7 @@ components:
         - TokenField
       title: Get Audit Document Request
     GetAuditDocumentResponse:
-      description: The response returned when requesting and audit document.
+      description: '#### The response returned when requesting and audit document.'
       type: object
       x-examples:
         Example:
@@ -2209,7 +2241,7 @@ components:
         - AuditDocumentField
         - ResultField
     GetDocLinkRequest:
-      description: This is a request to get the document url.
+      description: '#### This is a request to get the document url.'
       type: object
       x-examples: {}
       title: Get Document Link Request
@@ -2232,7 +2264,7 @@ components:
         - ReturnURLField
         - TokenField
     GetDocLinkResponse:
-      description: This is the response returned when a document url is requested.
+      description: '#### This is the response returned when a document url is requested.'
       type: object
       x-examples:
         Example:
@@ -2253,7 +2285,7 @@ components:
         - Result
         - Url
     GetDocStatusRequest:
-      description: This is the request used to get the document status.
+      description: '#### This is the request used to get the document status.'
       type: object
       x-examples:
         Example:
@@ -2272,7 +2304,7 @@ components:
         - TokenField
       title: Get Document Status Request
     GetDocStatusResponse:
-      description: This is the response returned when a document status has been requested.
+      description: '#### This is the response returned when a document status has been requested.'
       type: object
       x-examples:
         Example:
@@ -2293,7 +2325,7 @@ components:
         - DocStatusField
         - ResultField
     GetDocumentPrepperLinkRequest:
-      description: This is the request sent to get a documnt prepper url.
+      description: '#### This is the request sent to get a documnt prepper url.'
       type: object
       x-examples:
         Example:
@@ -2322,7 +2354,7 @@ components:
         - TokenField
       title: Get Document Prepper Link Request
     GetDocumentPrepperLinkResponse:
-      description: This is the response returned when requesting a document prepper url.
+      description: '#### This is the response returned when requesting a document prepper url.'
       type: object
       x-examples:
         Example:
@@ -2343,7 +2375,7 @@ components:
         - Result
         - URL
     GetDocumentTagFieldBoxPositionRequest:
-      description: The request sent to get the document tag field box position.
+      description: '#### The request sent to get the document tag field box position.'
       type: object
       x-examples:
         Example:
@@ -2367,7 +2399,7 @@ components:
         - TokenField
       title: Get Document Tag Field Box Position Request
     GetDocumentTagFieldBoxPositionResponse:
-      description: The response returned after requesting the document tag field ox position.
+      description: '#### The response returned after requesting the document tag field ox position.'
       type: object
       x-examples:
         Example:
@@ -2416,7 +2448,7 @@ components:
         - DocumentTagFieldsBoxPositionField
         - ResultField
     GetDocumentTagFieldPositionRequest:
-      description: The request sent to get the document tag field position.
+      description: '#### The request sent to get the document tag field position.'
       type: object
       x-examples:
         Example:
@@ -2440,7 +2472,7 @@ components:
         - TokenField
       title: Get Document Tag Field Position Request
     GetDocumentTagFieldPositionResponse:
-      description: The response returned when requesting the document tag field position.
+      description: '#### The response returned when requesting the document tag field position.'
       type: object
       x-examples:
         Example:
@@ -2482,7 +2514,7 @@ components:
         - DocumentTagFieldsPositionField
         - ResultField
     GetDocumentAuditRequest:
-      description: The request sent to get the audit information from a document.
+      description: '#### The request sent to get the audit information from a document.'
       type: object
       x-examples:
         Example:
@@ -2502,7 +2534,7 @@ components:
         - TokenField
       title: Get Document Audit Request
     GetDocumentAuditResponse:
-      description: The response returned after requesting the audit information from a document.
+      description: '#### The response returned after requesting the audit information from a document.'
       type: object
       x-examples:
         Example:
@@ -2586,7 +2618,7 @@ components:
         - ActivityField
         - ResultField
     GetPrepperTemplateRequest:
-      description: The request used to get templates.
+      description: '#### The request used to get templates.'
       type: object
       x-examples: {}
       properties:
@@ -2602,7 +2634,7 @@ components:
         - TokenField
       title: Get Prepper Template Request
     GetPrepperTemplateResponse:
-      description: The response received after requesting a document template.
+      description: '#### The response received after requesting a document template.'
       type: object
       x-examples:
         Example:
@@ -2686,7 +2718,7 @@ components:
         - PrepperTemplateValuesField
         - ResultField
     GetPrepperTemplateListRequest:
-      description: The request sent to get the document template list.
+      description: '#### The request sent to get the document template list.'
       type: object
       x-examples: {}
       properties:
@@ -2699,7 +2731,7 @@ components:
         - TokenField
       title: Get Prepper Template List Request
     GetPrepperTemplateListResponse:
-      description: The response returned when the document template list gets requested.
+      description: '#### The response returned when the document template list gets requested.'
       type: object
       x-examples:
         Example:
@@ -2739,7 +2771,7 @@ components:
         - ResultField
         - TemplateInformationValuesField
     InitiateFlowRequest:
-      description: The request sent to initiate a workflow on a document.
+      description: '#### The request sent to initiate a workflow on a document.'
       type: object
       x-examples: {}
       properties:
@@ -2753,7 +2785,7 @@ components:
         - TokenField
       title: Initiate Flow Request
     InitiateFlowResponse:
-      description: The response returned when a workflow is initiated.
+      description: '#### The response returned when a workflow is initiated.'
       type: object
       x-examples:
         Example:
@@ -2773,7 +2805,7 @@ components:
         - DocIDField
         - ResultField
     InitiateFlow_No_EmailRequest:
-      description: The request sent to initiate a workflow witjout sending an email.
+      description: '#### The request sent to initiate a workflow without sending an email.'
       type: object
       x-examples: {}
       title: Initiate Flow No Email Request
@@ -2788,7 +2820,7 @@ components:
         - DocIDField
         - TokenField
     InitiateFlow_No_EmailResponse:
-      description: The response returned when a workflow is requested without any email.
+      description: '#### The response returned when a workflow is requested without any email.'
       type: object
       x-examples:
         Example:
@@ -2808,7 +2840,7 @@ components:
         - DocIDField
         - ResultField
     InitiateFlow_No_Initial_EmailRequest:
-      description: The request sent to initiate a workflow without an initial email.
+      description: '#### The request sent to initiate a workflow skiiping the first email.'
       type: object
       x-examples: {}
       title: Initiate Flow No Initial Email Request
@@ -2823,7 +2855,7 @@ components:
         - DocIDField
         - TokenField
     InitiateFlow_No_Initial_EmailResponse:
-      description: The response from requesting a workflow without an initial email.
+      description: '#### The response from requesting a workflow skipping the first email.'
       type: object
       x-examples:
         Example:
@@ -2843,7 +2875,7 @@ components:
         - DocIDField
         - ResultField
     LinkToPortfolioRequest:
-      description: This request is used to get the url link to a portfolio.
+      description: '#### This request is used to get the url link to a portfolio.'
       type: object
       x-examples: {}
       title: Link To Portfolio Request
@@ -2868,7 +2900,7 @@ components:
         - PortfolioIDField
         - TokenField
     LinkToPortfolioResponse:
-      description: This is the response returned after requesting a url link to a portfolio.
+      description: '#### This is the response returned after requesting a url link to a portfolio.'
       type: object
       x-examples:
         Example:
@@ -2889,7 +2921,7 @@ components:
         - PortfolioIDField
         - ResultField
     LogoutRequest:
-      description: The request sent when a user logs out.
+      description: '#### The request sent when a user logs out.'
       type: object
       properties:
         TokenField:
@@ -2900,7 +2932,7 @@ components:
       x-examples: {}
       title: Logout Request
     LogoutResponse:
-      description: The response returned when a user logs out.
+      description: '#### The response returned when a user logs out.'
       type: object
       x-examples:
         Example:
@@ -2921,7 +2953,7 @@ components:
         - ResultField
         - TokenField
     MultipleSignersSigningCeremonyRequest:
-      description: This is the request sent when there are multiple signers on a document.
+      description: '#### This is the request sent when there are multiple signers on a document.'
       type: object
       x-examples:
         Example:
@@ -3050,7 +3082,7 @@ components:
         - LoginUserNameField
         - SignerListField
     MultipleSignersSigningCeremonyResponse:
-      description: This is the response returned when there are multiple people who need to sign a document.
+      description: '#### This is the response returned when there are multiple people who need to sign a document.'
       type: object
       x-examples:
         Example:
@@ -3074,7 +3106,7 @@ components:
         - ResultField
         - SignedDocumentField
     SetDocumentOrderRequest:
-      description: The request sent when the document order for signing is confirmed.
+      description: '#### The request sent when the document order for signing is confirmed.'
       type: object
       x-examples:
         Example:
@@ -3099,7 +3131,7 @@ components:
         - TokenField
       title: Set Document Order Request
     SetDocumentOrderResponse:
-      description: The response returned when the document order for signing is set.
+      description: '#### The response returned when the document order for signing is set.'
       type: object
       x-examples:
         Example:
@@ -3114,7 +3146,7 @@ components:
       required:
         - ResultField
     SharePortfolioRequest:
-      description: The request sent when a user wants to share a portfolio with someone.
+      description: '#### The request sent when a user wants to share a portfolio with someone.'
       type: object
       x-examples:
         Example:
@@ -3147,7 +3179,7 @@ components:
         - UniqueIDField
       title: Share Portfolio Request
     SharePortfolioResponse:
-      description: The response returned when a user wants to share a portfolio.
+      description: '#### The response returned when a user wants to share a portfolio.'
       type: object
       x-examples:
         Example:
@@ -3162,7 +3194,7 @@ components:
       required:
         - ResultField
     SharePortfolio_No_EmailRequest:
-      description: The request sent when a user wants to shar a portfolio but does not want an email to be sent.
+      description: '#### The request sent when a user wants to share a portfolio but does not want an email to be sent.'
       type: object
       x-examples:
         Example:
@@ -3195,7 +3227,7 @@ components:
         - TokenField
         - UniqueIDField
     SharePortfolio_No_EmailResponse:
-      description: The response returned when a user wants to share a portfolio without sending out an email.
+      description: '#### The response returned when a user wants to share a portfolio without sending out an email.'
       type: object
       x-examples:
         Example:
@@ -3210,7 +3242,7 @@ components:
       required:
         - ResultField
     SigningCeremonyV2Request:
-      description: The request sent to start the signing process of a document.
+      description: '#### The request sent to start the signing process of a document.'
       type: object
       properties:
         CheckboxFieldsListField:
@@ -3429,7 +3461,7 @@ components:
                 TextFieldYField: 0
       title: Signing Ceremony V2 Request
     SigningCeremonyV2Response:
-      description: The response returned when the signing process is requested.
+      description: '#### The response returned when the signing process is requested.'
       type: object
       x-examples:
         Example:
@@ -3453,7 +3485,7 @@ components:
         - ResultField
         - SignedDocumentField
     TokenExtendRequest:
-      description: The request sent to extend the session time by extending the period when the token is valid.
+      description: '#### The request sent to extend the session time by extending the period when the token is valid.'
       type: object
       x-examples:
         Example:
@@ -3472,7 +3504,7 @@ components:
         - TokenValidityField
       title: Token Extend Request
     TokenExtendResponse:
-      description: The response returned when requesting the extention of the period of which the toekn is valid.
+      description: '#### The response returned when requesting the extention of the period of which the toekn is valid.'
       type: object
       x-examples:
         Example:
@@ -3493,7 +3525,7 @@ components:
         - ResultField
         - TokenField
     TokenValidateRequest:
-      description: This request gets sent when a session token needs to be validated.
+      description: '#### This request gets sent when a session token needs to be validated.'
       type: object
       x-examples:
         Example:
@@ -3507,7 +3539,7 @@ components:
         - '0'
       title: Token Validate Request
     TokenValidateResponse:
-      description: This is the response returned when a session token is validated.
+      description: '#### This is the response returned when a session token is validated.'
       type: object
       x-examples:
         Example:
@@ -3528,7 +3560,7 @@ components:
         - ResultField
         - TokenField
     WorkflowSignRequest:
-      description: This request is sent when a document workflow needs to be signed.
+      description: '#### This request is sent when a document workflow needs to be signed.'
       type: object
       x-examples: {}
       title: Workflow Sign Request
@@ -3567,7 +3599,7 @@ components:
         - TimeZoneOffsetField
         - TokenField
     WorkflowSignResponse:
-      description: This is the response returned when a user gets a request to sign a document workflow.
+      description: '#### This is the response returned when a user gets a request to sign a document workflow.'
       type: object
       x-examples:
         Example:
@@ -3582,24 +3614,21 @@ components:
       required:
         - ResultField
     ProxyAllowedField:
-      title: ProxyAllowedField
       type: integer
+      title: ProxyAllowedField
       description: |-
-        #### Determines whether or not a proxy is allowed.
+        #### Determines whether or not the signer can nominate someone else to sign on their behalf.
 
         `0 = No
         1 = Yes`
-      x-examples: {}
+      enum:
+        - 0
+        - 1
+      minimum: 0
+      maximum: 1
+      default: 0
   securitySchemes: {}
-  parameters:
-    serverUrl:
-      name: serverUrl
-      in: path
-      required: true
-      schema:
-        type: string
-security:
-  - {}
+  parameters: {}
 tags:
   - name: Authentication
     description: Methods used to get an API Token
@@ -3637,3 +3666,4 @@ tags:
     description: Requet and Response Models used by the API
     externalDocs:
       url: ''
+security: []
