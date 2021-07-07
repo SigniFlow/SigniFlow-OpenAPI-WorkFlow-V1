@@ -1,6 +1,11 @@
 {
   "items": [
     {
+    "type": "item",
+    "title": "Welcome",
+    "uri": "README.md"
+    },
+    {
       "type": "divider",
       "title": "GETTING STARTED"
     },

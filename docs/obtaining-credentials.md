@@ -15,7 +15,7 @@ SigniFlow maintains 8 cloud enviroments around the globe, you can sign up for a 
 
 ## Support Contact
 
-Alternativly please reach out to our support desk for assistance with a API Account.
+Alternativly please reach out to our support desk for assistance with an API Account.
 
 * Email : [support@signiflow.com](mailto:support@signiflow.com?subject=API%20Assistance)
 * Support Portal : [Helpdesk](https://helpdesk.signiflow.com/en/support/home)
