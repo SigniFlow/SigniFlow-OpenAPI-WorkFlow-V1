@@ -37,7 +37,6 @@ paths:
         - schema:
             type: string
             default: application/json
-            example: application/json
           in: header
           name: Content-Type
           required: true
@@ -59,7 +58,6 @@ paths:
               schema:
                 type: string
                 default: application/json
-                example: application/json
           content:
             application/json:
               schema:
@@ -97,7 +95,6 @@ paths:
               schema:
                 type: string
                 default: application/json
-                example: application/json
       description: '#### Used to log out a user from SigniFlow.'
       requestBody:
         content:
@@ -115,7 +112,6 @@ paths:
         - schema:
             type: string
             default: application/json
-            example: application/json
           in: header
           name: Content-Type
           required: true
@@ -124,23 +120,53 @@ paths:
       summary: Create Workflow
       description: '#### Used to start a new workflow by passing a Base64 encoded document to SigniFlow'
       operationId: CreateWorkflow
-      parameters: []
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
       requestBody:
         description: '##### Create Workflow Request Model'
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/CreateWorkflowRequest'
-            examples: {}
+            examples:
+              Example:
+                value:
+                  AdditionalDataField: '""'
+                  AutoExpireField: 0
+                  AutoRemindField: 0
+                  DocField: String content
+                  DocNameField: String content
+                  DueDateField: '2019-08-24T14:15:22Z'
+                  ExtensionField: 0
+                  MessageField: String content
+                  PriorityField: 0
+                  SLAField: 0
+                  TokenField:
+                    TokenExpiryField: '2019-08-24T14:15:22Z'
+                    TokenField: aaa111
         required: true
       responses:
         '200':
           description: '##### Create Workflow Response Model'
-          headers: {}
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                default: application/json
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/CreateWorkflowResponse'
+              examples:
+                Example:
+                  value:
+                    DocIDField: 2147483647
+                    ResultField: success
       deprecated: false
       tags:
         - WorkFlow
@@ -150,620 +176,1598 @@ paths:
       operationId: GetDocument
       responses:
         '200':
-          description: Get Document Response Model
+          description: '##### Get Document Response Model'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/GetDocumentResponse'
-      description: Used to download a document from SigniFlow.
+              examples:
+                Example:
+                  value:
+                    DocField: string
+                    DocNameField: template
+                    ExtensionField: pdf
+                    ResultField: success
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                default: application/json
+      description: '#### Used to download a document from SigniFlow.'
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/GetDocumentRequest'
-        description: Get Document Request Model
+            examples:
+              Example:
+                value:
+                  DocIDField: 2147483647
+                  TokenField:
+                    TokenExpiryField: '2019-08-24T14:15:22Z'
+                    TokenField: aaa111
+        description: '##### Get Document Request Model'
       tags:
         - WorkFlow
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /AddWorkflowStepV2:
     post:
       summary: Add a Workflow step
       operationId: post-AddWorkflowStep
       responses:
         '200':
-          description: Add A Workflow Step Response Model
+          description: '##### Add A Workflow Step Response Model'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/AddWokflowStepV2Response'
+              examples:
+                Example:
+                  value:
+                    DocIDField: 2147483647
+                    FlowIDField: 1111112
+                    FlowStepsField:
+                      - ActionField: 0
+                        EmailField: John@domain.com
+                        FlowIDField: 2222222
+                    ResultField: success
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                default: application/json
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/AddWorkflowStepV2Request'
-        description: Add A Workflow Step Request Model
-      description: Used to add a step to a document Workflow process.
+            examples:
+              Example:
+                value:
+                  ActionField: 0
+                  CellField: string
+                  DocIDField: '2147483647'
+                  EmailField: email@domain.com
+                  FirstNameField: John
+                  LanguageCodeField: ENG
+                  LastNameField: Smith
+                  ProxyAllowedField: 0
+                  TokenField:
+                    TokenExpiryField: '2019-08-24T14:15:22Z'
+                    TokenField: aaa111
+        description: '##### Add A Workflow Step Request Model'
+      description: '#### Used to add a step to a document Workflow process.'
       tags:
         - WorkFlow
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /ApplyPrepperTemplate:
     post:
       summary: Apply a Prepper template
       operationId: post-ApplyPrepperTemplate
       responses:
         '200':
-          description: Apply A Prepper Template Response Model
+          description: '##### Apply A Prepper Template Response Model'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApplyPrepperTemplateResponse'
+              examples:
+                Example:
+                  value:
+                    ResultField: success
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                default: application/json
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/ApplyPrepperTemplateRequest'
-        description: Apply A Prepper Template Request Model
-      description: Used when applying a templaet to a document.
+            examples:
+              Example:
+                value:
+                  DocIDField: 2147483647
+                  PrepperTemplateIDField: 21344
+                  TokenField:
+                    TokenExpiryField: '2019-08-24T14:15:22Z'
+                    TokenField: aaa111
+        description: '##### Apply A Prepper Template Request Model'
+      description: '#### Used when applying a templaet to a document.'
       tags:
         - Templates
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /CancelFlow:
     post:
       summary: Cancel Flow
       operationId: post-CancelFlow
       responses:
         '200':
-          description: Cancel Flow Response Model
+          description: '##### Cancel Flow Response Model'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/CancelFlowResponse'
-      description: Used to cancel a document workflow.
+              examples:
+                Example:
+                  value:
+                    DocIDField: 2147483647
+                    ResultField: success
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                default: application/json
+      description: '#### Used to cancel a document workflow.'
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/CancelFlowRequest'
-        description: Cancel Flow Request Model
+            examples:
+              Example:
+                value:
+                  DocIDField: '2147483647'
+                  TokenField:
+                    TokenExpiryField: '2019-08-24T14:15:22Z'
+                    TokenField: aaa111
+        description: '##### Cancel Flow Request Model'
       tags:
         - WorkFlow
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /CreatePortfolio:
     post:
       summary: Create Portfolio
       operationId: post-CreatePortfolio
       responses:
         '200':
-          description: Create Portfolio Response Model
+          description: '##### Create Portfolio Response Model'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/CreatePortfolioResponse'
+              examples:
+                Example:
+                  value:
+                    PortfolioIDField: 13342
+                    ResultField: success
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                default: application/json
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/CreatePortfolioRequest'
-        description: Create Portfolio Request Model
-      description: Used to create a portfolio to group documents.
+            examples:
+              Example:
+                value:
+                  DocIDField: 2147483647
+                  PortfolioNameField: Application Portfolio
+                  TokenIDField:
+                    TokenExpiryField: '2019-08-24T14:15:22Z'
+                    TokenField: aaa111
+        description: '##### Create Portfolio Request Model'
+      description: '#### Used to create a portfolio to group documents.'
       tags:
         - Portfolios
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /DeleteDoc:
     post:
       summary: Delete Document
       operationId: post-DeleteDoc
       responses:
         '200':
-          description: Delete Document Response Model
+          description: '##### Delete Document Response Model'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/DeleteDocResponse'
+              examples:
+                Example:
+                  value:
+                    ResultField: success
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                default: application/json
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/DeleteDocRequest'
-        description: Delete Document Request Model
-      description: This is used to delete a document.
+            examples:
+              example-1:
+                value:
+                  DocIDField: 2147483647
+                  TokenField:
+                    TokenExpiryField: '2019-08-24T14:15:22Z'
+                    TokenField: aaa111
+        description: '##### Delete Document Request Model'
+      description: '#### This is used to delete a document.'
       tags:
         - WorkFlow
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /DocPrepperAdvancedFields:
     post:
       summary: Document Prepper Add Advanced Fields
       operationId: post-DocPrepperAdvancedFields
       responses:
         '200':
-          description: Document Prepper Add Advanced Fields Response Model
+          description: '##### Document Prepper Add Advanced Fields Response Model'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/DocPrepperAddAdvancedFieldsResponse'
+              examples:
+                Example:
+                  value:
+                    AdvancedFieldResponseListField:
+                      - DocFieldIDField: 11111
+                        ResultField: success
+                    ResultField: success
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                default: application/json
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/DocPrepperAddAdvancedFieldsRequest'
-        description: Document Prepper Add Advanced Fields Request Model
-      description: Used to add advanced fields to a document.
+            examples:
+              Example:
+                value:
+                  FieldInfoListField:
+                    - AdvancedFieldTypeField: 0
+                      DocIDField: 2147483647
+                      FieldOptionsListField:
+                        - LinkedValueField: string
+                          MaxField: 5
+                          MinField: 2
+                          ValueField: string
+                      FlowIDField: 11111
+                      FontFamilyField: Arial
+                      FontSizeField: 12
+                      HeightField: '30'
+                      WidthField: '15'
+                      LinkToField: string
+                      NameField: Text Field
+                      PageNumberField: 2
+                      SearchableField: true
+                      UserEmailField: John@domain.com
+                      ValueField: string
+                      XCoordinateField: '60'
+                      YCoordinateField: '120'
+                  TokenField:
+                    TokenExpiryField: '2019-08-24T14:15:22Z'
+                    TokenField: aaa111
+        description: '##### Document Prepper Add Advanced Fields Request Model'
+      description: '#### Used to add advanced fields to a document.'
       tags:
         - WorkFlow
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /DocPrepperAddFieldsFlowID:
     post:
       summary: Document Prepper Add Fields
       operationId: post-DocPrepperAddField
       responses:
         '200':
-          description: Document Prepper Add Fields Response Model
+          description: '##### Document Prepper Add Fields Response Model'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/DocPrepperAddFieldsFlowIDResponse'
+              examples:
+                Example:
+                  value:
+                    DocIDField: 12344
+                    FieldTypeField: 0
+                    HeightField: '20'
+                    PageNumberField: 2
+                    PrepperFieldIDField: 0
+                    ResultField: string
+                    UserIDField: 111112
+                    WidthField: '25'
+                    XCoordinateField: '60'
+                    YCoordinateField: '120'
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                default: application/json
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/DocPrepperAddFieldsFlowIDRequest'
-        description: Document Prepper Add Fields Request Model
-      description: Used to add fields to a document using the user's FlowID.
+            examples:
+              Example:
+                value:
+                  DocFieldTypeField: 0
+                  DocIDField: 12344
+                  FlowIDField: 11111
+                  HeightField: '25'
+                  WidthField: '20'
+                  IsInvisibleField: true
+                  LinkToField: string
+                  PageNumberField: 2
+                  NameField: string
+                  UserEmailField: email@domain.com
+                  XCoordinateField: '50'
+                  YCoordinateField: '150'
+                  TokenField:
+                    TokenExpiryField: '2019-08-24T14:15:22Z'
+                    TokenField: aaa111
+        description: '##### Document Prepper Add Fields Request Model'
+      description: '#### Used to add fields to a document using the user''s FlowID.'
       tags:
         - WorkFlow
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /DownloadPortfolio:
     post:
       summary: Download Portfolio
       operationId: post-DownloadPortfolio
       responses:
         '200':
-          description: Download Portfolio Response Model
+          description: '##### Download Portfolio Response Model'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/DownloadPortfolioResponse'
+              examples:
+                Example:
+                  value:
+                    PortfolioDataField: string
+                    PortfolioIDField: 11112
+                    PortfolioNameField: Application Portfolio
+                    ResultField: string
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                default: application/json
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/DownloadPortfolioRequest'
-        description: Download Portfolio Request Model
-      description: Used to return a string that is then used to download a portfolio.
+            examples:
+              Example:
+                value:
+                  PortfolioIDField: 111112
+                  TokenField:
+                    TokenExpiryField: '2019-08-24T14:15:22Z'
+                    TokenField: aaa111
+        description: '##### Download Portfolio Request Model'
+      description: '#### Used to return a string that is then used to download a portfolio.'
       tags:
         - Portfolios
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /FullWorkflow:
     post:
       summary: FullWorkflow
       operationId: post-FullWorkflow
       responses:
         '200':
-          description: '#### FullWorkflow Response Model'
+          description: '##### FullWorkflow Response Model'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/FullWorkflowResponse'
+              examples:
+                Example:
+                  value:
+                    DocField: string
+                    DocIDField: 1237
+                    PortfolioIDField: 11112
+                    ResultField: string
+                    StatusField: Completed
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                default: application/json
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/FullWorkflowRequest'
-        description: '#### FullWorkflow Request Model'
-      description: '### Used to create a fullworkflow for a document.'
+            examples:
+              Example:
+                value:
+                  AdditionalDataField: string
+                  AutoRemindField: 0
+                  CustomMessageField: A message with things.
+                  DocField: string
+                  DocNameField: Document 1
+                  DueDateField: 02/02/2021
+                  ExtensionField: 0
+                  FlattenDocumentField: true
+                  KeepContentSecurityField: true
+                  KeepCustomPropertiesField: true
+                  KeepXMPMetadataField: true
+                  PortfolioInformationField:
+                    CreatePortfolioField: true
+                    LinkToPortfolioField: true
+                    PortfolioIDField: 11112
+                    PortfolioNameField: Portfolio 1
+                  PriorityField: 0
+                  SLAField: 0
+                  SendFirstEmailField: true
+                  SendWorkflowEmailsField: true
+                  TokenField:
+                    TokenExpiryField: '2019-08-24T14:15:22Z'
+                    TokenField: aaa111
+                  WorkflowUsersListField:
+                    - ActionField: 0
+                      AllowProxyField: 0
+                      AutoSignField: true
+                      EmailAddressField: email@domain.com
+                      GroupStepField:
+                        GroupMembersField:
+                          - LanguageCodeField: string
+                            UserEmailField: string
+                            UserFullNameField: string
+                            UserMobileNumberField: string
+                        GroupNameField: Managers
+                        RequiredNumberOfSignaturesField: 3
+                      LanguageCodeField: ENG
+                      LatitudeField: string
+                      LongitudeField: string
+                      MobileNumberField: 078 222 2222
+                      PreloadedFaceToFaceSignersField:
+                        - {}
+                      SignReasonField: Because yes
+                      SignerPasswordField: P@ssw0rd
+                      UserFirstNameField: John
+                      UserFullNameField: John Smith
+                      UserLastNameField: Smith
+                      WorkflowUserFieldsField:
+                        - FieldTypeField: 7
+                          FontFamilyField: Arial
+                          FontSizeField: 15
+                          GroupUserNumberField: 5
+                          HeightField: '15'
+                          IsInvisibleField: true
+                          PageNumberField: 2
+                          TagNameField: string
+                          ValueField: string
+                          WidthField: '25'
+                          XCoordinateField: '60'
+                          XOffsetField: 15
+                          YCoordinateField: '150'
+                          YOffsetField: 20
+        description: '##### FullWorkflow Request Model'
+      description: '#### Used to create a fullworkflow for a document.'
       tags:
         - WorkFlow
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /GetAuditDocument:
     post:
       summary: Get Audit Document
       operationId: post-GetAuditDocument
       responses:
         '200':
-          description: Get Audit Document Response Model
+          description: '##### Get Audit Document Response Model'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/GetAuditDocumentResponse'
-      description: Used to get an audit document.
+              examples:
+                Example:
+                  value:
+                    AuditDocumentField: string
+                    ResultField: string
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                default: application/json
+      description: '#### Used to get an audit document.'
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/GetAuditDocumentRequest'
-        description: Get Audit Document Request Model
+            examples:
+              Example:
+                value:
+                  DocIDField: string
+                  TokenField:
+                    TokenExpiryField: '2019-08-24T14:15:22Z'
+                    TokenField: aaa111
+        description: '##### Get Audit Document Request Model'
       tags:
         - Audits
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /GetDocLink:
     post:
       summary: Get Document Link
       operationId: post-GetDocLink
       responses:
         '200':
-          description: Get Document Link Response Model
+          description: '##### Get Document Link Response Model'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/GetDocLinkResponse'
-      description: Used to get the document link that will be used to sign a document.
+              examples:
+                Example:
+                  value:
+                    Result: string
+                    Url: string
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                default: application/json
+      description: '#### Used to get the document link that will be used to sign a document.'
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/GetDocLinkRequest'
-        description: Get Document Link Request Model
+            examples:
+              Example:
+                value:
+                  DocIDField: string
+                  EmailField: email@domain.com
+                  ReturnURLField: string
+                  TokenField:
+                    TokenExpiryField: '2019-08-24T14:15:22Z'
+                    TokenField: aaa111
+        description: '##### Get Document Link Request Model'
       tags:
         - Viewers
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /GetDocStatus:
     post:
       summary: Get Document Status
       operationId: post-GetDocStatus
       responses:
         '200':
-          description: Get Document Status Response Model
+          description: '##### Get Document Status Response Model'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/GetDocStatusResponse'
-      description: Used to get the status of the document ex. pending/completed/rejected.
+              examples:
+                Example:
+                  value:
+                    DocStatusField: string
+                    ResultField: string
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                default: application/json
+      description: '#### Used to get the status of the document ex. pending/completed/rejected.'
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/GetDocStatusRequest'
-        description: Get Document Status Request Model
+            examples:
+              Example:
+                value:
+                  DocIDField: 0
+                  TokenField:
+                    TokenExpiryField: '2019-08-24T14:15:22Z'
+                    TokenField: aaa111
+        description: '##### Get Document Status Request Model'
       tags:
         - WorkFlow
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /GetDocumentPrepperLink:
     post:
       summary: Get Document Prepper Link
       operationId: post-GetDocumentPrepperLink
       responses:
         '200':
-          description: Get Document Prepper Link Response Model
+          description: '##### Get Document Prepper Link Response Model'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/GetDocumentPrepperLinkResponse'
+              examples:
+                Example:
+                  value:
+                    Result: string
+                    URL: string
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                default: application/json
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/GetDocumentPrepperLinkRequest'
-        description: Get Document Prepper Link Request Model
-      description: Used to get a document prepper link (url).
+            examples:
+              Example:
+                value:
+                  DocIDField: string
+                  EmailSettingField: 0
+                  ReturnURLField: string
+                  TokenField:
+                    TokenExpiryField: '2019-08-24T14:15:22Z'
+                    TokenField: aaa111
+        description: '##### Get Document Prepper Link Request Model'
+      description: '#### Used to get a document prepper link (url).'
       tags:
         - Viewers
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /GetDocumentTagFieldBoxPosition:
     post:
       summary: Get Document Tag Field Box Position
       operationId: post-GetDocumentTagFieldBoxPosition
       responses:
         '200':
-          description: Get Document Tag Field Box Position Response Model
+          description: '##### Get Document Tag Field Box Position Response Model'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/GetDocumentTagFieldBoxPositionResponse'
+              examples:
+                Example:
+                  value:
+                    DocumentTagFieldsBoxPositionField:
+                      HeightField: string
+                      PageNumberField: 0
+                      WidthField: string
+                      XCoordinateField: string
+                      YCoordinateField: string
+                    ResultField: string
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                default: application/json
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/GetDocumentTagFieldBoxPositionRequest'
-        description: Get Document Tag Field Box Position Request Model
-      description: Used to get the tag field box position on a document.
+            examples:
+              Example:
+                value:
+                  DocIDField: 0
+                  TagNameField: string
+                  TokenField:
+                    TokenExpiryField: '2019-08-24T14:15:22Z'
+                    TokenField: aaa111
+        description: '##### Get Document Tag Field Box Position Request Model'
+      description: '#### Used to get the tag field box position on a document.'
       tags:
         - Templates
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /GetDocumentTagFieldPosition:
     post:
       summary: Get Document Tag Field Position
       operationId: post-GetDocumentTagFieldPosition
       responses:
         '200':
-          description: Get Document Tag Field Position Response Model
+          description: '##### Get Document Tag Field Position Response Model'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/GetDocumentTagFieldPositionResponse'
+              examples:
+                Example:
+                  value:
+                    DocumentTagFieldsPositionField:
+                      - PageNumberField: 0
+                        XCoordinateField: string
+                        YCoordinateField: string
+                    ResultField: string
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                default: application/json
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/GetDocumentTagFieldPositionRequest'
-        description: Get Document Tag Field Position Request Model
-      description: Used to get the tag position on a document.
+            examples:
+              Example:
+                value:
+                  DocIDField: 0
+                  TagNameField: string
+                  TokenField:
+                    TokenExpiryField: '2019-08-24T14:15:22Z'
+                    TokenField: aaa111
+        description: '##### Get Document Tag Field Position Request Model'
+      description: '#### Used to get the tag position on a document.'
       tags:
         - Templates
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /GetDocumentAudit:
     post:
       summary: Get Document Audit
       operationId: post-GetDocumentAudit
       responses:
         '200':
-          description: Get Document Audit Response Model
+          description: '##### Get Document Audit Response Model'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/GetDocumentAuditResponse'
+              examples:
+                Example:
+                  value:
+                    ActivityField:
+                      - ActionOrderField: string
+                        AdditionalField: string
+                        DocIDField: string
+                        EmailField: email@domain.com
+                        EventDateField: string
+                        EventField: string
+                        EventStatusField: string
+                        LocationField: string
+                        OrderDateField: string
+                        PageField: string
+                        UserFullNameField: string
+                    ResultField: string
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                default: application/json
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/GetDocumentAuditRequest'
-        description: Get Document Audit Request Model
-      description: Used to get the audit information from a document.
+            examples:
+              Example:
+                value:
+                  DocIDField: string
+                  TokenField:
+                    TokenExpiryField: '2019-08-24T14:15:22Z'
+                    TokenField: aaa111
+        description: '##### Get Document Audit Request Model'
+      description: '#### Used to get the audit information from a document.'
       tags:
         - Audits
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /GetPrepperTemplate:
     post:
       summary: Get Prepper Template
       operationId: post-GetPrepperTemplate
       responses:
         '200':
-          description: Get Prepper Template Response Model
+          description: '##### Get Prepper Template Response Model'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/GetPrepperTemplateResponse'
+              examples:
+                Example:
+                  value:
+                    PrepperTemplateValuesField:
+                      - ColorField: string
+                        DocFieldIDField: string
+                        DocIDField: 0
+                        FieldTypeField: string
+                        HeightField: 0
+                        PageNumberField: 0
+                        UserFullNameField: string
+                        UserIDField: 0
+                        ValueField: string
+                        WidthField: 0
+                        XCoordinateField: 0
+                        YCoordinateField: 0
+                    ResultField: string
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                default: application/json
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/GetPrepperTemplateRequest'
-        description: Get Prepper Template Request Model
-      description: Used to get a document template.
+            examples:
+              Example:
+                value:
+                  DocIDField: 0
+                  PrepperTemplateIDField: 0
+                  TokenField:
+                    TokenExpiryField: '2019-08-24T14:15:22Z'
+                    TokenField: aaa111
+        description: '##### Get Prepper Template Request Model'
+      description: '#### Used to get a document template.'
       tags:
         - Templates
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /GetPrepperTemplateList:
     post:
       summary: Get Prepper Template List
       operationId: post-GetPrepperTemplateList
       responses:
         '200':
-          description: Get Prepper Template List Response Model
+          description: '##### Get Prepper Template List Response Model'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/GetPrepperTemplateListResponse'
-      description: Used to get a list of document templates.
+              examples:
+                Example:
+                  value:
+                    ResultField: string
+                    TemplateInformationValuesField:
+                      - NameField: string
+                        PrepperTemplateIDField: 0
+                        TemplateDescriptionField: string
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                default: application/json
+      description: '#### Used to get a list of document templates.'
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/GetPrepperTemplateListRequest'
-        description: Get Prepper Template List Request Model
+            examples:
+              Example:
+                value:
+                  TemplateFolderField: 0
+                  TokenField:
+                    TokenExpiryField: '2019-08-24T14:15:22Z'
+                    TokenField: aaa111
+        description: '##### Get Prepper Template List Request Model'
       tags:
         - Templates
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /InitiateFlow:
     post:
       summary: Initiate Flow
       operationId: post-InitiateFlow
       responses:
         '200':
-          description: Initiate Flow Response Model
+          description: '##### Initiate Flow Response Model'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/InitiateFlowResponse'
+              examples:
+                Example:
+                  value:
+                    DocIDField: 0
+                    ResultField: string
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                default: application/json
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/InitiateFlowRequest'
-        description: Initiate Flow Request Model
-      description: Used to initiate aworkflow of a document.
+            examples:
+              Example:
+                value:
+                  DocIDField: string
+                  TokenField:
+                    TokenExpiryField: '2019-08-24T14:15:22Z'
+                    TokenField: aaa111
+        description: '##### Initiate Flow Request Model'
+      description: '#### Used to initiate aworkflow of a document.'
       tags:
         - WorkFlow
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /InitiateFlow_No_Email:
     post:
       summary: Initiate Flow No Email
       operationId: post-InitiateFlow_No_Email
       responses:
         '200':
-          description: Initiate Flow No Email Response Model
+          description: '##### Initiate Flow No Email Response Model'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/InitiateFlow_No_EmailResponse'
+              examples:
+                Example:
+                  value:
+                    DocIDField: 0
+                    ResultField: string
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                default: application/json
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/InitiateFlow_No_EmailRequest'
-        description: Initiate Flow No Email Request Model
-      description: Used to initiate a workflow without sending out emails.
+            examples:
+              Example:
+                value:
+                  DocIDField: string
+                  TokenField:
+                    TokenExpiryField: '2019-08-24T14:15:22Z'
+                    TokenField: aaa111
+        description: '##### Initiate Flow No Email Request Model'
+      description: '#### Used to initiate a workflow without sending out emails.'
       tags:
         - WorkFlow
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /InitiateFlow_No_Initial_Email:
     post:
       summary: Initiate Flow No Initial Email
       operationId: post-InitiateFlow_No_Initial_Email
       responses:
         '200':
-          description: Initiate Flow No Initial Email Response Model
+          description: '##### Initiate Flow No Initial Email Response Model'
           content:
             application/json:
               schema:
-                $ref: ''
+                $ref: '#/components/schemas/InitiateFlow_No_Initial_EmailResponse'
+              examples:
+                Example:
+                  value:
+                    DocIDField: 0
+                    ResultField: string
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                default: application/json
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/InitiateFlow_No_Initial_EmailRequest'
-        description: Initiate Flow No Initial Email Request Model
-      description: Used to initiate a document workflow without an initial email being sent to the user.
+            examples:
+              Example:
+                value:
+                  DocIDField: string
+                  TokenField:
+                    TokenExpiryField: '2019-08-24T14:15:22Z'
+                    TokenField: aaa111
+        description: '##### Initiate Flow No Initial Email Request Model'
+      description: '#### Used to initiate a document workflow without an initial email being sent to the user.'
       tags:
         - WorkFlow
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /LinkToPortfolio:
     post:
       summary: Link To Portfolio
       operationId: post-LinkToPortfolio
       responses:
         '200':
-          description: Link To Portfolio Response Model
+          description: '##### Link To Portfolio Response Model'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/LinkToPortfolioResponse'
+              examples:
+                Example:
+                  value:
+                    PortfolioIDField: string
+                    ResultField: string
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                default: application/json
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/LinkToPortfolioRequest'
-        description: Link To Portfolio Request Model
-      description: Used to get the url link to a portfolio.
+            examples:
+              Example:
+                value:
+                  DocIDField: string
+                  DocumentNameField: string
+                  PortfolioIDField: string
+                  TokenField:
+                    TokenExpiryField: '2019-08-24T14:15:22Z'
+                    TokenField: aaa111
+        description: '##### Link To Portfolio Request Model'
+      description: '#### Used to get the url link to a portfolio.'
       tags:
         - Portfolios
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /MultipleSignersSigningCeremony:
     post:
       summary: Multiple Signers Signing Ceremony
       operationId: post-MultipleSignersSigningCeremony
       responses:
         '200':
-          description: Multiple Signers Signing Ceremony Response Model
+          description: '##### Multiple Signers Signing Ceremony Response Model'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/MultipleSignersSigningCeremonyResponse'
-      description: Used when there are multiple signers on a document.
+              examples:
+                Example:
+                  value:
+                    CeremonyIDField: 0
+                    ResultField: string
+                    SignedDocumentField: string
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                default: application/json
+      description: '#### Used when there are multiple signers on a document.'
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/MultipleSignersSigningCeremonyRequest'
-        description: Multiple Signers Signing Ceremony Request Model
+            examples:
+              Example:
+                value:
+                  DocField: string
+                  DocNameField: string
+                  LoginPasswordField: '12345'
+                  LoginUserNameField: John@gmail.com
+                  SignerListField:
+                    - SignatureHField: 0
+                      SignatureImageField: string
+                      SignatureImageIncludeBorderField: true
+                      SignatureImageIncludeReasonField: true
+                      SignatureImageIncludeSignedByField: true
+                      SignatureImageIncludeSignedDateField: true
+                      SignatureImageTypeField: 0
+                      SignaturePageField: 0
+                      SignatureWField: 0
+                      SignatureXField: 0
+                      SignatureYField: 0
+                      SignerEmailField: string
+                      SignerFullNameField: string
+                      SignerIndentificationNumberField: string
+                      SignerLocationField: string
+                      SignerMobileNumberField: string
+                      SignerReasonField: string
+                      SignerTrustOriginField: string
+                      SignerTrustReferenceField: string
+        description: '##### Multiple Signers Signing Ceremony Request Model'
       tags:
         - Signing Ceremony
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /SetDocumentOrder:
     post:
       summary: Set Document Order
       operationId: post-SetDocumentOrder
       responses:
         '200':
-          description: Set Document Order Response Model
+          description: '##### Set Document Order Response Model'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/SetDocumentOrderResponse'
+              examples:
+                Example:
+                  value:
+                    ResultField: string
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                default: application/json
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/SetDocumentOrderRequest'
-        description: Set Document Order Request Model
-      description: Used to set the order of documents that needs to be signed.
+            examples:
+              Example:
+                value:
+                  DocIDField: string
+                  DocumentOrderField: string
+                  TokenField:
+                    TokenExpiryField: '2019-08-24T14:15:22Z'
+                    TokenField: aaa111
+        description: '##### Set Document Order Request Model'
+      description: '#### Used to set the order of documents that needs to be signed.'
       tags:
         - Portfolios
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /SharePortfolio:
     post:
       summary: Share Portfolio
       operationId: post-SharePortfolio
       responses:
         '200':
-          description: Share Portfolio Response Model
+          description: '##### Share Portfolio Response Model'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/SharePortfolioResponse'
-      description: Used when a user wants to share a portfolio with someone else.
+              examples:
+                Example:
+                  value:
+                    ResultField: string
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                default: application/json
+      description: '#### Used when a user wants to share a portfolio with someone else.'
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/SharePortfolioRequest'
-        description: Share Portfolio Request Model
+            examples:
+              Example:
+                value:
+                  AccessLevelField: 0
+                  PortfolioIDField: string
+                  ShareOptionField: 0
+                  TokenField:
+                    TokenExpiryField: '2019-08-24T14:15:22Z'
+                    TokenField: aaa111
+                  UniqueIDField: string
+        description: '##### Share Portfolio Request Model'
       tags:
         - Portfolios
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /SharePortfolio_No_Email:
     post:
       summary: Share Portfolio No Email
       operationId: post-SharePortfolio_No_Email
       responses:
         '200':
-          description: Share Portfolio No Email Response Model
+          description: '##### Share Portfolio No Email Response Model'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/SharePortfolio_No_EmailResponse'
-      description: Used when a user wants to share a portfolio without sending out an email.
+              examples:
+                Example:
+                  value:
+                    ResultField: string
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                default: application/json
+      description: '#### Used when a user wants to share a portfolio without sending out an email.'
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/SharePortfolio_No_EmailRequest'
-        description: Share Portfolio No Email Request Model
+            examples:
+              Example:
+                value:
+                  AccessLevelField: 0
+                  PortfolioIDField: string
+                  ShareOptionField: 0
+                  TokenField:
+                    TokenExpiryField: '2019-08-24T14:15:22Z'
+                    TokenField: aaa111
+                  UniqueIDField: string
+        description: '##### Share Portfolio No Email Request Model'
       tags:
         - Portfolios
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /SigningCeremonyV2:
     post:
       summary: Signing Ceremony V2
       operationId: post-SigningCeremonyV2
       responses:
         '200':
-          description: Signing Ceremony V2 Response Model
+          description: '##### Signing Ceremony V2 Response Model'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/SigningCeremonyV2Response'
-      description: Used to initiate the signing process of a document.
+              examples:
+                Example:
+                  value:
+                    CeremonyIDField: 0
+                    ResultField: string
+                    SignedDocumentField: string
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                default: application/json
+      description: '#### Used to initiate the signing process of a document.'
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/SigningCeremonyV2Request'
-        description: Signing Ceremony V2 Request Model
+            examples:
+              Example:
+                value:
+                  CheckboxFieldsListField:
+                    - CheckboxHField: 0
+                      CheckboxPageField: 0
+                      CheckboxWField: 0
+                      CheckboxXField: 0
+                      CheckboxYField: 0
+                      IsCheckedField: true
+                  DocField: string
+                  DocNameField: string
+                  InitialFieldsListField:
+                    - InitialHField: 0
+                      InitialImageField: string
+                      InitialImageTypeField: 0
+                      InitialPageField: 0
+                      InitialWField: 0
+                      InitialXField: 0
+                      InitialYField: 0
+                  LoginPasswordField: string
+                  LoginUserNameField: string
+                  SignatureHField: 0
+                  SignatureImageField: string
+                  SignatureImageIncludeBorderField: true
+                  SignatureImageIncludeReasonField: true
+                  SignatureImageIncludeSignedByField: true
+                  SignatureImageIncludeSignedDateField: true
+                  SignatureImageTypeField: 0
+                  SignaturePageField: 0
+                  SignatureWField: 0
+                  SignatureXField: 0
+                  SignatureYField: 0
+                  SignerEmailField: string
+                  SignerFullNameField: string
+                  SignerIdentificationNumberField: string
+                  SignerLocationField: string
+                  SignerMobileNumberField: string
+                  SignerReasonField: string
+                  SignerTrustOriginField: string
+                  SignerTrustReferenceField: string
+                  TextFieldsListField:
+                    - TextFieldHField: 0
+                      TextFieldPageField: 0
+                      TextFieldValueField: string
+                      TextFieldWField: 0
+                      TextFieldXField: 0
+                      TextFieldYField: 0
+        description: '##### Signing Ceremony V2 Request Model'
       tags:
         - Signing Ceremony
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /TokenExtend:
     post:
       summary: Token Extend
       operationId: post-TokenExtend
       responses:
         '200':
-          description: Token Extend Response Model
+          description: '##### Token Extend Response Model'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/TokenExtendResponse'
-      description: Used to extend the period of time in which the session token is valid.
+              examples:
+                Example:
+                  value:
+                    ResultField: string
+                    TokenField:
+                      TokenExpiryField: '2019-08-24T14:15:22Z'
+                      TokenField: aaa111
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                default: application/json
+      description: '#### Used to extend the period of time in which the session token is valid.'
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/TokenExtendRequest'
-        description: Token Extend Request Model
+            examples:
+              Example:
+                value:
+                  TokenField:
+                    TokenExpiryField: '2019-08-24T14:15:22Z'
+                    TokenField: aaa111
+                  TokenValidityField: 0
+        description: '##### Token Extend Request Model'
       tags:
         - Authentication
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /TokenValidate:
     post:
       summary: Token Validate
       operationId: post-TokenValidate
       responses:
         '200':
-          description: Token Validate Response Model
+          description: '##### Token Validate Response Model'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/TokenValidateResponse'
+              examples:
+                Example:
+                  value:
+                    ResultField: string
+                    TokenField:
+                      TokenExpiryField: '2019-08-24T14:15:22Z'
+                      TokenField: aaa111
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                default: application/json
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/TokenValidateRequest'
-        description: Token Validate Request Model
-      description: Used to validate the user's session token.
+            examples:
+              Example:
+                value:
+                  '0': string
+        description: '##### Token Validate Request Model'
+      description: '#### Used to validate the user''s session token.'
       tags:
         - Authentication
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
   /WorkflowSign:
     post:
       summary: Workflow Sign
       operationId: post-WorkflowSign
       responses:
         '200':
-          description: Workflow Sign Response Model
+          description: '##### Workflow Sign Response Model'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/WorkflowSignResponse'
-      description: Used to send a request to a user to sign a document workflow.
+              examples:
+                Example:
+                  value:
+                    ResultField: string
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                default: application/json
+      description: '#### Used to send a request to a user to sign a document workflow.'
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/WorkflowSignRequest'
-        description: Workflow Sign Request Model
+            examples:
+              Example:
+                value:
+                  DocIDField: string
+                  LatitudeField: string
+                  LoginPasswordField: pa$$word
+                  LoginUserNameField: email@domain.com
+                  LongitudeField: string
+                  SignReasonField: string
+                  TimeZoneOffsetField: 0
+                  TokenField:
+                    TokenExpiryField: '2019-08-24T14:15:22Z'
+                    TokenField: aaa111
+        description: '##### Workflow Sign Request Model'
       tags:
         - WorkFlow
+      parameters:
+        - schema:
+            type: string
+            default: application/json
+          in: header
+          name: Content-Type
+          required: true
 components:
   schemas:
     LoginResponse:
@@ -1410,9 +2414,7 @@ components:
             type: object
             properties:
               AdvancedFieldTypeField:
-                type: number
-                example: DropDown
-                description: The type of advanced field that wil be added.
+                $ref: '#/components/schemas/AdvancedFieldType'
               DocIDField:
                 type: number
                 example: 2147483647
@@ -1581,9 +2583,7 @@ components:
       title: Document Prepper Add Fields FlowID Request
       properties:
         DocFieldTypeField:
-          type: number
-          example: 5
-          description: Document field type.
+          $ref: '#/components/schemas/FieldType'
         DocIDField:
           type: number
           example: 12344
@@ -1597,6 +2597,11 @@ components:
           minLength: 1
           example: '25'
           description: Field height.
+        WidthField:
+          type: string
+          minLength: 1
+          example: '20'
+          description: Field width.
         IsInvisibleField:
           type: boolean
           description: Is the field invisible.
@@ -1604,27 +2609,20 @@ components:
           type: string
           minLength: 1
           description: Document link.
-        NameField:
-          type: string
-          minLength: 1
-          description: Field name field.
         PageNumberField:
           type: number
           example: 2
           description: Field page number.
-        TokenField:
-          $ref: '#/components/schemas/TokenField'
+        NameField:
+          type: string
+          minLength: 1
+          description: Field name field.
         UserEmailField:
           type: string
           minLength: 1
           format: email
           example: email@domain.com
           description: User email address field.
-        WidthField:
-          type: string
-          minLength: 1
-          example: '20'
-          description: Field width.
         XCoordinateField:
           type: string
           minLength: 1
@@ -1635,20 +2633,22 @@ components:
           minLength: 1
           example: '150'
           description: Document field y-coordinates.
+        TokenField:
+          $ref: '#/components/schemas/TokenField'
       required:
         - DocFieldTypeField
         - DocIDField
         - FlowIDField
         - HeightField
+        - WidthField
         - IsInvisibleField
         - LinkToField
-        - NameField
         - PageNumberField
-        - TokenField
+        - NameField
         - UserEmailField
-        - WidthField
         - XCoordinateField
         - YCoordinateField
+        - TokenField
     DocPrepperAddFieldsFlowIDResponse:
       description: '#### The response retuenrd when fields are added to a document using a FlowID.'
       type: object
@@ -1672,9 +2672,7 @@ components:
           example: 12344
           description: Document ID.
         FieldTypeField:
-          type: string
-          minLength: 1
-          description: Document field type.
+          $ref: '#/components/schemas/FieldType'
         HeightField:
           type: string
           minLength: 1
@@ -3627,6 +4625,88 @@ components:
       minimum: 0
       maximum: 1
       default: 0
+    FieldType:
+      type: integer
+      title: FieldType
+      description: |-
+        #### Document Prepper Field Types
+
+        `
+        0  = Signature
+        1  = NameText
+        2  = DateText
+        3  = EmailAddressText
+        4  = ContactNumberText
+        5  = PlainText
+        6  = PlainTextOptional
+        7  = FaceToface
+        8  = Initial
+        9  = CheckBox
+        10 = F2FInitial
+        11 = AddressText
+        12 = CompanyNameText
+        13 = OptionalCurrencyText
+        14 = MandatoryCurrencyText
+        15 = ReadOnlyText
+        16 = NumericFieldOpt
+        17 = NumericFieldMand
+        18 = EmailInputOptional
+        19 = EmailInput
+        `
+      enum:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        - 8
+        - 9
+        - 10
+        - 11
+        - 12
+        - 13
+        - 14
+        - 15
+        - 16
+        - 17
+        - 18
+        - 19
+      minimum: 0
+      maximum: 19
+    AdvancedFieldType:
+      type: number
+      title: AdvancedFieldType
+      description: |-
+        #### Document Prepper Advanced Field Types
+
+        `
+        0 = DropDown
+        1 = CheckBoxGroup
+        2 = OptionalDropDown
+        3 = RadioGroup
+        4 = DateMand
+        5 = DateOpt
+        6 = DropDownCountry
+        7 = OptionalDropDownCountry
+        8 = DropDownMobilePrefix
+        9 = OptionalDropDownMobilePrefix
+        `
+      enum:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        - 8
+        - 9
+      minimum: 0
+      maximum: 9
   securitySchemes: {}
   parameters: {}
 tags:
