@@ -900,13 +900,13 @@ components:
         `
       example: 0
     CreateWorkflowRequest:
-      title: CreateWorkflowRequest
+      title: Create Workflow Request
       type: object
-      description: ''
+      description: '#### The request sent to create a document workflow.'
       properties:
         AdditionalDataField:
           type: string
-          description: Sets additional data to be embedded in PDF Meta
+          description: Sets additional data to be embedded in PDF Meta.
           example: '""'
         AutoExpireField:
           $ref: '#/components/schemas/AutoExpire'
@@ -950,8 +950,24 @@ components:
         - PriorityField
         - SLAField
         - TokenField
+      x-examples:
+        Create Workflow Request Example:
+          value:
+            AdditionalDataField: '""'
+            AutoExpireField: 0
+            AutoRemindField: 0
+            DocField: String content
+            DocNameField: String content
+            DueDateField: '2019-08-24T14:15:22Z'
+            ExtensionField: 0
+            MessageField: String content
+            PriorityField: 0
+            SLAField: 0
+            TokenField:
+              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenField: aaa111
     CreateWorkflowResponse:
-      title: CreateWorkflowResponse
+      title: Create Workflow Response
       type: object
       properties:
         DocIDField:
@@ -966,6 +982,12 @@ components:
       required:
         - DocIDField
         - ResultField
+      x-examples:
+        Create Workflow Response Example:
+          value:
+            DocIDField: 2147483
+            ResultField: success
+      description: '#### The response returned when creating a document workflow.'
     GetDocumentRequest:
       description: '#### The request sent when a user wants to download a document.'
       type: object
