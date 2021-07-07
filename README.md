@@ -10,6 +10,7 @@ SigniFlow uses the OpenAPI (OAI) Specification - formerly known as "Swagger" - t
 ## The Swagger file
 
 ![](https://validator.swagger.io/validator?url=https://raw.githubusercontent.com/SigniFlow/OpenAPI-Spec-V1/main/reference/SigniFlow-OpenAPI-v1.yaml) 
+
 `SigniFlow-OpenAPI-v1.yaml` - the full swagger file for SigniFlow's eSignature REST API v1
 
 
