@@ -806,7 +806,7 @@ components:
       required:
         - TokenField
     ActionField:
-      type: integer
+      type: string
       title: ActionField
       description: |
         #### Is the action taken by a user in a workflow on this step.
@@ -1096,8 +1096,7 @@ components:
           description: User last name.
           example: Smith
         ProxyAllowedField:
-          type: number
-          description: Proxy allowed fields.
+          $ref: '#/components/schemas/ProxyAllowedField'
         TokenField:
           $ref: '#/components/schemas/TokenField'
       required:
@@ -1141,8 +1140,7 @@ components:
             type: object
             properties:
               ActionField:
-                type: string
-                minLength: 1
+                $ref: '#/components/schemas/ActionField'
               EmailField:
                 type: string
                 minLength: 1
