@@ -19,35 +19,14 @@
       "uri": "docs/obtaining-credentials.md"
     },
     {
-      "type": "group",
-      "title": "Quick Starts",
-      "items": [
-        {
-          "type": "item",
-          "title": "Overview",
-          "uri": "docs/quick-starts.md"
-        },
-        {
-          "type": "item",
-          "title": "Scenario 1",
-          "uri": "docs/quick-starts.md"
-        },
-        {
-          "type": "item",
-          "title": "Scenario 2",
-          "uri": "docs/quick-starts.md"
-        },
-        {
-          "type": "item",
-          "title": "Scenario 3",
-          "uri": "docs/quick-starts.md"
-        }
-      ]
+      "type": "item",
+      "title": "Website",
+      "uri": "https://www.signiflow.com/"
     },
     {
       "type": "item",
-      "title": "External Link",
-      "uri": "https://stoplight.io"
+      "title": "Academy",
+      "uri": "https://www.signiflow.com/academy"
     },
     {
       "type": "item",

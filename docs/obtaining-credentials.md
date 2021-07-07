@@ -1,11 +1,12 @@
 # 🔑 Obtaining Credentials
 ## Overview
-Making API calls to the SgniFlow system requires a user account.
+Making API calls to the SigniFlow system requires a user account.
 
 SigniFlow maintains 8 cloud enviroments around the globe, you can sign up for a trial account on any of these servers.
 
 ## 🌎 Cloud Server List
 
+* [Pre-Production](https://preprod.signiflow.com)
 * [Australia Cloud](https://au.signiflow.com)
 * [Europe Cloud](https://eu.signiflow.com)
 * [South America Cloud](https://latam.signiflow.com)
