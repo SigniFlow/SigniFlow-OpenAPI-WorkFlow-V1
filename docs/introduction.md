@@ -170,7 +170,7 @@ Trust in the form of authentication is transferred to the third-party applicatio
 <!-- theme: info -->
 > ### A thing to know
 >
-> When SigningCeremony is integrated into the customer’s system where no workflow of a document is needed.
+> When SigningCeremony is integrated into the customer’s system, NO workflow of a document is needed.
 
 
 * [/SigningCeremonyV2](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1SigningCeremonyV2/post) 
