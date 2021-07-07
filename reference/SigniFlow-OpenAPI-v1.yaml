@@ -754,7 +754,7 @@ components:
         ResultField:
           type: string
           description: Displays the result of the call.
-          example: String content
+          example: success
         TokenField:
           $ref: '#/components/schemas/TokenField'
       required:
@@ -877,11 +877,11 @@ components:
           type: integer
           description: Document ID created in SigniFlow
           format: int32
-          example: 2147483647
+          example: 2147483
         ResultField:
           type: string
           description: Displays the result of the call.
-          example: String content
+          example: success
       required:
         - DocIDField
         - ResultField
@@ -976,7 +976,7 @@ components:
             DocField: string
             DocNameField: template
             ExtensionField: .pdf
-            ResultField: string
+            ResultField: success
       title: Get Document Response
       properties:
         DocField:
@@ -997,6 +997,7 @@ components:
           type: string
           minLength: 1
           description: Displays the result of the call.
+          example: success
       required:
         - DocField
         - DocNameField
@@ -1080,7 +1081,7 @@ components:
               - ActionField: string
                 EmailField: John@domain.com
                 FlowIDField: 2222222
-            ResultField: string
+            ResultField: success
       title: Add Workflow step V2 Response
       properties:
         DocIDField:
@@ -1118,6 +1119,7 @@ components:
           type: string
           minLength: 1
           description: Displays the result of the call.
+          example: success
       required:
         - DocIDField
         - FlowIDField
@@ -1156,13 +1158,14 @@ components:
       x-examples:
         Apply Prepper Template Response Example:
           value:
-            ResultField: string
+            ResultField: success
       title: Apply Prepper Template Response
       properties:
         ResultField:
           type: string
           minLength: 1
           description: Displays the result of the call.
+          example: success
       required:
         - ResultField
     CancelFlowRequest:
@@ -1194,7 +1197,7 @@ components:
         Cancel Flow Response Example:
           value:
             DocIDField: 12344
-            ResultField: string
+            ResultField: success
       title: Cancel Flow Response
       properties:
         DocIDField:
@@ -1205,6 +1208,7 @@ components:
           type: string
           minLength: 1
           description: Displays the result of the call.
+          example: success
       required:
         - DocIDField
         - ResultField
@@ -1243,7 +1247,7 @@ components:
         Create Portfolio Response Example:
           value:
             PortfolioIDField: 13342
-            ResultField: string
+            ResultField: success
       title: Create Portfolio Response
       properties:
         PortfolioIDField:
@@ -1254,6 +1258,7 @@ components:
           type: string
           minLength: 1
           description: Displays the result of the call.
+          example: success
       required:
         - PortfolioIDField
         - ResultField
@@ -1284,13 +1289,14 @@ components:
       x-examples:
         Delete Document Response Example:
           value:
-            ResultField: string
+            ResultField: success
       title: Delete Document Response
       properties:
         ResultField:
           type: string
           minLength: 1
           description: Displays the result of the call.
+          example: success
       required:
         - ResultField
     DocPrepperAddAdvancedFieldsRequest:
@@ -1447,8 +1453,8 @@ components:
           value:
             AdvancedFieldResponseListField:
               - DocFieldIDField: 11111
-                ResultField: string
-            ResultField: string
+                ResultField: success
+            ResultField: success
       title: Document Prepper Add Advanced Fields Response
       properties:
         AdvancedFieldResponseListField:
@@ -1466,6 +1472,7 @@ components:
                 type: string
                 minLength: 1
                 description: Displays the result of the call.
+                example: success
             required:
               - DocFieldIDField
               - ResultField
@@ -1473,6 +1480,7 @@ components:
           type: string
           minLength: 1
           description: Displays the result of the call.
+          example: success
       required:
         - AdvancedFieldResponseListField
         - ResultField
