@@ -1,9 +1,13 @@
 {
   "items": [
     {
+      "type": "divider",
+      "title": "WELCOME"
+    },
+    {
     "type": "item",
-    "title": "Welcome",
-    "uri": "README.md"
+    "title": "Introduction",
+    "uri": "docs/introduction.md"
     },
     {
       "type": "divider",
