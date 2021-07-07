@@ -73,12 +73,23 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/LogoutResponse'
+              examples:
+                Example:
+                  value:
+                    ResultField: success
+                    TokenField:
+                      TokenExpiryField: '2019-08-24T14:15:22Z'
+                      TokenField: aaa111
       description: Used to log out a user from SigniFlow.
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/LogoutRequest'
+            examples:
+              Example:
+                value:
+                  TokenField: aaaaa1111111
         description: Logout Request Model
       tags:
         - Authentication
