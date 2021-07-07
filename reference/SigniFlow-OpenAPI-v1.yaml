@@ -815,6 +815,13 @@ components:
         1 = ViewDocument
         2 = ApproveDocument`
       example: 0
+      x-examples:
+        Sign Document:
+          value: 0
+        View Document:
+          value: 1
+        Approve Document:
+          value: 2
     AutoRemind:
       title: AutoRemind
       enum:
@@ -827,7 +834,11 @@ components:
         `0 = No
         1 = Yes`
       example: 0
-      x-examples: {}
+      x-examples:
+        'No':
+          value: 0
+        'Yes':
+          value: 1
     AutoExpire:
       type: integer
       title: AutoExpire
@@ -863,6 +874,13 @@ components:
         1 = Normal
         2 = High`
       example: 0
+      x-examples:
+        Low:
+          value: 0
+        Normal:
+          value: 1
+        High:
+          value: 2
     DocExtension:
       title: DocExtension
       enum:
@@ -3550,6 +3568,15 @@ components:
           description: Displays the result of the call.
       required:
         - ResultField
+    ProxyAllowedField:
+      title: ProxyAllowedField
+      type: integer
+      description: |-
+        #### Determines whether or not a proxy is allowed.
+
+        `0 = No
+        1 = Yes`
+      x-examples: {}
   securitySchemes: {}
   parameters:
     serverUrl:
