@@ -1015,16 +1015,16 @@ components:
       x-examples:
         Get Document Response Example:
           value:
-            DocField: string
+            DocField: base64 string
             DocNameField: template
-            ExtensionField: .pdf
+            ExtensionField: pdf
             ResultField: success
       title: Get Document Response
       properties:
         DocField:
           type: string
           minLength: 1
-          description: Document field.
+          description: Returns a base64 string as the document.
         DocNameField:
           type: string
           minLength: 1
@@ -1033,7 +1033,7 @@ components:
         ExtensionField:
           type: string
           minLength: 1
-          example: .pdf
+          example: pdf
           description: Document extension field.
         ResultField:
           type: string
@@ -1065,8 +1065,7 @@ components:
       title: Add Workflow Step V2 Request
       properties:
         ActionField:
-          type: number
-          description: Action field.
+          $ref: '#/components/schemas/ActionField'
         CellField:
           type: string
           minLength: 1
