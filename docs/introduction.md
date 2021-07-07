@@ -48,24 +48,12 @@ Create A Workflow But The Most Simple Way Is Displayed Here:
 ![download-document](../assets/images/download-document.png)
 
 * [/Login](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post)
-  * ➡️ Pass Through: Your API Account Username And Password.
+  * ➡️ Pass Through: Your Account Username And Password.
   * ⬅️ Receive Back: a Token Which Is Used For Further Processes.
 
-* [/GetDoc](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post)
-  * ➡️ Pass Through: Your API Token, Your Document ID.
+* [/GetDoc](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1GetDoc/post)
+  * ➡️ Pass Through: Your Token, Your Document ID.
   * ⬅️ Receive Back: a Document As A Base64 Encoded String As Well As Other Information About The Document.
----
-### Get Your Dash Board Information
-
-![dashboard](../assets/images/dashboard.png)
-
-* [/Login](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post)
-  * ➡️ Pass Through: Your API Account Username And Password.
-  * ⬅️ Receive Back: a Token Which Is Used For Further Processes.
-
-* [/GetPrepperTemplateList](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post) 
-  * ➡️ Pass Through: Your API Token.
-  * ⬅️ Receive Back: All Of Your Dashboard Values Including How Many Documents You can Still Create.
 
 ![person 6](../assets/images/person-6.png)
 
@@ -84,11 +72,11 @@ Create A Workflow But The Most Simple Way Is Displayed Here:
 ![download-document](../assets/images/download-document.png)
 
 * [Login](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post)
-  * ➡️ Pass Through: Your API Account Username And Password.
+  * ➡️ Pass Through: Your Account Username And Password.
   * ⬅️ Receive Back: a Token Which Is Used For Further Processes.
 
-* [/GetPrepperTemplateList](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post) 
-  * ➡️ Pass Through: A Template Folder ID And Your API Token.
+* [/GetPrepperTemplateList](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1GetPrepperTemplateList/post) 
+  * ➡️ Pass Through: A Template Folder ID And Your Token.
   * ⬅️ Receive Back: A List Of Prepper Templates.
 
 ---
@@ -101,24 +89,26 @@ create a workflow but the most simple way is displayed here:
 
 ![workflow-with-prepper-template](../assets/images/workflow-with-prepper-template.png)
 
+![prepper-templates](../assets/images/prepper-templates.gif)
+
 * [/Login](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post)
-  * ➡️ Pass Through: Your API Account Username And Password.
+  * ➡️ Pass Through: Your Account Username And Password.
   * ⬅️ Receive Back: a Token Which Is Used For Further Processes.
 
-* [/Create Docflow](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post) 
-  * ➡️ Pass Through: Your API Token, Your Document (Base64 Encoded) & Other Information About The Workflow.
+* [/CreateWorkflow](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1CreateWorkflow/post) 
+  * ➡️ Pass Through: Your Token, Your Document (Base64 Encoded) & Other Information About The Workflow.
   * ⬅️ Receive Back: a Document ID
 
-* [/AddWorkflowStep](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post) 
-  * ➡️ Pass Through: The Document ID, Your API Token & Information About The Person Being Added.
+* [/AddWorkflowStep](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1AddWorkflowStepV2/post) 
+  * ➡️ Pass Through: The Document ID, Your Token & Information About The Person Being Added.
   * ⬅️ Receive Back: Data Regarding The Step Added.
 
-* [/ApplyPrepperTemplate](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post) 
-  * ➡️ Pass Through: The Document ID, Your API Token & a Template ID.
+* [/ApplyPrepperTemplate](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1ApplyPrepperTemplate/post) 
+  * ➡️ Pass Through: The Document ID, Your Token & a Template ID.
   * ⬅️ Receive Back: Data Regarding The Field Added.
 
-* [/InitiateFlow](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post) 
-  * ➡️ Pass Through: The Document ID, Your API Token
+* [/InitiateFlow](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1InitiateFlow/post) 
+  * ➡️ Pass Through: The Document ID, Your Token
   * ⬅️ Receive Back: API Token from the login API.
 
 ---
@@ -130,11 +120,11 @@ create a workflow but the most simple way is displayed here:
 ![full-workflow](../assets/images/full-workflow.png)
 
 * [/Login](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post)
-  * ➡️ Pass Through: Your API Account Username And Password.
+  * ➡️ Pass Through: Your Account Username And Password.
   * ⬅️ Receive Back: A Token Which Is Used For Further Processes.
 
-* [/FullWorkflow](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post)
-  * ➡️ Pass Through: Your API Token, Your Document (Base64 Encoded), All Users Who Will Be Included In The Workflow As Well As Where Their Fields Should Be Placed & Other Information About The Workflow. 
+* [/FullWorkflow](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1FullWorkflow/post)
+  * ➡️ Pass Through: Your Token, Your Document (Base64 Encoded), All Users Who Will Be Included In The Workflow As Well As Where Their Fields Should Be Placed & Other Information About The Workflow. 
   * ⬅️ Receive Back: A Document ID And Other Information Regarding The Workflow.
 
 ---
@@ -147,15 +137,17 @@ create a workflow but the most simple way is displayed here:
 
 > If You Are Not Sure Where Your Fields Should Be Placed, Place White Text Where You Want Your Field To Be.
 
+![find-fields-gif](../assets/images/find-fields.gif)
+
 * [/Login](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post)
-  * ➡️ Pass Through: Your API Account Username And Password.
+  * ➡️ Pass Through: Your Account Username And Password.
   * ⬅️ Receive Back: a Token Which Is Used For Further Processes.
 
-* [/CreateWorkflow](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post) 
-  * ➡️ Pass Through: Your API Token, Your Document (Base64 Encoded) & Other Information About The Workflow.
+* [/CreateWorkflow](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1CreateWorkflow/post) 
+  * ➡️ Pass Through: Your Token, Your Document (Base64 Encoded) & Other Information About The Workflow.
   * ⬅️ Receive Back: a Document ID
 
-* [/GetDocumentTagField](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post) 
+* [/GetDocumentTagField](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1GetDocumentTagFieldPosition/post) 
   * ➡️ Pass Through: The Document ID, The Text To Search For And API Token.
   * ⬅️ Receive Back: List Of Positions Where The Text Was Found.
 
