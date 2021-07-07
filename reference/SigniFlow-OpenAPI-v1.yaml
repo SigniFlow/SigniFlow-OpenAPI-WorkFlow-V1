@@ -922,7 +922,7 @@ components:
           example: String content
         DueDateField:
           type: string
-          description: 'Due date for the document, use in conjunction with Auto Expire'
+          description: 'Due date for the document, use in conjunction with Auto Expire.'
           format: date-time
         ExtensionField:
           $ref: '#/components/schemas/DocExtension'
