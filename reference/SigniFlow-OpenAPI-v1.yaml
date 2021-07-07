@@ -43,7 +43,6 @@ paths:
             example:
               UserNameField: email@domain.com
               PasswordField: P@ssword
-            examples: {}
         required: true
       responses:
         '200':
