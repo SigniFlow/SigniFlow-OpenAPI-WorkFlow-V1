@@ -746,7 +746,7 @@ components:
       x-examples:
         Login Response Example:
           value:
-            ResultField: Success
+            ResultField: success
             TokenField:
               TokenExpiryField: /Date(1624307263000+0200)/
               TokenField: e6dgfh
@@ -815,7 +815,9 @@ components:
         1 = ViewDocument
         2 = ApproveDocument`
       example: 0
-      x-examples: {}
+      x-examples:
+        Approve Document:
+          value: 2
     AutoRemind:
       title: AutoRemind
       enum:
@@ -871,10 +873,6 @@ components:
       x-examples:
         Low:
           value: 0
-        Normal:
-          value: 1
-        High:
-          value: 2
     DocExtension:
       title: DocExtension
       enum:
