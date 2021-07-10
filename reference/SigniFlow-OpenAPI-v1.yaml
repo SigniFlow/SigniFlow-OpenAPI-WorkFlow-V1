@@ -13,7 +13,7 @@ info:
     name: Proprietary
     url: 'https://www.signiflow.com/legal'
 servers:
-  - url: 'https://{server-url}/API/SignFlowAPIServiceRest.svc'
+  - url: 'https://{serverUrl}/API/SignFlowAPIServiceRest.svc'
     description: SigniFlow Instance url
     variables:
       enviroment:
