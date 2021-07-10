@@ -1,4 +1,4 @@
-# OpenAPI-Spec-V1
+# OpenAPI-Specifications
 SigniFlow OPENAPI used to automate workflow creation and management.
 
 ![OPEN API LOGO](assets/images/OpenAPI.png)
