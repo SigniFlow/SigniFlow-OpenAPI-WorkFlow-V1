@@ -13,20 +13,27 @@ info:
     name: Proprietary
     url: 'https://www.signiflow.com/legal'
 servers:
-  - url: 'https://preprod.signiflow.com/API/SignFlowAPIServiceRest.svc'
+  - url: 'https://{enviroment}/API/SignFlowAPIServiceRest.svc'
     description: Pre-Production
-  - url: 'https://au.signiflow.com/API/SignFlowAPIServiceRest.svc'
-    description: Australia Cloud
-  - url: 'https://eu.signiflow.com/API/SignFlowAPIServiceRest.svc'
-    description: Europe Cloud
-  - url: 'https://flow.signflow.co.za/API/SignFlowAPIServiceRest.svc'
-    description: South Africa Cloud
-  - url: 'https://latam.signiflow.com/API/SignFlowAPIServiceRest.svc'
-    description: South America Cloud
-  - url: 'https://uk.signiflow.com/API/SignFlowAPIServiceRest.svc'
-    description: United Kingdom Cloud
-  - url: 'https://us.signiflow.com/API/SignFlowAPIServiceRest.svc'
-    description: United States Cloud
+    variables:
+      enviroment:
+        default: preprod.signiflow.com
+  - url: 'https://{region}/API/SignFlowAPIServiceRest.svc'
+    description: Regional Cloud
+    variables:
+      region:
+        enum:
+          - au.signiflow.com
+          - eu.signiflow.com
+          - flow.signflow.co.za
+          - latam.signiflow.com
+          - uk.signiflow.com
+          - us.signiflow.com
+  - url: 'https://{hybrid-server}/API/SignFlowAPIServiceRest.svc'
+    description: Hybrid Server URL Provided by SigniFlow
+    variables:
+      enviroment:
+        default: clientname.signiflow.com
 paths:
   /Login:
     post:
