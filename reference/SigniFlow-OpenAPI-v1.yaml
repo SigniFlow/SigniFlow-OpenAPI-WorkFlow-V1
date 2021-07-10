@@ -16,7 +16,7 @@ servers:
   - url: 'https://{serverUrl}/API/SignFlowAPIServiceRest.svc'
     description: SigniFlow Instance url
     variables:
-      enviroment:
+      serverUrl:
         default: clientname.signiflow.com
   - url: 'https://preprod.signiflow.com/API/SignFlowAPIServiceRest.svc'
     description: Pre-Production
