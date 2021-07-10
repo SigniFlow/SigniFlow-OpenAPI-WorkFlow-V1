@@ -1850,6 +1850,18 @@ components:
         - 0
         - 1
         - 2
+      x-enumNames:
+        -  "SignDocument"
+        -  "ViewDocument"
+        -  "ApproveDocument"
+      x-enum-descriptions:
+        -  "Sign The Document"
+        -  "View The Document"
+        -  "Approve The Document"
+      x-enum-varnames:
+        -  "SignDocument"
+        -  "ViewDocument"
+        -  "ApproveDocument"
       minimum: 0
       maximum: 2
     AutoRemind:
@@ -1858,6 +1870,15 @@ components:
       enum:
         - 0
         - 1
+      x-enumNames:
+        - "No"
+        - "Yes"
+      x-enum-descriptions:
+        - "Dont send daily reminders"
+        - "Send the recipient a daily reminder email"
+      x-enum-varnames:
+        - "No"
+        - "Yes"
       description: |-
         #### Sets an Auto Reminder email to go out daily to workflow participants that have not signed the document.
 
@@ -1871,6 +1892,15 @@ components:
       enum:
         - 0
         - 1
+      x-enumNames:
+        - "No"
+        - "Yes"
+      x-enum-descriptions:
+        - "Workflow wont expire"
+        - "Expire the Workflow once due date is reached"
+      x-enum-varnames:
+        - "No"
+        - "Yes"
       description: |
         #### Sets an Auto Expire that will expire the document if not completed by the Due Date.
 
@@ -1887,6 +1917,18 @@ components:
         - 0
         - 1
         - 2
+      x-enumNames:
+        - "Low"
+        - "Normal"
+        - "High"
+      x-enum-descriptions:
+        - "Low"
+        - "Normal"
+        - "High"
+      x-enum-varnames:
+        - "Low"
+        - "Normal"
+        - "High"
       description: |-
         #### The priority level of the workflow. 
 
@@ -1909,6 +1951,39 @@ components:
         - 7
         - 8
         - 9
+      x-enumNames:
+        - "pdf"
+        - "xls"
+        - "txt"
+        - "xlsx"
+        - "docx"
+        - "doc"
+        - "xml"
+        - "png"
+        - "jpg"
+        - "gif"
+      x-enum-descriptions:
+        - "pdf"
+        - "xls"
+        - "txt"
+        - "xlsx"
+        - "docx"
+        - "doc"
+        - "xml"
+        - "png"
+        - "jpg"
+        - "gif"
+      x-enum-varnames:
+        - "pdf"
+        - "xls"
+        - "txt"
+        - "xlsx"
+        - "docx"
+        - "doc"
+        - "xml"
+        - "png"
+        - "jpg"
+        - "gif"
       description: |
         #### Document Extension 
 
@@ -4622,6 +4697,15 @@ components:
       enum:
         - 0
         - 1
+      x-enumNames:
+        - "No"
+        - "Yes"
+      x-enum-descriptions:
+        - "No"
+        - "Yes"
+      x-enum-varnames:
+        - "No"
+        - "Yes"
       minimum: 0
       maximum: 1
       default: 0
@@ -4674,6 +4758,66 @@ components:
         - 17
         - 18
         - 19
+      x-enumNames:
+        - Signature
+        - NameText
+        - DateText
+        - EmailAddressText
+        - ContactNumberText
+        - PlainText
+        - PlainTextOptional
+        - FaceToface
+        - Initial
+        - CheckBox
+        - F2FInitial
+        - AddressText
+        - CompanyNameText
+        - OptionalCurrencyText
+        - ReadOnlyText
+        - NumericFieldOpt
+        - NumericFieldMand
+        - EmailInputOptional
+        - EmailInput
+      x-enum-descriptions:
+        - "Signature"
+        - "NameText"
+        - "DateText"
+        - "EmailAddressText"
+        - "ContactNumberText"
+        - "PlainText"
+        - "PlainTextOptional"
+        - "FaceToface"
+        - "Initial"
+        - "CheckBox"
+        - "F2FInitial"
+        - "AddressText"
+        - "CompanyNameText"
+        - "OptionalCurrencyText"
+        - "ReadOnlyText"
+        - "NumericFieldOpt"
+        - "NumericFieldMand"
+        - "EmailInputOptional"
+        - "EmailInput"
+      x-enum-varnames:
+        - Signature
+        - NameText
+        - DateText
+        - EmailAddressText
+        - ContactNumberText
+        - PlainText
+        - PlainTextOptional
+        - FaceToface
+        - Initial
+        - CheckBox
+        - F2FInitial
+        - AddressText
+        - CompanyNameText
+        - OptionalCurrencyText
+        - ReadOnlyText
+        - NumericFieldOpt
+        - NumericFieldMand
+        - EmailInputOptional
+        - EmailInput
       minimum: 0
       maximum: 19
     AdvancedFieldType:
@@ -4705,6 +4849,39 @@ components:
         - 7
         - 8
         - 9
+      x-enumNames:
+        - DropDown
+        - CheckBoxGroup
+        - OptionalDropDown 
+        - RadioGroup
+        - DateMand
+        - DateOpt
+        - DropDownCountry
+        - OptionalDropDownCountry
+        - DropDownMobilePrefix
+        - OptionalDropDownMobilePrefix
+      x-enum-descriptions:
+        - DropDown
+        - CheckBoxGroup
+        - OptionalDropDown 
+        - RadioGroup
+        - DateMand
+        - DateOpt
+        - DropDownCountry
+        - OptionalDropDownCountry
+        - DropDownMobilePrefix
+        - OptionalDropDownMobilePrefix
+      x-enum-varnames:
+        - DropDown
+        - CheckBoxGroup
+        - OptionalDropDown 
+        - RadioGroup
+        - DateMand
+        - DateOpt
+        - DropDownCountry
+        - OptionalDropDownCountry
+        - DropDownMobilePrefix
+        - OptionalDropDownMobilePrefix
       minimum: 0
       maximum: 9
   securitySchemes: {}
