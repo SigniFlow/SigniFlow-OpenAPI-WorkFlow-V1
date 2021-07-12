@@ -1776,8 +1776,8 @@ paths:
 components:
   schemas:
     LoginResponse:
-      title: Login Response
       type: object
+      title: Login Response
       description: '#### The response returned when a user Logs in.'
       x-examples:
         Login Response Example:
@@ -1791,11 +1791,13 @@ components:
           type: string
           description: Displays the result of the call.
           example: success
+          readOnly: true
         TokenField:
           $ref: '#/components/schemas/TokenField'
       required:
         - ResultField
         - TokenField
+      readOnly: true
     LoginRequest:
       type: object
       description: '#### The request sent when a user Logs in.'
