@@ -2051,6 +2051,7 @@ components:
           example: String content
         DueDateField:
           type: string
+          nullable: true
           description: 'Due date for the document, use in conjunction with Auto Expire.'
           format: date-time
         ExtensionField:
