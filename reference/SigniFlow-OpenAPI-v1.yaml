@@ -1797,14 +1797,15 @@ components:
         - ResultField
         - TokenField
     LoginRequest:
-      description: '#### The request sent when a user Logs in.'
       type: object
+      description: '#### The request sent when a user Logs in.'
       x-examples:
         Example:
           value:
             UserNameField: email@domain.com
             PasswordField: Password
       title: Login Request
+      x-internal: false
       properties:
         UserNameField:
           type: string
@@ -1812,15 +1813,18 @@ components:
           example: email@domain.com
           format: email
           description: Email address of the user generating a Token
+          writeOnly: true
         PasswordField:
           type: string
           minLength: 1
           example: Password
           format: password
           description: SigniFlow user password
+          writeOnly: true
       required:
         - UserNameField
         - PasswordField
+      writeOnly: true
     TokenField:
       title: TokenField
       type: object
@@ -1856,17 +1860,17 @@ components:
         - 1
         - 2
       x-enumNames:
-        -  "SignDocument"
-        -  "ViewDocument"
-        -  "ApproveDocument"
+        - SignDocument
+        - ViewDocument
+        - ApproveDocument
       x-enum-descriptions:
-        -  "Sign The Document"
-        -  "View The Document"
-        -  "Approve The Document"
+        - Sign The Document
+        - View The Document
+        - Approve The Document
       x-enum-varnames:
-        -  "SignDocument"
-        -  "ViewDocument"
-        -  "ApproveDocument"
+        - SignDocument
+        - ViewDocument
+        - ApproveDocument
       minimum: 0
       maximum: 2
     AutoRemind:
@@ -1876,14 +1880,14 @@ components:
         - 0
         - 1
       x-enumNames:
-        - "No"
-        - "Yes"
+        - 'No'
+        - 'Yes'
       x-enum-descriptions:
-        - "Dont send daily reminders"
-        - "Send the recipient a daily reminder email"
+        - Dont send daily reminders
+        - Send the recipient a daily reminder email
       x-enum-varnames:
-        - "No"
-        - "Yes"
+        - 'No'
+        - 'Yes'
       description: |-
         #### Sets an Auto Reminder email to go out daily to workflow participants that have not signed the document.
 
@@ -1898,14 +1902,14 @@ components:
         - 0
         - 1
       x-enumNames:
-        - "No"
-        - "Yes"
+        - 'No'
+        - 'Yes'
       x-enum-descriptions:
-        - "Workflow wont expire"
-        - "Expire the Workflow once due date is reached"
+        - Workflow wont expire
+        - Expire the Workflow once due date is reached
       x-enum-varnames:
-        - "No"
-        - "Yes"
+        - 'No'
+        - 'Yes'
       description: |
         #### Sets an Auto Expire that will expire the document if not completed by the Due Date.
 
@@ -1923,17 +1927,17 @@ components:
         - 1
         - 2
       x-enumNames:
-        - "Low"
-        - "Normal"
-        - "High"
+        - Low
+        - Normal
+        - High
       x-enum-descriptions:
-        - "Low"
-        - "Normal"
-        - "High"
+        - Low
+        - Normal
+        - High
       x-enum-varnames:
-        - "Low"
-        - "Normal"
-        - "High"
+        - Low
+        - Normal
+        - High
       description: |-
         #### The priority level of the workflow. 
 
@@ -1957,38 +1961,38 @@ components:
         - 8
         - 9
       x-enumNames:
-        - "pdf"
-        - "xls"
-        - "txt"
-        - "xlsx"
-        - "docx"
-        - "doc"
-        - "xml"
-        - "png"
-        - "jpg"
-        - "gif"
+        - pdf
+        - xls
+        - txt
+        - xlsx
+        - docx
+        - doc
+        - xml
+        - png
+        - jpg
+        - gif
       x-enum-descriptions:
-        - "pdf"
-        - "xls"
-        - "txt"
-        - "xlsx"
-        - "docx"
-        - "doc"
-        - "xml"
-        - "png"
-        - "jpg"
-        - "gif"
+        - pdf
+        - xls
+        - txt
+        - xlsx
+        - docx
+        - doc
+        - xml
+        - png
+        - jpg
+        - gif
       x-enum-varnames:
-        - "pdf"
-        - "xls"
-        - "txt"
-        - "xlsx"
-        - "docx"
-        - "doc"
-        - "xml"
-        - "png"
-        - "jpg"
-        - "gif"
+        - pdf
+        - xls
+        - txt
+        - xlsx
+        - docx
+        - doc
+        - xml
+        - png
+        - jpg
+        - gif
       description: |
         #### Document Extension 
 
@@ -4703,14 +4707,14 @@ components:
         - 0
         - 1
       x-enumNames:
-        - "No"
-        - "Yes"
+        - 'No'
+        - 'Yes'
       x-enum-descriptions:
-        - "No"
-        - "Yes"
+        - 'No'
+        - 'Yes'
       x-enum-varnames:
-        - "No"
-        - "Yes"
+        - 'No'
+        - 'Yes'
       minimum: 0
       maximum: 1
       default: 0
@@ -4784,25 +4788,25 @@ components:
         - EmailInputOptional
         - EmailInput
       x-enum-descriptions:
-        - "Signature"
-        - "NameText"
-        - "DateText"
-        - "EmailAddressText"
-        - "ContactNumberText"
-        - "PlainText"
-        - "PlainTextOptional"
-        - "FaceToface"
-        - "Initial"
-        - "CheckBox"
-        - "F2FInitial"
-        - "AddressText"
-        - "CompanyNameText"
-        - "OptionalCurrencyText"
-        - "ReadOnlyText"
-        - "NumericFieldOpt"
-        - "NumericFieldMand"
-        - "EmailInputOptional"
-        - "EmailInput"
+        - Signature
+        - NameText
+        - DateText
+        - EmailAddressText
+        - ContactNumberText
+        - PlainText
+        - PlainTextOptional
+        - FaceToface
+        - Initial
+        - CheckBox
+        - F2FInitial
+        - AddressText
+        - CompanyNameText
+        - OptionalCurrencyText
+        - ReadOnlyText
+        - NumericFieldOpt
+        - NumericFieldMand
+        - EmailInputOptional
+        - EmailInput
       x-enum-varnames:
         - Signature
         - NameText
@@ -4857,7 +4861,7 @@ components:
       x-enumNames:
         - DropDown
         - CheckBoxGroup
-        - OptionalDropDown 
+        - OptionalDropDown
         - RadioGroup
         - DateMand
         - DateOpt
@@ -4868,7 +4872,7 @@ components:
       x-enum-descriptions:
         - DropDown
         - CheckBoxGroup
-        - OptionalDropDown 
+        - OptionalDropDown
         - RadioGroup
         - DateMand
         - DateOpt
@@ -4879,7 +4883,7 @@ components:
       x-enum-varnames:
         - DropDown
         - CheckBoxGroup
-        - OptionalDropDown 
+        - OptionalDropDown
         - RadioGroup
         - DateMand
         - DateOpt
