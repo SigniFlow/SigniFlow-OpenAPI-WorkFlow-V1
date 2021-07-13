@@ -20,6 +20,11 @@
     },
     {
       "type": "item",
+      "title": "GitHub SDK Repo",
+      "uri": "https://signiflow.github.io/"
+    },
+    {
+      "type": "item",
       "title": "Website",
       "uri": "https://www.signiflow.com/"
     },
