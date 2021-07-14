@@ -2558,10 +2558,12 @@ components:
               LinkToField:
                 type: string
                 minLength: 1
+                description: This field is used to link fields together and allow users to fill in specific portions of the document based on a checkbox with the same LinkedTo Value.
               NameField:
                 type: string
                 minLength: 1
                 example: Text Field
+                description: This field is used when you need to define the field embedded in the document with a unique name that can be referenced later.
               PageNumberField:
                 type: number
                 example: 2
@@ -2576,6 +2578,7 @@ components:
               ValueField:
                 type: string
                 minLength: 1
+                description: If you would like to fill in a predefined value that will appear on the document - you can fill it in here - this can be editted by the end user.
               XCoordinateField:
                 type: string
                 minLength: 1
