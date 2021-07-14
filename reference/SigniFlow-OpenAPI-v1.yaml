@@ -4238,7 +4238,7 @@ components:
             properties:
               SignatureHField:
                 type: number
-                description: Signature header field
+                description: Signature field height.
               SignatureImageField:
                 type: string
                 minLength: 1
