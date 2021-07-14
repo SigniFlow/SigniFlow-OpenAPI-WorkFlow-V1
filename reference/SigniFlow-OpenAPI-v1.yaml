@@ -2051,9 +2051,9 @@ components:
           example: String content
         DueDateField:
           type: string
-          nullable: true
           description: 'Due date for the document, use in conjunction with Auto Expire.'
           format: date-time
+          nullable: true
         ExtensionField:
           $ref: '#/components/schemas/DocExtension'
         MessageField:
@@ -2072,8 +2072,6 @@ components:
         TokenField:
           $ref: '#/components/schemas/TokenField'
       required:
-        - AdditionalDataField
-        - AutoExpireField
         - AutoRemindField
         - DocField
         - DocNameField
@@ -2227,7 +2225,6 @@ components:
         - DocIDField
         - EmailField
         - FirstNameField
-        - LanguageCodeField
         - LastNameField
         - ProxyAllowedField
         - TokenField
@@ -2284,7 +2281,6 @@ components:
       required:
         - DocIDField
         - FlowIDField
-        - FlowStepsField
         - ResultField
     ApplyPrepperTemplateRequest:
       description: '#### Used to send a request for applying a template.'
@@ -2728,10 +2724,7 @@ components:
         - FlowIDField
         - HeightField
         - WidthField
-        - IsInvisibleField
-        - LinkToField
         - PageNumberField
-        - NameField
         - UserEmailField
         - XCoordinateField
         - YCoordinateField
