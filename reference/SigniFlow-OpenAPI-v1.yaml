@@ -3953,47 +3953,64 @@ components:
     InitiateFlowRequest:
       description: '#### The request sent to initiate a workflow on a document.'
       type: object
-      x-examples: {}
+      x-examples:
+        Initiate Flow Request Example:
+          value:
+            DocIDField: '123473'
+            TokenField:
+              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenField: aaa111
+      title: Initiate Flow Request
       properties:
         DocIDField:
           type: string
           minLength: 1
+          description: Document ID
+          example: '123473'
         TokenField:
           $ref: '#/components/schemas/TokenField'
       required:
         - DocIDField
         - TokenField
-      title: Initiate Flow Request
     InitiateFlowResponse:
       description: '#### The response returned when a workflow is initiated.'
       type: object
       x-examples:
-        Example:
+        Initiate Flow Response Example:
           value:
-            DocIDField: 0
-            ResultField: string
+            DocIDField: 123473
+            ResultField: success
       title: Initiate Flow Response
       properties:
         DocIDField:
           type: number
-          description: The document ID.
+          description: Document ID.
+          example: 123473
         ResultField:
           type: string
           minLength: 1
           description: Displays the result of the call.
+          example: success
       required:
         - DocIDField
         - ResultField
     InitiateFlow_No_EmailRequest:
       description: '#### The request sent to initiate a workflow without sending an email.'
       type: object
-      x-examples: {}
+      x-examples:
+        Initiate Flow No Email Request Example:
+          value:
+            DocIDField: '123473'
+            TokenField:
+              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenField: aaa111
       title: Initiate Flow No Email Request
       properties:
         DocIDField:
           type: string
           minLength: 1
-          description: The document ID.
+          description: Document ID.
+          example: '123473'
         TokenField:
           $ref: '#/components/schemas/TokenField'
       required:
@@ -4003,32 +4020,41 @@ components:
       description: '#### The response returned when a workflow is requested without any email.'
       type: object
       x-examples:
-        Example:
+        Initiate Flow No Email Response Example:
           value:
-            DocIDField: 0
-            ResultField: string
+            DocIDField: 123473
+            ResultField: success
       title: Initiate Flow No Email Response
       properties:
         DocIDField:
           type: number
-          description: The document ID.
+          description: Document ID.
+          example: 123473
         ResultField:
           type: string
           minLength: 1
           description: Displays the result of the call.
+          example: success
       required:
         - DocIDField
         - ResultField
     InitiateFlow_No_Initial_EmailRequest:
       description: '#### The request sent to initiate a workflow skiiping the first email.'
       type: object
-      x-examples: {}
+      x-examples:
+        Initiate Flow No Initial Email Request Example:
+          value:
+            DocIDField: '123473'
+            TokenField:
+              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenField: aaa111
       title: Initiate Flow No Initial Email Request
       properties:
         DocIDField:
           type: string
           minLength: 1
-          description: The document ID.
+          description: Document ID.
+          example: '123473'
         TokenField:
           $ref: '#/components/schemas/TokenField'
       required:
