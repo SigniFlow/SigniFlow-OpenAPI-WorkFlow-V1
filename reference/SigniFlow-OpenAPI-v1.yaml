@@ -2977,10 +2977,10 @@ components:
           properties:
             CreatePortfolioField:
               type: boolean
-              description: Create portfolio.
+              description: Create a new portfolio.
             LinkToPortfolioField:
               type: boolean
-              description: Portfolio link.
+              description: Link document to Portfolio link.
             PortfolioIDField:
               type: number
               example: 11112
@@ -2992,7 +2992,7 @@ components:
               description: Portfolio name.
         PriorityField:
           type: number
-          description: Document priority.
+          description: Level of priority.
         SLAField:
           type: number
           description: SLA
