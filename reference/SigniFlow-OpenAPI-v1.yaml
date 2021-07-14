@@ -3437,9 +3437,9 @@ components:
       description: '#### This is the request sent to get a documnt prepper url.'
       type: object
       x-examples:
-        Example:
+        Get Document Prepper Link Request Example:
           value:
-            DocIDField: string
+            DocIDField: '12373'
             EmailSettingField: 0
             ReturnURLField: string
             TokenField:
@@ -3451,11 +3451,14 @@ components:
           type: string
           minLength: 1
           description: Document ID
+          example: '12373'
         EmailSettingField:
           type: number
+          description: The user's email settings
         ReturnURLField:
           type: string
           minLength: 1
+          description: The return url.
         TokenField:
           $ref: '#/components/schemas/TokenField'
       required:
@@ -3467,9 +3470,9 @@ components:
       description: '#### This is the response returned when requesting a document prepper url.'
       type: object
       x-examples:
-        Example:
+        Get Document Prepper Link Response Example:
           value:
-            Result: string
+            Result: success
             URL: string
       title: Get Document Prepper Link Response
       properties:
@@ -3477,6 +3480,7 @@ components:
           type: string
           minLength: 1
           description: Displays the result of the call.
+          example: success
         URL:
           type: string
           minLength: 1
@@ -3488,26 +3492,29 @@ components:
       description: '#### The request sent to get the document tag field box position.'
       type: object
       x-examples:
-        Example:
+        Get Document Tag Field Box Position Request Example:
           value:
-            DocIDField: 0
+            DocIDField: 12372
             TagNameField: string
             TokenField:
               TokenExpiryField: '2019-08-24T14:15:22Z'
               TokenField: aaa111
+      title: Get Document Tag Field Box Position Request
       properties:
         DocIDField:
           type: number
+          example: 12372
+          description: Document ID
         TagNameField:
           type: string
           minLength: 1
+          description: Document field tag name
         TokenField:
           $ref: '#/components/schemas/TokenField'
       required:
         - DocIDField
         - TagNameField
         - TokenField
-      title: Get Document Tag Field Box Position Request
     GetDocumentTagFieldBoxPositionResponse:
       description: '#### The response returned after requesting the document tag field ox position.'
       type: object
