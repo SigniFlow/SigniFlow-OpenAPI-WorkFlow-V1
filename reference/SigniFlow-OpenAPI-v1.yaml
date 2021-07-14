@@ -2739,11 +2739,11 @@ components:
         Document Prepper Add Fields FlowID Response Example:
           value:
             DocIDField: 12344
-            FieldTypeField: string
+            FieldTypeField: 0
             HeightField: '20'
             PageNumberField: 2
             PrepperFieldIDField: 0
-            ResultField: string
+            ResultField: success
             UserIDField: 111112
             WidthField: '25'
             XCoordinateField: '60'
@@ -2772,6 +2772,7 @@ components:
           type: string
           minLength: 1
           description: Displays the result of the call.
+          example: success
         UserIDField:
           type: number
           description: SigniFlow User ID
@@ -2832,7 +2833,7 @@ components:
             PortfolioDataField: string
             PortfolioIDField: 11112
             PortfolioNameField: Application Portfolio
-            ResultField: string
+            ResultField: success
       title: Download Portfolio Response
       properties:
         PortfolioDataField:
@@ -2852,6 +2853,7 @@ components:
           type: string
           minLength: 1
           description: Displays the result of the call.
+          example: success
       required:
         - PortfolioDataField
         - PortfolioIDField
@@ -2869,7 +2871,7 @@ components:
             DocField: string
             DocNameField: Document 1
             DueDateField: 02/02/2021
-            ExtensionField: .pdf
+            ExtensionField: 0
             FlattenDocumentField: true
             KeepContentSecurityField: true
             KeepCustomPropertiesField: true
@@ -2879,8 +2881,8 @@ components:
               LinkToPortfolioField: true
               PortfolioIDField: 11112
               PortfolioNameField: Portfolio 1
-            PriorityField: 0
-            SLAField: 0
+            PriorityField: Low
+            SLAField: 2147483647
             SendFirstEmailField: true
             SendWorkflowEmailsField: true
             TokenField:
@@ -2993,9 +2995,11 @@ components:
         PriorityField:
           type: number
           description: Level of priority.
+          example: Low
         SLAField:
           type: number
           description: SLA
+          example: 2147483647
         SendFirstEmailField:
           type: boolean
           description: Confirm first user email notification will or will not be sent.
@@ -3086,11 +3090,11 @@ components:
               LatitudeField:
                 type: string
                 minLength: 1
-                description: Location latitude.
+                description: GPS location latitude.
               LongitudeField:
                 type: string
                 minLength: 1
-                description: Location longtitude.
+                description: GPS location longtitude.
               MobileNumberField:
                 type: string
                 minLength: 1
@@ -3254,27 +3258,32 @@ components:
             DocField: string
             DocIDField: 1237
             PortfolioIDField: 11112
-            ResultField: string
+            ResultField: success
             StatusField: Completed
       title: FullWorkflow Response
       properties:
         DocField:
           type: string
           minLength: 1
+          description: The document that has completed the workflow process.
         DocIDField:
           type: number
           example: 1237
+          description: Document ID
         PortfolioIDField:
           type: number
           example: 11112
+          description: Portfolio ID
         ResultField:
           type: string
           minLength: 1
           description: Displays the result of the call.
+          example: success
         StatusField:
           type: string
           minLength: 1
           example: Completed
+          description: Document status that gets returned.
       required:
         - DocField
         - DocIDField
@@ -3287,20 +3296,22 @@ components:
       x-examples:
         Example:
           value:
-            DocIDField: string
+            DocIDField: '12373'
             TokenField:
               TokenExpiryField: '2019-08-24T14:15:22Z'
               TokenField: aaa111
+      title: Get Audit Document Request
       properties:
         DocIDField:
           type: string
           minLength: 1
+          description: Document ID
+          example: '12373'
         TokenField:
           $ref: '#/components/schemas/TokenField'
       required:
         - DocIDField
         - TokenField
-      title: Get Audit Document Request
     GetAuditDocumentResponse:
       description: '#### The response returned when requesting and audit document.'
       type: object
@@ -3308,7 +3319,7 @@ components:
         Example:
           value:
             AuditDocumentField: string
-            ResultField: string
+            ResultField: success
       title: Get Audit Document Response
       properties:
         AuditDocumentField:
@@ -3318,25 +3329,38 @@ components:
           type: string
           minLength: 1
           description: Displays the result of the call.
+          example: success
       required:
         - AuditDocumentField
         - ResultField
     GetDocLinkRequest:
       description: '#### This is a request to get the document url.'
       type: object
-      x-examples: {}
+      x-examples:
+        Get Document Link Request Example:
+          value:
+            DocIDField: '12373'
+            EmailField: email@domain.com
+            ReturnURLField: string
+            TokenField:
+              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenField: aaa111
       title: Get Document Link Request
       properties:
         DocIDField:
           type: string
           minLength: 1
+          description: Document ID
+          example: '12373'
         EmailField:
           type: string
           minLength: 1
           example: email@domain.com
+          description: User's email address.
         ReturnURLField:
           type: string
           minLength: 1
+          description: The return url.
         TokenField:
           $ref: '#/components/schemas/TokenField'
       required:
@@ -3348,9 +3372,9 @@ components:
       description: '#### This is the response returned when a document url is requested.'
       type: object
       x-examples:
-        Example:
+        Get Document Link Response Example:
           value:
-            Result: string
+            Result: success
             Url: string
       title: Get Document Link Response
       properties:
@@ -3358,10 +3382,11 @@ components:
           type: string
           minLength: 1
           description: Displays the result of the call.
+          example: success
         Url:
           type: string
           minLength: 1
-          description: URL
+          description: URL link
       required:
         - Result
         - Url
@@ -3375,33 +3400,36 @@ components:
             TokenField:
               TokenExpiryField: '2019-08-24T14:15:22Z'
               TokenField: aaa111
+      title: Get Document Status Request
       properties:
         DocIDField:
           type: number
+          description: Document ID
         TokenField:
           $ref: '#/components/schemas/TokenField'
       required:
         - DocIDField
         - TokenField
-      title: Get Document Status Request
     GetDocStatusResponse:
       description: '#### This is the response returned when a document status has been requested.'
       type: object
       x-examples:
-        Example:
+        Get Document Status Response Example:
           value:
-            DocStatusField: string
-            ResultField: string
+            DocStatusField: Completed
+            ResultField: success
       title: Get Document Status Response
       properties:
         DocStatusField:
           type: string
           minLength: 1
           description: Status of the document.
+          example: Completed
         ResultField:
           type: string
           minLength: 1
           description: Displays the result of the call.
+          example: success
       required:
         - DocStatusField
         - ResultField
@@ -3417,10 +3445,12 @@ components:
             TokenField:
               TokenExpiryField: '2019-08-24T14:15:22Z'
               TokenField: aaa111
+      title: Get Document Prepper Link Request
       properties:
         DocIDField:
           type: string
           minLength: 1
+          description: Document ID
         EmailSettingField:
           type: number
         ReturnURLField:
@@ -3433,7 +3463,6 @@ components:
         - EmailSettingField
         - ReturnURLField
         - TokenField
-      title: Get Document Prepper Link Request
     GetDocumentPrepperLinkResponse:
       description: '#### This is the response returned when requesting a document prepper url.'
       type: object
