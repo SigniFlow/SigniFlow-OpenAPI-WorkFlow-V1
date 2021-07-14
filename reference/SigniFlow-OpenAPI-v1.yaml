@@ -3802,7 +3802,7 @@ components:
                 DocFieldIDField: '123562'
                 DocIDField: 123566
                 FieldTypeField: 0
-                HeightField: 0
+                HeightField: 15
                 PageNumberField: 2
                 UserFullNameField: John Doe
                 UserIDField: 111111
@@ -3839,6 +3839,7 @@ components:
               HeightField:
                 type: number
                 description: The height of the field.
+                example: 15
               PageNumberField:
                 type: number
                 description: Field page number.
@@ -3893,32 +3894,34 @@ components:
       description: '#### The request sent to get the document template list.'
       type: object
       x-examples: {}
+      title: Get Prepper Template List Request
       properties:
         TemplateFolderField:
           type: number
+          description: The category that the template list falls under.
         TokenField:
           $ref: '#/components/schemas/TokenField'
       required:
         - TemplateFolderField
         - TokenField
-      title: Get Prepper Template List Request
     GetPrepperTemplateListResponse:
       description: '#### The response returned when the document template list gets requested.'
       type: object
       x-examples:
-        Example:
+        Get Prepper Template List Response Example:
           value:
-            ResultField: string
+            ResultField: success
             TemplateInformationValuesField:
-              - NameField: string
-                PrepperTemplateIDField: 0
-                TemplateDescriptionField: string
+              - NameField: New Employee
+                PrepperTemplateIDField: 22222222
+                TemplateDescriptionField: New hire template
       title: Get Prepper Template List Response
       properties:
         ResultField:
           type: string
           minLength: 1
           description: Displays the result of the call.
+          example: success
         TemplateInformationValuesField:
           type: array
           uniqueItems: true
@@ -3929,12 +3932,17 @@ components:
               NameField:
                 type: string
                 minLength: 1
+                description: Template name.
+                example: New Employee
               PrepperTemplateIDField:
                 type: number
+                description: Template ID
+                example: 22222222
               TemplateDescriptionField:
                 type: string
                 minLength: 1
                 description: Template description.
+                example: New hire template
             required:
               - NameField
               - PrepperTemplateIDField
