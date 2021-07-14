@@ -3704,30 +3704,35 @@ components:
               ActionOrderField:
                 type: string
                 minLength: 1
+                description: The order in which action will be taken.
               AdditionalField:
                 type: string
                 minLength: 1
               DocIDField:
                 type: string
                 minLength: 1
+                description: Document ID
               EmailField:
                 type: string
                 minLength: 1
                 format: email
-                description: The user's email.
+                description: The user's email address.
                 example: email@domain.com
               EventDateField:
                 type: string
                 minLength: 1
+                description: The date of the event
               EventField:
                 type: string
                 minLength: 1
               EventStatusField:
                 type: string
                 minLength: 1
+                description: Status of the event
               LocationField:
                 type: string
                 minLength: 1
+                description: GPS location
               OrderDateField:
                 type: string
                 minLength: 1
@@ -3738,6 +3743,7 @@ components:
                 type: string
                 minLength: 1
                 description: User's full name.
+                example: John Smith
             required:
               - ActionOrderField
               - AdditionalField
@@ -3754,45 +3760,57 @@ components:
           type: string
           minLength: 1
           description: Displays the result of the call.
+          example: success
       required:
         - ActivityField
         - ResultField
     GetPrepperTemplateRequest:
       description: '#### The request used to get templates.'
       type: object
-      x-examples: {}
+      x-examples:
+        Get Prepper Template Request Example:
+          value:
+            DocIDField: 12357
+            PrepperTemplateIDField: 12348
+            TokenField:
+              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenField: aaa111
+      title: Get Prepper Template Request
       properties:
         DocIDField:
           type: number
+          description: Document ID
+          example: 12357
         PrepperTemplateIDField:
           type: number
+          description: The template ID.
+          example: 12348
         TokenField:
           $ref: '#/components/schemas/TokenField'
       required:
         - DocIDField
         - PrepperTemplateIDField
         - TokenField
-      title: Get Prepper Template Request
     GetPrepperTemplateResponse:
       description: '#### The response received after requesting a document template.'
       type: object
       x-examples:
-        Example:
+        Get Prepper Template Response Example:
           value:
             PrepperTemplateValuesField:
-              - ColorField: string
-                DocFieldIDField: string
-                DocIDField: 0
-                FieldTypeField: string
+              - ColorField: green
+                DocFieldIDField: '123562'
+                DocIDField: 123566
+                FieldTypeField: 0
                 HeightField: 0
-                PageNumberField: 0
-                UserFullNameField: string
-                UserIDField: 0
+                PageNumberField: 2
+                UserFullNameField: John Doe
+                UserIDField: 111111
                 ValueField: string
-                WidthField: 0
-                XCoordinateField: 0
-                YCoordinateField: 0
-            ResultField: string
+                WidthField: 20
+                XCoordinateField: 60
+                YCoordinateField: 100
+            ResultField: success
       title: Get Prepper Template Response
       properties:
         PrepperTemplateValuesField:
@@ -3805,38 +3823,51 @@ components:
               ColorField:
                 type: string
                 minLength: 1
+                description: 'The color assigned to the fields of each user, each user has a predefined color.'
+                example: green
               DocFieldIDField:
                 type: string
                 minLength: 1
+                description: Document field ID
+                example: '123562'
               DocIDField:
                 type: number
+                example: 123566
+                description: Document ID
               FieldTypeField:
-                type: string
-                minLength: 1
+                $ref: '#/components/schemas/FieldType'
               HeightField:
                 type: number
-                description: Field height.
+                description: The height of the field.
               PageNumberField:
                 type: number
+                description: Field page number.
+                example: 2
               UserFullNameField:
                 type: string
                 minLength: 1
                 description: The user's full name.
+                example: John Doe
               UserIDField:
                 type: number
                 description: The user's ID.
+                example: 111111
               ValueField:
                 type: string
                 minLength: 1
+                description: If you would like to fill in a predefined value that will appear on the document - you can fill it in here - this can be editted by the end user.
               WidthField:
                 type: number
-                description: Field width.
+                description: The width of the field.
+                example: 20
               XCoordinateField:
                 type: number
-                description: The x coordinates of the fields.
+                description: The x-coordinates of the fields.
+                example: 60
               YCoordinateField:
                 type: number
-                description: The y coordinates of the fields
+                description: The y-coordinates of the fields
+                example: 100
             required:
               - ColorField
               - DocFieldIDField
@@ -3854,6 +3885,7 @@ components:
           type: string
           minLength: 1
           description: Displays the result of the call.
+          example: success
       required:
         - PrepperTemplateValuesField
         - ResultField
