@@ -2512,6 +2512,7 @@ components:
                     LinkedValueField:
                       type: string
                       minLength: 1
+                      description: Used to indicate to which value the current option is linked to in the linked field.
                     MaxField:
                       type: number
                       example: 5
@@ -2566,6 +2567,7 @@ components:
                 description: Field page number.
               SearchableField:
                 type: boolean
+                description: Used to indicate whether a dropdown field should contain a search option.
               UserEmailField:
                 type: string
                 minLength: 1
@@ -2839,7 +2841,7 @@ components:
         PortfolioDataField:
           type: string
           minLength: 1
-          description: Portfolio data field.
+          description: The portfolio document as a base64 encoded string.
         PortfolioIDField:
           type: number
           example: 11112
@@ -3325,6 +3327,7 @@ components:
         AuditDocumentField:
           type: string
           minLength: 1
+          description: A pdf of the audit as a base64 encoded string.
         ResultField:
           type: string
           minLength: 1
@@ -3460,6 +3463,7 @@ components:
             `0 = SendAll
             1 = SkipAll
             2 = SkipFirst`
+          example: 0
         ReturnURLField:
           type: string
           minLength: 1
@@ -3524,15 +3528,15 @@ components:
       description: '#### The response returned after requesting the document tag field ox position.'
       type: object
       x-examples:
-        Example:
+        Get Document Tag Field Box Position Response Example:
           value:
             DocumentTagFieldsBoxPositionField:
-              HeightField: string
+              HeightField: '20'
               PageNumberField: 0
-              WidthField: string
-              XCoordinateField: string
-              YCoordinateField: string
-            ResultField: string
+              WidthField: '35'
+              XCoordinateField: '140'
+              YCoordinateField: '160'
+            ResultField: success
       title: Get Document Tag Field Box Position Response
       properties:
         DocumentTagFieldsBoxPositionField:
@@ -3548,24 +3552,30 @@ components:
               type: string
               minLength: 1
               description: The height of the field.
+              example: '20'
             PageNumberField:
               type: number
               description: The page number where the field is.
             WidthField:
               type: string
               minLength: 1
+              description: The width of the field.
+              example: '35'
             XCoordinateField:
               type: string
               minLength: 1
               description: The x coordinates of the field.
+              example: '140'
             YCoordinateField:
               type: string
               minLength: 1
               description: The y coordinates of the field
+              example: '160'
         ResultField:
           type: string
           minLength: 1
           description: Displays the result of the call.
+          example: success
       required:
         - DocumentTagFieldsBoxPositionField
         - ResultField
@@ -3573,37 +3583,40 @@ components:
       description: '#### The request sent to get the document tag field position.'
       type: object
       x-examples:
-        Example:
+        Get Document Tag Field Position Request Example:
           value:
-            DocIDField: 0
+            DocIDField: 12373
             TagNameField: string
             TokenField:
               TokenExpiryField: '2019-08-24T14:15:22Z'
               TokenField: aaa111
+      title: Get Document Tag Field Position Request
       properties:
         DocIDField:
           type: number
+          example: 12373
+          description: Document ID
         TagNameField:
           type: string
           minLength: 1
+          description: The tag name of the field.
         TokenField:
           $ref: '#/components/schemas/TokenField'
       required:
         - DocIDField
         - TagNameField
         - TokenField
-      title: Get Document Tag Field Position Request
     GetDocumentTagFieldPositionResponse:
       description: '#### The response returned when requesting the document tag field position.'
       type: object
       x-examples:
-        Example:
+        Get Document Tag Field Position Response Example:
           value:
             DocumentTagFieldsPositionField:
-              - PageNumberField: 0
-                XCoordinateField: string
-                YCoordinateField: string
-            ResultField: string
+              - PageNumberField: 2
+                XCoordinateField: '160'
+                YCoordinateField: '100'
+            ResultField: success
       title: Get Document Tag Field Position Response
       properties:
         DocumentTagFieldsPositionField:
@@ -3616,14 +3629,17 @@ components:
               PageNumberField:
                 type: number
                 description: The page number where the field is.
+                example: 2
               XCoordinateField:
                 type: string
                 minLength: 1
                 description: The y coordinates of the field.
+                example: '160'
               YCoordinateField:
                 type: string
                 minLength: 1
                 description: The x coordinates of the field.
+                example: '100'
             required:
               - PageNumberField
               - XCoordinateField
@@ -3632,6 +3648,7 @@ components:
           type: string
           minLength: 1
           description: Displays the result of the call.
+          example: success
       required:
         - DocumentTagFieldsPositionField
         - ResultField
@@ -3639,22 +3656,23 @@ components:
       description: '#### The request sent to get the audit information from a document.'
       type: object
       x-examples:
-        Example:
+        Get Document Audit Request Example:
           value:
-            DocIDField: string
+            DocIDField: '12373'
             TokenField:
               TokenExpiryField: '2019-08-24T14:15:22Z'
               TokenField: aaa111
+      title: Get Document Audit Request
       properties:
         DocIDField:
           type: string
           minLength: 1
+          example: '12373'
         TokenField:
           $ref: '#/components/schemas/TokenField'
       required:
         - DocIDField
         - TokenField
-      title: Get Document Audit Request
     GetDocumentAuditResponse:
       description: '#### The response returned after requesting the audit information from a document.'
       type: object
@@ -4589,7 +4607,7 @@ components:
         Example:
           value:
             CeremonyIDField: 0
-            ResultField: string
+            ResultField: success
             SignedDocumentField: string
       title: Signing Ceremony V2 Response
       properties:
@@ -4599,6 +4617,7 @@ components:
           type: string
           minLength: 1
           description: Displays the result of the call.
+          example: success
         SignedDocumentField:
           type: string
           minLength: 1
@@ -4610,7 +4629,7 @@ components:
       description: '#### The request sent to extend the session time by extending the period when the token is valid.'
       type: object
       x-examples:
-        Example:
+        Token Extend Request Example:
           value:
             TokenField:
               TokenExpiryField: '2019-08-24T14:15:22Z'
@@ -4629,9 +4648,9 @@ components:
       description: '#### The response returned when requesting the extention of the period of which the toekn is valid.'
       type: object
       x-examples:
-        Example:
+        Token Extend Response Example:
           value:
-            ResultField: string
+            ResultField: success
             TokenField:
               TokenExpiryField: '2019-08-24T14:15:22Z'
               TokenField: aaa111
@@ -4641,6 +4660,7 @@ components:
           type: string
           minLength: 1
           description: Displays the result of the call.
+          example: success
         TokenField:
           $ref: '#/components/schemas/TokenField'
       required:
@@ -4650,7 +4670,7 @@ components:
       description: '#### This request gets sent when a session token needs to be validated.'
       type: object
       x-examples:
-        Example:
+        Token Validate Request Example:
           value:
             '0': string
       properties:
@@ -4664,9 +4684,9 @@ components:
       description: '#### This is the response returned when a session token is validated.'
       type: object
       x-examples:
-        Example:
+        Token Validate Response Example:
           value:
-            ResultField: string
+            ResultField: success
             TokenField:
               TokenExpiryField: '2019-08-24T14:15:22Z'
               TokenField: aaa111
@@ -4676,6 +4696,7 @@ components:
           type: string
           minLength: 1
           description: Displays the result of the call.
+          example: success
         TokenField:
           $ref: '#/components/schemas/TokenField'
       required:
@@ -4690,6 +4711,7 @@ components:
         DocIDField:
           type: string
           minLength: 1
+          description: Document ID
         LatitudeField:
           type: string
           minLength: 1
@@ -4707,6 +4729,7 @@ components:
         SignReasonField:
           type: string
           minLength: 1
+          description: Reason for signature.
         TimeZoneOffsetField:
           type: number
         TokenField:
@@ -4724,22 +4747,23 @@ components:
       description: '#### This is the response returned when a user gets a request to sign a document workflow.'
       type: object
       x-examples:
-        Example:
+        Workflow Sign Response Example:
           value:
-            ResultField: string
+            ResultField: success
       title: Workflow Sign Response
       properties:
         ResultField:
           type: string
           minLength: 1
           description: Displays the result of the call.
+          example: success
       required:
         - ResultField
     ProxyAllowedField:
       type: integer
       title: ProxyAllowedField
       description: |-
-        #### Determines whether or not the signer can nominate someone else to sign on their behalf.
+        #### Determines whether or not the signer can nominate someone else to signon their behalf.
 
         `0 = No
         1 = Yes`
