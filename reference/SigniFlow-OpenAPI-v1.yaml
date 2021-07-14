@@ -4064,40 +4064,53 @@ components:
       description: '#### The response from requesting a workflow skipping the first email.'
       type: object
       x-examples:
-        Example:
+        Initiate Flow No Initial Email Response Example:
           value:
-            DocIDField: 0
-            ResultField: string
+            DocIDField: 123473
+            ResultField: success
       title: Initiate Flow No Initial Email Response
       properties:
         DocIDField:
           type: number
           description: The document ID.
+          example: 123473
         ResultField:
           type: string
           minLength: 1
           description: Displays the result of the call.
+          example: success
       required:
         - DocIDField
         - ResultField
     LinkToPortfolioRequest:
       description: '#### This request is used to get the url link to a portfolio.'
       type: object
-      x-examples: {}
+      x-examples:
+        Link To Portfolio Request Example:
+          value:
+            DocIDField: '123473'
+            DocumentNameField: application_01
+            PortfolioIDField: '1111111'
+            TokenField:
+              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenField: aaa111
       title: Link To Portfolio Request
       properties:
         DocIDField:
           type: string
           minLength: 1
           description: The document ID.
+          example: '123473'
         DocumentNameField:
           type: string
           minLength: 1
           description: Document name.
+          example: application_01
         PortfolioIDField:
           type: string
           minLength: 1
           description: The portfolio ID.
+          example: '1111111'
         TokenField:
           $ref: '#/components/schemas/TokenField'
       required:
@@ -4109,41 +4122,47 @@ components:
       description: '#### This is the response returned after requesting a url link to a portfolio.'
       type: object
       x-examples:
-        Example:
+        Link To Portfolio Response Example:
           value:
-            PortfolioIDField: string
-            ResultField: string
+            PortfolioIDField: '111111'
+            ResultField: success
       title: Link To Portfolio Response
       properties:
         PortfolioIDField:
           type: string
           minLength: 1
           description: The portfolio ID.
+          example: '111111'
         ResultField:
           type: string
           minLength: 1
           description: Displays the result of the call.
+          example: success
       required:
         - PortfolioIDField
         - ResultField
     LogoutRequest:
       description: '#### The request sent when a user logs out.'
       type: object
+      x-examples:
+        Logout Request Example:
+          value:
+            TokenField:
+              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenField: aaa111
+      title: Logout Request
       properties:
         TokenField:
-          type: string
-          minLength: 1
+          $ref: '#/components/schemas/TokenField'
       required:
         - TokenField
-      x-examples: {}
-      title: Logout Request
     LogoutResponse:
       description: '#### The response returned when a user logs out.'
       type: object
       x-examples:
-        Example:
+        Logout Response Example:
           value:
-            ResultField: string
+            ResultField: success
             TokenField:
               TokenExpiryField: '2019-08-24T14:15:22Z'
               TokenField: aaa111
@@ -4153,6 +4172,7 @@ components:
           type: string
           minLength: 1
           description: Displays the result of the call.
+          example: success
         TokenField:
           $ref: '#/components/schemas/TokenField'
       required:
@@ -4193,9 +4213,11 @@ components:
         DocField:
           type: string
           minLength: 1
+          description: Document field
         DocNameField:
           type: string
           minLength: 1
+          description: Document name
         LoginPasswordField:
           type: string
           minLength: 1
@@ -4216,45 +4238,62 @@ components:
             properties:
               SignatureHField:
                 type: number
+                description: Signature header field
               SignatureImageField:
                 type: string
                 minLength: 1
+                description: Signature image
               SignatureImageIncludeBorderField:
                 type: boolean
+                description: Signature image with borders
               SignatureImageIncludeReasonField:
                 type: boolean
+                description: Signature image with a reason.
               SignatureImageIncludeSignedByField:
                 type: boolean
+                description: Signature image with the signer included.
               SignatureImageIncludeSignedDateField:
                 type: boolean
+                description: Signature image with signed by date.
               SignatureImageTypeField:
                 type: number
+                description: Signature image type.
               SignaturePageField:
                 type: number
+                description: The page where the signature is.
               SignatureWField:
                 type: number
+                description: Signature field width.
               SignatureXField:
                 type: number
+                description: Signature field x-coordinates.
               SignatureYField:
                 type: number
+                description: Signature field y-coordinates.
               SignerEmailField:
                 type: string
                 minLength: 1
+                description: Signer email address
               SignerFullNameField:
                 type: string
                 minLength: 1
+                description: Signer full name.
               SignerIndentificationNumberField:
                 type: string
                 minLength: 1
+                description: Signer ID number.
               SignerLocationField:
                 type: string
                 minLength: 1
+                description: Signer GPS location.
               SignerMobileNumberField:
                 type: string
                 minLength: 1
+                description: SIgner mobile number
               SignerReasonField:
                 type: string
                 minLength: 1
+                description: Reason for signature of the signer.
               SignerTrustOriginField:
                 type: string
                 minLength: 1
@@ -4294,16 +4333,18 @@ components:
         Example:
           value:
             CeremonyIDField: 0
-            ResultField: string
+            ResultField: success
             SignedDocumentField: string
       title: Multiple Signers Signing Ceremony Response
       properties:
         CeremonyIDField:
           type: number
+          description: Signing ceremony ID
         ResultField:
           type: string
           minLength: 1
           description: Displays the result of the call.
+          example: success
         SignedDocumentField:
           type: string
           minLength: 1
