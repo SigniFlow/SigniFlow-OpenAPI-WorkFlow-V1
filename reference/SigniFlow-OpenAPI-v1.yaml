@@ -3001,7 +3001,7 @@ components:
           $ref: '#/components/schemas/Priority'
         SLAField:
           type: number
-          description: SLA
+          description: 'This field has been deprecated, the default value is 0.'
           example: 0
           deprecated: true
           minimum: 0
@@ -4894,10 +4894,12 @@ components:
           type: string
           minLength: 1
           format: password
+          description: User password.
         LoginUserNameField:
           type: string
           minLength: 1
           example: email@domain.com
+          description: User's username.
         LongitudeField:
           type: string
           minLength: 1
@@ -4907,6 +4909,7 @@ components:
           description: Reason for signature.
         TimeZoneOffsetField:
           type: number
+          description: The user's timezone offste.
         TokenField:
           $ref: '#/components/schemas/TokenField'
       required:
@@ -4957,6 +4960,7 @@ components:
       minimum: 0
       maximum: 1
       default: 0
+      x-examples: {}
     FieldType:
       type: integer
       title: FieldType
