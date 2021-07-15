@@ -2956,6 +2956,7 @@ components:
           minLength: 1
           example: 02/02/2021
           description: Document due date.
+          nullable: true
         ExtensionField:
           $ref: '#/components/schemas/DocExtension'
         FlattenDocumentField:
@@ -2989,19 +2990,22 @@ components:
               type: number
               example: 11112
               description: Portfolio ID.
+              nullable: true
             PortfolioNameField:
               type: string
               minLength: 1
               example: Portfolio 1
               description: Portfolio name.
+              nullable: true
         PriorityField:
-          type: number
-          description: Level of priority.
-          example: Low
+          $ref: '#/components/schemas/Priority'
         SLAField:
           type: number
           description: SLA
-          example: 2147483647
+          example: 0
+          deprecated: true
+          minimum: 0
+          maximum: 0
         SendFirstEmailField:
           type: boolean
           description: Confirm first user email notification will or will not be sent.
@@ -3019,11 +3023,9 @@ components:
             type: object
             properties:
               ActionField:
-                description: Refers to the order of signatures from the users.
-                type: number
+                $ref: '#/components/schemas/ActionField'
               AllowProxyField:
-                description: Allow proxy confirmation field.
-                type: number
+                $ref: '#/components/schemas/ProxyAllowedField'
               AutoSignField:
                 type: boolean
                 description: |
@@ -3039,6 +3041,7 @@ components:
               GroupStepField:
                 type: object
                 description: Steps of the group signers in the workflow.
+                nullable: true
                 properties:
                   GroupMembersField:
                     type: array
@@ -3144,9 +3147,7 @@ components:
                   type: object
                   properties:
                     FieldTypeField:
-                      type: number
-                      example: 7
-                      description: Field type.
+                      $ref: '#/components/schemas/FieldType'
                     FontFamilyField:
                       type: string
                       minLength: 1
