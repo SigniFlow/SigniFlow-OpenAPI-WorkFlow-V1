@@ -3707,8 +3707,8 @@ components:
                 LocationField: string
                 OrderDateField: string
                 PageField: '2'
-                UserFullNameField: string
-            ResultField: string
+                UserFullNameField: John Doe
+            ResultField: success
       title: Get Document Audit Response
       properties:
         ActivityField:
@@ -3765,7 +3765,7 @@ components:
                 type: string
                 minLength: 1
                 description: User's full name.
-                example: John Smith
+                example: John Doe
             required:
               - ActionOrderField
               - AdditionalField
