@@ -4512,173 +4512,6 @@ components:
     SigningCeremonyV2Request:
       description: '#### The request sent to start the signing process of a document.'
       type: object
-      properties:
-        CheckboxFieldsListField:
-          type: array
-          uniqueItems: true
-          minItems: 1
-          items:
-            required:
-              - CheckboxHField
-              - CheckboxPageField
-              - CheckboxWField
-              - CheckboxXField
-              - CheckboxYField
-              - IsCheckedField
-            properties:
-              CheckboxHField:
-                type: number
-              CheckboxPageField:
-                type: number
-              CheckboxWField:
-                type: number
-              CheckboxXField:
-                type: number
-              CheckboxYField:
-                type: number
-              IsCheckedField:
-                type: boolean
-        DocField:
-          type: string
-          minLength: 1
-        DocNameField:
-          type: string
-          minLength: 1
-        InitialFieldsListField:
-          type: array
-          uniqueItems: true
-          minItems: 1
-          items:
-            required:
-              - InitialHField
-              - InitialImageField
-              - InitialImageTypeField
-              - InitialPageField
-              - InitialWField
-              - InitialXField
-              - InitialYField
-            properties:
-              InitialHField:
-                type: number
-              InitialImageField:
-                type: string
-                minLength: 1
-              InitialImageTypeField:
-                type: number
-              InitialPageField:
-                type: number
-              InitialWField:
-                type: number
-              InitialXField:
-                type: number
-              InitialYField:
-                type: number
-        LoginPasswordField:
-          type: string
-          minLength: 1
-        LoginUserNameField:
-          type: string
-          minLength: 1
-        SignatureHField:
-          type: number
-        SignatureImageField:
-          type: string
-          minLength: 1
-        SignatureImageIncludeBorderField:
-          type: boolean
-        SignatureImageIncludeReasonField:
-          type: boolean
-        SignatureImageIncludeSignedByField:
-          type: boolean
-        SignatureImageIncludeSignedDateField:
-          type: boolean
-        SignatureImageTypeField:
-          type: number
-        SignaturePageField:
-          type: number
-        SignatureWField:
-          type: number
-        SignatureXField:
-          type: number
-        SignatureYField:
-          type: number
-        SignerEmailField:
-          type: string
-          minLength: 1
-        SignerFullNameField:
-          type: string
-          minLength: 1
-        SignerIdentificationNumberField:
-          type: string
-          minLength: 1
-        SignerLocationField:
-          type: string
-          minLength: 1
-        SignerMobileNumberField:
-          type: string
-          minLength: 1
-        SignerReasonField:
-          type: string
-          minLength: 1
-        SignerTrustOriginField:
-          type: string
-          minLength: 1
-        SignerTrustReferenceField:
-          type: string
-          minLength: 1
-        TextFieldsListField:
-          type: array
-          uniqueItems: true
-          minItems: 1
-          items:
-            required:
-              - TextFieldHField
-              - TextFieldPageField
-              - TextFieldValueField
-              - TextFieldWField
-              - TextFieldXField
-              - TextFieldYField
-            properties:
-              TextFieldHField:
-                type: number
-              TextFieldPageField:
-                type: number
-              TextFieldValueField:
-                type: string
-                minLength: 1
-              TextFieldWField:
-                type: number
-              TextFieldXField:
-                type: number
-              TextFieldYField:
-                type: number
-      required:
-        - CheckboxFieldsListField
-        - DocField
-        - DocNameField
-        - InitialFieldsListField
-        - LoginPasswordField
-        - LoginUserNameField
-        - SignatureHField
-        - SignatureImageField
-        - SignatureImageIncludeBorderField
-        - SignatureImageIncludeReasonField
-        - SignatureImageIncludeSignedByField
-        - SignatureImageIncludeSignedDateField
-        - SignatureImageTypeField
-        - SignaturePageField
-        - SignatureWField
-        - SignatureXField
-        - SignatureYField
-        - SignerEmailField
-        - SignerFullNameField
-        - SignerIdentificationNumberField
-        - SignerLocationField
-        - SignerMobileNumberField
-        - SignerReasonField
-        - SignerTrustOriginField
-        - SignerTrustReferenceField
-        - TextFieldsListField
       x-examples:
         Example:
           value:
@@ -4728,6 +4561,220 @@ components:
                 TextFieldXField: 0
                 TextFieldYField: 0
       title: Signing Ceremony V2 Request
+      properties:
+        CheckboxFieldsListField:
+          type: array
+          uniqueItems: true
+          minItems: 1
+          description: The list of checkbox fields.
+          items:
+            type: object
+            properties:
+              CheckboxHField:
+                type: number
+                description: Checkbox field height.
+              CheckboxPageField:
+                type: number
+                description: The page on which the Checkbox field is located.
+              CheckboxWField:
+                type: number
+                description: Checkbox field width.
+              CheckboxXField:
+                type: number
+                description: Checkbox field x-coordinates.
+              CheckboxYField:
+                type: number
+                description: Checkbox field y-coordinates.
+              IsCheckedField:
+                type: boolean
+                description: Is the checkbos field checked.
+            required:
+              - CheckboxHField
+              - CheckboxPageField
+              - CheckboxWField
+              - CheckboxXField
+              - CheckboxYField
+              - IsCheckedField
+        DocField:
+          type: string
+          minLength: 1
+        DocNameField:
+          type: string
+          minLength: 1
+          description: Document name.
+        InitialFieldsListField:
+          type: array
+          uniqueItems: true
+          minItems: 1
+          description: The list of initial fields.
+          items:
+            type: object
+            properties:
+              InitialHField:
+                type: number
+                description: Initial field height.
+              InitialImageField:
+                type: string
+                minLength: 1
+                description: Initial field image.
+              InitialImageTypeField:
+                type: number
+                description: Initial field image type.
+              InitialPageField:
+                type: number
+                description: The page on which the initial field is located.
+              InitialWField:
+                type: number
+                description: Initial field width.
+              InitialXField:
+                type: number
+                description: Initial field x-coordinates.
+              InitialYField:
+                type: number
+                description: Initial field y-coordinates.
+            required:
+              - InitialHField
+              - InitialImageField
+              - InitialImageTypeField
+              - InitialPageField
+              - InitialWField
+              - InitialXField
+              - InitialYField
+        LoginPasswordField:
+          type: string
+          minLength: 1
+          description: User password.
+        LoginUserNameField:
+          type: string
+          minLength: 1
+          description: User's username.
+        SignatureHField:
+          type: number
+          description: Signature field height.
+        SignatureImageField:
+          type: string
+          minLength: 1
+          description: Signature field image.
+        SignatureImageIncludeBorderField:
+          type: boolean
+          description: Include signature border.
+        SignatureImageIncludeReasonField:
+          type: boolean
+          description: Include signature reason.
+        SignatureImageIncludeSignedByField:
+          type: boolean
+          description: Include signature signed by information.
+        SignatureImageIncludeSignedDateField:
+          type: boolean
+          description: Include signature date.
+        SignatureImageTypeField:
+          type: number
+          description: Signature image type.
+        SignaturePageField:
+          type: number
+          description: The page on which the signature is on.
+        SignatureWField:
+          type: number
+          description: Signature field width.
+        SignatureXField:
+          type: number
+          description: Signature field x-coordinates.
+        SignatureYField:
+          type: number
+          description: Signature field y-coordinates.
+        SignerEmailField:
+          type: string
+          minLength: 1
+          description: The signer's email.
+        SignerFullNameField:
+          type: string
+          minLength: 1
+          description: The signer's full name.
+        SignerIdentificationNumberField:
+          type: string
+          minLength: 1
+          description: The signer's ID number.
+        SignerLocationField:
+          type: string
+          minLength: 1
+          description: The signer's GPS location.
+        SignerMobileNumberField:
+          type: string
+          minLength: 1
+          description: The signer's mobile number.
+        SignerReasonField:
+          type: string
+          minLength: 1
+          description: The signer's reason for signing.
+        SignerTrustOriginField:
+          type: string
+          minLength: 1
+          description: This field is used to define the source of the Audit keep by the user calling the Signing Ceremony.
+        SignerTrustReferenceField:
+          type: string
+          minLength: 1
+          description: A unique identifier that links back to an audit stored by the user calling the Signing Ceremony.
+        TextFieldsListField:
+          type: array
+          uniqueItems: true
+          minItems: 1
+          description: The list of text fields.
+          items:
+            type: object
+            properties:
+              TextFieldHField:
+                type: number
+                description: Text field height.
+              TextFieldPageField:
+                type: number
+                description: The page on which the text field is.
+              TextFieldValueField:
+                type: string
+                minLength: 1
+                description: The value of the text field.
+              TextFieldWField:
+                type: number
+                description: Text field width.
+              TextFieldXField:
+                type: number
+                description: Text field x-coordinates.
+              TextFieldYField:
+                type: number
+                description: Text field y-coordinates.
+            required:
+              - TextFieldHField
+              - TextFieldPageField
+              - TextFieldValueField
+              - TextFieldWField
+              - TextFieldXField
+              - TextFieldYField
+      required:
+        - CheckboxFieldsListField
+        - DocField
+        - DocNameField
+        - InitialFieldsListField
+        - LoginPasswordField
+        - LoginUserNameField
+        - SignatureHField
+        - SignatureImageField
+        - SignatureImageIncludeBorderField
+        - SignatureImageIncludeReasonField
+        - SignatureImageIncludeSignedByField
+        - SignatureImageIncludeSignedDateField
+        - SignatureImageTypeField
+        - SignaturePageField
+        - SignatureWField
+        - SignatureXField
+        - SignatureYField
+        - SignerEmailField
+        - SignerFullNameField
+        - SignerIdentificationNumberField
+        - SignerLocationField
+        - SignerMobileNumberField
+        - SignerReasonField
+        - SignerTrustOriginField
+        - SignerTrustReferenceField
+        - TextFieldsListField
     SigningCeremonyV2Response:
       description: '#### The response returned when the signing process is requested.'
       type: object
