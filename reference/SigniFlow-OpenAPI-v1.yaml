@@ -3533,7 +3533,7 @@ components:
         TagNameField:
           type: string
           minLength: 1
-          description: Document field tag name
+          description: The white text on the document that the API needs to identify.
         TokenField:
           $ref: '#/components/schemas/TokenField'
       required:
@@ -3615,7 +3615,7 @@ components:
         TagNameField:
           type: string
           minLength: 1
-          description: The tag name of the field.
+          description: The white text on the document that the API needs to identify.
         TokenField:
           $ref: '#/components/schemas/TokenField'
       required:
