@@ -3706,7 +3706,7 @@ components:
                 EventStatusField: string
                 LocationField: string
                 OrderDateField: string
-                PageField: string
+                PageField: '2'
                 UserFullNameField: string
             ResultField: string
       title: Get Document Audit Response
@@ -3760,6 +3760,7 @@ components:
                 type: string
                 minLength: 1
                 description: What page of the document an event took place on - this is not always populated as some events don't take place on the document.
+                example: '2'
               UserFullNameField:
                 type: string
                 minLength: 1
@@ -3791,7 +3792,7 @@ components:
       x-examples:
         Get Prepper Template Request Example:
           value:
-            DocIDField: 12357
+            DocIDField: 2147483647
             PrepperTemplateIDField: 12348
             TokenField:
               TokenExpiryField: '2019-08-24T14:15:22Z'
@@ -3801,7 +3802,7 @@ components:
         DocIDField:
           type: number
           description: Document ID
-          example: 12357
+          example: 2147483647
         PrepperTemplateIDField:
           type: number
           description: The template ID.
@@ -3821,7 +3822,7 @@ components:
             PrepperTemplateValuesField:
               - ColorField: green
                 DocFieldIDField: '123562'
-                DocIDField: 123566
+                DocIDField: 2147483647
                 FieldTypeField: 0
                 HeightField: 15
                 PageNumberField: 2
@@ -3853,7 +3854,7 @@ components:
                 example: '123562'
               DocIDField:
                 type: number
-                example: 123566
+                example: 2147483647
                 description: Document ID
               FieldTypeField:
                 $ref: '#/components/schemas/FieldType'
@@ -3987,7 +3988,7 @@ components:
           type: string
           minLength: 1
           description: Document ID
-          example: '123473'
+          example: '2147483647'
         TokenField:
           $ref: '#/components/schemas/TokenField'
       required:
@@ -3999,14 +4000,14 @@ components:
       x-examples:
         Initiate Flow Response Example:
           value:
-            DocIDField: 123473
+            DocIDField: 2147483647
             ResultField: success
       title: Initiate Flow Response
       properties:
         DocIDField:
           type: number
           description: Document ID.
-          example: 123473
+          example: 2147483647
         ResultField:
           type: string
           minLength: 1
@@ -4021,7 +4022,7 @@ components:
       x-examples:
         Initiate Flow No Email Request Example:
           value:
-            DocIDField: '123473'
+            DocIDField: '2147483647'
             TokenField:
               TokenExpiryField: '2019-08-24T14:15:22Z'
               TokenField: aaa111
@@ -4031,7 +4032,7 @@ components:
           type: string
           minLength: 1
           description: Document ID.
-          example: '123473'
+          example: '2147483647'
         TokenField:
           $ref: '#/components/schemas/TokenField'
       required:
@@ -4043,14 +4044,14 @@ components:
       x-examples:
         Initiate Flow No Email Response Example:
           value:
-            DocIDField: 123473
+            DocIDField: 2147483647
             ResultField: success
       title: Initiate Flow No Email Response
       properties:
         DocIDField:
           type: number
           description: Document ID.
-          example: 123473
+          example: 2147483647
         ResultField:
           type: string
           minLength: 1
@@ -4065,7 +4066,7 @@ components:
       x-examples:
         Initiate Flow No Initial Email Request Example:
           value:
-            DocIDField: '123473'
+            DocIDField: '2147483647'
             TokenField:
               TokenExpiryField: '2019-08-24T14:15:22Z'
               TokenField: aaa111
@@ -4075,7 +4076,7 @@ components:
           type: string
           minLength: 1
           description: Document ID.
-          example: '123473'
+          example: '2147483647'
         TokenField:
           $ref: '#/components/schemas/TokenField'
       required:
@@ -4087,14 +4088,14 @@ components:
       x-examples:
         Initiate Flow No Initial Email Response Example:
           value:
-            DocIDField: 123473
+            DocIDField: 2147483647
             ResultField: success
       title: Initiate Flow No Initial Email Response
       properties:
         DocIDField:
           type: number
           description: Document ID.
-          example: 123473
+          example: 2147483647
         ResultField:
           type: string
           minLength: 1
@@ -4109,7 +4110,7 @@ components:
       x-examples:
         Link To Portfolio Request Example:
           value:
-            DocIDField: '123473'
+            DocIDField: '2147483647'
             DocumentNameField: application_01
             PortfolioIDField: '1111111'
             TokenField:
@@ -4121,7 +4122,7 @@ components:
           type: string
           minLength: 1
           description: Document ID.
-          example: '123473'
+          example: '2147483647'
         DocumentNameField:
           type: string
           minLength: 1
@@ -4355,7 +4356,7 @@ components:
       x-examples:
         Example:
           value:
-            CeremonyIDField: 0
+            CeremonyIDField: 2147483647
             ResultField: success
             SignedDocumentField: string
       title: Multiple Signers Signing Ceremony Response
@@ -4363,6 +4364,7 @@ components:
         CeremonyIDField:
           type: number
           description: Signing ceremony ID
+          example: 2147483647
         ResultField:
           type: string
           minLength: 1
@@ -4378,14 +4380,21 @@ components:
     SetDocumentOrderRequest:
       description: '#### The request sent when the document order for signing is confirmed.'
       type: object
-      x-examples: {}
+      x-examples:
+        Set Document Order Request Example:
+          value:
+            DocIDField: '2147483647'
+            DocumentOrderField: string
+            TokenField:
+              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenField: aaa111
       title: Set Document Order Request
       properties:
         DocIDField:
           type: string
           minLength: 1
           description: Document ID
-          example: '123473'
+          example: '2147483647'
         DocumentOrderField:
           type: string
           minLength: 1
@@ -4796,9 +4805,9 @@ components:
       description: '#### The response returned when the signing process is requested.'
       type: object
       x-examples:
-        Example:
+        Signing Ceremony V2 Response Example:
           value:
-            CeremonyIDField: 0
+            CeremonyIDField: 2147483647
             ResultField: success
             SignedDocumentField: string
       title: Signing Ceremony V2 Response
@@ -4806,7 +4815,7 @@ components:
         CeremonyIDField:
           type: number
           description: The unique identifier for the current SigningCeremony.
-          example: 1212121
+          example: 2147483647
         ResultField:
           type: string
           minLength: 1
@@ -4900,13 +4909,26 @@ components:
     WorkflowSignRequest:
       description: '#### This request is sent when a document workflow needs to be signed.'
       type: object
-      x-examples: {}
+      x-examples:
+        Workflow Sign Request Example:
+          value:
+            DocIDField: '2147483647'
+            LatitudeField: string
+            LoginPasswordField: pa$$word
+            LoginUserNameField: email@domain.com
+            LongitudeField: string
+            SignReasonField: string
+            TimeZoneOffsetField: 0
+            TokenField:
+              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenField: aaa111
       title: Workflow Sign Request
       properties:
         DocIDField:
           type: string
           minLength: 1
           description: Document ID
+          example: '2147483647'
         LatitudeField:
           type: string
           minLength: 1
