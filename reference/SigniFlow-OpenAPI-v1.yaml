@@ -2865,7 +2865,7 @@ components:
       description: '#### Request a fullworkflow of a document.'
       type: object
       x-examples:
-        FullWorkflow Request Example:
+        Example:
           value:
             AdditionalDataField: string
             AutoRemindField: 0
@@ -2883,7 +2883,7 @@ components:
               LinkToPortfolioField: true
               PortfolioIDField: 11112
               PortfolioNameField: Portfolio 1
-            PriorityField: Low
+            PriorityField: 0
             SLAField: 0
             SendFirstEmailField: true
             SendWorkflowEmailsField: true
@@ -2897,10 +2897,10 @@ components:
                 EmailAddressField: email@domain.com
                 GroupStepField:
                   GroupMembersField:
-                    - LanguageCodeField: en
-                      UserEmailField: email@domain.com
-                      UserFullNameField: John Doe
-                      UserMobileNumberField: 000 000 0000
+                    - LanguageCodeField: string
+                      UserEmailField: string
+                      UserFullNameField: string
+                      UserMobileNumberField: string
                   GroupNameField: Managers
                   RequiredNumberOfSignaturesField: 3
                 LanguageCodeField: en
@@ -2915,7 +2915,7 @@ components:
                 UserFullNameField: John Smith
                 UserLastNameField: Smith
                 WorkflowUserFieldsField:
-                  - FieldTypeField: 7
+                  - FieldTypeField: 0
                     FontFamilyField: Arial
                     FontSizeField: 15
                     GroupUserNumberField: 5
@@ -2925,9 +2925,9 @@ components:
                     TagNameField: string
                     ValueField: string
                     WidthField: '25'
-                    XCoordinateField: '60'
+                    XCoordinateField: '160'
                     XOffsetField: 15
-                    YCoordinateField: '150'
+                    YCoordinateField: '60'
                     YOffsetField: 20
       title: FullWorkflow Request
       properties:
@@ -3200,9 +3200,8 @@ components:
                     XCoordinateField:
                       type: string
                       minLength: 1
-                      example: '60'
+                      example: '160'
                       description: The fields x-coordinates.
-                      nullable: true
                     XOffsetField:
                       type: number
                       example: 15
@@ -3211,9 +3210,8 @@ components:
                     YCoordinateField:
                       type: string
                       minLength: 1
-                      example: '150'
+                      example: '60'
                       description: The fields y-coordinates.
-                      nullable: true
                     YOffsetField:
                       type: number
                       example: 20
