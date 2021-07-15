@@ -3286,12 +3286,6 @@ components:
           minLength: 1
           example: Completed
           description: Document status that gets returned.
-      required:
-        - DocField
-        - DocIDField
-        - PortfolioIDField
-        - ResultField
-        - StatusField
     GetAuditDocumentRequest:
       description: '#### A request sent to get an audit document.'
       type: object
