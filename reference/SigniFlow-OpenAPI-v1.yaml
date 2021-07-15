@@ -4369,7 +4369,7 @@ components:
         DocumentOrderField:
           type: string
           minLength: 1
-          description: The order by which the signers will sign.
+          description: 'Specifies which order the documents appear in, in a portfolio.'
         TokenField:
           $ref: '#/components/schemas/TokenField'
       required:
@@ -4785,6 +4785,8 @@ components:
       properties:
         CeremonyIDField:
           type: number
+          description: The unique identifier for the current SigningCeremony.
+          example: 1212121
         ResultField:
           type: string
           minLength: 1
@@ -4793,6 +4795,7 @@ components:
         SignedDocumentField:
           type: string
           minLength: 1
+          description: The base64 string for the Signed pdf document.
       required:
         - CeremonyIDField
         - ResultField
@@ -4887,6 +4890,7 @@ components:
         LatitudeField:
           type: string
           minLength: 1
+          description: The current GPS lattitude location where the signing is taking place from.  Needs to be paired with the longitude Field.
         LoginPasswordField:
           type: string
           minLength: 1
@@ -4900,6 +4904,7 @@ components:
         LongitudeField:
           type: string
           minLength: 1
+          description: The current GPS longitude location where the signing is taking place from.  Needs to be paired with the lattitude field.
         SignReasonField:
           type: string
           minLength: 1
