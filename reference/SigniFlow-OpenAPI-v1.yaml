@@ -3725,6 +3725,7 @@ components:
               AdditionalField:
                 type: string
                 minLength: 1
+                description: Returns the additional information about the audit (i.e. IP Address and browser that was used/ Reason for rejection or expiration)
               DocIDField:
                 type: string
                 minLength: 1
