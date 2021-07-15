@@ -3633,12 +3633,12 @@ components:
               XCoordinateField:
                 type: string
                 minLength: 1
-                description: The y coordinates of the field.
+                description: The x-coordinates of the field.
                 example: '160'
               YCoordinateField:
                 type: string
                 minLength: 1
-                description: The x coordinates of the field.
+                description: The y-coordinates of the field.
                 example: '100'
             required:
               - PageNumberField
@@ -4075,7 +4075,7 @@ components:
       properties:
         DocIDField:
           type: number
-          description: The document ID.
+          description: Document ID.
           example: 123473
         ResultField:
           type: string
@@ -4102,7 +4102,7 @@ components:
         DocIDField:
           type: string
           minLength: 1
-          description: The document ID.
+          description: Document ID.
           example: '123473'
         DocumentNameField:
           type: string
@@ -4360,118 +4360,132 @@ components:
     SetDocumentOrderRequest:
       description: '#### The request sent when the document order for signing is confirmed.'
       type: object
-      x-examples:
-        Example:
-          value:
-            DocIDField: string
-            DocumentOrderField: string
-            TokenField:
-              TokenExpiryField: '2019-08-24T14:15:22Z'
-              TokenField: aaa111
+      x-examples: {}
+      title: Set Document Order Request
       properties:
         DocIDField:
           type: string
           minLength: 1
+          description: Document ID
+          example: '123473'
         DocumentOrderField:
           type: string
           minLength: 1
+          description: The order by which the signers will sign.
         TokenField:
           $ref: '#/components/schemas/TokenField'
       required:
         - DocIDField
         - DocumentOrderField
         - TokenField
-      title: Set Document Order Request
     SetDocumentOrderResponse:
       description: '#### The response returned when the document order for signing is set.'
       type: object
       x-examples:
-        Example:
+        Set Document Order Response Example:
           value:
-            ResultField: string
+            ResultField: success
       title: Set Document Order Response
       properties:
         ResultField:
           type: string
           minLength: 1
           description: Displays the result of the call.
+          example: success
       required:
         - ResultField
     SharePortfolioRequest:
       description: '#### The request sent when a user wants to share a portfolio with someone.'
       type: object
       x-examples:
-        Example:
+        Share Portfolio Request Example:
           value:
-            AccessLevelField: 0
-            PortfolioIDField: string
-            ShareOptionField: 0
+            AccessLevelField: Viewer
+            PortfolioIDField: '11111111'
+            ShareOptionField: Business
             TokenField:
               TokenExpiryField: '2019-08-24T14:15:22Z'
               TokenField: aaa111
-            UniqueIDField: string
+            UniqueIDField: '12121212'
+      title: Share Portfolio Request
       properties:
         AccessLevelField:
           type: number
+          example: Viewer
+          description: User's level of access.
         PortfolioIDField:
           type: string
           minLength: 1
+          description: Portfolio ID
+          example: '11111111'
         ShareOptionField:
           type: number
+          example: Business
+          description: Who to share the portfolio with.
         TokenField:
           $ref: '#/components/schemas/TokenField'
         UniqueIDField:
           type: string
           minLength: 1
+          description: Portfolio unique ID
+          example: '12121212'
       required:
         - AccessLevelField
         - PortfolioIDField
         - ShareOptionField
         - TokenField
         - UniqueIDField
-      title: Share Portfolio Request
     SharePortfolioResponse:
       description: '#### The response returned when a user wants to share a portfolio.'
       type: object
       x-examples:
-        Example:
+        Share Portfolio Response Example:
           value:
-            ResultField: string
+            ResultField: success
       title: Share Portfolio Response
       properties:
         ResultField:
           type: string
           minLength: 1
           description: Displays the result of the call.
+          example: success
       required:
         - ResultField
     SharePortfolio_No_EmailRequest:
       description: '#### The request sent when a user wants to share a portfolio but does not want an email to be sent.'
       type: object
       x-examples:
-        Example:
+        Share Portfolio No Email Request Example:
           value:
-            AccessLevelField: 0
-            PortfolioIDField: string
-            ShareOptionField: 0
+            AccessLevelField: Viewer
+            PortfolioIDField: '111111'
+            ShareOptionField: Business
             TokenField:
               TokenExpiryField: '2019-08-24T14:15:22Z'
               TokenField: aaa111
-            UniqueIDField: string
+            UniqueIDField: '1212121'
       title: Share Portfolio No Email Request
       properties:
         AccessLevelField:
           type: number
+          example: Viewer
+          description: User's level of access.
         PortfolioIDField:
           type: string
           minLength: 1
+          example: '111111'
+          description: Portfolio ID
         ShareOptionField:
           type: number
+          example: Business
+          description: Who to share the portfolio with.
         TokenField:
           $ref: '#/components/schemas/TokenField'
         UniqueIDField:
           type: string
           minLength: 1
+          example: '1212121'
+          description: Portfolio unique ID.
       required:
         - AccessLevelField
         - PortfolioIDField
@@ -4482,15 +4496,16 @@ components:
       description: '#### The response returned when a user wants to share a portfolio without sending out an email.'
       type: object
       x-examples:
-        Example:
+        Share Portfolio No Email Response Example:
           value:
-            ResultField: string
+            ResultField: success
       title: Share Portfolio No Email Response
       properties:
         ResultField:
           type: string
           minLength: 1
           description: Displays the result of the call.
+          example: success
       required:
         - ResultField
     SigningCeremonyV2Request:
