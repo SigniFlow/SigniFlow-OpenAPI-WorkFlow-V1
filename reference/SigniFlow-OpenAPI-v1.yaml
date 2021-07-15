@@ -4297,9 +4297,11 @@ components:
               SignerTrustOriginField:
                 type: string
                 minLength: 1
+                description: This field is used to define the source of the Audit keep by the user calling the Signing Ceremony.
               SignerTrustReferenceField:
                 type: string
                 minLength: 1
+                description: A unique identifier that links back to an audit stored by the user calling the Signing Ceremony.
             required:
               - SignatureHField
               - SignatureImageField
