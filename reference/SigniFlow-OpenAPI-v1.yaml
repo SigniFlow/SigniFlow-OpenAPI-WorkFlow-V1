@@ -2996,6 +2996,7 @@ components:
               minLength: 1
               example: Portfolio 1
               description: Portfolio name.
+              nullable: true
         PriorityField:
           $ref: '#/components/schemas/Priority'
         SLAField:
