@@ -2897,10 +2897,10 @@ components:
                 EmailAddressField: email@domain.com
                 GroupStepField:
                   GroupMembersField:
-                    - LanguageCodeField: string
-                      UserEmailField: string
-                      UserFullNameField: string
-                      UserMobileNumberField: string
+                    - LanguageCodeField: en
+                      UserEmailField: email@domain.com
+                      UserFullNameField: John Doe
+                      UserMobileNumberField: 000 000 0000
                   GroupNameField: Managers
                   RequiredNumberOfSignaturesField: 3
                 LanguageCodeField: en
@@ -3602,7 +3602,7 @@ components:
       x-examples:
         Get Document Tag Field Position Request Example:
           value:
-            DocIDField: 12373
+            DocIDField: 2147483647
             TagNameField: string
             TokenField:
               TokenExpiryField: '2019-08-24T14:15:22Z'
