@@ -2956,6 +2956,7 @@ components:
           minLength: 1
           example: 02/02/2021
           description: Document due date.
+          format: date-time
           nullable: true
         ExtensionField:
           $ref: '#/components/schemas/DocExtension'
