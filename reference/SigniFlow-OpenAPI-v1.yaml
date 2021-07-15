@@ -3222,30 +3222,14 @@ components:
                       nullable: true
                   required:
                     - FieldTypeField
-                    - FontFamilyField
-                    - FontSizeField
-                    - GroupUserNumberField
-                    - HeightField
                     - IsInvisibleField
-                    - PageNumberField
-                    - TagNameField
-                    - ValueField
-                    - WidthField
-                    - XCoordinateField
-                    - XOffsetField
-                    - YCoordinateField
-                    - YOffsetField
             required:
               - ActionField
               - AllowProxyField
               - AutoSignField
               - EmailAddressField
               - LanguageCodeField
-              - LatitudeField
-              - LongitudeField
               - MobileNumberField
-              - SignReasonField
-              - SignerPasswordField
               - UserFirstNameField
               - UserFullNameField
               - UserLastNameField
