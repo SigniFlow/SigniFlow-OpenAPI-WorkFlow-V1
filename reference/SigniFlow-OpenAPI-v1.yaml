@@ -3181,7 +3181,6 @@ components:
                       type: number
                       example: 2
                       description: Field page number.
-                      nullable: true
                     TagNameField:
                       type: string
                       minLength: 1
