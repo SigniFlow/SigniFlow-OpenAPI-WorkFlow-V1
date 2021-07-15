@@ -2903,7 +2903,7 @@ components:
                       UserMobileNumberField: string
                   GroupNameField: Managers
                   RequiredNumberOfSignaturesField: 3
-                LanguageCodeField: ENG
+                LanguageCodeField: en
                 LatitudeField: string
                 LongitudeField: string
                 MobileNumberField: 078 222 2222
@@ -3082,7 +3082,7 @@ components:
               LanguageCodeField:
                 type: string
                 minLength: 1
-                example: ENG
+                example: en
                 description: |
                   #### Sets the display language for the user
                   ##### ISO 2 Digit Code
@@ -3093,12 +3093,12 @@ components:
               LatitudeField:
                 type: string
                 minLength: 1
-                description: GPS location latitude.
+                description: The current GPS lattitude location where the signing is taking place from. Needs to be paired with the longitude field.
                 nullable: true
               LongitudeField:
                 type: string
                 minLength: 1
-                description: GPS location longtitude.
+                description: The current GPS longitudelocation where the signing is taking place from. Needs to be paired with the lattitude field.
                 nullable: true
               MobileNumberField:
                 type: string
