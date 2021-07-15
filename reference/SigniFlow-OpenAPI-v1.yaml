@@ -2956,6 +2956,7 @@ components:
           minLength: 1
           example: 02/02/2021
           description: Document due date.
+          nullable: true
         ExtensionField:
           $ref: '#/components/schemas/DocExtension'
         FlattenDocumentField:
@@ -2989,6 +2990,7 @@ components:
               type: number
               example: 11112
               description: Portfolio ID.
+              nullable: true
             PortfolioNameField:
               type: string
               minLength: 1
@@ -3038,6 +3040,7 @@ components:
               GroupStepField:
                 type: object
                 description: Steps of the group signers in the workflow.
+                nullable: true
                 properties:
                   GroupMembersField:
                     type: array
