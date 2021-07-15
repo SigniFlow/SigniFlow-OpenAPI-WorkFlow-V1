@@ -3725,6 +3725,7 @@ components:
               EventField:
                 type: string
                 minLength: 1
+                description: The type of the event that took place.
               EventStatusField:
                 type: string
                 minLength: 1
@@ -3736,9 +3737,11 @@ components:
               OrderDateField:
                 type: string
                 minLength: 1
+                description: This is the date when the event took place.
               PageField:
                 type: string
                 minLength: 1
+                description: What page of the document an event took place on - this is not always populated as some events don't take place on the document.
               UserFullNameField:
                 type: string
                 minLength: 1
