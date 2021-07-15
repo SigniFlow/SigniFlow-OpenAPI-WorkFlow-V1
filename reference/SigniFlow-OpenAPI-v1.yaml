@@ -3094,10 +3094,12 @@ components:
                 type: string
                 minLength: 1
                 description: GPS location latitude.
+                nullable: true
               LongitudeField:
                 type: string
                 minLength: 1
                 description: GPS location longtitude.
+                nullable: true
               MobileNumberField:
                 type: string
                 minLength: 1
@@ -3108,19 +3110,23 @@ components:
                 uniqueItems: true
                 minItems: 1
                 description: Preloaded user's who will be using the face to face signature field.
+                nullable: true
                 items:
                   type: object
+                  nullable: true
               SignReasonField:
                 type: string
                 minLength: 1
                 example: Because yes
                 description: Reason for signature.
+                nullable: true
               SignerPasswordField:
                 type: string
                 minLength: 1
                 format: password
                 example: P@ssw0rd
                 description: Face to face user's password.
+                nullable: true
               UserFirstNameField:
                 type: string
                 minLength: 1
@@ -3151,19 +3157,23 @@ components:
                       minLength: 1
                       example: Arial
                       description: The font family of the fields text.
+                      nullable: true
                     FontSizeField:
                       type: number
                       example: 15
                       description: The font size of the fields text.
+                      nullable: true
                     GroupUserNumberField:
                       type: number
                       example: 5
                       description: The users in the group's user number.
+                      nullable: true
                     HeightField:
                       type: string
                       minLength: 1
                       example: '15'
                       description: Field height.
+                      nullable: true
                     IsInvisibleField:
                       type: boolean
                       description: Is the field visible.
@@ -3171,37 +3181,45 @@ components:
                       type: number
                       example: 2
                       description: Field page number.
+                      nullable: true
                     TagNameField:
                       type: string
                       minLength: 1
                       description: Field tag name.
+                      nullable: true
                     ValueField:
                       type: string
                       minLength: 1
                       description: Field value.
+                      nullable: true
                     WidthField:
                       type: string
                       minLength: 1
                       example: '25'
                       description: Field width.
+                      nullable: true
                     XCoordinateField:
                       type: string
                       minLength: 1
                       example: '60'
                       description: The fields x-coordinates.
+                      nullable: true
                     XOffsetField:
                       type: number
                       example: 15
                       description: The fields x-coordinates offset.
+                      nullable: true
                     YCoordinateField:
                       type: string
                       minLength: 1
                       example: '150'
                       description: The fields y-coordinates.
+                      nullable: true
                     YOffsetField:
                       type: number
                       example: 20
                       description: The fields y-coordinates offset.
+                      nullable: true
                   required:
                     - FieldTypeField
                     - FontFamilyField
