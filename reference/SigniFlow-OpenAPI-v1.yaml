@@ -2977,8 +2977,6 @@ components:
           required:
             - CreatePortfolioField
             - LinkToPortfolioField
-            - PortfolioIDField
-            - PortfolioNameField
           properties:
             CreatePortfolioField:
               type: boolean
@@ -3239,7 +3237,6 @@ components:
         - CustomMessageField
         - DocField
         - DocNameField
-        - DueDateField
         - ExtensionField
         - FlattenDocumentField
         - KeepContentSecurityField
