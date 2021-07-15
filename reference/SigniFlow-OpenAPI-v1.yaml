@@ -4395,8 +4395,6 @@ components:
           minLength: 1
           description: Displays the result of the call.
           example: success
-      required:
-        - ResultField
     SharePortfolioRequest:
       description: '#### The request sent when a user wants to share a portfolio with someone.'
       type: object
@@ -4413,24 +4411,20 @@ components:
       title: Share Portfolio Request
       properties:
         AccessLevelField:
-          type: number
-          example: Viewer
-          description: User's level of access.
+          $ref: '#/components/schemas/AccessLevelField'
         PortfolioIDField:
           type: string
           minLength: 1
           description: Portfolio ID
           example: '11111111'
         ShareOptionField:
-          type: number
-          example: Business
-          description: Who to share the portfolio with.
+          $ref: '#/components/schemas/ShareOptionField'
         TokenField:
           $ref: '#/components/schemas/TokenField'
         UniqueIDField:
           type: string
           minLength: 1
-          description: Portfolio unique ID
+          description: 'Based upon ShareOption, use either a team Id, Department Id, Business Id, or User ID \ Email'
           example: '12121212'
       required:
         - AccessLevelField
@@ -4452,8 +4446,6 @@ components:
           minLength: 1
           description: Displays the result of the call.
           example: success
-      required:
-        - ResultField
     SharePortfolio_No_EmailRequest:
       description: '#### The request sent when a user wants to share a portfolio but does not want an email to be sent.'
       type: object
@@ -4470,25 +4462,21 @@ components:
       title: Share Portfolio No Email Request
       properties:
         AccessLevelField:
-          type: number
-          example: Viewer
-          description: User's level of access.
+          $ref: '#/components/schemas/AccessLevelField'
         PortfolioIDField:
           type: string
           minLength: 1
           example: '111111'
           description: Portfolio ID
         ShareOptionField:
-          type: number
-          example: Business
-          description: Who to share the portfolio with.
+          $ref: '#/components/schemas/ShareOptionField'
         TokenField:
           $ref: '#/components/schemas/TokenField'
         UniqueIDField:
           type: string
           minLength: 1
           example: '1212121'
-          description: Portfolio unique ID.
+          description: 'Based upon ShareOption, use either a team Id, Department Id, Business Id, or User ID \ Email'
       required:
         - AccessLevelField
         - PortfolioIDField
@@ -4509,8 +4497,6 @@ components:
           minLength: 1
           description: Displays the result of the call.
           example: success
-      required:
-        - ResultField
     SigningCeremonyV2Request:
       description: '#### The request sent to start the signing process of a document.'
       type: object
@@ -5156,6 +5142,28 @@ components:
         - OptionalDropDownMobilePrefix
       minimum: 0
       maximum: 9
+    AccessLevelField:
+      title: AccessLevelField
+      type: number
+      description: |-
+        #### Access Level Field Types
+
+        `
+        0 = Viewer         // Has access to view documents in the portfolio
+        1 = Contributor    // Can upload documents to placeholders
+        2 = Owner          // Has full control over the portfolio
+        `
+    ShareOptionField:
+      title: ShareOptionField
+      type: integer
+      description: |-
+        #### Share Portfolio Option Field Types
+        `
+        0 = Business    // Share with an entire business
+        1 = Department  // Share with a specific department
+        2 = Team        // Share with a specific team
+        3 = User        // Share with a specific user
+        `
   securitySchemes: {}
   parameters: {}
 tags:
