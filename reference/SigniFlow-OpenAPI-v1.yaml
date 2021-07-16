@@ -283,7 +283,7 @@ paths:
       operationId: post-ApplyPrepperTemplate
       responses:
         '200':
-          description: '##### Apply A Prepper Template Response Model'
+          description: '##### Apply A Prepper Template Response Model.'
           content:
             application/json:
               schema:
@@ -310,8 +310,8 @@ paths:
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
-        description: '##### Apply A Prepper Template Request Model'
-      description: '#### Used when applying a templaet to a document.'
+        description: '##### Apply A Prepper Template Request Model.'
+      description: '#### Used when applying a template to a document.'
       tags:
         - Templates
       parameters:
