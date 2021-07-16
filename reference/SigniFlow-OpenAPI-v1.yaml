@@ -109,7 +109,9 @@ paths:
             examples:
               Example:
                 value:
-                  TokenField: aaa111
+                  TokenField:
+                    TokenExpiryField: '2019-08-24T14:15:22Z'
+                    TokenField: aaa111
         description: '##### Logout Request Model'
       tags:
         - Authentication
@@ -665,7 +667,7 @@ paths:
                   CustomMessageField: A message with things.
                   DocField: string
                   DocNameField: Document 1
-                  DueDateField: 02/02/2021
+                  DueDateField: '2019-08-24'
                   ExtensionField: 0
                   FlattenDocumentField: true
                   KeepContentSecurityField: true
@@ -696,7 +698,7 @@ paths:
                             UserMobileNumberField: string
                         GroupNameField: Managers
                         RequiredNumberOfSignaturesField: 3
-                      LanguageCodeField: ENG
+                      LanguageCodeField: en
                       LatitudeField: string
                       LongitudeField: string
                       MobileNumberField: 078 222 2222
@@ -708,7 +710,7 @@ paths:
                       UserFullNameField: John Smith
                       UserLastNameField: Smith
                       WorkflowUserFieldsField:
-                        - FieldTypeField: 7
+                        - FieldTypeField: 0
                           FontFamilyField: Arial
                           FontSizeField: 15
                           GroupUserNumberField: 5
@@ -718,9 +720,9 @@ paths:
                           TagNameField: string
                           ValueField: string
                           WidthField: '25'
-                          XCoordinateField: '60'
+                          XCoordinateField: '160'
                           XOffsetField: 15
-                          YCoordinateField: '150'
+                          YCoordinateField: '60'
                           YOffsetField: 20
         description: '##### FullWorkflow Request Model'
       description: '#### Used to create a fullworkflow for a document.'
@@ -1084,7 +1086,7 @@ paths:
                       - ColorField: string
                         DocFieldIDField: string
                         DocIDField: 0
-                        FieldTypeField: string
+                        FieldTypeField: 0
                         HeightField: 0
                         PageNumberField: 0
                         UserFullNameField: string
@@ -2953,7 +2955,7 @@ components:
           description: Document name.
         DueDateField:
           type: string
-          example: 02/02/2021
+          example: 2019-08-24
           description: Document due date.
           format: date
           nullable: true
@@ -5143,8 +5145,8 @@ components:
       minimum: 0
       maximum: 9
     AccessLevelField:
-      title: AccessLevelField
       type: number
+      title: AccessLevelField
       description: |-
         #### Access Level Field Types
 
@@ -5153,9 +5155,27 @@ components:
         1 = Contributor    // Can upload documents to placeholders
         2 = Owner          // Has full control over the portfolio
         `
+      enum:
+        - 0
+        - 1
+        - 2
+      x-enumNames:
+        - Viewer
+        - Contributor
+        - Owner
+      x-enum-descriptions:
+        - Viewer
+        - Contributor
+        - Owner
+      x-enum-varnames:
+        - Viewer
+        - Contributor
+        - Owner
+      minimum: 0
+      maximum: 2
     ShareOptionField:
-      title: ShareOptionField
       type: integer
+      title: ShareOptionField
       description: |-
         #### Share Portfolio Option Field Types
         `
@@ -5164,6 +5184,28 @@ components:
         2 = Team        // Share with a specific team
         3 = User        // Share with a specific user
         `
+      enum:
+        - 0
+        - 1
+        - 2
+        - 3
+      x-enumNames:
+        - Business
+        - Department
+        - Team
+        - User
+      x-enum-descriptions:
+        - Business
+        - Department
+        - Team
+        - User
+      x-enum-varnames:
+        - Business
+        - Department
+        - Team
+        - User
+      minimum: 0
+      maximum: 3
   securitySchemes: {}
   parameters: {}
 tags:
