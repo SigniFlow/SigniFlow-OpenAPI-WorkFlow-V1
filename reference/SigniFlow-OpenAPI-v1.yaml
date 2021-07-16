@@ -2955,7 +2955,7 @@ components:
           description: Document name.
         DueDateField:
           type: string
-          example: 2019-08-24
+          example: '2019-08-24'
           description: Document due date.
           format: date
           nullable: true
@@ -4577,7 +4577,7 @@ components:
                 description: Checkbox field y-coordinates.
               IsCheckedField:
                 type: boolean
-                description: Is the checkbos field checked.
+                description: Is the checkbox field checked.
             required:
               - CheckboxHField
               - CheckboxPageField
