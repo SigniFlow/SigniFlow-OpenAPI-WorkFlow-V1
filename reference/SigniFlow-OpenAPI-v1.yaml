@@ -4351,6 +4351,7 @@ components:
         SignedDocumentField:
           type: string
           minLength: 1
+          description: The base64 string for the Signed pdf document.
       required:
         - CeremonyIDField
         - ResultField
