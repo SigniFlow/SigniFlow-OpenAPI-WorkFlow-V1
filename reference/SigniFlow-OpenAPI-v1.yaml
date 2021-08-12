@@ -4589,6 +4589,7 @@ components:
         DocField:
           type: string
           minLength: 1
+          description: Document field
         DocNameField:
           type: string
           minLength: 1
