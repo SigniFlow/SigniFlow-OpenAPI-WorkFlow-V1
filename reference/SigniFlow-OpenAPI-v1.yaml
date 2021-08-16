@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  title: SigniFlow OpenAPI Spec v1
+  title: WorkFlow API V1
   description: |
     ## SigniFlow API used to automate esignature workflow creation and management.
   contact:
