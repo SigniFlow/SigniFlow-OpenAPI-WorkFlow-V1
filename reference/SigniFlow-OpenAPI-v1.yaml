@@ -1340,7 +1340,7 @@ paths:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
         description: '##### Link To Portfolio Request Model'
-      description: '#### Used to get the url link to a portfolio.'
+      description: '#### Used to get the url link to a portfolio in order to link a document to a portfolio.'
       tags:
         - Portfolios
       parameters:
