@@ -1784,7 +1784,7 @@ components:
       x-examples:
         Login Response Example:
           value:
-            ResultField: success
+            ResultField: Success
             TokenField:
               TokenExpiryField: /Date(1624307263000+0200)/
               TokenField: e6dgfh
