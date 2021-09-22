@@ -3313,8 +3313,8 @@ components:
       x-examples:
         Get Audit Document Response Example:
           value:
-            AuditDocumentField: string
-            ResultField: success
+            AuditDocumentField: Base64 Encoded Document
+            ResultField: Success
       title: Get Audit Document Response
       properties:
         AuditDocumentField:
@@ -3370,7 +3370,7 @@ components:
       x-examples:
         Get Document Link Response Example:
           value:
-            Result: success
+            Result: Success
             Url: string
       title: Get Document Link Response
       properties:
@@ -3414,7 +3414,7 @@ components:
         Get Document Status Response Example:
           value:
             DocStatusField: Completed
-            ResultField: success
+            ResultField: Success
       title: Get Document Status Response
       properties:
         DocStatusField:
@@ -3475,7 +3475,7 @@ components:
       x-examples:
         Get Document Prepper Link Response Example:
           value:
-            Result: success
+            Result: Success
             URL: string
       title: Get Document Prepper Link Response
       properties:
@@ -3530,7 +3530,7 @@ components:
               WidthField: '35'
               XCoordinateField: '140'
               YCoordinateField: '160'
-            ResultField: success
+            ResultField: Success
       title: Get Document Tag Field Box Position Response
       properties:
         DocumentTagFieldsBoxPositionField:
@@ -3610,7 +3610,7 @@ components:
               - PageNumberField: 2
                 XCoordinateField: '160'
                 YCoordinateField: '100'
-            ResultField: success
+            ResultField: Success
       title: Get Document Tag Field Position Response
       properties:
         DocumentTagFieldsPositionField:
@@ -3674,7 +3674,7 @@ components:
         Get Document Audit Response Example:
           value:
             ActivityField:
-              - ActionOrderField: string
+              - ActionOrderField: '1'
                 AdditionalField: string
                 DocIDField: '2147483647'
                 EmailField: email@domain.com
@@ -3685,7 +3685,7 @@ components:
                 OrderDateField: string
                 PageField: '2'
                 UserFullNameField: John Doe
-            ResultField: success
+            ResultField: Success
       title: Get Document Audit Response
       properties:
         ActivityField:
@@ -3893,7 +3893,13 @@ components:
     GetPrepperTemplateListRequest:
       description: '#### The request sent to get the document template list.'
       type: object
-      x-examples: {}
+      x-examples:
+        Get Prepper Template List Request Example:
+          value:
+            TemplateFolderField: 0
+            TokenField:
+              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenField: aaa111
       title: Get Prepper Template List Request
       properties:
         TemplateFolderField:
@@ -3910,7 +3916,7 @@ components:
       x-examples:
         Get Prepper Template List Response Example:
           value:
-            ResultField: success
+            ResultField: Success
             TemplateInformationValuesField:
               - NameField: New Employee
                 PrepperTemplateIDField: 22222222
@@ -3979,7 +3985,7 @@ components:
         Initiate Flow Response Example:
           value:
             DocIDField: 2147483647
-            ResultField: success
+            ResultField: Success
       title: Initiate Flow Response
       properties:
         DocIDField:
@@ -4023,7 +4029,7 @@ components:
         Initiate Flow No Email Response Example:
           value:
             DocIDField: 2147483647
-            ResultField: success
+            ResultField: Success
       title: Initiate Flow No Email Response
       properties:
         DocIDField:
@@ -4067,7 +4073,7 @@ components:
         Initiate Flow No Initial Email Response Example:
           value:
             DocIDField: 2147483647
-            ResultField: success
+            ResultField: Success
       title: Initiate Flow No Initial Email Response
       properties:
         DocIDField:
@@ -4162,7 +4168,7 @@ components:
       x-examples:
         Logout Response Example:
           value:
-            ResultField: success
+            ResultField: Success
             TokenField:
               TokenExpiryField: '2019-08-24T14:15:22Z'
               TokenField: aaa111
@@ -4182,10 +4188,10 @@ components:
       description: '#### This is the request sent when there are multiple signers on a document.'
       type: object
       x-examples:
-        Example:
+        Multiple Signers Signing Ceremony Request Example:
           value:
-            DocField: string
-            DocNameField: string
+            DocField: Base64 Encoded Document
+            DocNameField: Employee_Application.pdf
             LoginPasswordField: '12345'
             LoginUserNameField: John@gmail.com
             SignerListField:
@@ -4200,14 +4206,14 @@ components:
                 SignatureWField: 0
                 SignatureXField: 0
                 SignatureYField: 0
-                SignerEmailField: string
-                SignerFullNameField: string
+                SignerEmailField: user@domain.com
+                SignerFullNameField: John Doe
                 SignerIndentificationNumberField: string
-                SignerLocationField: string
-                SignerMobileNumberField: string
+                SignerLocationField: '-37.8044416, 144.9721856'
+                SignerMobileNumberField: '+27786352163'
                 SignerReasonField: string
-                SignerTrustOriginField: string
-                SignerTrustReferenceField: string
+                SignerTrustOriginField: PBSA Pty Ltd
+                SignerTrustReferenceField: Dev001#
       title: Multiple Signers Signing Ceremony Request
       properties:
         DocField:
@@ -4332,11 +4338,11 @@ components:
       description: '#### This is the response returned when there are multiple people who need to sign a document.'
       type: object
       x-examples:
-        Example:
+        Multiple Signers Signing Ceremony Response Example:
           value:
             CeremonyIDField: 2147483647
-            ResultField: success
-            SignedDocumentField: string
+            ResultField: Success
+            SignedDocumentField: Base64 Encoded Document
       title: Multiple Signers Signing Ceremony Response
       properties:
         CeremonyIDField:
@@ -4363,7 +4369,7 @@ components:
         Set Document Order Request Example:
           value:
             DocIDField: '2147483647'
-            DocumentOrderField: string
+            DocumentOrderField: '1'
             TokenField:
               TokenExpiryField: '2019-08-24T14:15:22Z'
               TokenField: aaa111
@@ -4390,7 +4396,7 @@ components:
       x-examples:
         Set Document Order Response Example:
           value:
-            ResultField: success
+            ResultField: Success
       title: Set Document Order Response
       properties:
         ResultField:
@@ -4441,7 +4447,7 @@ components:
       x-examples:
         Share Portfolio Response Example:
           value:
-            ResultField: success
+            ResultField: Success
       title: Share Portfolio Response
       properties:
         ResultField:
@@ -4492,7 +4498,7 @@ components:
       x-examples:
         Share Portfolio No Email Response Example:
           value:
-            ResultField: success
+            ResultField: Success
       title: Share Portfolio No Email Response
       properties:
         ResultField:
@@ -4513,8 +4519,8 @@ components:
                 CheckboxXField: 0
                 CheckboxYField: 0
                 IsCheckedField: true
-            DocField: string
-            DocNameField: string
+            DocField: Base64 Encoded Document
+            DocNameField: Employee_Application.pdf
             InitialFieldsListField:
               - InitialHField: 0
                 InitialImageField: string
@@ -4523,8 +4529,8 @@ components:
                 InitialWField: 0
                 InitialXField: 0
                 InitialYField: 0
-            LoginPasswordField: string
-            LoginUserNameField: string
+            LoginPasswordField: password
+            LoginUserNameField: user@domain.com
             SignatureHField: 0
             SignatureImageField: string
             SignatureImageIncludeBorderField: true
@@ -4536,14 +4542,14 @@ components:
             SignatureWField: 0
             SignatureXField: 0
             SignatureYField: 0
-            SignerEmailField: string
-            SignerFullNameField: string
-            SignerIdentificationNumberField: string
-            SignerLocationField: string
-            SignerMobileNumberField: string
+            SignerEmailField: user@domain.com
+            SignerFullNameField: John Doe
+            SignerIdentificationNumberField: '9711210040087'
+            SignerLocationField: '-37.8044416, 144.9721856'
+            SignerMobileNumberField: '+27786537631'
             SignerReasonField: string
-            SignerTrustOriginField: string
-            SignerTrustReferenceField: string
+            SignerTrustOriginField: PBSA Pty Ltd
+            SignerTrustReferenceField: Dev001#
             TextFieldsListField:
               - TextFieldHField: 0
                 TextFieldPageField: 0
@@ -4774,8 +4780,8 @@ components:
         Signing Ceremony V2 Response Example:
           value:
             CeremonyIDField: 2147483647
-            ResultField: success
-            SignedDocumentField: string
+            ResultField: Success
+            SignedDocumentField: Base64 Encoded Document
       title: Signing Ceremony V2 Response
       properties:
         CeremonyIDField:
@@ -4820,7 +4826,7 @@ components:
       x-examples:
         Token Extend Response Example:
           value:
-            ResultField: success
+            ResultField: Success
             TokenField:
               TokenExpiryField: '2019-08-24T14:15:22Z'
               TokenField: aaa111
@@ -4856,7 +4862,7 @@ components:
       x-examples:
         Token Validate Response Example:
           value:
-            ResultField: success
+            ResultField: Success
             TokenField:
               TokenExpiryField: '2019-08-24T14:15:22Z'
               TokenField: aaa111
@@ -4879,10 +4885,10 @@ components:
         Workflow Sign Request Example:
           value:
             DocIDField: '2147483647'
-            LatitudeField: string
+            LatitudeField: '-37.8044416'
             LoginPasswordField: pa$$word
             LoginUserNameField: email@domain.com
-            LongitudeField: string
+            LongitudeField: '144.9721856'
             SignReasonField: string
             TimeZoneOffsetField: 0
             TokenField:
@@ -4937,7 +4943,7 @@ components:
       x-examples:
         Workflow Sign Response Example:
           value:
-            ResultField: success
+            ResultField: Success
       title: Workflow Sign Response
       properties:
         ResultField:
