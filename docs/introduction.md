@@ -18,23 +18,23 @@ Create A Workflow But The Most Simple Way Is Displayed Here:
 
 ![create-a-workflow](../assets/images/creating-a-workflow.png)
 
-* [/Login](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post)
+* [/Login](../../reference/SigniFlow-OpenAPI.yaml/paths/~1Login/post)
   * ➡️ Pass Through: Your Account Username And Password.
-  * ⬅️ Receive Back: A [Token](../../reference/SigniFlow-OpenAPI-v1.yaml/components/schemas/TokenField) Which Is Used For Further Processes.
+  * ⬅️ Receive Back: A [Token](../../reference/SigniFlow-OpenAPI.yaml/components/schemas/TokenField) Which Is Used For Further Processes.
 
-* [/CreateWorkflow](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1CreateWorkflow/post) 
+* [/CreateWorkflow](../../reference/SigniFlow-OpenAPI.yaml/paths/~1CreateWorkflow/post) 
   * ➡️ Pass Through: Your Token, Your Document (Base64 Encoded) & Other Information About The Workflow.
   * ⬅️ ️Receive Back: A Document ID
 
-* [/AddWorkflowStep](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1AddWorkflowStepV2/post) 
+* [/AddWorkflowStep](../../reference/SigniFlow-OpenAPI.yaml/paths/~1AddWorkflowStepV2/post) 
   * ➡️ Pass Through: The Document ID, Your Token & Information About The Person Being Added.
   * ⬅️ Receive Back: Data Regarding The Step Added.
 
-* [/DocPrepperAddFields](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1DocPrepperAddFieldsFlowID/post) 
+* [/DocPrepperAddFields](../../reference/SigniFlow-OpenAPI.yaml/paths/~1DocPrepperAddFieldsFlowID/post) 
   * ➡️ Pass Through: The Document ID, Your Token & Information About The Field Being Added.
   * ⬅️ Receive Back: Data Regarding The Field Added.
 
-* [/InitiateFlow](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1InitiateFlow/post) 
+* [/InitiateFlow](../../reference/SigniFlow-OpenAPI.yaml/paths/~1InitiateFlow/post) 
   * ➡️ Pass Through: The Document ID, Your Token
   * ⬅️ Receive Back: Data Regarding The Workflow.
 
@@ -47,11 +47,11 @@ Create A Workflow But The Most Simple Way Is Displayed Here:
 
 ![download-document](../assets/images/download-document.png)
 
-* [/Login](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post)
+* [/Login](../../reference/SigniFlow-OpenAPI.yaml/paths/~1Login/post)
   * ➡️ Pass Through: Your Account Username And Password.
   * ⬅️ Receive Back: a Token Which Is Used For Further Processes.
 
-* [/GetDoc](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1GetDoc/post)
+* [/GetDoc](../../reference/SigniFlow-OpenAPI.yaml/paths/~1GetDoc/post)
   * ➡️ Pass Through: Your Token, Your Document ID.
   * ⬅️ Receive Back: a Document As A Base64 Encoded String As Well As Other Information About The Document.
 
@@ -71,11 +71,11 @@ Create A Workflow But The Most Simple Way Is Displayed Here:
 
 ![download-document](../assets/images/download-document.png)
 
-* [Login](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post)
+* [Login](../../reference/SigniFlow-OpenAPI.yaml/paths/~1Login/post)
   * ➡️ Pass Through: Your Account Username And Password.
   * ⬅️ Receive Back: a Token Which Is Used For Further Processes.
 
-* [/GetPrepperTemplateList](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1GetPrepperTemplateList/post) 
+* [/GetPrepperTemplateList](../../reference/SigniFlow-OpenAPI.yaml/paths/~1GetPrepperTemplateList/post) 
   * ➡️ Pass Through: A Template Folder ID And Your Token.
   * ⬅️ Receive Back: A List Of Prepper Templates.
 
@@ -91,23 +91,23 @@ create a workflow but the most simple way is displayed here:
 
 ![prepper-templates](../assets/images/prepper-templates.gif)
 
-* [/Login](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post)
+* [/Login](../../reference/SigniFlow-OpenAPI.yaml/paths/~1Login/post)
   * ➡️ Pass Through: Your Account Username And Password.
   * ⬅️ Receive Back: a Token Which Is Used For Further Processes.
 
-* [/CreateWorkflow](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1CreateWorkflow/post) 
+* [/CreateWorkflow](../../reference/SigniFlow-OpenAPI.yaml/paths/~1CreateWorkflow/post) 
   * ➡️ Pass Through: Your Token, Your Document (Base64 Encoded) & Other Information About The Workflow.
   * ⬅️ Receive Back: a Document ID
 
-* [/AddWorkflowStep](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1AddWorkflowStepV2/post) 
+* [/AddWorkflowStep](../../reference/SigniFlow-OpenAPI.yaml/paths/~1AddWorkflowStepV2/post) 
   * ➡️ Pass Through: The Document ID, Your Token & Information About The Person Being Added.
   * ⬅️ Receive Back: Data Regarding The Step Added.
 
-* [/ApplyPrepperTemplate](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1ApplyPrepperTemplate/post) 
+* [/ApplyPrepperTemplate](../../reference/SigniFlow-OpenAPI.yaml/paths/~1ApplyPrepperTemplate/post) 
   * ➡️ Pass Through: The Document ID, Your Token & a Template ID.
   * ⬅️ Receive Back: Data Regarding The Field Added.
 
-* [/InitiateFlow](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1InitiateFlow/post) 
+* [/InitiateFlow](../../reference/SigniFlow-OpenAPI.yaml/paths/~1InitiateFlow/post) 
   * ➡️ Pass Through: The Document ID, Your Token
   * ⬅️ Receive Back: API Token from the login API.
 
@@ -119,11 +119,11 @@ create a workflow but the most simple way is displayed here:
 
 ![full-workflow](../assets/images/full-workflow.png)
 
-* [/Login](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post)
+* [/Login](../../reference/SigniFlow-OpenAPI.yaml/paths/~1Login/post)
   * ➡️ Pass Through: Your Account Username And Password.
   * ⬅️ Receive Back: A Token Which Is Used For Further Processes.
 
-* [/FullWorkflow](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1FullWorkflow/post)
+* [/FullWorkflow](../../reference/SigniFlow-OpenAPI.yaml/paths/~1FullWorkflow/post)
   * ➡️ Pass Through: Your Token, Your Document (Base64 Encoded), All Users Who Will Be Included In The Workflow As Well As Where Their Fields Should Be Placed & Other Information About The Workflow. 
   * ⬅️ Receive Back: A Document ID And Other Information Regarding The Workflow.
 
@@ -139,15 +139,15 @@ create a workflow but the most simple way is displayed here:
 
 ![find-fields-gif](../assets/images/find-fields.gif)
 
-* [/Login](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1Login/post)
+* [/Login](../../reference/SigniFlow-OpenAPI.yaml/paths/~1Login/post)
   * ➡️ Pass Through: Your Account Username And Password.
   * ⬅️ Receive Back: a Token Which Is Used For Further Processes.
 
-* [/CreateWorkflow](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1CreateWorkflow/post) 
+* [/CreateWorkflow](../../reference/SigniFlow-OpenAPI.yaml/paths/~1CreateWorkflow/post) 
   * ➡️ Pass Through: Your Token, Your Document (Base64 Encoded) & Other Information About The Workflow.
   * ⬅️ Receive Back: a Document ID
 
-* [/GetDocumentTagField](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1GetDocumentTagFieldPosition/post) 
+* [/GetDocumentTagField](../../reference/SigniFlow-OpenAPI.yaml/paths/~1GetDocumentTagFieldPosition/post) 
   * ➡️ Pass Through: The Document ID, The Text To Search For And API Token.
   * ⬅️ Receive Back: List Of Positions Where The Text Was Found.
 
@@ -173,11 +173,11 @@ Trust in the form of authentication is transferred to the third-party applicatio
 > When SigningCeremony is integrated into the customer’s system, NO workflow of a document is needed.
 
 
-* [/SigningCeremonyV2](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1SigningCeremonyV2/post) 
+* [/SigningCeremonyV2](../../reference/SigniFlow-OpenAPI.yaml/paths/~1SigningCeremonyV2/post) 
   * This function takes in the signers information, the document and signature along with the trust reference of how and
 where you authenticated the user. This function also can add fields such as Initials, Checkboxes, and textboxes to a
 document, it will then sign the document. It will return a result field along with the signed document.
-* [/MultipleSignersSigningCeremony](../../reference/SigniFlow-OpenAPI-v1.yaml/paths/~1MultipleSignersSigningCeremony/post) 
+* [/MultipleSignersSigningCeremony](../../reference/SigniFlow-OpenAPI.yaml/paths/~1MultipleSignersSigningCeremony/post) 
   * This function takes in a list of signers information, the document and signatures along with the trust reference of
 how and where you authenticated the users in the list, it will then sign the document. It will return a result field along
 with the signed document.
