@@ -4225,7 +4225,7 @@ components:
         DocField:
           type: string
           minLength: 1
-          description: Document field
+          description: Bse64 encoded string.
         DocNameField:
           type: string
           minLength: 1
@@ -4317,10 +4317,6 @@ components:
             required:
               - SignatureHField
               - SignatureImageField
-              - SignatureImageIncludeBorderField
-              - SignatureImageIncludeReasonField
-              - SignatureImageIncludeSignedByField
-              - SignatureImageIncludeSignedDateField
               - SignatureImageTypeField
               - SignaturePageField
               - SignatureWField
@@ -4328,10 +4324,7 @@ components:
               - SignatureYField
               - SignerEmailField
               - SignerFullNameField
-              - SignerIndentificationNumberField
               - SignerLocationField
-              - SignerMobileNumberField
-              - SignerReasonField
               - SignerTrustOriginField
               - SignerTrustReferenceField
       required:
@@ -4461,6 +4454,8 @@ components:
           minLength: 1
           description: Displays the result of the call.
           example: success
+      required:
+        - ResultField
     SharePortfolio_No_EmailRequest:
       description: '#### The request sent when a user wants to share a portfolio but does not want an email to be sent.'
       type: object
@@ -4512,6 +4507,8 @@ components:
           minLength: 1
           description: Displays the result of the call.
           example: success
+      required:
+        - ResultField
     SigningCeremonyV2Request:
       description: '#### The request sent to start the signing process of a document.'
       type: object
@@ -4591,17 +4588,10 @@ components:
               IsCheckedField:
                 type: boolean
                 description: Is the checkbox field checked.
-            required:
-              - CheckboxHField
-              - CheckboxPageField
-              - CheckboxWField
-              - CheckboxXField
-              - CheckboxYField
-              - IsCheckedField
         DocField:
           type: string
           minLength: 1
-          description: Document field
+          description: Base64 encoded string.
         DocNameField:
           type: string
           minLength: 1
@@ -4636,14 +4626,6 @@ components:
               InitialYField:
                 type: number
                 description: Initial field y-coordinates.
-            required:
-              - InitialHField
-              - InitialImageField
-              - InitialImageTypeField
-              - InitialPageField
-              - InitialWField
-              - InitialXField
-              - InitialYField
         LoginPasswordField:
           type: string
           minLength: 1
@@ -4745,26 +4727,13 @@ components:
               TextFieldYField:
                 type: number
                 description: Text field y-coordinates.
-            required:
-              - TextFieldHField
-              - TextFieldPageField
-              - TextFieldValueField
-              - TextFieldWField
-              - TextFieldXField
-              - TextFieldYField
       required:
-        - CheckboxFieldsListField
         - DocField
         - DocNameField
-        - InitialFieldsListField
         - LoginPasswordField
         - LoginUserNameField
         - SignatureHField
         - SignatureImageField
-        - SignatureImageIncludeBorderField
-        - SignatureImageIncludeReasonField
-        - SignatureImageIncludeSignedByField
-        - SignatureImageIncludeSignedDateField
         - SignatureImageTypeField
         - SignaturePageField
         - SignatureWField
@@ -4772,13 +4741,10 @@ components:
         - SignatureYField
         - SignerEmailField
         - SignerFullNameField
-        - SignerIdentificationNumberField
         - SignerLocationField
         - SignerMobileNumberField
-        - SignerReasonField
         - SignerTrustOriginField
         - SignerTrustReferenceField
-        - TextFieldsListField
     SigningCeremonyV2Response:
       description: '#### The response returned when the signing process is requested.'
       type: object
@@ -4931,7 +4897,7 @@ components:
           description: Reason for signature.
         TimeZoneOffsetField:
           type: number
-          description: The user's timezone offste.
+          description: The user's timezone offset.
         TokenField:
           $ref: '#/components/schemas/TokenField'
       required:
@@ -4940,7 +4906,6 @@ components:
         - LoginPasswordField
         - LoginUserNameField
         - LongitudeField
-        - SignReasonField
         - TimeZoneOffsetField
         - TokenField
     WorkflowSignResponse:
