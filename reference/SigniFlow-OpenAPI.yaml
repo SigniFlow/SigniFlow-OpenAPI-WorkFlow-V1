@@ -2220,10 +2220,10 @@ components:
           $ref: '#/components/schemas/TokenField'
       required:
         - ActionField
-        - CellField
         - DocIDField
         - EmailField
         - FirstNameField
+        - LanguageCodeField
         - LastNameField
         - ProxyAllowedField
         - TokenField
@@ -2280,6 +2280,7 @@ components:
       required:
         - DocIDField
         - FlowIDField
+        - FlowStepsField
         - ResultField
     ApplyPrepperTemplateRequest:
       description: '#### Used to send a request for applying a template.'
@@ -2524,7 +2525,6 @@ components:
                       type: string
                       minLength: 1
                   required:
-                    - LinkedValueField
                     - MaxField
                     - MinField
                     - ValueField
@@ -2559,7 +2559,7 @@ components:
                 type: string
                 minLength: 1
                 example: Text Field
-                description: This field is used when you need to define the field embedded in the document with a unique name that can be referenced later.
+                description: This field is used when you need to define the field embedded in the document with a unique name that can be referenced later. Ex. all checkbosgroups should have the same NameField.
               PageNumberField:
                 type: number
                 example: 2
@@ -2594,8 +2594,6 @@ components:
               - FontSizeField
               - HeightField
               - WidthField
-              - LinkToField
-              - NameField
               - PageNumberField
               - SearchableField
               - UserEmailField
@@ -3218,21 +3216,30 @@ components:
                       nullable: true
                   required:
                     - FieldTypeField
+                    - GroupUserNumberField
+                    - HeightField
                     - IsInvisibleField
+                    - PageNumberField
+                    - WidthField
+                    - XCoordinateField
+                    - XOffsetField
+                    - YCoordinateField
+                    - YOffsetField
             required:
               - ActionField
               - AllowProxyField
               - AutoSignField
               - EmailAddressField
               - LanguageCodeField
+              - LatitudeField
+              - LongitudeField
               - MobileNumberField
+              - SignerPasswordField
               - UserFirstNameField
               - UserFullNameField
               - UserLastNameField
       required:
-        - AdditionalDataField
         - AutoRemindField
-        - CustomMessageField
         - DocField
         - DocNameField
         - ExtensionField
@@ -3241,8 +3248,6 @@ components:
         - KeepCustomPropertiesField
         - KeepXMPMetadataField
         - PortfolioInformationField
-        - PriorityField
-        - SLAField
         - SendFirstEmailField
         - SendWorkflowEmailsField
         - TokenField
@@ -3282,6 +3287,12 @@ components:
           minLength: 1
           example: Completed
           description: Document status that gets returned.
+      required:
+        - DocField
+        - DocIDField
+        - PortfolioIDField
+        - ResultField
+        - StatusField
     GetAuditDocumentRequest:
       description: '#### A request sent to get an audit document.'
       type: object
@@ -3699,7 +3710,7 @@ components:
               AdditionalField:
                 type: string
                 minLength: 1
-                description: Returns the additional information about the audit (i.e. IP Address and browser that was used/ Reason for rejection or expiration)
+                description: Returns the additional information about the audit (i.e. IP Address and browser that was used/ Reason for rejection or expiration).
               DocIDField:
                 type: string
                 minLength: 1
@@ -3743,7 +3754,6 @@ components:
                 example: John Doe
             required:
               - ActionOrderField
-              - AdditionalField
               - DocIDField
               - EmailField
               - EventDateField
@@ -3875,7 +3885,6 @@ components:
               - PageNumberField
               - UserFullNameField
               - UserIDField
-              - ValueField
               - WidthField
               - XCoordinateField
               - YCoordinateField
