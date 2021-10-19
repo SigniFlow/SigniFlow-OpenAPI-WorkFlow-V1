@@ -2074,13 +2074,10 @@ components:
         TokenField:
           $ref: '#/components/schemas/TokenField'
       required:
-        - AutoRemindField
         - DocField
         - DocNameField
         - ExtensionField
-        - MessageField
         - PriorityField
-        - SLAField
         - TokenField
     CreateWorkflowResponse:
       title: Create Workflow Response
