@@ -258,11 +258,11 @@ paths:
               Example:
                 value:
                   ActionField: 0
-                  CellField: string
+                  CellField: '0121231234'
                   DocIDField: '2147483647'
                   EmailField: email@domain.com
                   FirstNameField: John
-                  LanguageCodeField: ENG
+                  LanguageCodeField: en
                   LastNameField: Smith
                   ProxyAllowedField: 0
                   TokenField:
@@ -2165,7 +2165,7 @@ components:
         Add Workflow Step V2 Request Example:
           value:
             ActionField: 0
-            CellField: '1121231234'
+            CellField: '0121231234'
             DocIDField: '2147483647'
             EmailField: email@domain.com
             FirstNameField: John
