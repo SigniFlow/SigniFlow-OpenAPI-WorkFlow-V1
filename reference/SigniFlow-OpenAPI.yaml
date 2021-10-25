@@ -146,11 +146,11 @@ paths:
                   AdditionalDataField: '""'
                   AutoExpireField: 0
                   AutoRemindField: 0
-                  DocField: String content
-                  DocNameField: String content
+                  DocField: Base64 Encoded Document
+                  DocNameField: Document Name
                   DueDateField: '2019-08-24T14:15:22Z'
                   ExtensionField: 0
-                  MessageField: String content
+                  MessageField: Message to participants
                   PriorityField: 0
                   SLAField: 0
                   TokenField:
