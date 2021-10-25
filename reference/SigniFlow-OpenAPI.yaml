@@ -191,7 +191,7 @@ paths:
               examples:
                 Example:
                   value:
-                    DocField: string
+                    DocField: Base64 Encoded Document
                     DocNameField: template
                     ExtensionField: pdf
                     ResultField: success
