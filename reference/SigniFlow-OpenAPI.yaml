@@ -490,21 +490,21 @@ paths:
                     - AdvancedFieldTypeField: 0
                       DocIDField: 2147483647
                       FieldOptionsListField:
-                        - LinkedValueField: string
+                        - LinkedValueField: 'null'
                           MaxField: 5
                           MinField: 2
-                          ValueField: string
+                          ValueField: txt1
                       FlowIDField: 11111
-                      FontFamilyField: Arial
-                      FontSizeField: 12
+                      FontFamilyField: 'null'
+                      FontSizeField: 0
                       HeightField: '30'
                       WidthField: '15'
-                      LinkToField: string
-                      NameField: Text Field
+                      LinkToField: 'null'
+                      NameField: txt1
                       PageNumberField: 2
                       SearchableField: true
                       UserEmailField: John@domain.com
-                      ValueField: string
+                      ValueField: 'null'
                       XCoordinateField: '60'
                       YCoordinateField: '120'
                   TokenField:
@@ -2466,20 +2466,20 @@ components:
               - AdvancedFieldTypeField: 0
                 DocIDField: 2147483647
                 FieldOptionsListField:
-                  - LinkedValueField: string
+                  - LinkedValueField: 'null'
                     MaxField: 5
                     MinField: 2
-                    ValueField: string
+                    ValueField: txt1
                 FlowIDField: 11111
-                FontFamilyField: Arial
+                FontFamilyField: 'null'
                 FontSizeField: 12
                 HeightField: '30'
-                LinkToField: string
-                NameField: Text Field
+                LinkToField: 'null'
+                NameField: txt1
                 PageNumberField: 2
                 SearchableField: true
                 UserEmailField: John@domain.com
-                ValueField: string
+                ValueField: 'null'
                 WidthField: '15'
                 XCoordinateField: '60'
                 YCoordinateField: '120'
@@ -2527,7 +2527,6 @@ components:
                   required:
                     - MaxField
                     - MinField
-                    - ValueField
               FlowIDField:
                 type: number
                 example: 11111
@@ -2590,14 +2589,12 @@ components:
               - AdvancedFieldTypeField
               - DocIDField
               - FlowIDField
-              - FontFamilyField
               - FontSizeField
               - HeightField
               - WidthField
               - PageNumberField
               - SearchableField
               - UserEmailField
-              - ValueField
               - XCoordinateField
               - YCoordinateField
         TokenField:
