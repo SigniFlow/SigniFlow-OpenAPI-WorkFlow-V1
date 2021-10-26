@@ -601,7 +601,7 @@ paths:
                     PortfolioDataField: string
                     PortfolioIDField: 11112
                     PortfolioNameField: Application Portfolio
-                    ResultField: string
+                    ResultField: success
           headers:
             Content-Type:
               schema:
@@ -692,16 +692,16 @@ paths:
                       EmailAddressField: email@domain.com
                       GroupStepField:
                         GroupMembersField:
-                          - LanguageCodeField: string
-                            UserEmailField: string
-                            UserFullNameField: string
-                            UserMobileNumberField: string
+                          - LanguageCodeField: en
+                            UserEmailField: email@domain.com
+                            UserFullNameField: John Smith
+                            UserMobileNumberField: +2778 000 0000
                         GroupNameField: Managers
                         RequiredNumberOfSignaturesField: 3
                       LanguageCodeField: en
                       LatitudeField: string
                       LongitudeField: string
-                      MobileNumberField: 078 222 2222
+                      MobileNumberField: +2778 222 2222
                       PreloadedFaceToFaceSignersField:
                         - {}
                       SignReasonField: Because yes
@@ -711,14 +711,14 @@ paths:
                       UserLastNameField: Smith
                       WorkflowUserFieldsField:
                         - FieldTypeField: 0
-                          FontFamilyField: Arial
+                          FontFamilyField: 'null'
                           FontSizeField: 15
                           GroupUserNumberField: 5
                           HeightField: '15'
                           IsInvisibleField: true
                           PageNumberField: 2
-                          TagNameField: string
-                          ValueField: string
+                          TagNameField: 'null'
+                          ValueField: 'null'
                           WidthField: '25'
                           XCoordinateField: '160'
                           XOffsetField: 15
@@ -2829,7 +2829,7 @@ components:
             PortfolioDataField: string
             PortfolioIDField: 11112
             PortfolioNameField: Application Portfolio
-            ResultField: Success
+            ResultField: success
       title: Download Portfolio Response
       properties:
         PortfolioDataField:
@@ -2900,7 +2900,7 @@ components:
                 LanguageCodeField: en
                 LatitudeField: string
                 LongitudeField: string
-                MobileNumberField: 078 222 2222
+                MobileNumberField: +2778 222 2222
                 PreloadedFaceToFaceSignersField:
                   - {}
                 SignReasonField: Because yes
@@ -2910,14 +2910,14 @@ components:
                 UserLastNameField: Smith
                 WorkflowUserFieldsField:
                   - FieldTypeField: 0
-                    FontFamilyField: Arial
+                    FontFamilyField: 'null'
                     FontSizeField: 15
                     GroupUserNumberField: 5
                     HeightField: '15'
                     IsInvisibleField: true
                     PageNumberField: 2
-                    TagNameField: string
-                    ValueField: string
+                    TagNameField: 'null'
+                    ValueField: 'null'
                     WidthField: '25'
                     XCoordinateField: '160'
                     XOffsetField: 15
