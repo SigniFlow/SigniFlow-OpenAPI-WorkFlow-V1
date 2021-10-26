@@ -564,9 +564,9 @@ paths:
                   HeightField: '25'
                   WidthField: '20'
                   IsInvisibleField: true
-                  LinkToField: string
+                  LinkToField: 'null'
                   PageNumberField: 2
-                  NameField: string
+                  NameField: 'null'
                   UserEmailField: email@domain.com
                   XCoordinateField: '50'
                   YCoordinateField: '150'
@@ -2652,8 +2652,8 @@ components:
             FlowIDField: 11111
             HeightField: '25'
             IsInvisibleField: true
-            LinkToField: string
-            NameField: string
+            LinkToField: 'null'
+            NameField: 'null'
             PageNumberField: 2
             TokenField:
               TokenExpiryField: '2019-08-24T14:15:22Z'
