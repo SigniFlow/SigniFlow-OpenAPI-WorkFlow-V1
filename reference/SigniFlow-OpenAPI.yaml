@@ -933,8 +933,8 @@ paths:
                       HeightField: '30'
                       PageNumberField: 1
                       WidthField: '30'
-                      XCoordinateField: string
-                      YCoordinateField: string
+                      XCoordinateField: '120'
+                      YCoordinateField: '80'
                     ResultField: success
           headers:
             Content-Type:
@@ -980,10 +980,10 @@ paths:
                 Example:
                   value:
                     DocumentTagFieldsPositionField:
-                      - PageNumberField: 0
-                        XCoordinateField: string
-                        YCoordinateField: string
-                    ResultField: string
+                      - PageNumberField: 1
+                        XCoordinateField: '120'
+                        YCoordinateField: '80'
+                    ResultField: success
           headers:
             Content-Type:
               schema:
@@ -997,7 +997,7 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: 0
+                  DocIDField: 1212121
                   TagNameField: string
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
@@ -1028,18 +1028,18 @@ paths:
                 Example:
                   value:
                     ActivityField:
-                      - ActionOrderField: string
-                        AdditionalField: string
-                        DocIDField: string
+                      - ActionOrderField: '1'
+                        AdditionalField: 'null'
+                        DocIDField: '1212121'
                         EmailField: email@domain.com
                         EventDateField: string
                         EventField: string
                         EventStatusField: string
                         LocationField: string
                         OrderDateField: string
-                        PageField: string
-                        UserFullNameField: string
-                    ResultField: string
+                        PageField: '1'
+                        UserFullNameField: John Doe
+                    ResultField: success
           headers:
             Content-Type:
               schema:
@@ -1053,7 +1053,7 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: string
+                  DocIDField: '1212121'
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
