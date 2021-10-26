@@ -644,11 +644,11 @@ paths:
               examples:
                 Example:
                   value:
-                    DocField: string
+                    DocField: Base64 Encoded Document
                     DocIDField: 1237
                     PortfolioIDField: 11112
-                    ResultField: string
-                    StatusField: Completed
+                    ResultField: success
+                    StatusField: completed
           headers:
             Content-Type:
               schema:
@@ -749,8 +749,8 @@ paths:
               examples:
                 Example:
                   value:
-                    AuditDocumentField: string
-                    ResultField: string
+                    AuditDocumentField: Base64 Encoded Document
+                    ResultField: success
           headers:
             Content-Type:
               schema:
@@ -765,7 +765,7 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: string
+                  DocIDField: '1212121'
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
@@ -793,7 +793,7 @@ paths:
               examples:
                 Example:
                   value:
-                    Result: string
+                    Result: success
                     Url: string
           headers:
             Content-Type:
@@ -809,7 +809,7 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: string
+                  DocIDField: '1212121'
                   EmailField: email@domain.com
                   ReturnURLField: string
                   TokenField:
@@ -839,8 +839,8 @@ paths:
               examples:
                 Example:
                   value:
-                    DocStatusField: string
-                    ResultField: string
+                    DocStatusField: pending release
+                    ResultField: success
           headers:
             Content-Type:
               schema:
@@ -855,7 +855,7 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: 0
+                  DocIDField: 1212121
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
@@ -883,7 +883,7 @@ paths:
               examples:
                 Example:
                   value:
-                    Result: string
+                    Result: success
                     URL: string
           headers:
             Content-Type:
@@ -898,7 +898,7 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: string
+                  DocIDField: '1212121'
                   EmailSettingField: 0
                   ReturnURLField: string
                   TokenField:
@@ -930,12 +930,12 @@ paths:
                 Example:
                   value:
                     DocumentTagFieldsBoxPositionField:
-                      HeightField: string
-                      PageNumberField: 0
-                      WidthField: string
+                      HeightField: '30'
+                      PageNumberField: 1
+                      WidthField: '30'
                       XCoordinateField: string
                       YCoordinateField: string
-                    ResultField: string
+                    ResultField: success
           headers:
             Content-Type:
               schema:
@@ -949,7 +949,7 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: 0
+                  DocIDField: 12121212
                   TagNameField: string
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
