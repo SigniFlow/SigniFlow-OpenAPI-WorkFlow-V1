@@ -70,7 +70,7 @@ paths:
               examples:
                 Example:
                   value:
-                    ResultField: success
+                    ResultField: Success
                     TokenField:
                       TokenExpiryField: '2019-08-24T14:15:22Z'
                       TokenField: aaa111
@@ -91,7 +91,7 @@ paths:
               examples:
                 Example:
                   value:
-                    ResultField: success
+                    ResultField: Success
                     TokenField:
                       TokenExpiryField: '2019-08-24T14:15:22Z'
                       TokenField: aaa111
@@ -173,7 +173,7 @@ paths:
                 Example:
                   value:
                     DocIDField: 2147483647
-                    ResultField: success
+                    ResultField: Success
       deprecated: false
       tags:
         - WorkFlow
@@ -194,7 +194,7 @@ paths:
                     DocField: Base64 Encoded Document
                     DocNameField: template
                     ExtensionField: pdf
-                    ResultField: success
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -243,7 +243,7 @@ paths:
                       - ActionField: 0
                         EmailField: John@domain.com
                         FlowIDField: 2222222
-                    ResultField: success
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -293,7 +293,7 @@ paths:
               examples:
                 Example:
                   value:
-                    ResultField: success
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -338,7 +338,7 @@ paths:
                 Example:
                   value:
                     DocIDField: 2147483647
-                    ResultField: success
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -382,7 +382,7 @@ paths:
                 Example:
                   value:
                     PortfolioIDField: 13342
-                    ResultField: success
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -426,7 +426,7 @@ paths:
               examples:
                 Example:
                   value:
-                    ResultField: success
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -471,8 +471,8 @@ paths:
                   value:
                     AdvancedFieldResponseListField:
                       - DocFieldIDField: 11111
-                        ResultField: success
-                    ResultField: success
+                        ResultField: Success
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -601,7 +601,7 @@ paths:
                     PortfolioDataField: string
                     PortfolioIDField: 11112
                     PortfolioNameField: Application Portfolio
-                    ResultField: success
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -647,8 +647,8 @@ paths:
                     DocField: Base64 Encoded Document
                     DocIDField: 1237
                     PortfolioIDField: 11112
-                    ResultField: success
-                    StatusField: completed
+                    ResultField: Success
+                    StatusField: Completed
           headers:
             Content-Type:
               schema:
@@ -750,7 +750,7 @@ paths:
                 Example:
                   value:
                     AuditDocumentField: Base64 Encoded Document
-                    ResultField: success
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -793,8 +793,8 @@ paths:
               examples:
                 Example:
                   value:
-                    Result: success
-                    Url: string
+                    Result: Success
+                    Url: preprod.signiflow.com
           headers:
             Content-Type:
               schema:
@@ -839,8 +839,8 @@ paths:
               examples:
                 Example:
                   value:
-                    DocStatusField: pending release
-                    ResultField: success
+                    DocStatusField: Pending release
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -883,8 +883,8 @@ paths:
               examples:
                 Example:
                   value:
-                    Result: success
-                    URL: string
+                    Result: Success
+                    URL: preprod.signiflow.com/documentprepper.aspx?enc=fghkasdjfga
           headers:
             Content-Type:
               schema:
@@ -935,7 +935,7 @@ paths:
                       WidthField: '30'
                       XCoordinateField: '120'
                       YCoordinateField: '80'
-                    ResultField: success
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -983,7 +983,7 @@ paths:
                       - PageNumberField: 1
                         XCoordinateField: '120'
                         YCoordinateField: '80'
-                    ResultField: success
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -1039,7 +1039,7 @@ paths:
                         OrderDateField: string
                         PageField: '1'
                         UserFullNameField: John Doe
-                    ResultField: success
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -1095,7 +1095,7 @@ paths:
                         WidthField: 0
                         XCoordinateField: 0
                         YCoordinateField: 0
-                    ResultField: success
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -1139,11 +1139,11 @@ paths:
               examples:
                 Example:
                   value:
-                    ResultField: success
+                    ResultField: Success
                     TemplateInformationValuesField:
                       - NameField: Leave Template
                         PrepperTemplateIDField: 0
-                        TemplateDescriptionField: Th eleave application template.
+                        TemplateDescriptionField: The leave application template.
           headers:
             Content-Type:
               schema:
@@ -1187,7 +1187,7 @@ paths:
                 Example:
                   value:
                     DocIDField: 0
-                    ResultField: success
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -1231,7 +1231,7 @@ paths:
                 Example:
                   value:
                     DocIDField: 0
-                    ResultField: success
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -1275,7 +1275,7 @@ paths:
                 Example:
                   value:
                     DocIDField: 0
-                    ResultField: success
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -1319,7 +1319,7 @@ paths:
                 Example:
                   value:
                     PortfolioIDField: '0'
-                    ResultField: success
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -1365,7 +1365,7 @@ paths:
                 Example:
                   value:
                     CeremonyIDField: 2147483647
-                    ResultField: success
+                    ResultField: Success
                     SignedDocumentField: Base64 Encoded Document
           headers:
             Content-Type:
@@ -1473,7 +1473,7 @@ paths:
               examples:
                 Example:
                   value:
-                    ResultField: success
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -1519,7 +1519,7 @@ paths:
               examples:
                 Example:
                   value:
-                    ResultField: success
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -1566,8 +1566,8 @@ paths:
                 Example:
                   value:
                     CeremonyIDField: 0
-                    ResultField: string
-                    SignedDocumentField: string
+                    ResultField: Success
+                    SignedDocumentField: Base64 Encoded Document
           headers:
             Content-Type:
               schema:
@@ -1651,7 +1651,7 @@ paths:
               examples:
                 Example:
                   value:
-                    ResultField: success
+                    ResultField: Success
                     TokenField:
                       TokenExpiryField: '2019-08-24T14:15:22Z'
                       TokenField: aaa111
@@ -1697,7 +1697,7 @@ paths:
               examples:
                 Example:
                   value:
-                    ResultField: success
+                    ResultField: Success
                     TokenField:
                       TokenExpiryField: '2019-08-24T14:15:22Z'
                       TokenField: aaa111
@@ -1740,7 +1740,7 @@ paths:
               examples:
                 Example:
                   value:
-                    ResultField: sucess
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
