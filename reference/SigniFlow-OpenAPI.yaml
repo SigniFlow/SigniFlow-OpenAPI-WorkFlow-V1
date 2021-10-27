@@ -1364,9 +1364,9 @@ paths:
               examples:
                 Example:
                   value:
-                    CeremonyIDField: 0
+                    CeremonyIDField: 2147483647
                     ResultField: success
-                    SignedDocumentField: string
+                    SignedDocumentField: Base64 Encoded Document
           headers:
             Content-Type:
               schema:
@@ -1403,8 +1403,8 @@ paths:
                       SignerLocationField: string
                       SignerMobileNumberField: +2700 000 0000
                       SignerReasonField: 'null'
-                      SignerTrustOriginField: string
-                      SignerTrustReferenceField: string
+                      SignerTrustOriginField: PBSA Pty Ltd
+                      SignerTrustReferenceField: Dev001#
         description: '##### Multiple Signers Signing Ceremony Request Model'
       tags:
         - Signing Ceremony
@@ -1429,7 +1429,7 @@ paths:
               examples:
                 Example:
                   value:
-                    ResultField: string
+                    ResultField: success
           headers:
             Content-Type:
               schema:
@@ -1443,8 +1443,8 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: string
-                  DocumentOrderField: string
+                  DocIDField: '0'
+                  DocumentOrderField: '0'
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
@@ -1473,7 +1473,7 @@ paths:
               examples:
                 Example:
                   value:
-                    ResultField: string
+                    ResultField: success
           headers:
             Content-Type:
               schema:
@@ -1489,12 +1489,12 @@ paths:
               Example:
                 value:
                   AccessLevelField: 0
-                  PortfolioIDField: string
+                  PortfolioIDField: '2147483647'
                   ShareOptionField: 0
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
-                  UniqueIDField: string
+                  UniqueIDField: '2147483640'
         description: '##### Share Portfolio Request Model'
       tags:
         - Portfolios
@@ -1519,7 +1519,7 @@ paths:
               examples:
                 Example:
                   value:
-                    ResultField: string
+                    ResultField: success
           headers:
             Content-Type:
               schema:
@@ -1535,12 +1535,12 @@ paths:
               Example:
                 value:
                   AccessLevelField: 0
-                  PortfolioIDField: string
+                  PortfolioIDField: '2147483647'
                   ShareOptionField: 0
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
-                  UniqueIDField: string
+                  UniqueIDField: '2147483640'
         description: '##### Share Portfolio No Email Request Model'
       tags:
         - Portfolios
@@ -1590,7 +1590,7 @@ paths:
                       CheckboxYField: 0
                       IsCheckedField: true
                   DocField: string
-                  DocNameField: string
+                  DocNameField: example_doc
                   InitialFieldsListField:
                     - InitialHField: 0
                       InitialImageField: string
@@ -1599,8 +1599,8 @@ paths:
                       InitialWField: 0
                       InitialXField: 0
                       InitialYField: 0
-                  LoginPasswordField: string
-                  LoginUserNameField: string
+                  LoginPasswordField: password
+                  LoginUserNameField: email@domain.com
                   SignatureHField: 0
                   SignatureImageField: string
                   SignatureImageIncludeBorderField: true
@@ -1612,18 +1612,18 @@ paths:
                   SignatureWField: 0
                   SignatureXField: 0
                   SignatureYField: 0
-                  SignerEmailField: string
-                  SignerFullNameField: string
-                  SignerIdentificationNumberField: string
+                  SignerEmailField: email@domain.com
+                  SignerFullNameField: John Smith
+                  SignerIdentificationNumberField: XXXXXXXXXXXXX
                   SignerLocationField: string
-                  SignerMobileNumberField: string
-                  SignerReasonField: string
+                  SignerMobileNumberField: +2700 000 0000
+                  SignerReasonField: 'null'
                   SignerTrustOriginField: string
                   SignerTrustReferenceField: string
                   TextFieldsListField:
                     - TextFieldHField: 0
                       TextFieldPageField: 0
-                      TextFieldValueField: string
+                      TextFieldValueField: 'null'
                       TextFieldWField: 0
                       TextFieldXField: 0
                       TextFieldYField: 0
@@ -1651,7 +1651,7 @@ paths:
               examples:
                 Example:
                   value:
-                    ResultField: string
+                    ResultField: success
                     TokenField:
                       TokenExpiryField: '2019-08-24T14:15:22Z'
                       TokenField: aaa111
@@ -1697,7 +1697,7 @@ paths:
               examples:
                 Example:
                   value:
-                    ResultField: string
+                    ResultField: success
                     TokenField:
                       TokenExpiryField: '2019-08-24T14:15:22Z'
                       TokenField: aaa111
@@ -1740,7 +1740,7 @@ paths:
               examples:
                 Example:
                   value:
-                    ResultField: string
+                    ResultField: sucess
           headers:
             Content-Type:
               schema:
@@ -1760,7 +1760,7 @@ paths:
                   LoginPasswordField: pa$$word
                   LoginUserNameField: email@domain.com
                   LongitudeField: string
-                  SignReasonField: string
+                  SignReasonField: 'null'
                   TimeZoneOffsetField: 0
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
