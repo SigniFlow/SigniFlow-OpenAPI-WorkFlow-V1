@@ -2743,7 +2743,7 @@ components:
             FieldTypeField: 0
             HeightField: '20'
             PageNumberField: 2
-            PrepperFieldIDField: 0
+            PrepperFieldIDField: 2147483647
             ResultField: success
             UserIDField: 111112
             WidthField: '25'
@@ -2831,7 +2831,7 @@ components:
       x-examples:
         Download Portfolio Response Example:
           value:
-            PortfolioDataField: string
+            PortfolioDataField: Base64 Encoded Document
             PortfolioIDField: 11112
             PortfolioNameField: Application Portfolio
             ResultField: success
@@ -3690,7 +3690,7 @@ components:
                 EmailField: email@domain.com
                 EventDateField: string
                 EventField: Document signed
-                EventStatusField: string
+                EventStatusField: Document Signed
                 LocationField: string
                 OrderDateField: string
                 PageField: '2'
