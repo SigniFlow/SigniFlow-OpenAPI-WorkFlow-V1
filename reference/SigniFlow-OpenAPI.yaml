@@ -1848,6 +1848,7 @@ components:
           example: aaa111
           description: User API Token
       required:
+        - TokenExpiryField
         - TokenField
     ActionField:
       type: integer
@@ -2074,6 +2075,7 @@ components:
         TokenField:
           $ref: '#/components/schemas/TokenField'
       required:
+        - AutoRemindField
         - DocField
         - DocNameField
         - ExtensionField
@@ -2223,7 +2225,6 @@ components:
         - DocIDField
         - EmailField
         - FirstNameField
-        - LanguageCodeField
         - LastNameField
         - ProxyAllowedField
         - TokenField
@@ -2525,8 +2526,10 @@ components:
                       type: string
                       minLength: 1
                   required:
+                    - LinkedValueField
                     - MaxField
                     - MinField
+                    - ValueField
               FlowIDField:
                 type: number
                 example: 11111
@@ -2535,7 +2538,7 @@ components:
                 type: string
                 minLength: 1
                 example: Arial
-                description: Font family of the text in the field
+                description: Font family of the text in the field. If its a text field the font in the text field will be the selected font.
               FontSizeField:
                 type: number
                 example: 12
@@ -2592,6 +2595,8 @@ components:
               - FontSizeField
               - HeightField
               - WidthField
+              - LinkToField
+              - NameField
               - PageNumberField
               - SearchableField
               - UserEmailField
@@ -2686,7 +2691,7 @@ components:
           description: Field width.
         IsInvisibleField:
           type: boolean
-          description: Is the field invisible.
+          description: Is the field invisible. Only applicable to signatures.
         LinkToField:
           type: string
           minLength: 1
@@ -3178,7 +3183,7 @@ components:
                     TagNameField:
                       type: string
                       minLength: 1
-                      description: Field tag name.
+                      description: Field tag name. Not required if the fields are defined.
                       nullable: true
                     ValueField:
                       type: string
@@ -3235,6 +3240,7 @@ components:
               - UserFirstNameField
               - UserFullNameField
               - UserLastNameField
+              - WorkflowUserFieldsField
       required:
         - AutoRemindField
         - DocField
@@ -3471,7 +3477,6 @@ components:
           $ref: '#/components/schemas/TokenField'
       required:
         - DocIDField
-        - EmailSettingField
         - ReturnURLField
         - TokenField
     GetDocumentPrepperLinkResponse:
@@ -3481,7 +3486,7 @@ components:
         Get Document Prepper Link Response Example:
           value:
             Result: Success
-            URL: string
+            URL: preprod.signiflow.com/documentprepper.aspx?enc=sdgfkjsdgf
       title: Get Document Prepper Link Response
       properties:
         Result:
@@ -3684,7 +3689,7 @@ components:
                 DocIDField: '2147483647'
                 EmailField: email@domain.com
                 EventDateField: string
-                EventField: string
+                EventField: Document signed
                 EventStatusField: string
                 LocationField: string
                 OrderDateField: string
@@ -4124,7 +4129,6 @@ components:
           $ref: '#/components/schemas/TokenField'
       required:
         - DocIDField
-        - DocumentNameField
         - PortfolioIDField
         - TokenField
     LinkToPortfolioResponse:
@@ -4251,7 +4255,7 @@ components:
               SignatureImageField:
                 type: string
                 minLength: 1
-                description: Signature image
+                description: 'Signature image, if signature type is set to 0 then no signature image field is needed.'
               SignatureImageIncludeBorderField:
                 type: boolean
                 description: Signature image with borders
@@ -4302,7 +4306,7 @@ components:
               SignerReasonField:
                 type: string
                 minLength: 1
-                description: Reason for signature of the signer.
+                description: Reason for signature of the signer. This will be required if SignatureImageIncludeReasonField is set to true.
               SignerTrustOriginField:
                 type: string
                 minLength: 1
@@ -4314,6 +4318,10 @@ components:
             required:
               - SignatureHField
               - SignatureImageField
+              - SignatureImageIncludeBorderField
+              - SignatureImageIncludeReasonField
+              - SignatureImageIncludeSignedByField
+              - SignatureImageIncludeSignedDateField
               - SignatureImageTypeField
               - SignaturePageField
               - SignatureWField
@@ -4731,6 +4739,10 @@ components:
         - LoginUserNameField
         - SignatureHField
         - SignatureImageField
+        - SignatureImageIncludeBorderField
+        - SignatureImageIncludeReasonField
+        - SignatureImageIncludeSignedByField
+        - SignatureImageIncludeSignedDateField
         - SignatureImageTypeField
         - SignaturePageField
         - SignatureWField
@@ -4899,10 +4911,8 @@ components:
           $ref: '#/components/schemas/TokenField'
       required:
         - DocIDField
-        - LatitudeField
         - LoginPasswordField
         - LoginUserNameField
-        - LongitudeField
         - TimeZoneOffsetField
         - TokenField
     WorkflowSignResponse:
