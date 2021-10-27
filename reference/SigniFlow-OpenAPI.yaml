@@ -1083,19 +1083,19 @@ paths:
                 Example:
                   value:
                     PrepperTemplateValuesField:
-                      - ColorField: string
-                        DocFieldIDField: string
+                      - ColorField: green
+                        DocFieldIDField: '1212121'
                         DocIDField: 0
                         FieldTypeField: 0
                         HeightField: 0
                         PageNumberField: 0
-                        UserFullNameField: string
+                        UserFullNameField: John Smith
                         UserIDField: 0
-                        ValueField: string
+                        ValueField: 'null'
                         WidthField: 0
                         XCoordinateField: 0
                         YCoordinateField: 0
-                    ResultField: string
+                    ResultField: success
           headers:
             Content-Type:
               schema:
@@ -1139,11 +1139,11 @@ paths:
               examples:
                 Example:
                   value:
-                    ResultField: string
+                    ResultField: success
                     TemplateInformationValuesField:
-                      - NameField: string
+                      - NameField: Leave Template
                         PrepperTemplateIDField: 0
-                        TemplateDescriptionField: string
+                        TemplateDescriptionField: Th eleave application template.
           headers:
             Content-Type:
               schema:
@@ -1187,7 +1187,7 @@ paths:
                 Example:
                   value:
                     DocIDField: 0
-                    ResultField: string
+                    ResultField: success
           headers:
             Content-Type:
               schema:
@@ -1231,7 +1231,7 @@ paths:
                 Example:
                   value:
                     DocIDField: 0
-                    ResultField: string
+                    ResultField: success
           headers:
             Content-Type:
               schema:
@@ -1245,7 +1245,7 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: string
+                  DocIDField: '0'
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
@@ -1275,7 +1275,7 @@ paths:
                 Example:
                   value:
                     DocIDField: 0
-                    ResultField: string
+                    ResultField: success
           headers:
             Content-Type:
               schema:
@@ -1289,7 +1289,7 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: string
+                  DocIDField: '0'
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
@@ -1318,8 +1318,8 @@ paths:
               examples:
                 Example:
                   value:
-                    PortfolioIDField: string
-                    ResultField: string
+                    PortfolioIDField: '0'
+                    ResultField: success
           headers:
             Content-Type:
               schema:
@@ -1333,9 +1333,9 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: string
-                  DocumentNameField: string
-                  PortfolioIDField: string
+                  DocIDField: '0'
+                  DocumentNameField: example_doc
+                  PortfolioIDField: '0'
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
@@ -1365,7 +1365,7 @@ paths:
                 Example:
                   value:
                     CeremonyIDField: 0
-                    ResultField: string
+                    ResultField: success
                     SignedDocumentField: string
           headers:
             Content-Type:
@@ -1381,10 +1381,10 @@ paths:
             examples:
               Example:
                 value:
-                  DocField: string
-                  DocNameField: string
+                  DocField: Base64 Encoded Document
+                  DocNameField: example_doc
                   LoginPasswordField: '12345'
-                  LoginUserNameField: John@gmail.com
+                  LoginUserNameField: email@domain.com
                   SignerListField:
                     - SignatureHField: 0
                       SignatureImageField: string
@@ -1397,12 +1397,12 @@ paths:
                       SignatureWField: 0
                       SignatureXField: 0
                       SignatureYField: 0
-                      SignerEmailField: string
-                      SignerFullNameField: string
-                      SignerIndentificationNumberField: string
+                      SignerEmailField: email@domain.com
+                      SignerFullNameField: John Smith
+                      SignerIndentificationNumberField: XXXXXXXXXXXXX
                       SignerLocationField: string
-                      SignerMobileNumberField: string
-                      SignerReasonField: string
+                      SignerMobileNumberField: +2700 000 0000
+                      SignerReasonField: 'null'
                       SignerTrustOriginField: string
                       SignerTrustReferenceField: string
         description: '##### Multiple Signers Signing Ceremony Request Model'
