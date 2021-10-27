@@ -4571,7 +4571,7 @@ components:
           type: array
           uniqueItems: true
           minItems: 1
-          description: The list of checkbox fields.
+          description: The list of checkbox fields. This is array is only required if you add checkboxes to your document.
           items:
             type: object
             properties:
@@ -4605,7 +4605,7 @@ components:
           type: array
           uniqueItems: true
           minItems: 1
-          description: The list of initial fields.
+          description: The list of initial fields. This is array is only required if you add initial fields to your document.
           items:
             type: object
             properties:
@@ -4709,7 +4709,7 @@ components:
           type: array
           uniqueItems: true
           minItems: 1
-          description: The list of text fields.
+          description: The list of text fields. This is array is only required if you add text fields to your document.
           items:
             type: object
             properties:
