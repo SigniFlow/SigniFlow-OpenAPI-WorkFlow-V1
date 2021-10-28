@@ -511,6 +511,32 @@ paths:
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
+              Checkbox Group Example:
+                value:
+                  FieldInfoListField:
+                    - AdvancedFieldTypeField: 0
+                      DocIDField: 2147483647
+                      FieldOptionsListField:
+                        - LinkedValueField: string
+                          MaxField: 5
+                          MinField: 2
+                          ValueField: string
+                      FlowIDField: 11111
+                      FontFamilyField: Arial
+                      FontSizeField: 12
+                      HeightField: '30'
+                      WidthField: '15'
+                      LinkToField: string
+                      NameField: Text Field
+                      PageNumberField: 2
+                      SearchableField: true
+                      UserEmailField: John@domain.com
+                      ValueField: string
+                      XCoordinateField: '60'
+                      YCoordinateField: '120'
+                  TokenField:
+                    TokenExpiryField: '2019-08-24T14:15:22Z'
+                    TokenField: aaa111
         description: '##### Document Prepper Add Advanced Fields Request Model'
       description: '#### Used to add advanced fields to a document.'
       tags:
