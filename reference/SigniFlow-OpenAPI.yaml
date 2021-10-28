@@ -492,8 +492,8 @@ paths:
                       DocIDField: 2147483647
                       FieldOptionsListField:
                         - LinkedValueField: 'null'
-                          MaxField: 5
-                          MinField: 2
+                          MaxField: 1
+                          MinField: 1
                           ValueField: txt1
                       FlowIDField: 11111
                       FontFamilyField: Arial
