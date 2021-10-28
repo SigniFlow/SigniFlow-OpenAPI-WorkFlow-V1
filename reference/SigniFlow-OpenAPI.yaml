@@ -666,7 +666,7 @@ paths:
                   AdditionalDataField: '""'
                   AutoRemindField: 0
                   CustomMessageField: A message with things.
-                  DocField: string
+                  DocField: Base64 Encoded Document
                   DocNameField: Document 1
                   DueDateField: '2019-08-24'
                   ExtensionField: 0
@@ -1187,7 +1187,7 @@ paths:
               examples:
                 Example:
                   value:
-                    DocIDField: 0
+                    DocIDField: 2147483647
                     ResultField: Success
           headers:
             Content-Type:
@@ -1202,7 +1202,7 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: string
+                  DocIDField: '2147483647'
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
@@ -1231,7 +1231,7 @@ paths:
               examples:
                 Example:
                   value:
-                    DocIDField: 0
+                    DocIDField: 2147483647
                     ResultField: Success
           headers:
             Content-Type:
@@ -1246,7 +1246,7 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: '0'
+                  DocIDField: '2147483647'
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
@@ -1275,7 +1275,7 @@ paths:
               examples:
                 Example:
                   value:
-                    DocIDField: 0
+                    DocIDField: 2147483647
                     ResultField: Success
           headers:
             Content-Type:
@@ -1290,7 +1290,7 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: '0'
+                  DocIDField: '2147483647'
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
@@ -1334,9 +1334,9 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: '0'
+                  DocIDField: '2147483647'
                   DocumentNameField: example_doc
-                  PortfolioIDField: '0'
+                  PortfolioIDField: '2147111647'
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
@@ -1400,8 +1400,8 @@ paths:
                       SignatureYField: 0
                       SignerEmailField: email@domain.com
                       SignerFullNameField: John Smith
-                      SignerIndentificationNumberField: XXXXXXXXXXXXX
-                      SignerLocationField: string
+                      SignerIndentificationNumberField: +2700 000 0000
+                      SignerLocationField: '-37.8044416, 144.9721856'
                       SignerMobileNumberField: +2700 000 0000
                       SignerReasonField: 'null'
                       SignerTrustOriginField: PBSA Pty Ltd
@@ -1430,7 +1430,7 @@ paths:
               examples:
                 Example:
                   value:
-                    ResultField: success
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -1444,7 +1444,7 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: '0'
+                  DocIDField: '2147483647'
                   DocumentOrderField: '0'
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
@@ -1756,11 +1756,11 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: string
-                  LatitudeField: string
+                  DocIDField: '2147483647'
+                  LatitudeField: '-37.8044416'
                   LoginPasswordField: pa$$word
                   LoginUserNameField: email@domain.com
-                  LongitudeField: string
+                  LongitudeField: '144.9721856'
                   SignReasonField: 'null'
                   TimeZoneOffsetField: 0
                   TokenField:
@@ -2745,7 +2745,7 @@ components:
             HeightField: '20'
             PageNumberField: 2
             PrepperFieldIDField: 2147483647
-            ResultField: success
+            ResultField: Success
             UserIDField: 111112
             WidthField: '25'
             XCoordinateField: '60'
@@ -2835,7 +2835,7 @@ components:
             PortfolioDataField: Base64 Encoded Document
             PortfolioIDField: 11112
             PortfolioNameField: Application Portfolio
-            ResultField: success
+            ResultField: Success
       title: Download Portfolio Response
       properties:
         PortfolioDataField:
@@ -3537,7 +3537,7 @@ components:
           value:
             DocumentTagFieldsBoxPositionField:
               HeightField: '20'
-              PageNumberField: 0
+              PageNumberField: 1
               WidthField: '35'
               XCoordinateField: '140'
               YCoordinateField: '160'
@@ -3816,11 +3816,11 @@ components:
                 PageNumberField: 2
                 UserFullNameField: John Doe
                 UserIDField: 111111
-                ValueField: string
+                ValueField: 'null'
                 WidthField: 20
                 XCoordinateField: 60
                 YCoordinateField: 100
-            ResultField: success
+            ResultField: Success
       title: Get Prepper Template Response
       properties:
         PrepperTemplateValuesField:
@@ -3971,7 +3971,7 @@ components:
       x-examples:
         Initiate Flow Request Example:
           value:
-            DocIDField: '123473'
+            DocIDField: '2147483647'
             TokenField:
               TokenExpiryField: '2019-08-24T14:15:22Z'
               TokenField: aaa111
@@ -4216,10 +4216,10 @@ components:
                 SignatureYField: 0
                 SignerEmailField: user@domain.com
                 SignerFullNameField: John Doe
-                SignerIndentificationNumberField: string
+                SignerIndentificationNumberField: XXXXXXXXXXXXX
                 SignerLocationField: '-37.8044416, 144.9721856'
                 SignerMobileNumberField: '+27786352163'
-                SignerReasonField: string
+                SignerReasonField: 'null'
                 SignerTrustOriginField: PBSA Pty Ltd
                 SignerTrustReferenceField: Dev001#
       title: Multiple Signers Signing Ceremony Request
@@ -4553,10 +4553,10 @@ components:
             SignatureYField: 0
             SignerEmailField: user@domain.com
             SignerFullNameField: John Doe
-            SignerIdentificationNumberField: '9711210040087'
+            SignerIdentificationNumberField: '9710000040000'
             SignerLocationField: '-37.8044416, 144.9721856'
-            SignerMobileNumberField: '+27786537631'
-            SignerReasonField: string
+            SignerMobileNumberField: '+27000000000'
+            SignerReasonField: 'null'
             SignerTrustOriginField: PBSA Pty Ltd
             SignerTrustReferenceField: Dev001#
             TextFieldsListField:
@@ -4871,7 +4871,7 @@ components:
             LoginPasswordField: pa$$word
             LoginUserNameField: email@domain.com
             LongitudeField: '144.9721856'
-            SignReasonField: string
+            SignReasonField: 'null'
             TimeZoneOffsetField: 0
             TokenField:
               TokenExpiryField: '2019-08-24T14:15:22Z'
