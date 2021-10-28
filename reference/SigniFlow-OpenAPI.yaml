@@ -514,29 +514,148 @@ paths:
               Checkbox Group Example:
                 value:
                   FieldInfoListField:
-                    - AdvancedFieldTypeField: 0
-                      DocIDField: 2147483647
+                    - AdvancedFieldTypeField: 1
+                      DocIDField: 252073
+                      FlowIDField: 457952
                       FieldOptionsListField:
-                        - LinkedValueField: string
-                          MaxField: 5
-                          MinField: 2
-                          ValueField: string
-                      FlowIDField: 11111
-                      FontFamilyField: Arial
-                      FontSizeField: 12
-                      HeightField: '30'
-                      WidthField: '15'
-                      LinkToField: string
-                      NameField: Text Field
-                      PageNumberField: 2
-                      SearchableField: true
-                      UserEmailField: John@domain.com
-                      ValueField: string
-                      XCoordinateField: '60'
-                      YCoordinateField: '120'
-                  TokenField:
-                    TokenExpiryField: '2019-08-24T14:15:22Z'
-                    TokenField: aaa111
+                        - LinkedValueField: null
+                          MaxField: 1
+                          MinField: 1
+                          ValueField: cbg1
+                      FontFamilyField: null
+                      FontSizeField: 0
+                      HeightField: '60'
+                      LinkToField: null
+                      NameField: cbg1
+                      PageNumberField: '3'
+                      SearchableField: false
+                      UserEmailField: xxxxxxxx
+                      ValueField: null
+                      WidthField: '200'
+                      XCoordinateField: '300'
+                      YCoordinateField: '300'
+                    - AdvancedFieldTypeField: 1
+                      DocIDField: 252073
+                      FlowIDField: 457952
+                      FieldOptionsListField:
+                        - LinkedValueField: null
+                          MaxField: 1
+                          MinField: 1
+                          ValueField: cbg1
+                      FontFamilyField: null
+                      FontSizeField: 0
+                      HeightField: '60'
+                      LinkToField: null
+                      NameField: cbg1
+                      PageNumberField: '3'
+                      SearchableField: false
+                      UserEmailField: xxxxxxxx
+                      ValueField: null
+                      WidthField: '200'
+                      XCoordinateField: '300'
+                      YCoordinateField: '325'
+                    - AdvancedFieldTypeField: 1
+                      DocIDField: 252073
+                      FlowIDField: 457952
+                      FieldOptionsListField:
+                        - LinkedValueField: null
+                          MaxField: 1
+                          MinField: 1
+                          ValueField: cbg1
+                      FontFamilyField: null
+                      FontSizeField: 0
+                      HeightField: '60'
+                      LinkToField: null
+                      NameField: cbg1
+                      PageNumberField: '3'
+                      SearchableField: false
+                      UserEmailField: xxxxxxxx
+                      ValueField: null
+                      WidthField: '200'
+                      XCoordinateField: '300'
+                      YCoordinateField: '350'
+                    - AdvancedFieldTypeField: 1
+                      DocIDField: 252073
+                      FlowIDField: 457952
+                      FieldOptionsListField:
+                        - LinkedValueField: null
+                          MaxField: 1
+                          MinField: 1
+                          ValueField: cbg1
+                      FontFamilyField: null
+                      FontSizeField: 0
+                      HeightField: '60'
+                      LinkToField: null
+                      NameField: cbg1
+                      PageNumberField: '3'
+                      SearchableField: false
+                      UserEmailField: xxxxxxxx
+                      ValueField: null
+                      WidthField: '200'
+                      XCoordinateField: '300'
+                      YCoordinateField: '375'
+                    - AdvancedFieldTypeField: 1
+                      DocIDField: 252073
+                      FlowIDField: 457952
+                      FieldOptionsListField:
+                        - LinkedValueField: null
+                          MaxField: 1
+                          MinField: 1
+                          ValueField: cbg1
+                      FontFamilyField: null
+                      FontSizeField: 0
+                      HeightField: '60'
+                      LinkToField: null
+                      NameField: cbg1
+                      PageNumberField: '3'
+                      SearchableField: false
+                      UserEmailField: xxxxxxxx
+                      ValueField: null
+                      WidthField: '200'
+                      XCoordinateField: '300'
+                      YCoordinateField: '400'
+                    - AdvancedFieldTypeField: 1
+                      DocIDField: 252073
+                      FlowIDField: 457952
+                      FieldOptionsListField:
+                        - LinkedValueField: null
+                          MaxField: 1
+                          MinField: 1
+                          ValueField: cbg2
+                      FontFamilyField: null
+                      FontSizeField: 0
+                      HeightField: '60'
+                      LinkToField: null
+                      NameField: cbg2
+                      PageNumberField: '4'
+                      SearchableField: false
+                      UserEmailField: xxxxxxxx
+                      ValueField: null
+                      WidthField: '200'
+                      XCoordinateField: '300'
+                      YCoordinateField: '200'
+                    - AdvancedFieldTypeField: 1
+                      DocIDField: 252073
+                      FlowIDField: 457952
+                      FieldOptionsListField:
+                        - LinkedValueField: null
+                          MaxField: 2
+                          MinField: 1
+                          ValueField: cbg2
+                      FontFamilyField: null
+                      FontSizeField: 0
+                      HeightField: '60'
+                      LinkToField: null
+                      NameField: cbg2
+                      PageNumberField: '4'
+                      SearchableField: false
+                      UserEmailField: xxxxxxxx
+                      ValueField: null
+                      WidthField: '200'
+                      XCoordinateField: '300'
+                      YCoordinateField: '2250'
+                  TokenField: null
+                  TokenIDField: null
         description: '##### Document Prepper Add Advanced Fields Request Model'
       description: '#### Used to add advanced fields to a document.'
       tags:
