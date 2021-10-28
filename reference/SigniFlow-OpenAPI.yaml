@@ -54,6 +54,7 @@ paths:
             example:
               UserNameField: email@domain.com
               PasswordField: P@ssword
+            examples: {}
         required: true
       responses:
         '200':
@@ -662,7 +663,7 @@ paths:
             examples:
               Example:
                 value:
-                  AdditionalDataField: string
+                  AdditionalDataField: '""'
                   AutoRemindField: 0
                   CustomMessageField: A message with things.
                   DocField: string
@@ -711,7 +712,7 @@ paths:
                       UserLastNameField: Smith
                       WorkflowUserFieldsField:
                         - FieldTypeField: 0
-                          FontFamilyField: 'null'
+                          FontFamilyField: Arial
                           FontSizeField: 15
                           GroupUserNumberField: 5
                           HeightField: '15'
@@ -950,7 +951,7 @@ paths:
               Example:
                 value:
                   DocIDField: 12121212
-                  TagNameField: string
+                  TagNameField: textbox
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
@@ -998,7 +999,7 @@ paths:
               Example:
                 value:
                   DocIDField: 1212121
-                  TagNameField: string
+                  TagNameField: textbox
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
@@ -1087,14 +1088,14 @@ paths:
                         DocFieldIDField: '1212121'
                         DocIDField: 0
                         FieldTypeField: 0
-                        HeightField: 0
-                        PageNumberField: 0
+                        HeightField: 30
+                        PageNumberField: 1
                         UserFullNameField: John Smith
                         UserIDField: 0
                         ValueField: 'null'
-                        WidthField: 0
-                        XCoordinateField: 0
-                        YCoordinateField: 0
+                        WidthField: 60
+                        XCoordinateField: 120
+                        YCoordinateField: 80
                     ResultField: Success
           headers:
             Content-Type:
@@ -1589,7 +1590,7 @@ paths:
                       CheckboxXField: 0
                       CheckboxYField: 0
                       IsCheckedField: true
-                  DocField: string
+                  DocField: Base64 Encoded Document
                   DocNameField: example_doc
                   InitialFieldsListField:
                     - InitialHField: 0
