@@ -795,7 +795,7 @@ paths:
                 Example:
                   value:
                     Result: Success
-                    Url: preprod.signiflow.com
+                    Url: example.com
           headers:
             Content-Type:
               schema:
@@ -812,7 +812,7 @@ paths:
                 value:
                   DocIDField: '2147483647'
                   EmailField: email@domain.com
-                  ReturnURLField: preprod.signiflow.com
+                  ReturnURLField: example.com
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
@@ -885,7 +885,7 @@ paths:
                 Example:
                   value:
                     Result: Success
-                    URL: preprod.signiflow.com/documentprepper.aspx?enc=fghkasdjfga
+                    URL: example.com/document.aspx?enc=fghkasdjfga
           headers:
             Content-Type:
               schema:
@@ -901,7 +901,7 @@ paths:
                 value:
                   DocIDField: '2147483647'
                   EmailSettingField: 0
-                  ReturnURLField: preprod.signiflow.com
+                  ReturnURLField: example.com
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
@@ -1566,7 +1566,7 @@ paths:
               examples:
                 Example:
                   value:
-                    CeremonyIDField: 0
+                    CeremonyIDField: 2147483647
                     ResultField: Success
                     SignedDocumentField: Base64 Encoded Document
           headers:
