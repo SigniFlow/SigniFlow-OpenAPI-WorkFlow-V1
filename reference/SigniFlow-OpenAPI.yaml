@@ -496,7 +496,7 @@ paths:
                           MinField: 2
                           ValueField: txt1
                       FlowIDField: 11111
-                      FontFamilyField: 'null'
+                      FontFamilyField: Arial
                       FontSizeField: 0
                       HeightField: '30'
                       WidthField: '15'
