@@ -536,13 +536,13 @@ paths:
               examples:
                 Example:
                   value:
-                    DocIDField: 12344
+                    DocIDField: 2147483647
                     FieldTypeField: 0
                     HeightField: '20'
                     PageNumberField: 2
                     PrepperFieldIDField: 0
                     ResultField: string
-                    UserIDField: 111112
+                    UserIDField: 11111112
                     WidthField: '25'
                     XCoordinateField: '60'
                     YCoordinateField: '120'
@@ -560,8 +560,8 @@ paths:
               Example:
                 value:
                   DocFieldTypeField: 0
-                  DocIDField: 12344
-                  FlowIDField: 11111
+                  DocIDField: 2147483647
+                  FlowIDField: 2147111647
                   HeightField: '25'
                   WidthField: '20'
                   IsInvisibleField: true
@@ -599,7 +599,7 @@ paths:
               examples:
                 Example:
                   value:
-                    PortfolioDataField: string
+                    PortfolioDataField: Base64 Encoded Document
                     PortfolioIDField: 11112
                     PortfolioNameField: Application Portfolio
                     ResultField: Success
@@ -646,8 +646,8 @@ paths:
                 Example:
                   value:
                     DocField: Base64 Encoded Document
-                    DocIDField: 1237
-                    PortfolioIDField: 11112
+                    DocIDField: 2147483647
+                    PortfolioIDField: 2111113647
                     ResultField: Success
                     StatusField: Completed
           headers:
@@ -677,7 +677,7 @@ paths:
                   PortfolioInformationField:
                     CreatePortfolioField: true
                     LinkToPortfolioField: true
-                    PortfolioIDField: 11112
+                    PortfolioIDField: 2141111647
                     PortfolioNameField: Portfolio 1
                   PriorityField: 0
                   SLAField: 0
@@ -700,8 +700,8 @@ paths:
                         GroupNameField: Managers
                         RequiredNumberOfSignaturesField: 3
                       LanguageCodeField: en
-                      LatitudeField: string
-                      LongitudeField: string
+                      LatitudeField: '-37.8044416'
+                      LongitudeField: '144.9721856'
                       MobileNumberField: +2778 222 2222
                       PreloadedFaceToFaceSignersField:
                         - {}
@@ -766,7 +766,7 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: '1212121'
+                  DocIDField: '2147483647'
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
@@ -810,9 +810,9 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: '1212121'
+                  DocIDField: '2147483647'
                   EmailField: email@domain.com
-                  ReturnURLField: string
+                  ReturnURLField: preprod.signiflow.com
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
@@ -856,7 +856,7 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: 1212121
+                  DocIDField: 2147483647
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
@@ -899,9 +899,9 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: '1212121'
+                  DocIDField: '2147483647'
                   EmailSettingField: 0
-                  ReturnURLField: string
+                  ReturnURLField: preprod.signiflow.com
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
@@ -950,7 +950,7 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: 12121212
+                  DocIDField: 2147483647
                   TagNameField: textbox
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
@@ -998,7 +998,7 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: 1212121
+                  DocIDField: 2147483647
                   TagNameField: textbox
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
@@ -1031,13 +1031,13 @@ paths:
                     ActivityField:
                       - ActionOrderField: '1'
                         AdditionalField: 'null'
-                        DocIDField: '1212121'
+                        DocIDField: '2147483647'
                         EmailField: email@domain.com
-                        EventDateField: string
-                        EventField: string
-                        EventStatusField: string
-                        LocationField: string
-                        OrderDateField: string
+                        EventDateField: '2019-08-24'
+                        EventField: Pending Release
+                        EventStatusField: Pending Release
+                        LocationField: '-37.8044416, 144.9721856'
+                        OrderDateField: '2019-08-28'
                         PageField: '1'
                         UserFullNameField: John Doe
                     ResultField: Success
@@ -1054,7 +1054,7 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: '1212121'
+                  DocIDField: '2147483647'
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
@@ -1085,8 +1085,8 @@ paths:
                   value:
                     PrepperTemplateValuesField:
                       - ColorField: green
-                        DocFieldIDField: '1212121'
-                        DocIDField: 0
+                        DocFieldIDField: '2147483647'
+                        DocIDField: 2147483644
                         FieldTypeField: 0
                         HeightField: 30
                         PageNumberField: 1
@@ -1110,8 +1110,8 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: 0
-                  PrepperTemplateIDField: 0
+                  DocIDField: 2147483647
+                  PrepperTemplateIDField: 2147481117
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
@@ -1143,7 +1143,7 @@ paths:
                     ResultField: Success
                     TemplateInformationValuesField:
                       - NameField: Leave Template
-                        PrepperTemplateIDField: 0
+                        PrepperTemplateIDField: 2147483647
                         TemplateDescriptionField: The leave application template.
           headers:
             Content-Type:
@@ -1319,7 +1319,7 @@ paths:
               examples:
                 Example:
                   value:
-                    PortfolioIDField: '0'
+                    PortfolioIDField: '2147483640'
                     ResultField: Success
           headers:
             Content-Type:
