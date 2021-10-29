@@ -656,6 +656,244 @@ paths:
                       YCoordinateField: '2250'
                   TokenField: null
                   TokenIDField: null
+              Example of Different Field Types:
+                value:
+                  FieldInfoListField:
+                    - AdvancedFieldTypeField: 0
+                      DocIDField: DocID
+                      FlowIDField: FlowID
+                      FieldOptionsListField:
+                        - LinkedValueField: null
+                          MaxField: 0
+                          MinField: 0
+                          ValueField: Please Select
+                        - LinkedValueField: null
+                          MaxField: 0
+                          MinField: 0
+                          ValueField: Value 1
+                        - LinkedValueField: null
+                          MaxField: 0
+                          MinField: 0
+                          ValueField: Value 2
+                      FontFamilyField: null
+                      FontSizeField: 12
+                      HeightField: '60'
+                      LinkToField: null
+                      NameField: null
+                      PageNumberField: '1'
+                      SearchableField: false
+                      UserEmailField: UserEmail
+                      ValueField: null
+                      WidthField: '120'
+                      XCoordinateField: '0'
+                      YCoordinateField: '100'
+                    - AdvancedFieldTypeField: 2
+                      DocIDField: DocID
+                      FlowIDField: FlowID
+                      FieldOptionsListField:
+                        - LinkedValueField: null
+                          MaxField: 0
+                          MinField: 0
+                          ValueField: Value 1
+                        - LinkedValueField: null
+                          MaxField: 0
+                          MinField: 0
+                          ValueField: Value 2
+                      FontFamilyField: null
+                      FontSizeField: 12
+                      HeightField: '60'
+                      LinkToField: null
+                      NameField: SampleOptionalDropDown
+                      PageNumberField: '1'
+                      SearchableField: false
+                      UserEmailField: UserEmail
+                      ValueField: null
+                      WidthField: '120'
+                      XCoordinateField: '0'
+                      YCoordinateField: '200'
+                    - AdvancedFieldTypeField: 3
+                      DocIDField: DocID
+                      FlowIDField: FlowID
+                      FieldOptionsListField:
+                        - LinkedValueField: null
+                          MaxField: 0
+                          MinField: 0
+                          ValueField: rdgCarType
+                      FontFamilyField: null
+                      FontSizeField: 12
+                      HeightField: '15'
+                      LinkToField: rdgCarType
+                      NameField: rdgCarType_VW
+                      PageNumberField: '1'
+                      SearchableField: false
+                      UserEmailField: UserEmail
+                      ValueField: null
+                      WidthField: '15'
+                      XCoordinateField: '0'
+                      YCoordinateField: '300'
+                    - AdvancedFieldTypeField: 3
+                      DocIDField: DocID
+                      FlowIDField: FlowID
+                      FieldOptionsListField:
+                        - LinkedValueField: null
+                          MaxField: 0
+                          MinField: 0
+                          ValueField: rdgCarType
+                      FontFamilyField: null
+                      FontSizeField: 12
+                      HeightField: '60'
+                      LinkToField: rdgCarType
+                      NameField: rdgCarType_BMW
+                      PageNumberField: '1'
+                      SearchableField: false
+                      UserEmailField: UserEmail
+                      ValueField: null
+                      WidthField: '120'
+                      XCoordinateField: '20'
+                      YCoordinateField: '300'
+                    - AdvancedFieldTypeField: 3
+                      DocIDField: DocID
+                      FlowIDField: FlowID
+                      FieldOptionsListField:
+                        - LinkedValueField: null
+                          MaxField: 0
+                          MinField: 0
+                          ValueField: rdgCarType
+                      FontFamilyField: null
+                      FontSizeField: 12
+                      HeightField: '60'
+                      LinkToField: rdgCarType
+                      NameField: rdgCarType_TATA
+                      PageNumberField: '1'
+                      SearchableField: false
+                      UserEmailField: UserEmail
+                      ValueField: null
+                      WidthField: '120'
+                      XCoordinateField: '40'
+                      YCoordinateField: '300'
+                    - AdvancedFieldTypeField: 4
+                      DocIDField: DocID
+                      FlowIDField: FlowID
+                      FieldOptionsListField:
+                        - LinkedValueField: null
+                          MaxField: 0
+                          MinField: 0
+                          ValueField: ''
+                      FontFamilyField: null
+                      FontSizeField: 12
+                      HeightField: '60'
+                      LinkToField: null
+                      NameField: null
+                      PageNumberField: '1'
+                      SearchableField: false
+                      UserEmailField: UserEmail
+                      ValueField: null
+                      WidthField: '120'
+                      XCoordinateField: '0'
+                      YCoordinateField: '400'
+                    - AdvancedFieldTypeField: 5
+                      DocIDField: DocID
+                      FlowIDField: FlowID
+                      FieldOptionsListField:
+                        - LinkedValueField: null
+                          MaxField: 0
+                          MinField: 0
+                          ValueField: ''
+                      FontFamilyField: null
+                      FontSizeField: 12
+                      HeightField: '60'
+                      LinkToField: null
+                      NameField: null
+                      PageNumberField: '1'
+                      SearchableField: false
+                      UserEmailField: UserEmail
+                      ValueField: null
+                      WidthField: '120'
+                      XCoordinateField: '0'
+                      YCoordinateField: '500'
+                    - AdvancedFieldTypeField: 6
+                      DocIDField: DocID
+                      FlowIDField: FlowID
+                      FieldOptionsListField:
+                        - LinkedValueField: null
+                          MaxField: 0
+                          MinField: 0
+                          ValueField: ''
+                      FontFamilyField: null
+                      FontSizeField: 12
+                      HeightField: '60'
+                      LinkToField: null
+                      NameField: null
+                      PageNumberField: '1'
+                      SearchableField: false
+                      UserEmailField: UserEmail
+                      ValueField: null
+                      WidthField: '120'
+                      XCoordinateField: '100'
+                      YCoordinateField: '100'
+                    - AdvancedFieldTypeField: 7
+                      DocIDField: DocID
+                      FlowIDField: FlowID
+                      FieldOptionsListField:
+                        - LinkedValueField: null
+                          MaxField: 0
+                          MinField: 0
+                          ValueField: ''
+                      FontFamilyField: null
+                      FontSizeField: 12
+                      HeightField: '60'
+                      LinkToField: null
+                      NameField: null
+                      PageNumberField: '1'
+                      SearchableField: false
+                      UserEmailField: UserEmail
+                      ValueField: null
+                      WidthField: '120'
+                      XCoordinateField: '100'
+                      YCoordinateField: '200'
+                    - AdvancedFieldTypeField: 8
+                      DocIDField: DocID
+                      FlowIDField: FlowID
+                      FieldOptionsListField:
+                        - LinkedValueField: null
+                          MaxField: 0
+                          MinField: 0
+                          ValueField: ''
+                      FontFamilyField: null
+                      FontSizeField: 12
+                      HeightField: '60'
+                      LinkToField: null
+                      NameField: null
+                      PageNumberField: '1'
+                      SearchableField: false
+                      UserEmailField: UserEmail
+                      ValueField: null
+                      WidthField: '120'
+                      XCoordinateField: '100'
+                      YCoordinateField: '300'
+                    - AdvancedFieldTypeField: 9
+                      DocIDField: DocID
+                      FlowIDField: FlowID
+                      FieldOptionsListField:
+                        - LinkedValueField: null
+                          MaxField: 0
+                          MinField: 0
+                          ValueField: ''
+                      FontFamilyField: null
+                      FontSizeField: 12
+                      HeightField: '60'
+                      LinkToField: null
+                      NameField: null
+                      PageNumberField: '1'
+                      SearchableField: false
+                      UserEmailField: UserEmail
+                      ValueField: null
+                      WidthField: '120'
+                      XCoordinateField: '100'
+                      YCoordinateField: '400'
+                  TokenField:
+                    TokenExpiryField: '2019-08-24T14:15:22Z'
+                    TokenField: aaa111
         description: '##### Document Prepper Add Advanced Fields Request Model'
       description: '#### Used to add advanced fields to a document.'
       tags:
