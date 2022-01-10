@@ -1109,8 +1109,15 @@ paths:
                           YCoordinateField: '60'
                           YOffsetField: 20
         description: '##### FullWorkflow Request Model'
-      description: |
-        #### Used to create a fullworkflow for a document.
+      description: |-
+        #### Used to create a e-signature workflow with a single API Request.
+        The request can contain multiple recipients, fields and signatures.
+
+        Enumerations used in this API Call include:
+
+        * AutoRemindField
+        ** 0 = No
+        ** 1 = Yes
       tags:
         - WorkFlow
       parameters:
