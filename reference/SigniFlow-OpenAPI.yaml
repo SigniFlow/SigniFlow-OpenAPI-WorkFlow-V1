@@ -1109,10 +1109,8 @@ paths:
                           YCoordinateField: '60'
                           YOffsetField: 20
         description: '##### FullWorkflow Request Model'
-      description: |-
+      description: |
         #### Used to create a fullworkflow for a document.
-
-        List enum stuff here
       tags:
         - WorkFlow
       parameters:
