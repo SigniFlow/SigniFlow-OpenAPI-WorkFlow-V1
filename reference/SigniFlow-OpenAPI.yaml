@@ -2014,6 +2014,7 @@ components:
         `
       minimum: 0
       maximum: 9
+      x-internal: false
     CreateWorkflowRequest:
       title: Create Workflow Request
       type: object
@@ -2864,7 +2865,12 @@ components:
         - PortfolioNameField
         - ResultField
     FullWorkflowRequest:
-      description: '#### Request a fullworkflow of a document.'
+      description: |-
+        #### Request a fullworkflow of a document.
+
+        ##### Enums used in this call
+        * DocExtension
+        ** 0 = PDF
       type: object
       x-examples:
         Example:
