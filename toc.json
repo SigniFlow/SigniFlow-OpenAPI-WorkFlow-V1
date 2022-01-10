@@ -36,7 +36,7 @@
     {
       "type": "item",
       "title": "SigniFlow OpenAPI v1",
-      "uri": "reference/SigniFlow-OpenAPI-v1.yaml"
+      "uri": "reference/SigniFlow-OpenAPI.yaml"
     }
   ]
 }
