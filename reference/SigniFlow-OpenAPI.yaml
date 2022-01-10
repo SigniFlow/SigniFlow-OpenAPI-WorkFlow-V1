@@ -54,6 +54,7 @@ paths:
             example:
               UserNameField: email@domain.com
               PasswordField: P@ssword
+            examples: {}
         required: true
       responses:
         '200':
@@ -70,7 +71,7 @@ paths:
               examples:
                 Example:
                   value:
-                    ResultField: success
+                    ResultField: Success
                     TokenField:
                       TokenExpiryField: '2019-08-24T14:15:22Z'
                       TokenField: aaa111
@@ -91,7 +92,7 @@ paths:
               examples:
                 Example:
                   value:
-                    ResultField: success
+                    ResultField: Success
                     TokenField:
                       TokenExpiryField: '2019-08-24T14:15:22Z'
                       TokenField: aaa111
@@ -146,11 +147,11 @@ paths:
                   AdditionalDataField: '""'
                   AutoExpireField: 0
                   AutoRemindField: 0
-                  DocField: String content
-                  DocNameField: String content
+                  DocField: Base64 Encoded Document
+                  DocNameField: Document Name
                   DueDateField: '2019-08-24T14:15:22Z'
                   ExtensionField: 0
-                  MessageField: String content
+                  MessageField: Message to participants
                   PriorityField: 0
                   SLAField: 0
                   TokenField:
@@ -173,7 +174,7 @@ paths:
                 Example:
                   value:
                     DocIDField: 2147483647
-                    ResultField: success
+                    ResultField: Success
       deprecated: false
       tags:
         - WorkFlow
@@ -191,10 +192,10 @@ paths:
               examples:
                 Example:
                   value:
-                    DocField: string
+                    DocField: Base64 Encoded Document
                     DocNameField: template
                     ExtensionField: pdf
-                    ResultField: success
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -243,7 +244,7 @@ paths:
                       - ActionField: 0
                         EmailField: John@domain.com
                         FlowIDField: 2222222
-                    ResultField: success
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -258,11 +259,11 @@ paths:
               Example:
                 value:
                   ActionField: 0
-                  CellField: string
+                  CellField: '0121231234'
                   DocIDField: '2147483647'
                   EmailField: email@domain.com
                   FirstNameField: John
-                  LanguageCodeField: ENG
+                  LanguageCodeField: en
                   LastNameField: Smith
                   ProxyAllowedField: 0
                   TokenField:
@@ -293,7 +294,7 @@ paths:
               examples:
                 Example:
                   value:
-                    ResultField: success
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -338,7 +339,7 @@ paths:
                 Example:
                   value:
                     DocIDField: 2147483647
-                    ResultField: success
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -382,7 +383,7 @@ paths:
                 Example:
                   value:
                     PortfolioIDField: 13342
-                    ResultField: success
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -426,7 +427,7 @@ paths:
               examples:
                 Example:
                   value:
-                    ResultField: success
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -471,8 +472,8 @@ paths:
                   value:
                     AdvancedFieldResponseListField:
                       - DocFieldIDField: 11111
-                        ResultField: success
-                    ResultField: success
+                        ResultField: Success
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -490,23 +491,406 @@ paths:
                     - AdvancedFieldTypeField: 0
                       DocIDField: 2147483647
                       FieldOptionsListField:
-                        - LinkedValueField: string
-                          MaxField: 5
-                          MinField: 2
-                          ValueField: string
+                        - LinkedValueField: 'null'
+                          MaxField: 1
+                          MinField: 1
+                          ValueField: txt1
                       FlowIDField: 11111
                       FontFamilyField: Arial
-                      FontSizeField: 12
+                      FontSizeField: 0
                       HeightField: '30'
                       WidthField: '15'
-                      LinkToField: string
-                      NameField: Text Field
+                      LinkToField: 'null'
+                      NameField: txt1
                       PageNumberField: 2
                       SearchableField: true
                       UserEmailField: John@domain.com
-                      ValueField: string
+                      ValueField: 'null'
                       XCoordinateField: '60'
                       YCoordinateField: '120'
+                  TokenField:
+                    TokenExpiryField: '2019-08-24T14:15:22Z'
+                    TokenField: aaa111
+              Checkbox Group Example:
+                value:
+                  FieldInfoListField:
+                    - AdvancedFieldTypeField: 1
+                      DocIDField: 252073
+                      FlowIDField: 457952
+                      FieldOptionsListField:
+                        - LinkedValueField: null
+                          MaxField: 1
+                          MinField: 1
+                          ValueField: cbg1
+                      FontFamilyField: null
+                      FontSizeField: 0
+                      HeightField: '60'
+                      LinkToField: null
+                      NameField: cbg1
+                      PageNumberField: '3'
+                      SearchableField: false
+                      UserEmailField: xxxxxxxx
+                      ValueField: null
+                      WidthField: '200'
+                      XCoordinateField: '300'
+                      YCoordinateField: '300'
+                    - AdvancedFieldTypeField: 1
+                      DocIDField: 252073
+                      FlowIDField: 457952
+                      FieldOptionsListField:
+                        - LinkedValueField: null
+                          MaxField: 1
+                          MinField: 1
+                          ValueField: cbg1
+                      FontFamilyField: null
+                      FontSizeField: 0
+                      HeightField: '60'
+                      LinkToField: null
+                      NameField: cbg1
+                      PageNumberField: '3'
+                      SearchableField: false
+                      UserEmailField: xxxxxxxx
+                      ValueField: null
+                      WidthField: '200'
+                      XCoordinateField: '300'
+                      YCoordinateField: '325'
+                    - AdvancedFieldTypeField: 1
+                      DocIDField: 252073
+                      FlowIDField: 457952
+                      FieldOptionsListField:
+                        - LinkedValueField: null
+                          MaxField: 1
+                          MinField: 1
+                          ValueField: cbg1
+                      FontFamilyField: null
+                      FontSizeField: 0
+                      HeightField: '60'
+                      LinkToField: null
+                      NameField: cbg1
+                      PageNumberField: '3'
+                      SearchableField: false
+                      UserEmailField: xxxxxxxx
+                      ValueField: null
+                      WidthField: '200'
+                      XCoordinateField: '300'
+                      YCoordinateField: '350'
+                    - AdvancedFieldTypeField: 1
+                      DocIDField: 252073
+                      FlowIDField: 457952
+                      FieldOptionsListField:
+                        - LinkedValueField: null
+                          MaxField: 1
+                          MinField: 1
+                          ValueField: cbg1
+                      FontFamilyField: null
+                      FontSizeField: 0
+                      HeightField: '60'
+                      LinkToField: null
+                      NameField: cbg1
+                      PageNumberField: '3'
+                      SearchableField: false
+                      UserEmailField: xxxxxxxx
+                      ValueField: null
+                      WidthField: '200'
+                      XCoordinateField: '300'
+                      YCoordinateField: '375'
+                    - AdvancedFieldTypeField: 1
+                      DocIDField: 252073
+                      FlowIDField: 457952
+                      FieldOptionsListField:
+                        - LinkedValueField: null
+                          MaxField: 1
+                          MinField: 1
+                          ValueField: cbg1
+                      FontFamilyField: null
+                      FontSizeField: 0
+                      HeightField: '60'
+                      LinkToField: null
+                      NameField: cbg1
+                      PageNumberField: '3'
+                      SearchableField: false
+                      UserEmailField: xxxxxxxx
+                      ValueField: null
+                      WidthField: '200'
+                      XCoordinateField: '300'
+                      YCoordinateField: '400'
+                    - AdvancedFieldTypeField: 1
+                      DocIDField: 252073
+                      FlowIDField: 457952
+                      FieldOptionsListField:
+                        - LinkedValueField: null
+                          MaxField: 1
+                          MinField: 1
+                          ValueField: cbg2
+                      FontFamilyField: null
+                      FontSizeField: 0
+                      HeightField: '60'
+                      LinkToField: null
+                      NameField: cbg2
+                      PageNumberField: '4'
+                      SearchableField: false
+                      UserEmailField: xxxxxxxx
+                      ValueField: null
+                      WidthField: '200'
+                      XCoordinateField: '300'
+                      YCoordinateField: '200'
+                    - AdvancedFieldTypeField: 1
+                      DocIDField: 252073
+                      FlowIDField: 457952
+                      FieldOptionsListField:
+                        - LinkedValueField: null
+                          MaxField: 2
+                          MinField: 1
+                          ValueField: cbg2
+                      FontFamilyField: null
+                      FontSizeField: 0
+                      HeightField: '60'
+                      LinkToField: null
+                      NameField: cbg2
+                      PageNumberField: '4'
+                      SearchableField: false
+                      UserEmailField: xxxxxxxx
+                      ValueField: null
+                      WidthField: '200'
+                      XCoordinateField: '300'
+                      YCoordinateField: '2250'
+                  TokenField: null
+                  TokenIDField: null
+              Example of Different Field Types:
+                value:
+                  FieldInfoListField:
+                    - AdvancedFieldTypeField: 0
+                      DocIDField: '2147483647'
+                      FlowIDField: '2147483640'
+                      FieldOptionsListField:
+                        - LinkedValueField: null
+                          MaxField: 0
+                          MinField: 0
+                          ValueField: Please Select
+                        - LinkedValueField: null
+                          MaxField: 0
+                          MinField: 0
+                          ValueField: Value 1
+                        - LinkedValueField: null
+                          MaxField: 0
+                          MinField: 0
+                          ValueField: Value 2
+                      FontFamilyField: null
+                      FontSizeField: 12
+                      HeightField: '60'
+                      LinkToField: null
+                      NameField: null
+                      PageNumberField: '1'
+                      SearchableField: false
+                      UserEmailField: user@domain.com
+                      ValueField: null
+                      WidthField: '120'
+                      XCoordinateField: '0'
+                      YCoordinateField: '100'
+                    - AdvancedFieldTypeField: 2
+                      DocIDField: '2147483647'
+                      FlowIDField: '2147483647'
+                      FieldOptionsListField:
+                        - LinkedValueField: null
+                          MaxField: 0
+                          MinField: 0
+                          ValueField: Value 1
+                        - LinkedValueField: null
+                          MaxField: 0
+                          MinField: 0
+                          ValueField: Value 2
+                      FontFamilyField: null
+                      FontSizeField: 12
+                      HeightField: '60'
+                      LinkToField: null
+                      NameField: SampleOptionalDropDown
+                      PageNumberField: '1'
+                      SearchableField: false
+                      UserEmailField: user@domain.com
+                      ValueField: null
+                      WidthField: '120'
+                      XCoordinateField: '0'
+                      YCoordinateField: '200'
+                    - AdvancedFieldTypeField: 3
+                      DocIDField: '2147483647'
+                      FlowIDField: '2147483647'
+                      FieldOptionsListField:
+                        - LinkedValueField: null
+                          MaxField: 0
+                          MinField: 0
+                          ValueField: rdgCarType
+                      FontFamilyField: null
+                      FontSizeField: 12
+                      HeightField: '15'
+                      LinkToField: rdgCarType
+                      NameField: rdgCarType_VW
+                      PageNumberField: '1'
+                      SearchableField: false
+                      UserEmailField: user@domain.com
+                      ValueField: null
+                      WidthField: '15'
+                      XCoordinateField: '0'
+                      YCoordinateField: '300'
+                    - AdvancedFieldTypeField: 3
+                      DocIDField: '2147483647'
+                      FlowIDField: '2147483647'
+                      FieldOptionsListField:
+                        - LinkedValueField: null
+                          MaxField: 0
+                          MinField: 0
+                          ValueField: rdgCarType
+                      FontFamilyField: null
+                      FontSizeField: 12
+                      HeightField: '60'
+                      LinkToField: rdgCarType
+                      NameField: rdgCarType_BMW
+                      PageNumberField: '1'
+                      SearchableField: false
+                      UserEmailField: user@domain.com
+                      ValueField: null
+                      WidthField: '120'
+                      XCoordinateField: '20'
+                      YCoordinateField: '300'
+                    - AdvancedFieldTypeField: 3
+                      DocIDField: '2147483647'
+                      FlowIDField: '2147483647'
+                      FieldOptionsListField:
+                        - LinkedValueField: null
+                          MaxField: 0
+                          MinField: 0
+                          ValueField: rdgCarType
+                      FontFamilyField: null
+                      FontSizeField: 12
+                      HeightField: '60'
+                      LinkToField: rdgCarType
+                      NameField: rdgCarType_TATA
+                      PageNumberField: '1'
+                      SearchableField: false
+                      UserEmailField: user@domain.com
+                      ValueField: null
+                      WidthField: '120'
+                      XCoordinateField: '40'
+                      YCoordinateField: '300'
+                    - AdvancedFieldTypeField: 4
+                      DocIDField: '2147483647'
+                      FlowIDField: '2147483647'
+                      FieldOptionsListField:
+                        - LinkedValueField: null
+                          MaxField: 0
+                          MinField: 0
+                          ValueField: ''
+                      FontFamilyField: null
+                      FontSizeField: 12
+                      HeightField: '60'
+                      LinkToField: null
+                      NameField: null
+                      PageNumberField: '1'
+                      SearchableField: false
+                      UserEmailField: user@domain.com
+                      ValueField: null
+                      WidthField: '120'
+                      XCoordinateField: '0'
+                      YCoordinateField: '400'
+                    - AdvancedFieldTypeField: 5
+                      DocIDField: '2147483647'
+                      FlowIDField: '2147483647'
+                      FieldOptionsListField:
+                        - LinkedValueField: null
+                          MaxField: 0
+                          MinField: 0
+                          ValueField: ''
+                      FontFamilyField: null
+                      FontSizeField: 12
+                      HeightField: '60'
+                      LinkToField: null
+                      NameField: null
+                      PageNumberField: '1'
+                      SearchableField: false
+                      UserEmailField: user@domain.com
+                      ValueField: null
+                      WidthField: '120'
+                      XCoordinateField: '0'
+                      YCoordinateField: '500'
+                    - AdvancedFieldTypeField: 6
+                      DocIDField: '2147483647'
+                      FlowIDField: '2147483647'
+                      FieldOptionsListField:
+                        - LinkedValueField: null
+                          MaxField: 0
+                          MinField: 0
+                          ValueField: ''
+                      FontFamilyField: null
+                      FontSizeField: 12
+                      HeightField: '60'
+                      LinkToField: null
+                      NameField: null
+                      PageNumberField: '1'
+                      SearchableField: false
+                      UserEmailField: user@domain.com
+                      ValueField: null
+                      WidthField: '120'
+                      XCoordinateField: '100'
+                      YCoordinateField: '100'
+                    - AdvancedFieldTypeField: 7
+                      DocIDField: '2147483647'
+                      FlowIDField: '2147483647'
+                      FieldOptionsListField:
+                        - LinkedValueField: null
+                          MaxField: 0
+                          MinField: 0
+                          ValueField: ''
+                      FontFamilyField: null
+                      FontSizeField: 12
+                      HeightField: '60'
+                      LinkToField: null
+                      NameField: null
+                      PageNumberField: '1'
+                      SearchableField: false
+                      UserEmailField: user@domain.com
+                      ValueField: null
+                      WidthField: '120'
+                      XCoordinateField: '100'
+                      YCoordinateField: '200'
+                    - AdvancedFieldTypeField: 8
+                      DocIDField: '2147483647'
+                      FlowIDField: '2147483647'
+                      FieldOptionsListField:
+                        - LinkedValueField: null
+                          MaxField: 0
+                          MinField: 0
+                          ValueField: ''
+                      FontFamilyField: null
+                      FontSizeField: 12
+                      HeightField: '60'
+                      LinkToField: null
+                      NameField: null
+                      PageNumberField: '1'
+                      SearchableField: false
+                      UserEmailField: user@domain.com
+                      ValueField: null
+                      WidthField: '120'
+                      XCoordinateField: '100'
+                      YCoordinateField: '300'
+                    - AdvancedFieldTypeField: 9
+                      DocIDField: '2147483647'
+                      FlowIDField: '2147483647'
+                      FieldOptionsListField:
+                        - LinkedValueField: null
+                          MaxField: 0
+                          MinField: 0
+                          ValueField: ''
+                      FontFamilyField: null
+                      FontSizeField: 12
+                      HeightField: '60'
+                      LinkToField: null
+                      NameField: null
+                      PageNumberField: '1'
+                      SearchableField: false
+                      UserEmailField: user@domain.com
+                      ValueField: null
+                      WidthField: '120'
+                      XCoordinateField: '100'
+                      YCoordinateField: '400'
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
@@ -535,13 +919,13 @@ paths:
               examples:
                 Example:
                   value:
-                    DocIDField: 12344
+                    DocIDField: 2147483647
                     FieldTypeField: 0
                     HeightField: '20'
                     PageNumberField: 2
                     PrepperFieldIDField: 0
                     ResultField: string
-                    UserIDField: 111112
+                    UserIDField: 11111112
                     WidthField: '25'
                     XCoordinateField: '60'
                     YCoordinateField: '120'
@@ -559,14 +943,14 @@ paths:
               Example:
                 value:
                   DocFieldTypeField: 0
-                  DocIDField: 12344
-                  FlowIDField: 11111
+                  DocIDField: 2147483647
+                  FlowIDField: 2147111647
                   HeightField: '25'
                   WidthField: '20'
                   IsInvisibleField: true
-                  LinkToField: string
+                  LinkToField: 'null'
                   PageNumberField: 2
-                  NameField: string
+                  NameField: 'null'
                   UserEmailField: email@domain.com
                   XCoordinateField: '50'
                   YCoordinateField: '150'
@@ -598,10 +982,10 @@ paths:
               examples:
                 Example:
                   value:
-                    PortfolioDataField: string
+                    PortfolioDataField: Base64 Encoded Document
                     PortfolioIDField: 11112
                     PortfolioNameField: Application Portfolio
-                    ResultField: string
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -644,10 +1028,10 @@ paths:
               examples:
                 Example:
                   value:
-                    DocField: string
-                    DocIDField: 1237
-                    PortfolioIDField: 11112
-                    ResultField: string
+                    DocField: Base64 Encoded Document
+                    DocIDField: 2147483647
+                    PortfolioIDField: 2111113647
+                    ResultField: Success
                     StatusField: Completed
           headers:
             Content-Type:
@@ -662,10 +1046,10 @@ paths:
             examples:
               Example:
                 value:
-                  AdditionalDataField: string
+                  AdditionalDataField: '""'
                   AutoRemindField: 0
                   CustomMessageField: A message with things.
-                  DocField: string
+                  DocField: Base64 Encoded Document
                   DocNameField: Document 1
                   DueDateField: '2019-08-24'
                   ExtensionField: 0
@@ -676,7 +1060,7 @@ paths:
                   PortfolioInformationField:
                     CreatePortfolioField: true
                     LinkToPortfolioField: true
-                    PortfolioIDField: 11112
+                    PortfolioIDField: 2141111647
                     PortfolioNameField: Portfolio 1
                   PriorityField: 0
                   SLAField: 0
@@ -692,16 +1076,16 @@ paths:
                       EmailAddressField: email@domain.com
                       GroupStepField:
                         GroupMembersField:
-                          - LanguageCodeField: string
-                            UserEmailField: string
-                            UserFullNameField: string
-                            UserMobileNumberField: string
+                          - LanguageCodeField: en
+                            UserEmailField: email@domain.com
+                            UserFullNameField: John Smith
+                            UserMobileNumberField: +2778 000 0000
                         GroupNameField: Managers
                         RequiredNumberOfSignaturesField: 3
                       LanguageCodeField: en
-                      LatitudeField: string
-                      LongitudeField: string
-                      MobileNumberField: 078 222 2222
+                      LatitudeField: '-37.8044416'
+                      LongitudeField: '144.9721856'
+                      MobileNumberField: +2778 222 2222
                       PreloadedFaceToFaceSignersField:
                         - {}
                       SignReasonField: Because yes
@@ -717,8 +1101,8 @@ paths:
                           HeightField: '15'
                           IsInvisibleField: true
                           PageNumberField: 2
-                          TagNameField: string
-                          ValueField: string
+                          TagNameField: 'null'
+                          ValueField: 'null'
                           WidthField: '25'
                           XCoordinateField: '160'
                           XOffsetField: 15
@@ -749,8 +1133,8 @@ paths:
               examples:
                 Example:
                   value:
-                    AuditDocumentField: string
-                    ResultField: string
+                    AuditDocumentField: Base64 Encoded Document
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -765,7 +1149,7 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: string
+                  DocIDField: '2147483647'
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
@@ -793,8 +1177,8 @@ paths:
               examples:
                 Example:
                   value:
-                    Result: string
-                    Url: string
+                    Result: Success
+                    Url: example.com
           headers:
             Content-Type:
               schema:
@@ -809,9 +1193,9 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: string
+                  DocIDField: '2147483647'
                   EmailField: email@domain.com
-                  ReturnURLField: string
+                  ReturnURLField: example.com
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
@@ -839,8 +1223,8 @@ paths:
               examples:
                 Example:
                   value:
-                    DocStatusField: string
-                    ResultField: string
+                    DocStatusField: Pending release
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -855,7 +1239,7 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: 0
+                  DocIDField: 2147483647
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
@@ -883,8 +1267,8 @@ paths:
               examples:
                 Example:
                   value:
-                    Result: string
-                    URL: string
+                    Result: Success
+                    URL: example.com/document.aspx?enc=fghkasdjfga
           headers:
             Content-Type:
               schema:
@@ -898,9 +1282,9 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: string
+                  DocIDField: '2147483647'
                   EmailSettingField: 0
-                  ReturnURLField: string
+                  ReturnURLField: example.com
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
@@ -930,12 +1314,12 @@ paths:
                 Example:
                   value:
                     DocumentTagFieldsBoxPositionField:
-                      HeightField: string
-                      PageNumberField: 0
-                      WidthField: string
-                      XCoordinateField: string
-                      YCoordinateField: string
-                    ResultField: string
+                      HeightField: '30'
+                      PageNumberField: 1
+                      WidthField: '30'
+                      XCoordinateField: '120'
+                      YCoordinateField: '80'
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -949,8 +1333,8 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: 0
-                  TagNameField: string
+                  DocIDField: 2147483647
+                  TagNameField: textbox
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
@@ -980,10 +1364,10 @@ paths:
                 Example:
                   value:
                     DocumentTagFieldsPositionField:
-                      - PageNumberField: 0
-                        XCoordinateField: string
-                        YCoordinateField: string
-                    ResultField: string
+                      - PageNumberField: 1
+                        XCoordinateField: '120'
+                        YCoordinateField: '80'
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -997,8 +1381,8 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: 0
-                  TagNameField: string
+                  DocIDField: 2147483647
+                  TagNameField: textbox
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
@@ -1028,18 +1412,18 @@ paths:
                 Example:
                   value:
                     ActivityField:
-                      - ActionOrderField: string
-                        AdditionalField: string
-                        DocIDField: string
+                      - ActionOrderField: '1'
+                        AdditionalField: 'null'
+                        DocIDField: '2147483647'
                         EmailField: email@domain.com
-                        EventDateField: string
-                        EventField: string
-                        EventStatusField: string
-                        LocationField: string
-                        OrderDateField: string
-                        PageField: string
-                        UserFullNameField: string
-                    ResultField: string
+                        EventDateField: '2019-08-24'
+                        EventField: Pending Release
+                        EventStatusField: Pending Release
+                        LocationField: '-37.8044416, 144.9721856'
+                        OrderDateField: '2019-08-28'
+                        PageField: '1'
+                        UserFullNameField: John Doe
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -1053,7 +1437,7 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: string
+                  DocIDField: '2147483647'
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
@@ -1083,19 +1467,19 @@ paths:
                 Example:
                   value:
                     PrepperTemplateValuesField:
-                      - ColorField: string
-                        DocFieldIDField: string
-                        DocIDField: 0
+                      - ColorField: green
+                        DocFieldIDField: '2147483647'
+                        DocIDField: 2147483644
                         FieldTypeField: 0
-                        HeightField: 0
-                        PageNumberField: 0
-                        UserFullNameField: string
+                        HeightField: 30
+                        PageNumberField: 1
+                        UserFullNameField: John Smith
                         UserIDField: 0
-                        ValueField: string
-                        WidthField: 0
-                        XCoordinateField: 0
-                        YCoordinateField: 0
-                    ResultField: string
+                        ValueField: 'null'
+                        WidthField: 60
+                        XCoordinateField: 120
+                        YCoordinateField: 80
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -1109,8 +1493,8 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: 0
-                  PrepperTemplateIDField: 0
+                  DocIDField: 2147483647
+                  PrepperTemplateIDField: 2147481117
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
@@ -1139,11 +1523,11 @@ paths:
               examples:
                 Example:
                   value:
-                    ResultField: string
+                    ResultField: Success
                     TemplateInformationValuesField:
-                      - NameField: string
-                        PrepperTemplateIDField: 0
-                        TemplateDescriptionField: string
+                      - NameField: Leave Template
+                        PrepperTemplateIDField: 2147483647
+                        TemplateDescriptionField: The leave application template.
           headers:
             Content-Type:
               schema:
@@ -1186,8 +1570,8 @@ paths:
               examples:
                 Example:
                   value:
-                    DocIDField: 0
-                    ResultField: string
+                    DocIDField: 2147483647
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -1201,7 +1585,7 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: string
+                  DocIDField: '2147483647'
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
@@ -1230,8 +1614,8 @@ paths:
               examples:
                 Example:
                   value:
-                    DocIDField: 0
-                    ResultField: string
+                    DocIDField: 2147483647
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -1245,7 +1629,7 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: string
+                  DocIDField: '2147483647'
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
@@ -1274,8 +1658,8 @@ paths:
               examples:
                 Example:
                   value:
-                    DocIDField: 0
-                    ResultField: string
+                    DocIDField: 2147483647
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -1289,7 +1673,7 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: string
+                  DocIDField: '2147483647'
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
@@ -1318,8 +1702,8 @@ paths:
               examples:
                 Example:
                   value:
-                    PortfolioIDField: string
-                    ResultField: string
+                    PortfolioIDField: '2147483640'
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -1333,9 +1717,9 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: string
-                  DocumentNameField: string
-                  PortfolioIDField: string
+                  DocIDField: '2147483647'
+                  DocumentNameField: example_doc
+                  PortfolioIDField: '2147111647'
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
@@ -1364,9 +1748,9 @@ paths:
               examples:
                 Example:
                   value:
-                    CeremonyIDField: 0
-                    ResultField: string
-                    SignedDocumentField: string
+                    CeremonyIDField: 2147483647
+                    ResultField: Success
+                    SignedDocumentField: Base64 Encoded Document
           headers:
             Content-Type:
               schema:
@@ -1381,10 +1765,10 @@ paths:
             examples:
               Example:
                 value:
-                  DocField: string
-                  DocNameField: string
+                  DocField: Base64 Encoded Document
+                  DocNameField: example_doc
                   LoginPasswordField: '12345'
-                  LoginUserNameField: John@gmail.com
+                  LoginUserNameField: email@domain.com
                   SignerListField:
                     - SignatureHField: 0
                       SignatureImageField: string
@@ -1397,14 +1781,14 @@ paths:
                       SignatureWField: 0
                       SignatureXField: 0
                       SignatureYField: 0
-                      SignerEmailField: string
-                      SignerFullNameField: string
-                      SignerIndentificationNumberField: string
-                      SignerLocationField: string
-                      SignerMobileNumberField: string
-                      SignerReasonField: string
-                      SignerTrustOriginField: string
-                      SignerTrustReferenceField: string
+                      SignerEmailField: email@domain.com
+                      SignerFullNameField: John Smith
+                      SignerIndentificationNumberField: +2700 000 0000
+                      SignerLocationField: '-37.8044416, 144.9721856'
+                      SignerMobileNumberField: +2700 000 0000
+                      SignerReasonField: 'null'
+                      SignerTrustOriginField: PBSA Pty Ltd
+                      SignerTrustReferenceField: Dev001#
         description: '##### Multiple Signers Signing Ceremony Request Model'
       tags:
         - Signing Ceremony
@@ -1429,7 +1813,7 @@ paths:
               examples:
                 Example:
                   value:
-                    ResultField: string
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -1443,8 +1827,8 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: string
-                  DocumentOrderField: string
+                  DocIDField: '2147483647'
+                  DocumentOrderField: '0'
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
@@ -1473,7 +1857,7 @@ paths:
               examples:
                 Example:
                   value:
-                    ResultField: string
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -1489,12 +1873,12 @@ paths:
               Example:
                 value:
                   AccessLevelField: 0
-                  PortfolioIDField: string
+                  PortfolioIDField: '2147483647'
                   ShareOptionField: 0
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
-                  UniqueIDField: string
+                  UniqueIDField: '2147483640'
         description: '##### Share Portfolio Request Model'
       tags:
         - Portfolios
@@ -1519,7 +1903,7 @@ paths:
               examples:
                 Example:
                   value:
-                    ResultField: string
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -1535,12 +1919,12 @@ paths:
               Example:
                 value:
                   AccessLevelField: 0
-                  PortfolioIDField: string
+                  PortfolioIDField: '2147483647'
                   ShareOptionField: 0
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
-                  UniqueIDField: string
+                  UniqueIDField: '2147483640'
         description: '##### Share Portfolio No Email Request Model'
       tags:
         - Portfolios
@@ -1565,9 +1949,9 @@ paths:
               examples:
                 Example:
                   value:
-                    CeremonyIDField: 0
-                    ResultField: string
-                    SignedDocumentField: string
+                    CeremonyIDField: 2147483647
+                    ResultField: Success
+                    SignedDocumentField: Base64 Encoded Document
           headers:
             Content-Type:
               schema:
@@ -1589,8 +1973,8 @@ paths:
                       CheckboxXField: 0
                       CheckboxYField: 0
                       IsCheckedField: true
-                  DocField: string
-                  DocNameField: string
+                  DocField: Base64 Encoded Document
+                  DocNameField: example_doc
                   InitialFieldsListField:
                     - InitialHField: 0
                       InitialImageField: string
@@ -1599,8 +1983,8 @@ paths:
                       InitialWField: 0
                       InitialXField: 0
                       InitialYField: 0
-                  LoginPasswordField: string
-                  LoginUserNameField: string
+                  LoginPasswordField: password
+                  LoginUserNameField: email@domain.com
                   SignatureHField: 0
                   SignatureImageField: string
                   SignatureImageIncludeBorderField: true
@@ -1612,18 +1996,18 @@ paths:
                   SignatureWField: 0
                   SignatureXField: 0
                   SignatureYField: 0
-                  SignerEmailField: string
-                  SignerFullNameField: string
-                  SignerIdentificationNumberField: string
+                  SignerEmailField: email@domain.com
+                  SignerFullNameField: John Smith
+                  SignerIdentificationNumberField: XXXXXXXXXXXXX
                   SignerLocationField: string
-                  SignerMobileNumberField: string
-                  SignerReasonField: string
+                  SignerMobileNumberField: +2700 000 0000
+                  SignerReasonField: 'null'
                   SignerTrustOriginField: string
                   SignerTrustReferenceField: string
                   TextFieldsListField:
                     - TextFieldHField: 0
                       TextFieldPageField: 0
-                      TextFieldValueField: string
+                      TextFieldValueField: 'null'
                       TextFieldWField: 0
                       TextFieldXField: 0
                       TextFieldYField: 0
@@ -1651,7 +2035,7 @@ paths:
               examples:
                 Example:
                   value:
-                    ResultField: string
+                    ResultField: Success
                     TokenField:
                       TokenExpiryField: '2019-08-24T14:15:22Z'
                       TokenField: aaa111
@@ -1697,7 +2081,7 @@ paths:
               examples:
                 Example:
                   value:
-                    ResultField: string
+                    ResultField: Success
                     TokenField:
                       TokenExpiryField: '2019-08-24T14:15:22Z'
                       TokenField: aaa111
@@ -1740,7 +2124,7 @@ paths:
               examples:
                 Example:
                   value:
-                    ResultField: string
+                    ResultField: Success
           headers:
             Content-Type:
               schema:
@@ -1755,12 +2139,12 @@ paths:
             examples:
               Example:
                 value:
-                  DocIDField: string
-                  LatitudeField: string
+                  DocIDField: '2147483647'
+                  LatitudeField: '-37.8044416'
                   LoginPasswordField: pa$$word
                   LoginUserNameField: email@domain.com
-                  LongitudeField: string
-                  SignReasonField: string
+                  LongitudeField: '144.9721856'
+                  SignReasonField: 'null'
                   TimeZoneOffsetField: 0
                   TokenField:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
@@ -1848,6 +2232,7 @@ components:
           example: aaa111
           description: User API Token
       required:
+        - TokenExpiryField
         - TokenField
     ActionField:
       type: integer
@@ -2079,9 +2464,7 @@ components:
         - DocField
         - DocNameField
         - ExtensionField
-        - MessageField
         - PriorityField
-        - SLAField
         - TokenField
     CreateWorkflowResponse:
       title: Create Workflow Response
@@ -2169,7 +2552,7 @@ components:
         Add Workflow Step V2 Request Example:
           value:
             ActionField: 0
-            CellField: '1121231234'
+            CellField: '0121231234'
             DocIDField: '2147483647'
             EmailField: email@domain.com
             FirstNameField: John
@@ -2224,7 +2607,6 @@ components:
           $ref: '#/components/schemas/TokenField'
       required:
         - ActionField
-        - CellField
         - DocIDField
         - EmailField
         - FirstNameField
@@ -2284,6 +2666,7 @@ components:
       required:
         - DocIDField
         - FlowIDField
+        - FlowStepsField
         - ResultField
     ApplyPrepperTemplateRequest:
       description: '#### Used to send a request for applying a template.'
@@ -2469,20 +2852,20 @@ components:
               - AdvancedFieldTypeField: 0
                 DocIDField: 2147483647
                 FieldOptionsListField:
-                  - LinkedValueField: string
+                  - LinkedValueField: 'null'
                     MaxField: 5
                     MinField: 2
-                    ValueField: string
+                    ValueField: txt1
                 FlowIDField: 11111
-                FontFamilyField: Arial
+                FontFamilyField: 'null'
                 FontSizeField: 12
                 HeightField: '30'
-                LinkToField: string
-                NameField: Text Field
+                LinkToField: 'null'
+                NameField: txt1
                 PageNumberField: 2
                 SearchableField: true
                 UserEmailField: John@domain.com
-                ValueField: string
+                ValueField: 'null'
                 WidthField: '15'
                 XCoordinateField: '60'
                 YCoordinateField: '120'
@@ -2540,7 +2923,7 @@ components:
                 type: string
                 minLength: 1
                 example: Arial
-                description: Font family of the text in the field
+                description: Font family of the text in the field. If its a text field the font in the text field will be the selected font.
               FontSizeField:
                 type: number
                 example: 12
@@ -2563,7 +2946,7 @@ components:
                 type: string
                 minLength: 1
                 example: Text Field
-                description: This field is used when you need to define the field embedded in the document with a unique name that can be referenced later.
+                description: This field is used when you need to define the field embedded in the document with a unique name that can be referenced later. Ex. all checkbosgroups should have the same NameField.
               PageNumberField:
                 type: number
                 example: 2
@@ -2594,7 +2977,6 @@ components:
               - AdvancedFieldTypeField
               - DocIDField
               - FlowIDField
-              - FontFamilyField
               - FontSizeField
               - HeightField
               - WidthField
@@ -2603,7 +2985,6 @@ components:
               - PageNumberField
               - SearchableField
               - UserEmailField
-              - ValueField
               - XCoordinateField
               - YCoordinateField
         TokenField:
@@ -2661,8 +3042,8 @@ components:
             FlowIDField: 11111
             HeightField: '25'
             IsInvisibleField: true
-            LinkToField: string
-            NameField: string
+            LinkToField: 'null'
+            NameField: 'null'
             PageNumberField: 2
             TokenField:
               TokenExpiryField: '2019-08-24T14:15:22Z'
@@ -2695,7 +3076,7 @@ components:
           description: Field width.
         IsInvisibleField:
           type: boolean
-          description: Is the field invisible.
+          description: Is the field invisible. Only applicable to signatures.
         LinkToField:
           type: string
           minLength: 1
@@ -2747,8 +3128,8 @@ components:
             FieldTypeField: 0
             HeightField: '20'
             PageNumberField: 2
-            PrepperFieldIDField: 0
-            ResultField: success
+            PrepperFieldIDField: 2147483647
+            ResultField: Success
             UserIDField: 111112
             WidthField: '25'
             XCoordinateField: '60'
@@ -2835,7 +3216,7 @@ components:
       x-examples:
         Download Portfolio Response Example:
           value:
-            PortfolioDataField: string
+            PortfolioDataField: Base64 Encoded Document
             PortfolioIDField: 11112
             PortfolioNameField: Application Portfolio
             ResultField: Success
@@ -2914,7 +3295,7 @@ components:
                 LanguageCodeField: en
                 LatitudeField: string
                 LongitudeField: string
-                MobileNumberField: 078 222 2222
+                MobileNumberField: +2778 222 2222
                 PreloadedFaceToFaceSignersField:
                   - {}
                 SignReasonField: Because yes
@@ -2924,14 +3305,14 @@ components:
                 UserLastNameField: Smith
                 WorkflowUserFieldsField:
                   - FieldTypeField: 0
-                    FontFamilyField: Arial
+                    FontFamilyField: 'null'
                     FontSizeField: 15
                     GroupUserNumberField: 5
                     HeightField: '15'
                     IsInvisibleField: true
                     PageNumberField: 2
-                    TagNameField: string
-                    ValueField: string
+                    TagNameField: 'null'
+                    ValueField: 'null'
                     WidthField: '25'
                     XCoordinateField: '160'
                     XOffsetField: 15
@@ -3192,7 +3573,7 @@ components:
                     TagNameField:
                       type: string
                       minLength: 1
-                      description: Field tag name.
+                      description: Field tag name. Not required if the fields are defined.
                       nullable: true
                     ValueField:
                       type: string
@@ -3227,21 +3608,31 @@ components:
                       nullable: true
                   required:
                     - FieldTypeField
+                    - GroupUserNumberField
+                    - HeightField
                     - IsInvisibleField
+                    - PageNumberField
+                    - WidthField
+                    - XCoordinateField
+                    - XOffsetField
+                    - YCoordinateField
+                    - YOffsetField
             required:
               - ActionField
               - AllowProxyField
               - AutoSignField
               - EmailAddressField
               - LanguageCodeField
+              - LatitudeField
+              - LongitudeField
               - MobileNumberField
+              - SignerPasswordField
               - UserFirstNameField
               - UserFullNameField
               - UserLastNameField
+              - WorkflowUserFieldsField
       required:
-        - AdditionalDataField
         - AutoRemindField
-        - CustomMessageField
         - DocField
         - DocNameField
         - ExtensionField
@@ -3250,8 +3641,6 @@ components:
         - KeepCustomPropertiesField
         - KeepXMPMetadataField
         - PortfolioInformationField
-        - PriorityField
-        - SLAField
         - SendFirstEmailField
         - SendWorkflowEmailsField
         - TokenField
@@ -3291,6 +3680,12 @@ components:
           minLength: 1
           example: Completed
           description: Document status that gets returned.
+      required:
+        - DocField
+        - DocIDField
+        - PortfolioIDField
+        - ResultField
+        - StatusField
     GetAuditDocumentRequest:
       description: '#### A request sent to get an audit document.'
       type: object
@@ -3472,7 +3867,6 @@ components:
           $ref: '#/components/schemas/TokenField'
       required:
         - DocIDField
-        - EmailSettingField
         - ReturnURLField
         - TokenField
     GetDocumentPrepperLinkResponse:
@@ -3482,7 +3876,7 @@ components:
         Get Document Prepper Link Response Example:
           value:
             Result: Success
-            URL: string
+            URL: preprod.signiflow.com/documentprepper.aspx?enc=sdgfkjsdgf
       title: Get Document Prepper Link Response
       properties:
         Result:
@@ -3532,7 +3926,7 @@ components:
           value:
             DocumentTagFieldsBoxPositionField:
               HeightField: '20'
-              PageNumberField: 0
+              PageNumberField: 1
               WidthField: '35'
               XCoordinateField: '140'
               YCoordinateField: '160'
@@ -3685,8 +4079,8 @@ components:
                 DocIDField: '2147483647'
                 EmailField: email@domain.com
                 EventDateField: string
-                EventField: string
-                EventStatusField: string
+                EventField: Document signed
+                EventStatusField: Document Signed
                 LocationField: string
                 OrderDateField: string
                 PageField: '2'
@@ -3708,7 +4102,7 @@ components:
               AdditionalField:
                 type: string
                 minLength: 1
-                description: Returns the additional information about the audit (i.e. IP Address and browser that was used/ Reason for rejection or expiration)
+                description: Returns the additional information about the audit (i.e. IP Address and browser that was used/ Reason for rejection or expiration).
               DocIDField:
                 type: string
                 minLength: 1
@@ -3752,7 +4146,6 @@ components:
                 example: John Doe
             required:
               - ActionOrderField
-              - AdditionalField
               - DocIDField
               - EmailField
               - EventDateField
@@ -3812,11 +4205,11 @@ components:
                 PageNumberField: 2
                 UserFullNameField: John Doe
                 UserIDField: 111111
-                ValueField: string
+                ValueField: 'null'
                 WidthField: 20
                 XCoordinateField: 60
                 YCoordinateField: 100
-            ResultField: success
+            ResultField: Success
       title: Get Prepper Template Response
       properties:
         PrepperTemplateValuesField:
@@ -3884,7 +4277,6 @@ components:
               - PageNumberField
               - UserFullNameField
               - UserIDField
-              - ValueField
               - WidthField
               - XCoordinateField
               - YCoordinateField
@@ -3968,7 +4360,7 @@ components:
       x-examples:
         Initiate Flow Request Example:
           value:
-            DocIDField: '123473'
+            DocIDField: '2147483647'
             TokenField:
               TokenExpiryField: '2019-08-24T14:15:22Z'
               TokenField: aaa111
@@ -4127,7 +4519,6 @@ components:
           $ref: '#/components/schemas/TokenField'
       required:
         - DocIDField
-        - DocumentNameField
         - PortfolioIDField
         - TokenField
     LinkToPortfolioResponse:
@@ -4214,10 +4605,10 @@ components:
                 SignatureYField: 0
                 SignerEmailField: user@domain.com
                 SignerFullNameField: John Doe
-                SignerIndentificationNumberField: string
+                SignerIndentificationNumberField: XXXXXXXXXXXXX
                 SignerLocationField: '-37.8044416, 144.9721856'
                 SignerMobileNumberField: '+27786352163'
-                SignerReasonField: string
+                SignerReasonField: 'null'
                 SignerTrustOriginField: PBSA Pty Ltd
                 SignerTrustReferenceField: Dev001#
       title: Multiple Signers Signing Ceremony Request
@@ -4225,7 +4616,7 @@ components:
         DocField:
           type: string
           minLength: 1
-          description: Document field
+          description: Bse64 encoded string.
         DocNameField:
           type: string
           minLength: 1
@@ -4254,7 +4645,7 @@ components:
               SignatureImageField:
                 type: string
                 minLength: 1
-                description: Signature image
+                description: 'Signature image, if signature type is set to 0 then no signature image field is needed.'
               SignatureImageIncludeBorderField:
                 type: boolean
                 description: Signature image with borders
@@ -4305,7 +4696,7 @@ components:
               SignerReasonField:
                 type: string
                 minLength: 1
-                description: Reason for signature of the signer.
+                description: Reason for signature of the signer. This will be required if SignatureImageIncludeReasonField is set to true.
               SignerTrustOriginField:
                 type: string
                 minLength: 1
@@ -4328,10 +4719,7 @@ components:
               - SignatureYField
               - SignerEmailField
               - SignerFullNameField
-              - SignerIndentificationNumberField
               - SignerLocationField
-              - SignerMobileNumberField
-              - SignerReasonField
               - SignerTrustOriginField
               - SignerTrustReferenceField
       required:
@@ -4461,6 +4849,8 @@ components:
           minLength: 1
           description: Displays the result of the call.
           example: success
+      required:
+        - ResultField
     SharePortfolio_No_EmailRequest:
       description: '#### The request sent when a user wants to share a portfolio but does not want an email to be sent.'
       type: object
@@ -4512,6 +4902,8 @@ components:
           minLength: 1
           description: Displays the result of the call.
           example: success
+      required:
+        - ResultField
     SigningCeremonyV2Request:
       description: '#### The request sent to start the signing process of a document.'
       type: object
@@ -4550,10 +4942,10 @@ components:
             SignatureYField: 0
             SignerEmailField: user@domain.com
             SignerFullNameField: John Doe
-            SignerIdentificationNumberField: '9711210040087'
+            SignerIdentificationNumberField: '9710000040000'
             SignerLocationField: '-37.8044416, 144.9721856'
-            SignerMobileNumberField: '+27786537631'
-            SignerReasonField: string
+            SignerMobileNumberField: '+27000000000'
+            SignerReasonField: 'null'
             SignerTrustOriginField: PBSA Pty Ltd
             SignerTrustReferenceField: Dev001#
             TextFieldsListField:
@@ -4569,7 +4961,7 @@ components:
           type: array
           uniqueItems: true
           minItems: 1
-          description: The list of checkbox fields.
+          description: The list of checkbox fields. This is array is only required if you add checkboxes to your document.
           items:
             type: object
             properties:
@@ -4591,17 +4983,10 @@ components:
               IsCheckedField:
                 type: boolean
                 description: Is the checkbox field checked.
-            required:
-              - CheckboxHField
-              - CheckboxPageField
-              - CheckboxWField
-              - CheckboxXField
-              - CheckboxYField
-              - IsCheckedField
         DocField:
           type: string
           minLength: 1
-          description: Document field
+          description: Base64 encoded string.
         DocNameField:
           type: string
           minLength: 1
@@ -4610,7 +4995,7 @@ components:
           type: array
           uniqueItems: true
           minItems: 1
-          description: The list of initial fields.
+          description: The list of initial fields. This is array is only required if you add initial fields to your document.
           items:
             type: object
             properties:
@@ -4636,14 +5021,6 @@ components:
               InitialYField:
                 type: number
                 description: Initial field y-coordinates.
-            required:
-              - InitialHField
-              - InitialImageField
-              - InitialImageTypeField
-              - InitialPageField
-              - InitialWField
-              - InitialXField
-              - InitialYField
         LoginPasswordField:
           type: string
           minLength: 1
@@ -4722,7 +5099,7 @@ components:
           type: array
           uniqueItems: true
           minItems: 1
-          description: The list of text fields.
+          description: The list of text fields. This is array is only required if you add text fields to your document.
           items:
             type: object
             properties:
@@ -4745,18 +5122,9 @@ components:
               TextFieldYField:
                 type: number
                 description: Text field y-coordinates.
-            required:
-              - TextFieldHField
-              - TextFieldPageField
-              - TextFieldValueField
-              - TextFieldWField
-              - TextFieldXField
-              - TextFieldYField
       required:
-        - CheckboxFieldsListField
         - DocField
         - DocNameField
-        - InitialFieldsListField
         - LoginPasswordField
         - LoginUserNameField
         - SignatureHField
@@ -4772,13 +5140,10 @@ components:
         - SignatureYField
         - SignerEmailField
         - SignerFullNameField
-        - SignerIdentificationNumberField
         - SignerLocationField
         - SignerMobileNumberField
-        - SignerReasonField
         - SignerTrustOriginField
         - SignerTrustReferenceField
-        - TextFieldsListField
     SigningCeremonyV2Response:
       description: '#### The response returned when the signing process is requested.'
       type: object
@@ -4895,7 +5260,7 @@ components:
             LoginPasswordField: pa$$word
             LoginUserNameField: email@domain.com
             LongitudeField: '144.9721856'
-            SignReasonField: string
+            SignReasonField: 'null'
             TimeZoneOffsetField: 0
             TokenField:
               TokenExpiryField: '2019-08-24T14:15:22Z'
@@ -4931,16 +5296,13 @@ components:
           description: Reason for signature.
         TimeZoneOffsetField:
           type: number
-          description: The user's timezone offste.
+          description: The user's timezone offset.
         TokenField:
           $ref: '#/components/schemas/TokenField'
       required:
         - DocIDField
-        - LatitudeField
         - LoginPasswordField
         - LoginUserNameField
-        - LongitudeField
-        - SignReasonField
         - TimeZoneOffsetField
         - TokenField
     WorkflowSignResponse:

@@ -30,7 +30,7 @@ Create A Workflow But The Most Simple Way Is Displayed Here:
   * ➡️ Pass Through: The Document ID, Your Token & Information About The Person Being Added.
   * ⬅️ Receive Back: Data Regarding The Step Added.
 
-* [/DocPrepperAddFields](../../reference/SigniFlow-OpenAPI.yaml/paths/~1DocPrepperAddFieldsFlowID/post) 
+* [/DocPrepperAddFields](../../reference/SigniFlow-OpenAPI.yaml/paths/~1DocPrepperAdvancedFields/post) 
   * ➡️ Pass Through: The Document ID, Your Token & Information About The Field Being Added.
   * ⬅️ Receive Back: Data Regarding The Field Added.
 
