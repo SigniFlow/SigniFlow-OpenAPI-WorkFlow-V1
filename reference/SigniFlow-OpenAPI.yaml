@@ -1109,7 +1109,10 @@ paths:
                           YCoordinateField: '60'
                           YOffsetField: 20
         description: '##### FullWorkflow Request Model'
-      description: '#### Used to create a fullworkflow for a document.'
+      description: |-
+        #### Used to create a fullworkflow for a document.
+
+        List enum stuff here
       tags:
         - WorkFlow
       parameters:
@@ -3246,12 +3249,8 @@ components:
         - PortfolioNameField
         - ResultField
     FullWorkflowRequest:
-      description: |-
+      description: |
         #### Request a fullworkflow of a document.
-
-        ##### Enums used in this call
-        * DocExtension
-        ** 0 = PDF
       type: object
       x-examples:
         Example:
