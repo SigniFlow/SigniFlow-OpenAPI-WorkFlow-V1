@@ -36,7 +36,7 @@ paths:
   /Login:
     post:
       summary: Login
-      description: '#### Generates a API Token to allow the user to login'
+      description: '#### Generates a API Token to allow the user to login.'
       operationId: Login
       parameters:
         - schema:
@@ -127,7 +127,7 @@ paths:
     post:
       summary: Create Workflow
       description: |-
-        #### Used to start a new document workflow by passing a Base64 encoded document to SigniFlow
+        #### Used to start a new document workflow by passing a Base64 encoded document to SigniFlow.
 
         Enumerations used in this API Call include:
         | Enumeration    | Values          |
@@ -420,7 +420,7 @@ paths:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
         description: '##### Create Portfolio Request Model'
-      description: '#### Used to create a portfolio to group documents.'
+      description: '#### Used to group documents by creating a portfolio to store them in.'
       tags:
         - Portfolios
       parameters:
@@ -912,7 +912,13 @@ paths:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
         description: '##### Document Prepper Add Advanced Fields Request Model'
-      description: '#### Used to add advanced fields to a document.'
+      description: |-
+        #### Used to add advanced fields to a document.
+
+        Enumerations used in this API Call include:
+        | Enumeration    | Values          |
+        | -------------- |:---------------:|
+        | AdvancedFieldType | 0 = DropDown, 1 = CheckBoxGroup, 2 = OptionalDropDown, 3 = RadioGroup, 4 = DateMand, 5 = DateOpt, 6 = DropDownCountry, 7 = OptionalDropDownCountry, 8 = DropDownMobilePrefix, 9 = OptionalDropDownMobilePrefix |
       tags:
         - WorkFlow
       parameters:
