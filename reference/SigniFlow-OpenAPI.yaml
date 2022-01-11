@@ -132,6 +132,8 @@ paths:
         Enumerations used in this API Call include:
         | Enumeration    | Values          |
         | -------------- |:---------------:|
+        | AutoExpireField| 0 = No, 1 = Yes |
+        | AutoRemindField| 0 = No, 1 = Yes |
         | ExtensionField |0 = pdf, 1 = xls, 2 = txt, 3 = xlsx, 4 = docx, 5 = doc, 6 = xml, 7 = png, 8 = jpg, 9 = gif |
         | PriorityField  | 0 = Low, 1 = Normal, 2 = High |
       operationId: CreateWorkflow
