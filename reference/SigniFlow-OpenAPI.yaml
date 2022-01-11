@@ -36,7 +36,7 @@ paths:
   /Login:
     post:
       summary: Login
-      description: '#### Generates a API Token for the User'
+      description: '#### Generates a API Token to allow the user to login'
       operationId: Login
       parameters:
         - schema:
@@ -101,7 +101,7 @@ paths:
               schema:
                 type: string
                 default: application/json
-      description: '#### Used to log out a user from SigniFlow.'
+      description: '#### Used to log a user out of from SigniFlow.'
       requestBody:
         content:
           application/json:
@@ -126,7 +126,14 @@ paths:
   /CreateWorkflow:
     post:
       summary: Create Workflow
-      description: '#### Used to start a new workflow by passing a Base64 encoded document to SigniFlow'
+      description: |-
+        #### Used to start a new document workflow by passing a Base64 encoded document to SigniFlow
+
+        Enumerations used in this API Call include:
+        | Enumeration    | Values          |
+        | -------------- |:---------------:|
+        | ExtensionField |0 = pdf, 1 = xls, 2 = txt, 3 = xlsx, 4 = docx, 5 = doc, 6 = xml, 7 = png, 8 = jpg, 9 = gif |
+        | PriorityField  | 0 = Low, 1 = Normal, 2 = High |
       operationId: CreateWorkflow
       parameters:
         - schema:
