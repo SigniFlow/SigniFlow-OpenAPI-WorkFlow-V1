@@ -132,10 +132,10 @@ paths:
         Enumerations used in this API Call include:
         | Enumeration    | Values          |
         | -------------- |:---------------:|
-        | AutoExpireField| 0 = No, 1 = Yes |
-        | AutoRemindField| 0 = No, 1 = Yes |
-        | ExtensionField |0 = pdf, 1 = xls, 2 = txt, 3 = xlsx, 4 = docx, 5 = doc, 6 = xml, 7 = png, 8 = jpg, 9 = gif |
-        | PriorityField  | 0 = Low, 1 = Normal, 2 = High |
+        | **AutoExpireField**| 0 = No, 1 = Yes |
+        | **AutoRemindField**| 0 = No, 1 = Yes |
+        | **ExtensionField** |0 = pdf, 1 = xls, 2 = txt, 3 = xlsx, 4 = docx, 5 = doc, 6 = xml, 7 = png, 8 = jpg, 9 = gif |
+        | **PriorityField**  | 0 = Low, 1 = Normal, 2 = High |
       operationId: CreateWorkflow
       parameters:
         - schema:
@@ -286,8 +286,8 @@ paths:
         Enumerations used in this API Call include:
         | Enumeration    | Values          |
         | -------------- |:---------------:|
-        | ActionField    | 0 = SignDocument, 1 = ViewDocument, 2 = ApproveDocument |
-        | ProxyAllowedField| 0 = No, 1 = Yes | 
+        | **ActionField**    | 0 = SignDocument, 1 = ViewDocument, 2 = ApproveDocument |
+        | **ProxyAllowedField** | 0 = No, 1 = Yes | 
       tags:
         - WorkFlow
       parameters:
@@ -918,7 +918,7 @@ paths:
         Enumerations used in this API Call include:
         | Enumeration    | Values          |
         | -------------- |:---------------:|
-        | AdvancedFieldType | 0 = DropDown, 1 = CheckBoxGroup, 2 = OptionalDropDown, 3 = RadioGroup, 4 = DateMand, 5 = DateOpt, 6 = DropDownCountry, 7 = OptionalDropDownCountry, 8 = DropDownMobilePrefix, 9 = OptionalDropDownMobilePrefix |
+        | **AdvancedFieldType** | 0 = DropDown, 1 = CheckBoxGroup, 2 = OptionalDropDown, 3 = RadioGroup, 4 = DateMand, 5 = DateOpt, 6 = DropDownCountry, 7 = OptionalDropDownCountry, 8 = DropDownMobilePrefix, 9 = OptionalDropDownMobilePrefix |
       tags:
         - WorkFlow
       parameters:
