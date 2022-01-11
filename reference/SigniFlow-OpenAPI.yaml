@@ -210,7 +210,8 @@ paths:
               schema:
                 type: string
                 default: application/json
-      description: '#### Used to download a document from SigniFlow.'
+      description: |
+        #### Used to download a document from SigniFlow.
       requestBody:
         content:
           application/json:
@@ -279,7 +280,14 @@ paths:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
         description: '##### Add A Workflow Step Request Model'
-      description: '#### Used to add a step to a document Workflow process.'
+      description: |-
+        #### Used to add a step to a document Workflow process.
+
+        Enumerations used in this API Call include:
+        | Enumeration    | Values          |
+        | -------------- |:---------------:|
+        | ActionField    | 0 = SignDocument, 1 = ViewDocument, 2 = ApproveDocument |
+        | ProxyAllowedField| 0 = No, 1 = Yes | 
       tags:
         - WorkFlow
       parameters:
