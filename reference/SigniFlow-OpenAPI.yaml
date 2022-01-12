@@ -36,7 +36,7 @@ paths:
   /Login:
     post:
       summary: Login
-      description: '#### Generates a API Token to allow the user to login.'
+      description: '#### Generates an API Token to allow the user to login.'
       operationId: Login
       parameters:
         - schema:
@@ -101,7 +101,7 @@ paths:
               schema:
                 type: string
                 default: application/json
-      description: '#### Used to log a user out of from SigniFlow.'
+      description: '#### Used to log a user out of SigniFlow.'
       requestBody:
         content:
           application/json:
@@ -331,7 +331,7 @@ paths:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
         description: '##### Apply A Prepper Template Request Model.'
-      description: '#### Used when applying a template to a document.'
+      description: '#### The API call used when applying a template to a document.'
       tags:
         - Templates
       parameters:
@@ -362,7 +362,7 @@ paths:
               schema:
                 type: string
                 default: application/json
-      description: '#### Used to cancel a document workflow.'
+      description: '#### The API call used to cancel a document workflow.'
       requestBody:
         content:
           application/json:
@@ -420,7 +420,7 @@ paths:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
         description: '##### Create Portfolio Request Model'
-      description: '#### Used to group documents by creating a portfolio to store them in.'
+      description: '#### The API call used to group documents by creating a portfolio to store them in.'
       tags:
         - Portfolios
       parameters:
@@ -463,7 +463,7 @@ paths:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
         description: '##### Delete Document Request Model'
-      description: '#### This is used to delete a document.'
+      description: '#### The API call used to delete a document.'
       tags:
         - WorkFlow
       parameters:
@@ -913,7 +913,7 @@ paths:
                     TokenField: aaa111
         description: '##### Document Prepper Add Advanced Fields Request Model'
       description: |-
-        #### Used to add advanced fields to a document.
+        #### The API call used to add advanced fields to a document.
 
         Enumerations used in this API Call include:
         | Enumeration    | Values          |
@@ -982,8 +982,7 @@ paths:
                     TokenField: aaa111
         description: '##### Document Prepper Add Fields Request Model'
       description: |-
-        #### Used to add fields to a document using the user's FlowID.
-
+        #### The API call used to add fields to a document using the user's FlowID.
 
         Enumerations used in this API Call include:
         | Enumeration    | Values          |
@@ -1034,7 +1033,7 @@ paths:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
         description: '##### Download Portfolio Request Model'
-      description: '#### Used to return a string that is then used to download a portfolio.'
+      description: '#### The API call used to return a string that is then used to download a portfolio.'
       tags:
         - Portfolios
       parameters:
@@ -1272,7 +1271,7 @@ paths:
               schema:
                 type: string
                 default: application/json
-      description: '#### Used to get the status of the document ex. pending/completed/rejected.'
+      description: '#### Used to get the status of a document ex. pending/completed/rejected.'
       requestBody:
         content:
           application/json:
