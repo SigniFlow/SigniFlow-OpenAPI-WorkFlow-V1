@@ -1331,7 +1331,13 @@ paths:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
         description: '##### Get Document Prepper Link Request Model'
-      description: '#### Used to get a document prepper link (url).'
+      description: |-
+        #### Used to get a document prepper link (url).
+
+        Enumerations used in this API Call include:
+        | Enumeration    | Values          |
+        | -------------- |:---------------:|
+        | **EmailSettingsField**| 0 = SendAll, 1 = SkipAll, 2 = SkipFirst |
       tags:
         - Viewers
       parameters:
@@ -1541,7 +1547,13 @@ paths:
                     TokenExpiryField: '2019-08-24T14:15:22Z'
                     TokenField: aaa111
         description: '##### Get Prepper Template Request Model'
-      description: '#### Used to get a document template.'
+      description: |-
+        #### Used to get a document template.
+
+        Enumerations used in this API Call include:
+        | Enumeration    | Values          |
+        | -------------- |:---------------:|
+        | **FieldTypeField** | 0  = Signature, 1  = NameText, 2  = DateText, 3  = EmailAddressText, 4  = ContactNumberText, 5  = PlainText, 6  = PlainTextOptional, 7  = FaceToface, 8  = Initial, 9  = CheckBox, 10 = F2FInitial, 11 = AddressText, 12 = CompanyNameText, 13 = OptionalCurrencyText, 14 = MandatoryCurrencyText, 15 = ReadOnlyText, 16 = NumericFieldOpt, 17 = NumericFieldMand, 18 = EmailInputOptional, 19 = EmailInput |
       tags:
         - Templates
       parameters:
@@ -1905,7 +1917,14 @@ paths:
               schema:
                 type: string
                 default: application/json
-      description: '#### Used when a user wants to share a portfolio with someone else.'
+      description: |-
+        #### Used when a user wants to share a portfolio with someone else.
+
+        Enumerations used in this API Call include:
+        | Enumeration    | Values          |
+        | -------------- |:---------------:|
+        | **AccessLevelField** | 0 = Viewer *(User has access to view documents in the portfolio)*, 1 = Contributor *(User can upload documents to placeholders)*, 2 = Owner *(User has full control over the portfolio)* |
+        | **ShareOptionField** | 0 = Business *(Share with an entire business)*, 1 = Department *(Share with a specific department)*, 2 = Team *(Share with a specific team)*, 3 = User *(Share with a specific user)* |
       requestBody:
         content:
           application/json:
