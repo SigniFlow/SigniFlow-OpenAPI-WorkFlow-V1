@@ -3321,7 +3321,7 @@ components:
           value:
             AdditionalDataField: string
             AutoRemindField: 0
-            CustomMessageField: A message with things.
+            CustomMessageField: A custom message of your choice.
             DocField: string
             DocNameField: Document 1
             DueDateField: 02/02/2021
