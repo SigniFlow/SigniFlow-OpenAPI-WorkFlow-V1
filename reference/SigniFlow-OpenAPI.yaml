@@ -1128,7 +1128,7 @@ paths:
                           FontSizeField: 15
                           GroupUserNumberField: 5
                           HeightField: '15'
-                          IsInvisibleField: true
+                          IsInvisibleField: false
                           PageNumberField: 2
                           TagNameField: 'null'
                           ValueField: 'null'
