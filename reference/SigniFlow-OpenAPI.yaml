@@ -1077,7 +1077,7 @@ paths:
                 value:
                   AdditionalDataField: '""'
                   AutoRemindField: 0
-                  CustomMessageField: A message with things.
+                  CustomMessageField: A custom message of your choice.
                   DocField: Base64 Encoded Document
                   DocNameField: Document 1
                   DueDateField: '2019-08-24'
