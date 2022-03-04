@@ -3744,7 +3744,6 @@ components:
           example: Completed
           description: Document status that gets returned.
       required:
-        - DocField
         - DocIDField
         - PortfolioIDField
         - ResultField
