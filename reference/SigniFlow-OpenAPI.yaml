@@ -3385,13 +3385,12 @@ components:
       properties:
         AdditionalDataField:
           type: string
-          minLength: 1
           description: Additional data.
+          nullable: true
         AutoRemindField:
           $ref: '#/components/schemas/AutoRemind'
         CustomMessageField:
           type: string
-          minLength: 1
           example: A message with things.
           description: Custom message.
         DocField:
@@ -3414,18 +3413,23 @@ components:
         FlattenDocumentField:
           type: boolean
           description: Flatten document.
+          nullable: true
         KeepContentSecurityField:
           type: boolean
           description: Keep content security.
+          nullable: true
         KeepCustomPropertiesField:
           type: boolean
           description: Keep custom properties.
+          nullable: true
         KeepXMPMetadataField:
           type: boolean
           description: Keep XMP meta data.
+          nullable: true
         PortfolioInformationField:
           type: object
           description: Portfolio information.
+          nullable: true
           required:
             - CreatePortfolioField
             - LinkToPortfolioField
@@ -3485,7 +3489,7 @@ components:
                   False = User will need to login and Sign`
               EmailAddressField:
                 type: string
-                minLength: 1
+                nullable: true
                 example: email@domain.com
                 description: Workflow user's email addresses.
               GroupStepField:
@@ -3503,7 +3507,7 @@ components:
                       properties:
                         LanguageCodeField:
                           type: string
-                          minLength: 1
+                          nullable: true
                         UserEmailField:
                           type: string
                           minLength: 1
@@ -3514,7 +3518,6 @@ components:
                           type: string
                           minLength: 1
                       required:
-                        - LanguageCodeField
                         - UserEmailField
                         - UserFullNameField
                         - UserMobileNumberField
@@ -3533,7 +3536,7 @@ components:
                   - RequiredNumberOfSignaturesField
               LanguageCodeField:
                 type: string
-                minLength: 1
+                nullable: true
                 example: en
                 description: |
                   #### Sets the display language for the user
@@ -3544,17 +3547,15 @@ components:
                   fr = French`
               LatitudeField:
                 type: string
-                minLength: 1
                 description: The current GPS lattitude location where the signing is taking place from. Needs to be paired with the longitude field.
                 nullable: true
               LongitudeField:
                 type: string
-                minLength: 1
                 description: The current GPS longitudelocation where the signing is taking place from. Needs to be paired with the lattitude field.
                 nullable: true
               MobileNumberField:
                 type: string
-                minLength: 1
+                nullable: true
                 example: 078 222 2222
                 description: Group user's mobile number.
               PreloadedFaceToFaceSignersField:
@@ -3574,24 +3575,23 @@ components:
                 nullable: true
               SignerPasswordField:
                 type: string
-                minLength: 1
                 format: password
                 example: P@ssw0rd
                 description: Face to face user's password.
                 nullable: true
               UserFirstNameField:
                 type: string
-                minLength: 1
+                nullable: true
                 example: John
                 description: Face to face user's first name.
               UserFullNameField:
                 type: string
-                minLength: 1
+                nullable: true
                 example: John Smith
                 description: Face to face user's full name.
               UserLastNameField:
                 type: string
-                minLength: 1
+                nullable: true
                 example: Smith
                 description: Face to face user's last name.
               WorkflowUserFieldsField:
@@ -3606,7 +3606,6 @@ components:
                       $ref: '#/components/schemas/FieldType'
                     FontFamilyField:
                       type: string
-                      minLength: 1
                       example: Arial
                       description: The font family of the fields text.
                       nullable: true
@@ -3625,30 +3624,26 @@ components:
                       minLength: 1
                       example: '15'
                       description: Field height.
-                      nullable: true
                     IsInvisibleField:
                       type: boolean
                       description: Is the field visible.
+                      nullable: true
                     PageNumberField:
                       type: number
                       example: 2
                       description: Field page number.
                     TagNameField:
                       type: string
-                      minLength: 1
                       description: Field tag name. Not required if the fields are defined.
                       nullable: true
                     ValueField:
                       type: string
-                      minLength: 1
                       description: Field value.
-                      nullable: true
                     WidthField:
                       type: string
                       minLength: 1
                       example: '25'
                       description: Field width.
-                      nullable: true
                     XCoordinateField:
                       type: string
                       minLength: 1
@@ -3671,39 +3666,23 @@ components:
                       nullable: true
                   required:
                     - FieldTypeField
-                    - GroupUserNumberField
                     - HeightField
-                    - IsInvisibleField
                     - PageNumberField
                     - WidthField
                     - XCoordinateField
-                    - XOffsetField
                     - YCoordinateField
-                    - YOffsetField
             required:
               - ActionField
               - AllowProxyField
               - AutoSignField
-              - EmailAddressField
-              - LanguageCodeField
               - LatitudeField
               - LongitudeField
-              - MobileNumberField
-              - SignerPasswordField
-              - UserFirstNameField
-              - UserFullNameField
-              - UserLastNameField
               - WorkflowUserFieldsField
       required:
         - AutoRemindField
         - DocField
         - DocNameField
         - ExtensionField
-        - FlattenDocumentField
-        - KeepContentSecurityField
-        - KeepCustomPropertiesField
-        - KeepXMPMetadataField
-        - PortfolioInformationField
         - SendFirstEmailField
         - SendWorkflowEmailsField
         - TokenField
@@ -3723,7 +3702,6 @@ components:
       properties:
         DocField:
           type: string
-          minLength: 1
           description: The document that has completed the workflow process.
         DocIDField:
           type: number
@@ -3740,14 +3718,11 @@ components:
           example: success
         StatusField:
           type: string
-          minLength: 1
           example: Completed
           description: Document status that gets returned.
       required:
         - DocIDField
-        - PortfolioIDField
         - ResultField
-        - StatusField
     GetAuditDocumentRequest:
       description: '#### A request sent to get an audit document.'
       type: object
