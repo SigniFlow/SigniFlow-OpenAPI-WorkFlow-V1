@@ -2287,7 +2287,7 @@ components:
       x-examples:
         Example:
           value:
-            TokenExpiryField: '2019-08-24T14:15:22Z'
+            TokenExpiryField: '/2019-08-24T14:15:22Z/'
             TokenField: aaa111
       properties:
         TokenExpiryField:
