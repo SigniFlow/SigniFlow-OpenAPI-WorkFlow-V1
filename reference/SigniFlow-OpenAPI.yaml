@@ -73,7 +73,7 @@ paths:
                   value:
                     ResultField: Success
                     TokenField:
-                      TokenExpiryField: '2019-08-24T14:15:22Z'
+                      TokenExpiryField: \/Date(928142400000+0200)\/
                       TokenField: aaa111
       deprecated: false
       tags:
