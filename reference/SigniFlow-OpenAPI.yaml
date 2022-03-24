@@ -94,7 +94,7 @@ paths:
                   value:
                     ResultField: Success
                     TokenField:
-                      TokenExpiryField: '2019-08-24T14:15:22Z'
+                      TokenExpiryField: /Date(928142400000+0200)/
                       TokenField: aaa111
           headers:
             Content-Type:
@@ -158,13 +158,13 @@ paths:
                   AutoRemindField: 0
                   DocField: Base64 Encoded Document
                   DocNameField: Document Name
-                  DueDateField: '2019-08-24T14:15:22Z'
+                  DueDateField: /Date(928142400000+0200)/
                   ExtensionField: 0
                   MessageField: Message to participants
                   PriorityField: 0
                   SLAField: 0
                   TokenField:
-                    TokenExpiryField: '2019-08-24T14:15:22Z'
+                    TokenExpiryField: /Date(928142400000+0200)/
                     TokenField: aaa111
         required: true
       responses:
@@ -1080,7 +1080,7 @@ paths:
                   CustomMessageField: A custom message of your choice.
                   DocField: Base64 Encoded Document
                   DocNameField: Document 1
-                  DueDateField: '2019-08-24'
+                  DueDateField: /Date(928142400000+0200)/
                   ExtensionField: 0
                   FlattenDocumentField: true
                   KeepContentSecurityField: true
@@ -1463,11 +1463,11 @@ paths:
                         AdditionalField: 'null'
                         DocIDField: '2147483647'
                         EmailField: email@domain.com
-                        EventDateField: '2019-08-24'
+                        EventDateField: /Date(928142400000+0200)/
                         EventField: Pending Release
                         EventStatusField: Pending Release
                         LocationField: '-37.8044416, 144.9721856'
-                        OrderDateField: '2019-08-28'
+                        OrderDateField: /Date(928142400000+0200)/
                         PageField: '1'
                         UserFullNameField: John Doe
                     ResultField: Success
@@ -2104,7 +2104,7 @@ paths:
                   value:
                     ResultField: Success
                     TokenField:
-                      TokenExpiryField: '2019-08-24T14:15:22Z'
+                      TokenExpiryField: /Date(928142400000+0200)/
                       TokenField: aaa111
           headers:
             Content-Type:
@@ -2150,7 +2150,7 @@ paths:
                   value:
                     ResultField: Success
                     TokenField:
-                      TokenExpiryField: '2019-08-24T14:15:22Z'
+                      TokenExpiryField: /Date(928142400000+0200)/
                       TokenField: aaa111
           headers:
             Content-Type:
@@ -2237,7 +2237,7 @@ components:
           value:
             ResultField: Success
             TokenField:
-              TokenExpiryField: /Date(1624307263000+0200)/
+              TokenExpiryField: /Date(928142400000+0200)/
               TokenField: e6dgfh
       properties:
         ResultField:
@@ -2287,7 +2287,7 @@ components:
       x-examples:
         Example:
           value:
-            TokenExpiryField: '2019-08-24T14:15:22Z'
+            TokenExpiryField: /Date(928142400000+0200)/
             TokenField: aaa111
       properties:
         TokenExpiryField:
@@ -2329,6 +2329,8 @@ components:
         - ApproveDocument
       minimum: 0
       maximum: 2
+      x-examples:
+        example-1: 0
     AutoRemind:
       type: integer
       title: AutoRemind
@@ -2351,6 +2353,8 @@ components:
         1 = Yes`
       minimum: 0
       maximum: 1
+      x-examples:
+        example-1: 0
     AutoExpire:
       type: integer
       title: AutoExpire
@@ -2487,6 +2491,20 @@ components:
             TokenField:
               TokenExpiryField: '2019-08-24T14:15:22Z'
               TokenField: aaa111
+        example-1:
+          AdditionalDataField: '""'
+          AutoExpireField: 0
+          AutoRemindField: 0
+          DocField: String content
+          DocNameField: String content
+          DueDateField: /Date(928142400000+0200)/
+          ExtensionField: 0
+          MessageField: String content
+          PriorityField: 0
+          SLAField: 0
+          TokenField:
+            TokenExpiryField: /Date(928142400000+0200)/
+            TokenField: aaa111
       properties:
         AdditionalDataField:
           type: string
@@ -2563,7 +2581,7 @@ components:
           value:
             DocIDField: 2147483647
             TokenField:
-              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenExpiryField: /Date(928142400000+0200)/
               TokenField: aaa111
       title: Get Document Request
       properties:
@@ -2627,7 +2645,7 @@ components:
             LastNameField: Smith
             ProxyAllowedField: 0
             TokenField:
-              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenExpiryField: /Date(928142400000+0200)/
               TokenField: aaa111
       title: Add Workflow Step V2 Request
       properties:
@@ -2744,7 +2762,7 @@ components:
             DocIDField: 2147483647
             PrepperTemplateIDField: 21344
             TokenField:
-              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenExpiryField: /Date(928142400000+0200)/
               TokenField: aaa111
       title: Apply Prepper Template Response
       properties:
@@ -2786,7 +2804,7 @@ components:
           value:
             DocIDField: '2147483647'
             TokenField:
-              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenExpiryField: /Date(928142400000+0200)/
               TokenField: aaa111
       title: Cancel Flow Request
       properties:
@@ -2831,7 +2849,7 @@ components:
             DocIDField: 2147483647
             PortfolioNameField: Application Portfolio
             TokenIDField:
-              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenExpiryField: /Date(928142400000+0200)/
               TokenField: aaa111
       title: Create Portfolio Request
       properties:
@@ -2880,7 +2898,7 @@ components:
           value:
             DocIDField: 2147483647
             TokenField:
-              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenExpiryField: /Date(928142400000+0200)/
               TokenField: aaa111
       title: Delete Document Request
       properties:
@@ -2937,7 +2955,7 @@ components:
                 XCoordinateField: '60'
                 YCoordinateField: '120'
             TokenField:
-              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenExpiryField: /Date(928142400000+0200)/
               TokenField: aaa111
       title: Document Prepper Add Advanced Fields Request
       properties:
@@ -3113,7 +3131,7 @@ components:
             NameField: 'null'
             PageNumberField: 2
             TokenField:
-              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenExpiryField: /Date(928142400000+0200)/
               TokenField: aaa111
             UserEmailField: email@domain.com
             WidthField: '20'
@@ -3264,7 +3282,7 @@ components:
           value:
             PortfolioIDField: 111112
             TokenField:
-              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenExpiryField: /Date(928142400000+0200)/
               TokenField: aaa111
       title: Download Portfolio Request
       properties:
@@ -3324,7 +3342,7 @@ components:
             CustomMessageField: A custom message of your choice.
             DocField: string
             DocNameField: Document 1
-            DueDateField: 02/02/2021
+            DueDateField: /Date(928142400000+0200)/
             ExtensionField: 0
             FlattenDocumentField: true
             KeepContentSecurityField: true
@@ -3340,7 +3358,7 @@ components:
             SendFirstEmailField: true
             SendWorkflowEmailsField: true
             TokenField:
-              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenExpiryField: /Date(928142400000+0200)/
               TokenField: aaa111
             WorkflowUsersListField:
               - ActionField: 0
@@ -3731,7 +3749,7 @@ components:
           value:
             DocIDField: '2147483647'
             TokenField:
-              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenExpiryField: /Date(928142400000+0200)/
               TokenField: aaa111
       title: Get Audit Document Request
       properties:
@@ -3777,7 +3795,7 @@ components:
             EmailField: email@domain.com
             ReturnURLField: string
             TokenField:
-              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenExpiryField: /Date(928142400000+0200)/
               TokenField: aaa111
       title: Get Document Link Request
       properties:
@@ -3832,7 +3850,7 @@ components:
           value:
             DocIDField: 2147483647
             TokenField:
-              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenExpiryField: /Date(928142400000+0200)/
               TokenField: aaa111
       title: Get Document Status Request
       properties:
@@ -3878,7 +3896,7 @@ components:
             EmailSettingField: 0
             ReturnURLField: string
             TokenField:
-              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenExpiryField: /Date(928142400000+0200)/
               TokenField: aaa111
       title: Get Document Prepper Link Request
       properties:
@@ -3937,7 +3955,7 @@ components:
             DocIDField: 2147483647
             TagNameField: string
             TokenField:
-              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenExpiryField: /Date(928142400000+0200)/
               TokenField: aaa111
       title: Get Document Tag Field Box Position Request
       properties:
@@ -4019,7 +4037,7 @@ components:
             DocIDField: 2147483647
             TagNameField: string
             TokenField:
-              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenExpiryField: /Date(928142400000+0200)/
               TokenField: aaa111
       title: Get Document Tag Field Position Request
       properties:
@@ -4091,7 +4109,7 @@ components:
           value:
             DocIDField: '2147483647'
             TokenField:
-              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenExpiryField: /Date(928142400000+0200)/
               TokenField: aaa111
       title: Get Document Audit Request
       properties:
@@ -4209,7 +4227,7 @@ components:
             DocIDField: 2147483647
             PrepperTemplateIDField: 12348
             TokenField:
-              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenExpiryField: /Date(928142400000+0200)/
               TokenField: aaa111
       title: Get Prepper Template Request
       properties:
@@ -4333,7 +4351,7 @@ components:
           value:
             TemplateFolderField: 0
             TokenField:
-              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenExpiryField: /Date(928142400000+0200)/
               TokenField: aaa111
       title: Get Prepper Template List Request
       properties:
@@ -4399,7 +4417,7 @@ components:
           value:
             DocIDField: '2147483647'
             TokenField:
-              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenExpiryField: /Date(928142400000+0200)/
               TokenField: aaa111
       title: Initiate Flow Request
       properties:
@@ -4443,7 +4461,7 @@ components:
           value:
             DocIDField: '2147483647'
             TokenField:
-              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenExpiryField: /Date(928142400000+0200)/
               TokenField: aaa111
       title: Initiate Flow No Email Request
       properties:
@@ -4487,7 +4505,7 @@ components:
           value:
             DocIDField: '2147483647'
             TokenField:
-              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenExpiryField: /Date(928142400000+0200)/
               TokenField: aaa111
       title: Initiate Flow No Initial Email Request
       properties:
@@ -4533,7 +4551,7 @@ components:
             DocumentNameField: application_01
             PortfolioIDField: '1111111'
             TokenField:
-              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenExpiryField: /Date(928142400000+0200)/
               TokenField: aaa111
       title: Link To Portfolio Request
       properties:
@@ -4588,7 +4606,7 @@ components:
         Logout Request Example:
           value:
             TokenField:
-              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenExpiryField: /Date(928142400000+0200)/
               TokenField: aaa111
       title: Logout Request
       properties:
@@ -4604,7 +4622,7 @@ components:
           value:
             ResultField: Success
             TokenField:
-              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenExpiryField: /Date(928142400000+0200)/
               TokenField: aaa111
       title: Logout Response
       properties:
@@ -4802,7 +4820,7 @@ components:
             DocIDField: '2147483647'
             DocumentOrderField: '1'
             TokenField:
-              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenExpiryField: /Date(928142400000+0200)/
               TokenField: aaa111
       title: Set Document Order Request
       properties:
@@ -4845,7 +4863,7 @@ components:
             PortfolioIDField: '11111111'
             ShareOptionField: Business
             TokenField:
-              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenExpiryField: /Date(928142400000+0200)/
               TokenField: aaa111
             UniqueIDField: '12121212'
       title: Share Portfolio Request
@@ -4898,7 +4916,7 @@ components:
             PortfolioIDField: '111111'
             ShareOptionField: Business
             TokenField:
-              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenExpiryField: /Date(928142400000+0200)/
               TokenField: aaa111
             UniqueIDField: '1212121'
       title: Share Portfolio No Email Request
@@ -5216,7 +5234,7 @@ components:
         Token Extend Request Example:
           value:
             TokenField:
-              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenExpiryField: /Date(928142400000+0200)/
               TokenField: aaa111
             TokenValidityField: 0
       properties:
@@ -5272,7 +5290,7 @@ components:
           value:
             ResultField: Success
             TokenField:
-              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenExpiryField: /Date(928142400000+0200)/
               TokenField: aaa111
       title: Token Validate Response
       properties:
@@ -5300,7 +5318,7 @@ components:
             SignReasonField: 'null'
             TimeZoneOffsetField: 0
             TokenField:
-              TokenExpiryField: '2019-08-24T14:15:22Z'
+              TokenExpiryField: /Date(928142400000+0200)/
               TokenField: aaa111
       title: Workflow Sign Request
       properties:
