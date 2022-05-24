@@ -54,7 +54,9 @@ paths:
             example:
               UserNameField: email@domain.com
               PasswordField: P@ssword
-            examples: {}
+            examples:
+              example-1:
+                value: {}
         required: true
       responses:
         '200':
@@ -78,6 +80,8 @@ paths:
       deprecated: false
       tags:
         - Authentication
+      x-SigniFlowLogin-1: null
+      x-extension-2: null
   /Logout:
     post:
       summary: Logout
@@ -2256,7 +2260,7 @@ components:
       description: '#### The request sent when a user Logs in.'
       x-examples:
         Example:
-          value:
+          x-sf-dynamic-values:
             UserNameField: email@domain.com
             PasswordField: Password
       title: Login Request
@@ -2477,7 +2481,7 @@ components:
       description: '#### The request sent to create a document workflow.'
       x-examples:
         Create Workflow Request Example:
-          value:
+          x-sf-dynamic-values:
             AdditionalDataField: ''
             AutoExpireField: 0
             AutoRemindField: 0
@@ -2578,7 +2582,7 @@ components:
       type: object
       x-examples:
         Get Document Request Example:
-          value:
+          x-sf-dynamic-values:
             DocIDField: 2147483647
             TokenField:
               TokenExpiryField: /Date(928142400000+0200)/
@@ -2635,7 +2639,7 @@ components:
       type: object
       x-examples:
         Add Workflow Step V2 Request Example:
-          value:
+          x-sf-dynamic-values:
             ActionField: 0
             CellField: '0121231234'
             DocIDField: '2147483647'
@@ -4604,7 +4608,7 @@ components:
       type: object
       x-examples:
         Logout Request Example:
-          value:
+          x-sf-dynamic-values:
             TokenField:
               TokenExpiryField: /Date(928142400000+0200)/
               TokenField: aaa111
