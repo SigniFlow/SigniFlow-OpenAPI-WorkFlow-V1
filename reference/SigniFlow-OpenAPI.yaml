@@ -3742,6 +3742,7 @@ components:
           type: string
           example: Completed
           description: Document status that gets returned.
+          nullable: true
       required:
         - DocIDField
         - ResultField
