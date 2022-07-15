@@ -1061,11 +1061,20 @@ paths:
               examples:
                 Example:
                   value:
-                    DocField: Base64 Encoded Document
+                    AccessResponseListField:
+                      - ReferenceIDField: 2147483647
+                        ResultField: String content
+                    DocField: String content
                     DocIDField: 2147483647
-                    PortfolioIDField: 2111113647
-                    ResultField: Success
-                    StatusField: Completed
+                    PlaceholderDocumentResponseListField:
+                      - AccessResponseListField:
+                          - ReferenceIDField: 2147483647
+                            ResultField: String content
+                        DocIDField: 2147483647
+                        ResultField: String content
+                    PortfolioIDField: 2147483647
+                    ResultField: String content
+                    StatusField: String content
           headers:
             Content-Type:
               schema:
@@ -1079,68 +1088,124 @@ paths:
             examples:
               Example:
                 value:
-                  AdditionalDataField: '""'
+                  AdditionalDataField: String content
+                  AdhocPreloadedFaceToFaceUsersField:
+                    - CountryIDField: 0
+                      IDTypeField: 0
+                      IdentificationNumberField: '8500000000000'
+                      SignerEmailField: john@email.com
+                      SignerFirstNameField: John
+                      SignerLastNameField: Smith
+                      SignerMobileField: '+27821234567'
                   AutoRemindField: 0
-                  CustomMessageField: A custom message of your choice.
-                  DocField: Base64 Encoded Document
-                  DocNameField: Document 1
-                  DueDateField: /Date(928142400000+0200)/
+                  CustomMessageField: Custom message presented to signer
+                  DocField: Base64 Encoded document
+                  DocNameField: String content
+                  DueDateField: /Date(928149600000+0000)/
                   ExtensionField: 0
                   FlattenDocumentField: true
                   KeepContentSecurityField: true
                   KeepCustomPropertiesField: true
                   KeepXMPMetadataField: true
                   PortfolioInformationField:
+                    AccessListField:
+                      - AccessField: 0
+                        ReferenceIDField: 2147483647
+                        ShareOptionField: 0
+                        UniqueIDField: String content
+                        UserEmailField: String content
                     CreatePortfolioField: true
                     LinkToPortfolioField: true
-                    PortfolioIDField: 2141111647
-                    PortfolioNameField: Portfolio 1
+                    PlaceholderInfoListField:
+                      - AccessListField:
+                          - AccessField: 0
+                            ReferenceIDField: 2147483647
+                            ShareOptionField: 0
+                            UniqueIDField: String content
+                            UserEmailField: String content
+                        AllowMultipleField: true
+                        DocumentNameField: String content
+                        ForceUploadField: true
+                        PlaceholderGroupIDField: String content
+                        SendNotificationField: true
+                    PortfolioIDField: 2147483647
+                    PortfolioNameField: String content
                   PriorityField: 0
-                  SLAField: 0
+                  SLAField: 2147483647
                   SendFirstEmailField: true
                   SendWorkflowEmailsField: true
+                  SharedKeyField: String content
                   TokenField:
-                    TokenExpiryField: '2019-08-24T14:15:22Z'
-                    TokenField: aaa111
+                    TokenExpiryField: /Date(928149600000+0000)/
+                    TokenField: String content
                   WorkflowUsersListField:
                     - ActionField: 0
                       AllowProxyField: 0
                       AutoSignField: true
-                      EmailAddressField: email@domain.com
+                      EmailAddressField: String content
                       GroupStepField:
                         GroupMembersField:
-                          - LanguageCodeField: en
-                            UserEmailField: email@domain.com
-                            UserFullNameField: John Smith
-                            UserMobileNumberField: +2778 000 0000
-                        GroupNameField: Managers
-                        RequiredNumberOfSignaturesField: 3
-                      LanguageCodeField: en
-                      LatitudeField: '-37.8044416'
-                      LongitudeField: '144.9721856'
-                      MobileNumberField: +2778 222 2222
+                          - LanguageCodeField: String content
+                            SendCompletedEmailField: 0
+                            UserEmailField: String content
+                            UserFullNameField: String content
+                            UserMobileNumberField: String content
+                        GroupNameField: String content
+                        RequiredNumberOfSignaturesField: 2147483647
+                      LanguageCodeField: String content
+                      LatitudeField: String content
+                      LongitudeField: String content
+                      MobileNumberField: String content
+                      PhotoAtSigningField: 0
                       PreloadedFaceToFaceSignersField:
-                        - {}
-                      SignReasonField: Because yes
-                      SignerPasswordField: P@ssw0rd
-                      UserFirstNameField: John
-                      UserFullNameField: John Smith
-                      UserLastNameField: Smith
+                        - CountryIDField: 0
+                          FieldsListField:
+                            - DocFieldTypeField: 0
+                              FontFamilyField: String content
+                              FontSizeField: 2147483647
+                              HeightField: String content
+                              IsInvisibleField: true
+                              NameField: String content
+                              PageNumberField: 2147483647
+                              TagNameField: String content
+                              ValueField: String content
+                              WidthField: String content
+                              XCoordinateField: String content
+                              XOffsetField: 2147483647
+                              YCoordinateField: String content
+                              YOffsetField: 2147483647
+                          IDTypeField: 0
+                          IdentificationNumberField: String content
+                          PhotoAtSigningField: 0
+                          SendCompletedEmailField: 0
+                          SendOTPField: 0
+                          SignerEmailField: String content
+                          SignerFirstNameField: String content
+                          SignerLastNameField: String content
+                          SignerMobileField: String content
+                      SendCompletedEmailField: 0
+                      SignReasonField: String content
+                      SignatureTypeField: 0
+                      SignerPasswordField: String content
+                      UserFirstNameField: String content
+                      UserFullNameField: String content
+                      UserLastNameField: String content
                       WorkflowUserFieldsField:
                         - FieldTypeField: 0
-                          FontFamilyField: Arial
-                          FontSizeField: 15
-                          GroupUserNumberField: 5
-                          HeightField: '15'
-                          IsInvisibleField: false
-                          PageNumberField: 2
-                          TagNameField: 'null'
-                          ValueField: 'null'
-                          WidthField: '25'
-                          XCoordinateField: '160'
-                          XOffsetField: 15
-                          YCoordinateField: '60'
-                          YOffsetField: 20
+                          FontFamilyField: String content
+                          FontSizeField: 2147483647
+                          GroupUserNumberField: 2147483647
+                          HeightField: String content
+                          IsInvisibleField: true
+                          NameField: String content
+                          PageNumberField: 2147483647
+                          TagNameField: String content
+                          ValueField: String content
+                          WidthField: String content
+                          XCoordinateField: String content
+                          XOffsetField: 2147483647
+                          YCoordinateField: String content
+                          YOffsetField: 2147483647
         description: '##### FullWorkflow Request Model'
       description: |-
         #### Used to create a e-signature workflow with a single API Request.
