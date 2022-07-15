@@ -1214,7 +1214,7 @@ paths:
         Enumerations used in this API Call include:
         | Enumeration    | Values          |
         | -------------- |:---------------:|
-        | CountryIDField| 137 = South Africa, 154 = UnitedKingdom, 10 = Brazil Rio, 132 = Singapore, Australia Sydney =   | 
+        | CountryIDField| 137 = South Africa, 154 = UnitedKingdom, 10 = Brazil Rio, 132 = Singapore, 6 = Australia Sydney  | 
         | IDTypeField| 0 = South African ID Number, 1 = Passport, 2 = None |
         | AutoRemindField| 0 = No, 1 = Yes |
         | ExtensionField |0 = pdf, 1 = xls, 2 = txt, 3 = xlsx, 4 = docx, 5 = doc, 6 = xml, 7 = png, 8 = jpg, 9 = gif |
