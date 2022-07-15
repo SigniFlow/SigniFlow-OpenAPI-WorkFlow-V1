@@ -1214,7 +1214,7 @@ paths:
         Enumerations used in this API Call include:
         | Enumeration    | Values          |
         | -------------- |:---------------:|
-        | CountryID| 0 = No, 1 = Yes | 
+        | CountryIDField| 0 = No, 1 = Yes | 
         | IDTypeField| 0 = No, 1 = Yes |
         | AutoRemindField| 0 = No, 1 = Yes |
         | ExtensionField |0 = pdf, 1 = xls, 2 = txt, 3 = xlsx, 4 = docx, 5 = doc, 6 = xml, 7 = png, 8 = jpg, 9 = gif |
