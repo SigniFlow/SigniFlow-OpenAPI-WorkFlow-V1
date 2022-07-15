@@ -3844,12 +3844,20 @@ components:
       type: object
       x-examples:
         FullWorkflow Response Example:
-          value:
-            DocField: Base64 Encoded Document
-            DocIDField: 2147483647
-            PortfolioIDField: 11112
-            ResultField: Success
-            StatusField: Completed
+          AccessResponseListField:
+            - ReferenceIDField: 2147483647
+              ResultField: String content
+          DocField: String content
+          DocIDField: 2147483647
+          PlaceholderDocumentResponseListField:
+            - AccessResponseListField:
+                - ReferenceIDField: 2147483647
+                  ResultField: String content
+              DocIDField: 2147483647
+              ResultField: String content
+          PortfolioIDField: 2147483647
+          ResultField: String content
+          StatusField: String content
       title: FullWorkflow Response
       properties:
         DocField:
