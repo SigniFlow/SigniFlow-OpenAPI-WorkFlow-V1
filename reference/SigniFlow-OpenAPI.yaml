@@ -3415,69 +3415,124 @@ components:
       type: object
       x-examples:
         Example:
-          value:
-            AdditionalDataField: string
-            AutoRemindField: 0
-            CustomMessageField: A custom message of your choice.
-            DocField: string
-            DocNameField: Document 1
-            DueDateField: /Date(928142400000+0200)/
-            ExtensionField: 0
-            FlattenDocumentField: true
-            KeepContentSecurityField: true
-            KeepCustomPropertiesField: true
-            KeepXMPMetadataField: true
-            PortfolioInformationField:
-              CreatePortfolioField: true
-              LinkToPortfolioField: true
-              PortfolioIDField: 11112
-              PortfolioNameField: Portfolio 1
-            PriorityField: 0
-            SLAField: 0
-            SendFirstEmailField: true
-            SendWorkflowEmailsField: true
-            TokenField:
-              TokenExpiryField: /Date(928142400000+0200)/
-              TokenField: aaa111
-            WorkflowUsersListField:
-              - ActionField: 0
-                AllowProxyField: 0
-                AutoSignField: true
-                EmailAddressField: email@domain.com
-                GroupStepField:
-                  GroupMembersField:
-                    - LanguageCodeField: en
-                      UserEmailField: email@domain.com
-                      UserFullNameField: John Doe
-                      UserMobileNumberField: '+27786530989'
-                  GroupNameField: Managers
-                  RequiredNumberOfSignaturesField: 3
-                LanguageCodeField: en
-                LatitudeField: string
-                LongitudeField: string
-                MobileNumberField: +2778 222 2222
-                PreloadedFaceToFaceSignersField:
-                  - {}
-                SignReasonField: Because yes
-                SignerPasswordField: P@ssw0rd
-                UserFirstNameField: John
-                UserFullNameField: John Smith
-                UserLastNameField: Smith
-                WorkflowUserFieldsField:
-                  - FieldTypeField: 0
-                    FontFamilyField: 'null'
-                    FontSizeField: 15
-                    GroupUserNumberField: 5
-                    HeightField: '15'
-                    IsInvisibleField: true
-                    PageNumberField: 2
-                    TagNameField: 'null'
-                    ValueField: 'null'
-                    WidthField: '25'
-                    XCoordinateField: '160'
-                    XOffsetField: 15
-                    YCoordinateField: '60'
-                    YOffsetField: 20
+          AdditionalDataField: String content
+          AdhocPreloadedFaceToFaceUsersField:
+            - CountryIDField: 0
+              IDTypeField: 0
+              IdentificationNumberField: String content
+              SignerEmailField: String content
+              SignerFirstNameField: String content
+              SignerLastNameField: String content
+              SignerMobileField: String content
+          AutoRemindField: 0
+          CustomMessageField: String content
+          DocField: String content
+          DocNameField: String content
+          DueDateField: /Date(928149600000+0000)/
+          ExtensionField: 0
+          FlattenDocumentField: true
+          KeepContentSecurityField: true
+          KeepCustomPropertiesField: true
+          KeepXMPMetadataField: true
+          PortfolioInformationField:
+            AccessListField:
+              - AccessField: 0
+                ReferenceIDField: 2147483647
+                ShareOptionField: 0
+                UniqueIDField: String content
+                UserEmailField: String content
+            CreatePortfolioField: true
+            LinkToPortfolioField: true
+            PlaceholderInfoListField:
+              - AccessListField:
+                  - AccessField: 0
+                    ReferenceIDField: 2147483647
+                    ShareOptionField: 0
+                    UniqueIDField: String content
+                    UserEmailField: String content
+                AllowMultipleField: true
+                DocumentNameField: String content
+                ForceUploadField: true
+                PlaceholderGroupIDField: String content
+                SendNotificationField: true
+            PortfolioIDField: 2147483647
+            PortfolioNameField: String content
+          PriorityField: 0
+          SLAField: 2147483647
+          SendFirstEmailField: true
+          SendWorkflowEmailsField: true
+          SharedKeyField: String content
+          TokenField:
+            TokenExpiryField: /Date(928149600000+0000)/
+            TokenField: String content
+          WorkflowUsersListField:
+            - ActionField: 0
+              AllowProxyField: 0
+              AutoSignField: true
+              EmailAddressField: String content
+              GroupStepField:
+                GroupMembersField:
+                  - LanguageCodeField: String content
+                    SendCompletedEmailField: 0
+                    UserEmailField: String content
+                    UserFullNameField: String content
+                    UserMobileNumberField: String content
+                GroupNameField: String content
+                RequiredNumberOfSignaturesField: 2147483647
+              LanguageCodeField: String content
+              LatitudeField: String content
+              LongitudeField: String content
+              MobileNumberField: String content
+              PhotoAtSigningField: 0
+              PreloadedFaceToFaceSignersField:
+                - CountryIDField: 0
+                  FieldsListField:
+                    - DocFieldTypeField: 0
+                      FontFamilyField: String content
+                      FontSizeField: 2147483647
+                      HeightField: String content
+                      IsInvisibleField: true
+                      NameField: String content
+                      PageNumberField: 2147483647
+                      TagNameField: String content
+                      ValueField: String content
+                      WidthField: String content
+                      XCoordinateField: String content
+                      XOffsetField: 2147483647
+                      YCoordinateField: String content
+                      YOffsetField: 2147483647
+                  IDTypeField: 0
+                  IdentificationNumberField: String content
+                  PhotoAtSigningField: 0
+                  SendCompletedEmailField: 0
+                  SendOTPField: 0
+                  SignerEmailField: String content
+                  SignerFirstNameField: String content
+                  SignerLastNameField: String content
+                  SignerMobileField: String content
+              SendCompletedEmailField: 0
+              SignReasonField: String content
+              SignatureTypeField: 0
+              SignerPasswordField: String content
+              UserFirstNameField: String content
+              UserFullNameField: String content
+              UserLastNameField: String content
+              WorkflowUserFieldsField:
+                - FieldTypeField: 0
+                  FontFamilyField: String content
+                  FontSizeField: 2147483647
+                  GroupUserNumberField: 2147483647
+                  HeightField: String content
+                  IsInvisibleField: true
+                  NameField: String content
+                  PageNumberField: 2147483647
+                  TagNameField: String content
+                  ValueField: String content
+                  WidthField: String content
+                  XCoordinateField: String content
+                  XOffsetField: 2147483647
+                  YCoordinateField: String content
+                  YOffsetField: 2147483647
       title: FullWorkflow Request
       properties:
         AdditionalDataField:
