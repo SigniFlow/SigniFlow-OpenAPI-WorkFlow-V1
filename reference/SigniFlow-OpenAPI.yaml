@@ -1214,12 +1214,12 @@ paths:
         Enumerations used in this API Call include:
         | Enumeration    | Values          |
         | -------------- |:---------------:|
-        | CountryIDField| 0 = No, 1 = Yes | 
-        | IDTypeField| 0 = No, 1 = Yes |
+        | CountryIDField| Regional | 
+        | IDTypeField| 0 = South African ID Number, 1 = Passport, 2 = None |
         | AutoRemindField| 0 = No, 1 = Yes |
         | ExtensionField |0 = pdf, 1 = xls, 2 = txt, 3 = xlsx, 4 = docx, 5 = doc, 6 = xml, 7 = png, 8 = jpg, 9 = gif |
-        | Access Field| 0 = No, 1 = Yes |
-        | Share Option| 0 = No, 1 = Yes |
+        | AccessField| 0 = Allow, 1 = Deny |
+        | ShareOptionField| 0 = Business, 1 = Department, 2 = Team, 3 = User |
         | PriorityField  | 0 = Low, 1 = Normal, 2 = High |
         | ActionField    | 0 = SignDocument, 1 = ViewDocument, 2 = ApproveDocument |
         | AllowProxyField| 0 = No, 1 = Yes | 
