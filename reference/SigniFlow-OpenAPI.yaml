@@ -1206,7 +1206,7 @@ paths:
                           XOffsetField: 2147483647
                           YCoordinateField: String content
                           YOffsetField: 2147483647
-      description: '##### FullWorkflow Request Model'
+     
       description: |-
         #### Used to create a e-signature workflow with a single API Request.
         The request can contain multiple recipients, fields and signatures.
@@ -2103,7 +2103,7 @@ paths:
               schema:
                 type: string
                 default: application/json
-      description: '#### Used to initiate the signing process of a document.'
+      
       description: |-
         Enumerations used in this API Call include:
         | Enumeration    | Values          |
