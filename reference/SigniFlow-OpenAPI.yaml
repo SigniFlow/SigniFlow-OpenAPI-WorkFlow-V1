@@ -1206,7 +1206,7 @@ paths:
                           XOffsetField: 2147483647
                           YCoordinateField: String content
                           YOffsetField: 2147483647
-        description: '##### FullWorkflow Request Model'
+      description: '##### FullWorkflow Request Model'
       description: |-
         #### Used to create a e-signature workflow with a single API Request.
         The request can contain multiple recipients, fields and signatures.
@@ -2104,6 +2104,12 @@ paths:
                 type: string
                 default: application/json
       description: '#### Used to initiate the signing process of a document.'
+      description: |-
+        Enumerations used in this API Call include:
+        | Enumeration    | Values          |
+        | -------------- |:---------------:|
+        | **FieldTypeField** | 0  = Signature Image, 1  = Font: Calibri, 2  = Font: AR DECODE, 3  = Font 3: Bradley Hand ITC, 4  = Font: Harrington , 5  = Font: Alisandra Demo, 6  = Font: Brush Script MT, 7  = Font: Lucida Calligraphy , 8  = Font: Lucida Handrwriting,|
+     
       requestBody:
         content:
           application/json:
@@ -2556,7 +2562,6 @@ components:
       description: '#### The request sent to create a document workflow.'
       x-examples:
         Create Workflow Request Example:
-          x-sf-dynamic-values:
             AdditionalDataField: ''
             AutoExpireField: 0
             AutoRemindField: 0
