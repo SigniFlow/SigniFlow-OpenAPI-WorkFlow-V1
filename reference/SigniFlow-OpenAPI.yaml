@@ -2105,7 +2105,7 @@ paths:
                 default: application/json
       
       description: |-
-        Enumerations used in this API Call include:
+        Enumerations used in this API Call for the Signature Image Type Field include:
         | Enumeration    | Values          |
         | -------------- |:---------------:|
         | **FieldTypeField** | 0  = Signature Image, 1  = Font: Calibri, 2  = Font: AR DECODE, 3  = Font 3: Bradley Hand ITC, 4  = Font: Harrington , 5  = Font: Alisandra Demo, 6  = Font: Brush Script MT, 7  = Font: Lucida Calligraphy , 8  = Font: Lucida Handrwriting,|
