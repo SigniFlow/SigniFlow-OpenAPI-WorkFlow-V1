@@ -972,7 +972,7 @@ paths:
                   DateFormatField:
                     CustomDateValuesField:
                       CustomFormatValueField: 0
-                      CustomeSplitterField: String Content
+                      CustomSplitterField: '/ or space or -'
                     FormatField: 0
                   DocFieldTypeField: 0
                   DocIDField: 2147483647
