@@ -969,6 +969,11 @@ paths:
             examples:
               Example:
                 value:
+                  DateFormatField:
+                    CustomDateValuesField:
+                      CustomFormatValueField: 0
+                      CustomeSplitterField: String Content
+                    FormatField: 0
                   DocFieldTypeField: 0
                   DocIDField: 2147483647
                   FlowIDField: 2147111647
@@ -3206,6 +3211,11 @@ components:
       x-examples:
         Document Prepper Add Fields FlowID Request Example:
           value:
+            DateFormatField:
+              CustomDateValuesField:
+                CustomFormatValueField: 0
+                CustomeSplitterField: String Content
+              FormatField: 0
             DocFieldTypeField: 5
             DocIDField: 2147483647
             FlowIDField: 11111
@@ -3277,6 +3287,8 @@ components:
         TokenField:
           $ref: '#/components/schemas/TokenField'
       required:
+        - CustomeFormatValueField
+        - CustomSplitterField
         - DocFieldTypeField
         - DocIDField
         - FlowIDField
