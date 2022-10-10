@@ -997,8 +997,8 @@ paths:
         | Enumeration    | Values          |
         | -------------- |:---------------:|
         | **DocFieldTypeField / FieldTypeField** | 0  = Signature, 1  = NameText, 2  = DateText, 3  = EmailAddressText, 4  = ContactNumberText, 5  = PlainText, 6  = PlainTextOptional, 7  = FaceToface, 8  = Initial, 9  = CheckBox, 10 = F2FInitial, 11 = AddressText, 12 = CompanyNameText, 13 = OptionalCurrencyText, 14 = MandatoryCurrencyText, 15 = ReadOnlyText, 16 = NumericFieldOpt, 17 = NumericFieldMand, 18 = EmailInputOptional, 19 = EmailInput |
-        | **CustomFormatValueField** | 0 = Specify Custom Date Format , 1 =  |
-        | **Format Field** | Example in Brackets, 0 = Specify Custom Date Format, 1 = 'D,dd M yy' (Fri, 01 Jun 2022), 2 = 'yy-mm-dd 2022-06-01' (2022-06-01), 3 = 'D,d M y' (Fri, 1 Jun 22), 4 = 'DD, dd-M-y' (Friday, 01-Jun-22) 5 = 'D, d M yy' (Fri, 1 Jun 2022)|
+        | **CustomFormatValueField** | 0 = d, 1 = dd, 2 = o, 3 = oo, 4 = D, 5 = DD, 6 = m, 7 = mm, 8 = M, 9 = MM, 10 = y, 11 = yy, 12 = @, 13 = ! |
+        | **Format Field** | Visual Example in Brackets, 0 = Specify Custom Date Format, 1 = 'D,dd M yy' (Fri, 01 Jun 2022), 2 = 'yy-mm-dd' (2022-06-01), 3 = 'D,d M y' (Fri, 1 Jun 22), 4 = 'DD, dd-M-y' (Friday, 01-Jun-22) 5 = 'D, d M yy' (Fri, 1 Jun 2022)|
       tags:
         - WorkFlow
       parameters:
