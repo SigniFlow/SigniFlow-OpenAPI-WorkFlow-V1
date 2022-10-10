@@ -376,8 +376,9 @@ paths:
               Example:
                 value:
                   DocIDField: '2147483647'
+                  ReasonField: 'String'
                   TokenField:
-                    TokenExpiryField: '2019-08-24T14:15:22Z'
+                    TokenExpiryField: '2022-10-10T14:15:22Z'
                     TokenField: aaa111
         description: '##### Cancel Flow Request Model'
       tags:
