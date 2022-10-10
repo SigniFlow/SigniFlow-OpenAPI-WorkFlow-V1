@@ -510,6 +510,11 @@ paths:
                 value:
                   FieldInfoListField:
                     - AdvancedFieldTypeField: 0
+                      DateFormatField:
+                        CustomDateValuesField:
+                          CustomFormatValueField: 0
+                          CustomSplitterField: '/ or space or -'
+                        FormatField: 0
                       DocIDField: 2147483647
                       FieldOptionsListField:
                         - LinkedValueField: 'null'
@@ -923,6 +928,8 @@ paths:
         | Enumeration    | Values          |
         | -------------- |:---------------:|
         | **AdvancedFieldType** | 0 = DropDown, 1 = CheckBoxGroup, 2 = OptionalDropDown, 3 = RadioGroup, 4 = DateMand, 5 = DateOpt, 6 = DropDownCountry, 7 = OptionalDropDownCountry, 8 = DropDownMobilePrefix, 9 = OptionalDropDownMobilePrefix |
+        | **CustomFormatValueField** | 0 = d, 1 = dd, 2 = o, 3 = oo, 4 = D, 5 = DD, 6 = m, 7 = mm, 8 = M, 9 = MM, 10 = y, 11 = yy, 12 = @, 13 = ! |
+        | **Format Field** | Visual Example in Brackets, 0 = Specify Custom Date Format, 1 = 'D,dd M yy' (Fri, 01 Jun 2022), 2 = 'yy-mm-dd' (2022-06-01), 3 = 'D,d M y' (Fri, 1 Jun 22), 4 = 'DD, dd-M-y' (Friday, 01-Jun-22) 5 = 'D, d M yy' (Fri, 1 Jun 2022)|
       tags:
         - WorkFlow
       parameters:
@@ -1231,10 +1238,10 @@ paths:
         | ActionField    | 0 = SignDocument, 1 = ViewDocument, 2 = ApproveDocument |
         | AllowProxyField| 0 = No, 1 = Yes | 
         | DocFieldTypeField | 0  = Signature, 1  = NameText, 2  = DateText, 3  = EmailAddressText, 4  = ContactNumberText, 5  = PlainText, 6  = PlainTextOptional, 7  = FaceToface, 8  = Initial, 9  = CheckBox, 10 = F2FInitial, 11 = AddressText, 12 = CompanyNameText, 13 = OptionalCurrencyText, 14 = MandatoryCurrencyText, 15 = ReadOnlyText, 16 = NumericFieldOpt, 17 = NumericFieldMand, 18 = EmailInputOptional, 19 = EmailInput |
-        | PhotoAtSigningField| 0 = No, 1 = Yes |
+        | PhotoAtSigningField| CaptureSingleImage = 0, CaptureMultipleImages = 1, CaptureSingleImageWith3DLiveness = 2, CaptureMultipleImagesWith3DLiveness = 3|
         | SendCompletedEmailField| 0 = No, 1 = Yes |
         | SendOTPField| 0 = No, 1 = Yes |
-        | SignatureTypeField| 0 = No, 1 = Yes |
+        | SignatureTypeField| 0 = Electronic Signature, 1 = Digital Signature|
         | FieldTypeField| 0 = No, 1 = Yes |
                 
       tags:
