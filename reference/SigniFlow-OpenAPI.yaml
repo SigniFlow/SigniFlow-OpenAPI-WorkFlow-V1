@@ -1150,6 +1150,7 @@ paths:
                   SendFirstEmailField: true
                   SendWorkflowEmailsField: true
                   SharedKeyField: String content
+                  UseAutoTagsField: true
                   TokenField:
                     TokenExpiryField: /Date(928149600000+0000)/
                     TokenField: String content
@@ -1157,10 +1158,12 @@ paths:
                     - ActionField: 0
                       AllowProxyField: 0
                       AutoSignField: true
+                      EasiSignConfigID: 2147483647
                       EmailAddressField: String content
                       GroupStepField:
                         GroupMembersField:
-                          - LanguageCodeField: String content
+                          - EasiSignConfigID: 247483647
+                            LanguageCodeField: String content
                             SendCompletedEmailField: 0
                             UserEmailField: String content
                             UserFullNameField: String content
@@ -1175,7 +1178,12 @@ paths:
                       PreloadedFaceToFaceSignersField:
                         - CountryIDField: 0
                           FieldsListField:
-                            - DocFieldTypeField: 0
+                              DateFormatField:
+                                CustomDateValuesField:
+                                  CustomFormatValueField: 0
+                                  CustomSplitterField: '/ or space or -'
+                                FormatField: 0
+                              DocFieldFieldTypeField: 0
                               FontFamilyField: String content
                               FontSizeField: 2147483647
                               HeightField: String content
@@ -1206,7 +1214,12 @@ paths:
                       UserFullNameField: String content
                       UserLastNameField: String content
                       WorkflowUserFieldsField:
-                        - FieldTypeField: 0
+                          DateFormatField:
+                              CustomDateValuesField:
+                                  CustomFormatValueField: 0
+                                  CustomSplitterField: '/ or space or -'
+                              FormatField: 0
+                          FieldTypeField: 0
                           FontFamilyField: String content
                           FontSizeField: 2147483647
                           GroupUserNumberField: 2147483647
@@ -1244,7 +1257,8 @@ paths:
         | SendOTPField| 0 = No, 1 = Yes |
         | SignatureTypeField| 0 = Electronic Signature, 1 = Digital Signature|
         | FieldTypeField|0  = Signature, 1  = NameText, 2  = DateText, 3  = EmailAddressText, 4  = ContactNumberText, 5  = PlainText, 6  = PlainTextOptional, 7  = FaceToface, 8  = Initial, 9  = CheckBox, 10 = F2FInitial, 11 = AddressText, 12 = CompanyNameText, 13 = OptionalCurrencyText, 14 = MandatoryCurrencyText, 15 = ReadOnlyText, 16 = NumericFieldOpt, 17 = NumericFieldMand, 18 = EmailInputOptional, 19 = EmailInput ,20 = CompanyStamp, 21 = DesignationText, 22 = DateMandatory, 23 = DateOptional|
-                
+        | **CustomFormatValueField** | 0 = d, 1 = dd, 2 = o, 3 = oo, 4 = D, 5 = DD, 6 = m, 7 = mm, 8 = M, 9 = MM, 10 = y, 11 = yy, 12 = @, 13 = ! |
+        | **Format Field** | Visual Example in Brackets, 0 = Specify Custom Date Format, 1 = 'D,dd M yy' (Fri, 01 Jun 2022), 2 = 'yy-mm-dd' (2022-06-01), 3 = 'D,d M y' (Fri, 1 Jun 22), 4 = 'DD, dd-M-y' (Friday, 01-Jun-22) 5 = 'D, d M yy' (Fri, 1 Jun 2022)|       
       tags:
         - WorkFlow
       parameters:
