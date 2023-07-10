@@ -16,7 +16,7 @@ SigniFlow uses the OpenAPI (OAI) Specification - formerly known as "Swagger" - t
 
 ## What can I do with a Swagger file? 
 
-We use OpenAPI/Swagger files to build many of our developer tools including our [client SDKs](https://signiflow.github.io) using `swagger-codegen`. We also use the OAI specification to build our [API Docs](https://developers.signiflow.com/docs/signiflow-openapi-v1/docs/introduction.md). 
+We use OpenAPI/Swagger files to build many of our developer tools including our [client SDKs](https://signiflow.github.io) using `swagger-codegen`. We also use the OAI specification to build our [API Docs](https://developers.signiflow.com/docs/signiflow-openapi). 
 
 
 ## Support
