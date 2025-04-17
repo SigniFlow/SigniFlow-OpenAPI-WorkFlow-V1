@@ -376,7 +376,7 @@ paths:
               Example:
                 value:
                   DocIDField: '2147483647'
-                  ReasonField: 'String'
+                  ReasonField: String
                   TokenField:
                     TokenExpiryField: '2022-10-10T14:15:22Z'
                     TokenField: aaa111
@@ -514,7 +514,7 @@ paths:
                       DateFormatField:
                         CustomDateValuesField:
                           CustomFormatValueField: 0
-                          CustomSplitterField: '/ or space or -'
+                          CustomSplitterField: / or space or -
                         FormatField: 0
                       DocIDField: 2147483647
                       FieldOptionsListField:
@@ -980,7 +980,7 @@ paths:
                   DateFormatField:
                     CustomDateValuesField:
                       CustomFormatValueField: 0
-                      CustomSplitterField: '/ or space or -'
+                      CustomSplitterField: / or space or -
                     FormatField: 0
                   DocFieldTypeField: 0
                   DocIDField: 2147483647
@@ -1178,25 +1178,25 @@ paths:
                       PreloadedFaceToFaceSignersField:
                         - CountryIDField: 0
                           FieldsListField:
-                              DateFormatField:
-                                CustomDateValuesField:
-                                  CustomFormatValueField: 0
-                                  CustomSplitterField: '/ or space or -'
-                                FormatField: 0
-                              DocFieldFieldTypeField: 0
-                              FontFamilyField: String content
-                              FontSizeField: 2147483647
-                              HeightField: String content
-                              IsInvisibleField: true
-                              NameField: String content
-                              PageNumberField: 2147483647
-                              TagNameField: String content
-                              ValueField: String content
-                              WidthField: String content
-                              XCoordinateField: String content
-                              XOffsetField: 2147483647
-                              YCoordinateField: String content
-                              YOffsetField: 2147483647
+                            DateFormatField:
+                              CustomDateValuesField:
+                                CustomFormatValueField: 0
+                                CustomSplitterField: / or space or -
+                              FormatField: 0
+                            DocFieldFieldTypeField: 0
+                            FontFamilyField: String content
+                            FontSizeField: 2147483647
+                            HeightField: String content
+                            IsInvisibleField: true
+                            NameField: String content
+                            PageNumberField: 2147483647
+                            TagNameField: String content
+                            ValueField: String content
+                            WidthField: String content
+                            XCoordinateField: String content
+                            XOffsetField: 2147483647
+                            YCoordinateField: String content
+                            YOffsetField: 2147483647
                           IDTypeField: 0
                           IdentificationNumberField: String content
                           PhotoAtSigningField: 0
@@ -1214,27 +1214,26 @@ paths:
                       UserFullNameField: String content
                       UserLastNameField: String content
                       WorkflowUserFieldsField:
-                          DateFormatField:
-                              CustomDateValuesField:
-                                  CustomFormatValueField: 0
-                                  CustomSplitterField: '/ or space or -'
-                              FormatField: 0
-                          FieldTypeField: 0
-                          FontFamilyField: String content
-                          FontSizeField: 2147483647
-                          GroupUserNumberField: 2147483647
-                          HeightField: String content
-                          IsInvisibleField: true
-                          NameField: String content
-                          PageNumberField: 2147483647
-                          TagNameField: String content
-                          ValueField: String content
-                          WidthField: String content
-                          XCoordinateField: String content
-                          XOffsetField: 2147483647
-                          YCoordinateField: String content
-                          YOffsetField: 2147483647
-     
+                        DateFormatField:
+                          CustomDateValuesField:
+                            CustomFormatValueField: 0
+                            CustomSplitterField: / or space or -
+                          FormatField: 0
+                        FieldTypeField: 0
+                        FontFamilyField: String content
+                        FontSizeField: 2147483647
+                        GroupUserNumberField: 2147483647
+                        HeightField: String content
+                        IsInvisibleField: true
+                        NameField: String content
+                        PageNumberField: 2147483647
+                        TagNameField: String content
+                        ValueField: String content
+                        WidthField: String content
+                        XCoordinateField: String content
+                        XOffsetField: 2147483647
+                        YCoordinateField: String content
+                        YOffsetField: 2147483647
       description: |-
         #### Used to create a e-signature workflow with a single API Request.
         The request can contain multiple recipients, fields and signatures.
@@ -2132,13 +2131,11 @@ paths:
               schema:
                 type: string
                 default: application/json
-      
       description: |-
         Enumerations used in this API Call for the Signature Image Type Field include:
         | Enumeration    | Values          |
         | -------------- |:---------------:|
         | **FieldTypeField** | 0  = Signature Image, 1  = Font: Calibri, 2  = Font: AR DECODE, 3  = Font 3: Bradley Hand ITC, 4  = Font: Harrington , 5  = Font: Alisandra Demo, 6  = Font: Brush Script MT, 7  = Font: Lucida Calligraphy , 8  = Font: Lucida Handrwriting,|
-     
       requestBody:
         content:
           application/json:
@@ -2591,19 +2588,19 @@ components:
       description: '#### The request sent to create a document workflow.'
       x-examples:
         Create Workflow Request Example:
-            AdditionalDataField: ''
-            AutoExpireField: 0
-            AutoRemindField: 0
-            DocField: Base64 Encoded Document
-            DocNameField: Document Name
-            DueDateField: '2019-08-24T14:15:22Z'
-            ExtensionField: 0
-            MessageField: Message to participants
-            PriorityField: 0
-            SLAField: 0
-            TokenField:
-              TokenExpiryField: '2019-08-24T14:15:22Z'
-              TokenField: aaa111
+          AdditionalDataField: ''
+          AutoExpireField: 0
+          AutoRemindField: 0
+          DocField: Base64 Encoded Document
+          DocNameField: Document Name
+          DueDateField: '2019-08-24T14:15:22Z'
+          ExtensionField: 0
+          MessageField: Message to participants
+          PriorityField: 0
+          SLAField: 0
+          TokenField:
+            TokenExpiryField: '2019-08-24T14:15:22Z'
+            TokenField: aaa111
         example-1:
           AdditionalDataField: '""'
           AutoExpireField: 0
@@ -3451,11 +3448,316 @@ components:
         - PortfolioNameField
         - ResultField
     FullWorkflowRequest:
-      description: |
-        #### Request a fullworkflow of a document.
       type: object
+      properties:
+        AdditionalDataField:
+          type: string
+        AdhocPreloadedFaceToFaceUsersField:
+          type: array
+          items:
+            type: object
+            properties:
+              CountryIDField:
+                type: integer
+              IDTypeField:
+                type: integer
+              IdentificationNumberField:
+                type: string
+              SignerEmailField:
+                type: string
+              SignerFirstNameField:
+                type: string
+              SignerLastNameField:
+                type: string
+              SignerMobileField:
+                type: string
+        AutoExpireField:
+          type: integer
+        AutoRemindField:
+          type: integer
+        CustomMessageField:
+          type: string
+        DocField:
+          type: string
+        DocNameField:
+          type: string
+        DueDateField:
+          type: string
+        ExtensionField:
+          type: integer
+        FlattenDocumentField:
+          type: boolean
+        KeepContentSecurityField:
+          type: boolean
+        KeepCustomPropertiesField:
+          type: boolean
+        KeepXMPMetadataField:
+          type: boolean
+        PortfolioInformationField:
+          type: object
+          properties:
+            AccessListField:
+              type: array
+              items:
+                type: object
+                properties:
+                  AccessField:
+                    type: integer
+                  ReferenceIDField:
+                    type: integer
+                  ShareOptionField:
+                    type: integer
+                  UniqueIDField:
+                    type: string
+                  UserEmailField:
+                    type: string
+            CreatePortfolioField:
+              type: boolean
+            LinkToPortfolioField:
+              type: boolean
+            PlaceholderInfoListField:
+              type: array
+              items:
+                type: object
+                properties:
+                  AccessListField:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        AccessField:
+                          type: integer
+                        ReferenceIDField:
+                          type: integer
+                        ShareOptionField:
+                          type: integer
+                        UniqueIDField:
+                          type: string
+                        UserEmailField:
+                          type: string
+                  AllowMultipleField:
+                    type: boolean
+                  DocumentNameField:
+                    type: string
+                  ForceUploadField:
+                    type: boolean
+                  PlaceholderGroupIDField:
+                    type: string
+                  SendNotificationField:
+                    type: boolean
+            PortfolioIDField:
+              type: integer
+            PortfolioNameField:
+              type: string
+        PriorityField:
+          type: integer
+        SLAField:
+          type: integer
+        SendFirstEmailField:
+          type: boolean
+        SendWorkflowEmailsField:
+          type: boolean
+        SharedKeyField:
+          type: string
+        TokenField:
+          type: object
+          properties:
+            TokenExpiryField:
+              type: string
+            TokenField:
+              type: string
+        UseAutoTagsField:
+          type: boolean
+        WorkflowUsersListField:
+          type: array
+          items:
+            type: object
+            properties:
+              ActionField:
+                type: integer
+              AllowProxyField:
+                type: integer
+              AutoSignField:
+                type: boolean
+              EmailAddressField:
+                type: string
+              GroupStepField:
+                type: object
+                properties:
+                  GroupMembersField:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        LanguageCodeField:
+                          type: string
+                        SendCompletedEmailField:
+                          type: integer
+                        UserEmailField:
+                          type: string
+                        UserFullNameField:
+                          type: string
+                        UserMobileNumberField:
+                          type: string
+                  GroupNameField:
+                    type: string
+                  RequiredNumberOfSignaturesField:
+                    type: integer
+              LanguageCodeField:
+                type: string
+              LatitudeField:
+                type: string
+              LongitudeField:
+                type: string
+              MobileNumberField:
+                type: string
+              PhotoAtSigningField:
+                type: integer
+              PreloadedFaceToFaceSignersField:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    CountryIDField:
+                      type: integer
+                    FieldsListField:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          CombCharacterAmountField:
+                            type: integer
+                          DateFormatField:
+                            type: object
+                            properties:
+                              CustomDateValuesField:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    CustomFormatValueField:
+                                      type: integer
+                                    CustomSplitterField:
+                                      type: string
+                              FormatField:
+                                type: integer
+                          DocFieldTypeField:
+                            type: integer
+                          FontFamilyField:
+                            type: string
+                          FontSizeField:
+                            type: integer
+                          HeightField:
+                            type: string
+                          IsInvisibleField:
+                            type: boolean
+                          NameField:
+                            type: string
+                          PageNumberField:
+                            type: integer
+                          TagNameField:
+                            type: string
+                          ValidationIDField:
+                            type: integer
+                          ValueField:
+                            type: string
+                          WidthField:
+                            type: string
+                          XCoordinateField:
+                            type: string
+                          XOffsetField:
+                            type: integer
+                          YCoordinateField:
+                            type: string
+                          YOffsetField:
+                            type: integer
+                    IDTypeField:
+                      type: integer
+                    IdentificationNumberField:
+                      type: string
+                    PhotoAtSigningField:
+                      type: integer
+                    SendCompletedEmailField:
+                      type: integer
+                    SendOTPField:
+                      type: integer
+                    SignerEmailField:
+                      type: string
+                    SignerFirstNameField:
+                      type: string
+                    SignerLastNameField:
+                      type: string
+                    SignerMobileField:
+                      type: string
+              SendCompletedEmailField:
+                type: integer
+              SignReasonField:
+                type: string
+              SignatureTypeField:
+                type: integer
+              SignerPasswordField:
+                type: string
+              UserFirstNameField:
+                type: string
+              UserFullNameField:
+                type: string
+              UserLastNameField:
+                type: string
+              WorkflowUserFieldsField:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    CombCharacterAmountField:
+                      type: integer
+                    DateFormatField:
+                      type: object
+                      properties:
+                        CustomDateValuesField:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              CustomFormatValueField:
+                                type: integer
+                              CustomSplitterField:
+                                type: string
+                        FormatField:
+                          type: integer
+                    FieldTypeField:
+                      type: integer
+                    FontFamilyField:
+                      type: string
+                    FontSizeField:
+                      type: integer
+                    GroupUserNumberField:
+                      type: integer
+                    HeightField:
+                      type: string
+                    IsInvisibleField:
+                      type: boolean
+                    NameField:
+                      type: string
+                    PageNumberField:
+                      type: integer
+                    TagNameField:
+                      type: string
+                    ValidationIDField:
+                      type: integer
+                    ValueField:
+                      type: string
+                    WidthField:
+                      type: string
+                    XCoordinateField:
+                      type: string
+                    XOffsetField:
+                      type: integer
+                    YCoordinateField:
+                      type: string
+                    YOffsetField:
+                      type: integer
       x-examples:
-        Example:
+        Example 1:
           AdditionalDataField: String content
           AdhocPreloadedFaceToFaceUsersField:
             - CountryIDField: 0
@@ -3465,6 +3767,7 @@ components:
               SignerFirstNameField: String content
               SignerLastNameField: String content
               SignerMobileField: String content
+          AutoExpireField: 0
           AutoRemindField: 0
           CustomMessageField: String content
           DocField: String content
@@ -3506,6 +3809,7 @@ components:
           TokenField:
             TokenExpiryField: /Date(928149600000+0000)/
             TokenField: String content
+          UseAutoTagsField: true
           WorkflowUsersListField:
             - ActionField: 0
               AllowProxyField: 0
@@ -3528,7 +3832,13 @@ components:
               PreloadedFaceToFaceSignersField:
                 - CountryIDField: 0
                   FieldsListField:
-                    - DocFieldTypeField: 0
+                    - CombCharacterAmountField: 2147483647
+                      DateFormatField:
+                        CustomDateValuesField:
+                          - CustomFormatValueField: 0
+                            CustomSplitterField: String content
+                        FormatField: 0
+                      DocFieldTypeField: 0
                       FontFamilyField: String content
                       FontSizeField: 2147483647
                       HeightField: String content
@@ -3536,6 +3846,7 @@ components:
                       NameField: String content
                       PageNumberField: 2147483647
                       TagNameField: String content
+                      ValidationIDField: 2147483647
                       ValueField: String content
                       WidthField: String content
                       XCoordinateField: String content
@@ -3559,7 +3870,13 @@ components:
               UserFullNameField: String content
               UserLastNameField: String content
               WorkflowUserFieldsField:
-                - FieldTypeField: 0
+                - CombCharacterAmountField: 2147483647
+                  DateFormatField:
+                    CustomDateValuesField:
+                      - CustomFormatValueField: 0
+                        CustomSplitterField: String content
+                    FormatField: 0
+                  FieldTypeField: 0
                   FontFamilyField: String content
                   FontSizeField: 2147483647
                   GroupUserNumberField: 2147483647
@@ -3568,318 +3885,13 @@ components:
                   NameField: String content
                   PageNumberField: 2147483647
                   TagNameField: String content
+                  ValidationIDField: 2147483647
                   ValueField: String content
                   WidthField: String content
                   XCoordinateField: String content
                   XOffsetField: 2147483647
                   YCoordinateField: String content
                   YOffsetField: 2147483647
-      title: FullWorkflow Request
-      properties:
-        AdditionalDataField:
-          type: string
-          description: Additional data.
-          nullable: true
-        AutoRemindField:
-          $ref: '#/components/schemas/AutoRemind'
-        CustomMessageField:
-          type: string
-          example: A message with things.
-          description: Custom message.
-        DocField:
-          type: string
-          minLength: 1
-          description: Document field.
-        DocNameField:
-          type: string
-          minLength: 1
-          example: Document 1
-          description: Document name.
-        DueDateField:
-          type: string
-          example: '2019-08-24'
-          description: Document due date.
-          format: date
-          nullable: true
-        ExtensionField:
-          $ref: '#/components/schemas/DocExtension'
-        FlattenDocumentField:
-          type: boolean
-          description: Flatten document.
-          nullable: true
-        KeepContentSecurityField:
-          type: boolean
-          description: Keep content security.
-          nullable: true
-        KeepCustomPropertiesField:
-          type: boolean
-          description: Keep custom properties.
-          nullable: true
-        KeepXMPMetadataField:
-          type: boolean
-          description: Keep XMP meta data.
-          nullable: true
-        PortfolioInformationField:
-          type: object
-          description: Portfolio information.
-          nullable: true
-          required:
-            - CreatePortfolioField
-            - LinkToPortfolioField
-          properties:
-            CreatePortfolioField:
-              type: boolean
-              description: Create a new portfolio.
-            LinkToPortfolioField:
-              type: boolean
-              description: Link document to Portfolio link.
-            PortfolioIDField:
-              type: number
-              example: 11112
-              description: Portfolio ID.
-              nullable: true
-            PortfolioNameField:
-              type: string
-              minLength: 1
-              example: Portfolio 1
-              description: Portfolio name.
-              nullable: true
-        PriorityField:
-          $ref: '#/components/schemas/Priority'
-        SLAField:
-          type: number
-          description: 'This field has been deprecated, the default value is 0.'
-          example: 0
-          deprecated: true
-          minimum: 0
-          maximum: 0
-        SendFirstEmailField:
-          type: boolean
-          description: Confirm first user email notification will or will not be sent.
-        SendWorkflowEmailsField:
-          type: boolean
-          description: Confirm that workflow emails will or will not be sent.
-        TokenField:
-          $ref: '#/components/schemas/TokenField'
-        WorkflowUsersListField:
-          type: array
-          uniqueItems: true
-          minItems: 1
-          description: List of users in the workflow.
-          items:
-            type: object
-            properties:
-              ActionField:
-                $ref: '#/components/schemas/ActionField'
-              AllowProxyField:
-                $ref: '#/components/schemas/ProxyAllowedField'
-              AutoSignField:
-                type: boolean
-                description: |
-                  ### Enable auto sign.
-
-                  `True = Signature will be applied automaticly
-                  False = User will need to login and Sign`
-              EmailAddressField:
-                type: string
-                nullable: true
-                example: email@domain.com
-                description: Workflow user's email addresses.
-              GroupStepField:
-                type: object
-                description: Steps of the group signers in the workflow.
-                nullable: true
-                properties:
-                  GroupMembersField:
-                    type: array
-                    uniqueItems: true
-                    minItems: 1
-                    description: The list of users in a group in the workflow.
-                    items:
-                      type: object
-                      properties:
-                        LanguageCodeField:
-                          type: string
-                          nullable: true
-                        UserEmailField:
-                          type: string
-                          minLength: 1
-                        UserFullNameField:
-                          type: string
-                          minLength: 1
-                        UserMobileNumberField:
-                          type: string
-                          minLength: 1
-                      required:
-                        - UserEmailField
-                        - UserFullNameField
-                        - UserMobileNumberField
-                  GroupNameField:
-                    type: string
-                    minLength: 1
-                    example: Managers
-                    description: Group name.
-                  RequiredNumberOfSignaturesField:
-                    type: number
-                    example: 3
-                    description: Required number of signatures in the group.
-                required:
-                  - GroupMembersField
-                  - GroupNameField
-                  - RequiredNumberOfSignaturesField
-              LanguageCodeField:
-                type: string
-                nullable: true
-                example: en
-                description: |
-                  #### Sets the display language for the user
-                  ##### ISO 2 Digit Code
-
-                  `en = English
-                  es = Spanish
-                  fr = French`
-              LatitudeField:
-                type: string
-                description: The current GPS lattitude location where the signing is taking place from. Needs to be paired with the longitude field.
-                nullable: true
-              LongitudeField:
-                type: string
-                description: The current GPS longitudelocation where the signing is taking place from. Needs to be paired with the lattitude field.
-                nullable: true
-              MobileNumberField:
-                type: string
-                nullable: true
-                example: 078 222 2222
-                description: Group user's mobile number.
-              PreloadedFaceToFaceSignersField:
-                type: array
-                uniqueItems: true
-                minItems: 1
-                description: Preloaded user's who will be using the face to face signature field.
-                nullable: true
-                items:
-                  type: object
-                  nullable: true
-              SignReasonField:
-                type: string
-                minLength: 1
-                example: Because yes
-                description: Reason for signature.
-                nullable: true
-              SignerPasswordField:
-                type: string
-                format: password
-                example: P@ssw0rd
-                description: Face to face user's password.
-                nullable: true
-              UserFirstNameField:
-                type: string
-                nullable: true
-                example: John
-                description: Face to face user's first name.
-              UserFullNameField:
-                type: string
-                nullable: true
-                example: John Smith
-                description: Face to face user's full name.
-              UserLastNameField:
-                type: string
-                nullable: true
-                example: Smith
-                description: Face to face user's last name.
-              WorkflowUserFieldsField:
-                type: array
-                uniqueItems: true
-                minItems: 1
-                description: The list of the workflowed documents field.
-                items:
-                  type: object
-                  properties:
-                    FieldTypeField:
-                      $ref: '#/components/schemas/FieldType'
-                    FontFamilyField:
-                      type: string
-                      example: Arial
-                      description: The font family of the fields text.
-                      nullable: true
-                    FontSizeField:
-                      type: number
-                      example: 15
-                      description: The font size of the fields text.
-                      nullable: true
-                    GroupUserNumberField:
-                      type: number
-                      example: 5
-                      description: The users in the group's user number.
-                      nullable: true
-                    HeightField:
-                      type: string
-                      minLength: 1
-                      example: '15'
-                      description: Field height.
-                    IsInvisibleField:
-                      type: boolean
-                      description: Is the field visible.
-                      nullable: true
-                    PageNumberField:
-                      type: number
-                      example: 2
-                      description: Field page number.
-                    TagNameField:
-                      type: string
-                      description: Field tag name. Not required if the fields are defined.
-                      nullable: true
-                    ValueField:
-                      type: string
-                      description: Field value.
-                    WidthField:
-                      type: string
-                      minLength: 1
-                      example: '25'
-                      description: Field width.
-                    XCoordinateField:
-                      type: string
-                      minLength: 1
-                      example: '160'
-                      description: The fields x-coordinates.
-                    XOffsetField:
-                      type: number
-                      example: 15
-                      description: The fields x-coordinates offset.
-                      nullable: true
-                    YCoordinateField:
-                      type: string
-                      minLength: 1
-                      example: '60'
-                      description: The fields y-coordinates.
-                    YOffsetField:
-                      type: number
-                      example: 20
-                      description: The fields y-coordinates offset.
-                      nullable: true
-                  required:
-                    - FieldTypeField
-                    - HeightField
-                    - PageNumberField
-                    - WidthField
-                    - XCoordinateField
-                    - YCoordinateField
-            required:
-              - ActionField
-              - AllowProxyField
-              - AutoSignField
-              - LatitudeField
-              - LongitudeField
-              - WorkflowUserFieldsField
-      required:
-        - AutoRemindField
-        - DocField
-        - DocNameField
-        - ExtensionField
-        - SendFirstEmailField
-        - SendWorkflowEmailsField
-        - TokenField
-        - WorkflowUsersListField
     FullWorkflowResponse:
       description: '#### The response returned on FullWorkflow.'
       type: object
