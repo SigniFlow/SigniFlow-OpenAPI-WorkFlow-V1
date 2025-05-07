@@ -3449,313 +3449,6 @@ components:
         - ResultField
     FullWorkflowRequest:
       type: object
-      properties:
-        AdditionalDataField:
-          type: string
-        AdhocPreloadedFaceToFaceUsersField:
-          type: array
-          items:
-            type: object
-            properties:
-              CountryIDField:
-                type: integer
-              IDTypeField:
-                type: integer
-              IdentificationNumberField:
-                type: string
-              SignerEmailField:
-                type: string
-              SignerFirstNameField:
-                type: string
-              SignerLastNameField:
-                type: string
-              SignerMobileField:
-                type: string
-        AutoExpireField:
-          type: integer
-        AutoRemindField:
-          type: integer
-        CustomMessageField:
-          type: string
-        DocField:
-          type: string
-        DocNameField:
-          type: string
-        DueDateField:
-          type: string
-        ExtensionField:
-          type: integer
-        FlattenDocumentField:
-          type: boolean
-        KeepContentSecurityField:
-          type: boolean
-        KeepCustomPropertiesField:
-          type: boolean
-        KeepXMPMetadataField:
-          type: boolean
-        PortfolioInformationField:
-          type: object
-          properties:
-            AccessListField:
-              type: array
-              items:
-                type: object
-                properties:
-                  AccessField:
-                    type: integer
-                  ReferenceIDField:
-                    type: integer
-                  ShareOptionField:
-                    type: integer
-                  UniqueIDField:
-                    type: string
-                  UserEmailField:
-                    type: string
-            CreatePortfolioField:
-              type: boolean
-            LinkToPortfolioField:
-              type: boolean
-            PlaceholderInfoListField:
-              type: array
-              items:
-                type: object
-                properties:
-                  AccessListField:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        AccessField:
-                          type: integer
-                        ReferenceIDField:
-                          type: integer
-                        ShareOptionField:
-                          type: integer
-                        UniqueIDField:
-                          type: string
-                        UserEmailField:
-                          type: string
-                  AllowMultipleField:
-                    type: boolean
-                  DocumentNameField:
-                    type: string
-                  ForceUploadField:
-                    type: boolean
-                  PlaceholderGroupIDField:
-                    type: string
-                  SendNotificationField:
-                    type: boolean
-            PortfolioIDField:
-              type: integer
-            PortfolioNameField:
-              type: string
-        PriorityField:
-          type: integer
-        SLAField:
-          type: integer
-        SendFirstEmailField:
-          type: boolean
-        SendWorkflowEmailsField:
-          type: boolean
-        SharedKeyField:
-          type: string
-        TokenField:
-          type: object
-          properties:
-            TokenExpiryField:
-              type: string
-            TokenField:
-              type: string
-        UseAutoTagsField:
-          type: boolean
-        WorkflowUsersListField:
-          type: array
-          items:
-            type: object
-            properties:
-              ActionField:
-                type: integer
-              AllowProxyField:
-                type: integer
-              AutoSignField:
-                type: boolean
-              EmailAddressField:
-                type: string
-              GroupStepField:
-                type: object
-                properties:
-                  GroupMembersField:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        LanguageCodeField:
-                          type: string
-                        SendCompletedEmailField:
-                          type: integer
-                        UserEmailField:
-                          type: string
-                        UserFullNameField:
-                          type: string
-                        UserMobileNumberField:
-                          type: string
-                  GroupNameField:
-                    type: string
-                  RequiredNumberOfSignaturesField:
-                    type: integer
-              LanguageCodeField:
-                type: string
-              LatitudeField:
-                type: string
-              LongitudeField:
-                type: string
-              MobileNumberField:
-                type: string
-              PhotoAtSigningField:
-                type: integer
-              PreloadedFaceToFaceSignersField:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    CountryIDField:
-                      type: integer
-                    FieldsListField:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          CombCharacterAmountField:
-                            type: integer
-                          DateFormatField:
-                            type: object
-                            properties:
-                              CustomDateValuesField:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    CustomFormatValueField:
-                                      type: integer
-                                    CustomSplitterField:
-                                      type: string
-                              FormatField:
-                                type: integer
-                          DocFieldTypeField:
-                            type: integer
-                          FontFamilyField:
-                            type: string
-                          FontSizeField:
-                            type: integer
-                          HeightField:
-                            type: string
-                          IsInvisibleField:
-                            type: boolean
-                          NameField:
-                            type: string
-                          PageNumberField:
-                            type: integer
-                          TagNameField:
-                            type: string
-                          ValidationIDField:
-                            type: integer
-                          ValueField:
-                            type: string
-                          WidthField:
-                            type: string
-                          XCoordinateField:
-                            type: string
-                          XOffsetField:
-                            type: integer
-                          YCoordinateField:
-                            type: string
-                          YOffsetField:
-                            type: integer
-                    IDTypeField:
-                      type: integer
-                    IdentificationNumberField:
-                      type: string
-                    PhotoAtSigningField:
-                      type: integer
-                    SendCompletedEmailField:
-                      type: integer
-                    SendOTPField:
-                      type: integer
-                    SignerEmailField:
-                      type: string
-                    SignerFirstNameField:
-                      type: string
-                    SignerLastNameField:
-                      type: string
-                    SignerMobileField:
-                      type: string
-              SendCompletedEmailField:
-                type: integer
-              SignReasonField:
-                type: string
-              SignatureTypeField:
-                type: integer
-              SignerPasswordField:
-                type: string
-              UserFirstNameField:
-                type: string
-              UserFullNameField:
-                type: string
-              UserLastNameField:
-                type: string
-              WorkflowUserFieldsField:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    CombCharacterAmountField:
-                      type: integer
-                    DateFormatField:
-                      type: object
-                      properties:
-                        CustomDateValuesField:
-                          type: array
-                          items:
-                            type: object
-                            properties:
-                              CustomFormatValueField:
-                                type: integer
-                              CustomSplitterField:
-                                type: string
-                        FormatField:
-                          type: integer
-                    FieldTypeField:
-                      type: integer
-                    FontFamilyField:
-                      type: string
-                    FontSizeField:
-                      type: integer
-                    GroupUserNumberField:
-                      type: integer
-                    HeightField:
-                      type: string
-                    IsInvisibleField:
-                      type: boolean
-                    NameField:
-                      type: string
-                    PageNumberField:
-                      type: integer
-                    TagNameField:
-                      type: string
-                    ValidationIDField:
-                      type: integer
-                    ValueField:
-                      type: string
-                    WidthField:
-                      type: string
-                    XCoordinateField:
-                      type: string
-                    XOffsetField:
-                      type: integer
-                    YCoordinateField:
-                      type: string
-                    YOffsetField:
-                      type: integer
       x-examples:
         Example 1:
           AdditionalDataField: String content
@@ -3892,6 +3585,368 @@ components:
                   XOffsetField: 2147483647
                   YCoordinateField: String content
                   YOffsetField: 2147483647
+      required:
+        - AutoExpireField
+        - AutoRemindField
+        - DocField
+        - DocNameField
+        - ExtensionField
+        - FlattenDocumentField
+        - SendWorkflowEmailsField
+        - TokenField
+        - UseAutoTagsField
+        - WorkflowUsersListField
+      properties:
+        AdditionalDataField:
+          type: string
+        AdhocPreloadedFaceToFaceUsersField:
+          type: array
+          items:
+            type: object
+            properties:
+              CountryIDField:
+                type: integer
+              IDTypeField:
+                type: integer
+              IdentificationNumberField:
+                type: string
+              SignerEmailField:
+                type: string
+              SignerFirstNameField:
+                type: string
+              SignerLastNameField:
+                type: string
+              SignerMobileField:
+                type: string
+        AutoExpireField:
+          type: integer
+        AutoRemindField:
+          type: integer
+        CustomMessageField:
+          type: string
+        DocField:
+          type: string
+        DocNameField:
+          type: string
+        DueDateField:
+          type: string
+        ExtensionField:
+          type: integer
+        FlattenDocumentField:
+          type: boolean
+        KeepContentSecurityField:
+          type: boolean
+        KeepCustomPropertiesField:
+          type: boolean
+        KeepXMPMetadataField:
+          type: boolean
+        PortfolioInformationField:
+          type: object
+          required:
+            - CreatePortfolioField
+          properties:
+            AccessListField:
+              type: array
+              items:
+                type: object
+                properties:
+                  AccessField:
+                    type: integer
+                  ReferenceIDField:
+                    type: integer
+                  ShareOptionField:
+                    type: integer
+                  UniqueIDField:
+                    type: string
+                  UserEmailField:
+                    type: string
+            CreatePortfolioField:
+              type: boolean
+            LinkToPortfolioField:
+              type: boolean
+            PlaceholderInfoListField:
+              type: array
+              items:
+                type: object
+                properties:
+                  AccessListField:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        AccessField:
+                          type: integer
+                        ReferenceIDField:
+                          type: integer
+                        ShareOptionField:
+                          type: integer
+                        UniqueIDField:
+                          type: string
+                        UserEmailField:
+                          type: string
+                  AllowMultipleField:
+                    type: boolean
+                  DocumentNameField:
+                    type: string
+                  ForceUploadField:
+                    type: boolean
+                  PlaceholderGroupIDField:
+                    type: string
+                  SendNotificationField:
+                    type: boolean
+            PortfolioIDField:
+              type: integer
+            PortfolioNameField:
+              type: string
+        PriorityField:
+          type: integer
+        SLAField:
+          type: integer
+        SendFirstEmailField:
+          type: boolean
+        SendWorkflowEmailsField:
+          type: boolean
+        SharedKeyField:
+          type: string
+        TokenField:
+          type: object
+          required:
+            - TokenExpiryField
+            - TokenField
+          properties:
+            TokenExpiryField:
+              type: string
+            TokenField:
+              type: string
+        UseAutoTagsField:
+          type: boolean
+        WorkflowUsersListField:
+          type: array
+          items:
+            type: object
+            required:
+              - ActionField
+              - AllowProxyField
+              - AutoSignField
+              - EmailAddressField
+              - LanguageCodeField
+              - LatitudeField
+              - LongitudeField
+              - MobileNumberField
+              - PhotoAtSigningField
+              - SendCompletedEmailField
+              - SignatureTypeField
+              - UserFirstNameField
+              - UserFullNameField
+              - UserLastNameField
+            properties:
+              ActionField:
+                type: integer
+              AllowProxyField:
+                type: integer
+              AutoSignField:
+                type: boolean
+              EmailAddressField:
+                type: string
+              GroupStepField:
+                type: object
+                properties:
+                  GroupMembersField:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        LanguageCodeField:
+                          type: string
+                        SendCompletedEmailField:
+                          type: integer
+                        UserEmailField:
+                          type: string
+                        UserFullNameField:
+                          type: string
+                        UserMobileNumberField:
+                          type: string
+                  GroupNameField:
+                    type: string
+                  RequiredNumberOfSignaturesField:
+                    type: integer
+              LanguageCodeField:
+                type: string
+              LatitudeField:
+                type: string
+              LongitudeField:
+                type: string
+              MobileNumberField:
+                type: string
+              PhotoAtSigningField:
+                type: integer
+              PreloadedFaceToFaceSignersField:
+                type: array
+                items:
+                  type: object
+                  required:
+                    - IDTypeField
+                    - IdentificationNumberField
+                    - PhotoAtSigningField
+                    - SendCompletedEmailField
+                    - SendOTPField
+                    - SignerEmailField
+                    - SignerFirstNameField
+                    - SignerLastNameField
+                    - SignerMobileField
+                  properties:
+                    CountryIDField:
+                      type: integer
+                    FieldsListField:
+                      type: array
+                      items:
+                        type: object
+                        required:
+                          - DocFieldTypeField
+                        properties:
+                          CombCharacterAmountField:
+                            type: integer
+                          DateFormatField:
+                            type: object
+                            properties:
+                              CustomDateValuesField:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    CustomFormatValueField:
+                                      type: integer
+                                    CustomSplitterField:
+                                      type: string
+                              FormatField:
+                                type: integer
+                          DocFieldTypeField:
+                            type: integer
+                          FontFamilyField:
+                            type: string
+                          FontSizeField:
+                            type: integer
+                          HeightField:
+                            type: string
+                          IsInvisibleField:
+                            type: boolean
+                          NameField:
+                            type: string
+                          PageNumberField:
+                            type: integer
+                          TagNameField:
+                            type: string
+                          ValidationIDField:
+                            type: integer
+                          ValueField:
+                            type: string
+                          WidthField:
+                            type: string
+                          XCoordinateField:
+                            type: string
+                          XOffsetField:
+                            type: integer
+                          YCoordinateField:
+                            type: string
+                          YOffsetField:
+                            type: integer
+                    IDTypeField:
+                      type: integer
+                    IdentificationNumberField:
+                      type: string
+                    PhotoAtSigningField:
+                      type: integer
+                    SendCompletedEmailField:
+                      type: integer
+                    SendOTPField:
+                      type: integer
+                    SignerEmailField:
+                      type: string
+                    SignerFirstNameField:
+                      type: string
+                    SignerLastNameField:
+                      type: string
+                    SignerMobileField:
+                      type: string
+              SendCompletedEmailField:
+                type: integer
+              SignReasonField:
+                type: string
+              SignatureTypeField:
+                type: integer
+              SignerPasswordField:
+                type: string
+              UserFirstNameField:
+                type: string
+              UserFullNameField:
+                type: string
+              UserLastNameField:
+                type: string
+              WorkflowUserFieldsField:
+                type: array
+                items:
+                  type: object
+                  required:
+                    - FieldTypeField
+                    - FontFamilyField
+                    - FontSizeField
+                    - HeightField
+                    - IsInvisibleField
+                    - PageNumberField
+                    - WidthField
+                    - XCoordinateField
+                    - XOffsetField
+                    - YCoordinateField
+                    - YOffsetField
+                  properties:
+                    CombCharacterAmountField:
+                      type: integer
+                    DateFormatField:
+                      type: object
+                      properties:
+                        CustomDateValuesField:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              CustomFormatValueField:
+                                type: integer
+                              CustomSplitterField:
+                                type: string
+                        FormatField:
+                          type: integer
+                    FieldTypeField:
+                      type: integer
+                    FontFamilyField:
+                      type: string
+                    FontSizeField:
+                      type: integer
+                    GroupUserNumberField:
+                      type: integer
+                    HeightField:
+                      type: string
+                    IsInvisibleField:
+                      type: boolean
+                    NameField:
+                      type: string
+                    PageNumberField:
+                      type: integer
+                    TagNameField:
+                      type: string
+                    ValidationIDField:
+                      type: integer
+                    ValueField:
+                      type: string
+                    WidthField:
+                      type: string
+                    XCoordinateField:
+                      type: string
+                    XOffsetField:
+                      type: integer
+                    YCoordinateField:
+                      type: string
+                    YOffsetField:
+                      type: integer
     FullWorkflowResponse:
       description: '#### The response returned on FullWorkflow.'
       type: object
