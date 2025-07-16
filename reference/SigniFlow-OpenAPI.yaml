@@ -52,11 +52,10 @@ paths:
             schema:
               $ref: '#/components/schemas/LoginRequest'
             example:
-              UserNameField: email@domain.com
-              PasswordField: P@ssword
-            examples:
-              example-1:
-                value: {}
+              Example:
+                value:
+                  UserNameField: email@domain.com
+                  PasswordField: P@ssword
         required: true
       responses:
         '200':
