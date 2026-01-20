@@ -137,7 +137,7 @@ paths:
         | -------------- |:---------------:|
         | **AutoExpireField**| 0 = No, 1 = Yes |
         | **AutoRemindField**| 0 = No, 1 = Yes |
-        | **ExtensionField** |0 = pdf, 1 = xls, 2 = txt, 3 = xlsx, 4 = docx, 5 = doc, 6 = xml, 7 = png, 8 = jpg, 9 = gif |
+        | **ExtensionField** |0 = pdf, 1 = xls, 2 = txt, 3 = xlsx, 4 = docx, 5 = doc, 6 = xml, 7 = png, 8 = jpg, 9 = gif, 10 = dot |
         | **PriorityField**  | 0 = Low, 1 = Normal, 2 = High |
       operationId: CreateWorkflow
       parameters:
@@ -1243,7 +1243,7 @@ paths:
         | CountryIDField| 137 = South Africa, 154 = UnitedKingdom, 10 = Brazil Rio, 132 = Singapore, 6 = Australia Sydney  | 
         | IDTypeField| 0 = South African ID Number, 1 = Passport, 2 = None |
         | AutoRemindField| 0 = No, 1 = Yes |
-        | ExtensionField |0 = pdf, 1 = xls, 2 = txt, 3 = xlsx, 4 = docx, 5 = doc, 6 = xml, 7 = png, 8 = jpg, 9 = gif |
+        | ExtensionField |0 = pdf, 1 = xls, 2 = txt, 3 = xlsx, 4 = docx, 5 = doc, 6 = xml, 7 = png, 8 = jpg, 9 = gif, 10 = dot |
         | AccessField| 0 = Allow, 1 = Deny |
         | ShareOptionField| 0 = Business, 1 = Department, 2 = Team, 3 = User |
         | PriorityField  | 0 = Low, 1 = Normal, 2 = High |
@@ -1266,6 +1266,7 @@ paths:
           in: header
           name: Content-Type
           required: true
+      x-internal: false
   /GetAuditDocument:
     post:
       summary: Get Audit Document
@@ -2577,6 +2578,7 @@ components:
         7 = png
         8 = jpg
         9 = gif
+        10 = dot
         `
       minimum: 0
       maximum: 9
@@ -3585,142 +3587,338 @@ components:
                   YCoordinateField: String content
                   YOffsetField: 2147483647
       required:
-        - AutoExpireField
         - AutoRemindField
         - DocField
         - DocNameField
         - ExtensionField
-        - FlattenDocumentField
         - SendWorkflowEmailsField
         - TokenField
         - UseAutoTagsField
         - WorkflowUsersListField
+        - PriorityField
+        - SLAField
       properties:
         AdditionalDataField:
           type: string
+          description: Sets additional data to be embedded in PDF Meta.
+          example: '""'
         AdhocPreloadedFaceToFaceUsersField:
           type: array
+          description: A list of face-to-face signers and their ID details and contact info.
           items:
             type: object
+            required:
+              - CountryIDField
+              - IDTypeField
+              - SignerFirstNameField
+              - SignerLastNameField
+              - SignerMobileField
             properties:
               CountryIDField:
                 type: integer
+                description: |
+                  Indicates which country the signer is from, using.
+
+                  For example 137 = South Africa.
+                example: 137
               IDTypeField:
                 type: integer
+                description: |
+                  Indicates whether the signer has a South African ID, a passport or neither.
+
+                  0 = South African ID, 1 = Passport, 2 = None
+                example: 0 
+                enum:
+                  - 0
+                  - 1
+                  - 2
               IdentificationNumberField:
                 type: string
+                description: |
+                  Signers ID number.
+
+                  Required only if IDTypeField = 0 or 1
+                example: '9405100000000'
               SignerEmailField:
                 type: string
+                description: Signers email address.
+                example: 'examplesigner@email.com'
               SignerFirstNameField:
                 type: string
+                description: Signers First name.
+                example: 'String content'
               SignerLastNameField:
                 type: string
+                description: Signers Last name.
+                example: 'String content'
               SignerMobileField:
                 type: string
+                description: Signers mobile number.
+                example: '0820000000'
         AutoExpireField:
           type: integer
+          description: |
+            Sets whether the workflow should auto expire if the due date in DueDateField passed.
+
+            0 = No, 1 = Yes
+          example: 0
+          enum:
+            - 0
+            - 1
         AutoRemindField:
           type: integer
+          description: |
+            Sets whether auto reminder emails should be sent.
+
+            0 = No, 1 = Yes
+          example: 0
+          enum:
+            - 0
+            - 1
         CustomMessageField:
           type: string
+          description: Field for adding a custom message in workflow notification emails.
+          example: 'String content'
         DocField:
           type: string
+          description: Base64-encoded String of document.
+          example: 'String content'
         DocNameField:
           type: string
+          description: |
+            Document name with or without extension.
+          
+            Extension gets appended if missing.
+          example: 'document.pdf'
         DueDateField:
           type: string
+          description: Due date of workflow in DateTime format.
+          example: '2026/07/02'
         ExtensionField:
           type: integer
+          description: |
+            The document file extension type.
+
+            Check table above for types and their identifier.
+          example: 0
+          enum:
+            - 0
+            - 1
+            - 2
+            - 3
+            - 4
+            - 5
+            - 6
+            - 7
+            - 8
+            - 9
+            - 10
         FlattenDocumentField:
           type: boolean
+          description: This field is deprecated and can be passed as null.
+          nullable: true
+          example: 
         KeepContentSecurityField:
           type: boolean
+          description: This field is deprecated and can be passed as null.
+          nullable: true
+          example:
         KeepCustomPropertiesField:
           type: boolean
+          description: This field is deprecated and can be passed as null.
+          nullable: true
+          example:
         KeepXMPMetadataField:
           type: boolean
+          description: This field is deprecated and can be passed as null.
+          nullable: true
+          example:
         PortfolioInformationField:
           type: object
+          description: If provided creates or links document to a portfolio.
           required:
             - CreatePortfolioField
           properties:
             AccessListField:
               type: array
+              description: List of entities to give access to document/portfolio.
               items:
                 type: object
                 properties:
                   AccessField:
                     type: integer
+                    description: |
+                      Sets whether access is granted.
+
+                      0 = Allow, 1 = Deny
+                    example: 0
+                    enum:
+                      - 0
+                      - 1
                   ReferenceIDField:
                     type: integer
+                    description: Used for response object to echo back for reference/tracking purposes.
+                    example: 123
                   ShareOptionField:
                     type: integer
+                    description: |
+                      Determines the type of enity granted access.
+
+                      0 = Business, 1 = Department, 2 = Team, 3 = User
+                    example: 0
+                    enum:
+                      - 0
+                      - 1
+                      - 2
+                      - 3
                   UniqueIDField:
                     type: string
+                    description: The id of the entity being granted access.
+                    example: '1234'
                   UserEmailField:
                     type: string
+                    description: Field for user email if granting access to user, without knowing their userid.
+                    example: 'exampleuser@email.com'
             CreatePortfolioField:
               type: boolean
+              description: Sets whether to create a portfolio or not.
+              example: true
             LinkToPortfolioField:
               type: boolean
+              description: |
+                Sets whether to link document to existing portfolio or not.
+
+                Required only if CreatePortfolioField is false.
+              example: true
             PlaceholderInfoListField:
               type: array
+              description: Placeholders for documents to be added to the portfolio later.
               items:
                 type: object
                 properties:
                   AccessListField:
                     type: array
+                    description: List of entities to give access to document/portfolio.
                     items:
                       type: object
                       properties:
                         AccessField:
                           type: integer
+                          description: |
+                            Sets whether access is granted.
+
+                            0 = Allow, 1 = Deny
+                          example: 0
+                          enum:
+                            - 0
+                            - 1
                         ReferenceIDField:
                           type: integer
+                          description: Used for response object to echo back for reference/tracking purposes.
+                          example: 123
                         ShareOptionField:
                           type: integer
+                          description: |
+                            Determines the type of enity granted access.
+
+                            0 = Business, 1 = Department, 2 = Team, 3 = User
+                          example: 0
+                          enum:
+                            - 0
+                            - 1
+                            - 2
+                            - 3
                         UniqueIDField:
                           type: string
+                          description: The id of the entity being granted access.
+                          example: '1234'
                         UserEmailField:
                           type: string
+                          description: Field for user email if granting access to user, without knowing their userid.
+                          example: 'exampleuser@email.com'
                   AllowMultipleField:
                     type: boolean
+                    description: Sets whether placeholder allows multiple docs to be added.
+                    example: true
                   DocumentNameField:
                     type: string
+                    description: Name of the document to be added.
+                    example: 'ID Document'
                   ForceUploadField:
                     type: boolean
+                    description: Sets whether the first signer will be forced to upload a document to this placeholder.
+                    example: true
                   PlaceholderGroupIDField:
                     type: string
+                    description: If set will add placeholder to specified placeholder group.
+                    example: '1'
                   SendNotificationField:
                     type: boolean
+                    description: Sets whether a notification should be sent.
             PortfolioIDField:
               type: integer
+              description: |
+                The ID of the portfolio to which the document should be linked.
+
+                Required only if CreatePortfolioField is false and LinkToPortfolioField is true.
+              example: 123
             PortfolioNameField:
               type: string
+              description: |
+                The name of the portfolio to be created.
+
+                Required only if CreatePortfolioField is true.
         PriorityField:
           type: integer
+          description: |
+            Sets the priority of the document.
+
+            0 = Low, 1 = Normal, 2 = High
+          example: 0
+          enum:
+            - 0
+            - 1
+            - 2
         SLAField:
           type: integer
+          description: This is deprecated but still required set to 0.
+          example: 0
+          enum:
+            - 0
         SendFirstEmailField:
           type: boolean
+          description: Sets whether to send sign email to first signer.
+          example: true
         SendWorkflowEmailsField:
           type: boolean
+          description: Sets whether to send workflow notification emails.
         SharedKeyField:
           type: string
+          description: If set adds this value as a shared key(password) to the document.
+          example: 'String content'
         TokenField:
           type: object
+          description: Contains the authentication token.
           required:
             - TokenExpiryField
             - TokenField
           properties:
             TokenExpiryField:
               type: string
+              description: Not used can be left null.
+              nullable: true
+              example:
             TokenField:
               type: string
+              description: The Authentication token passed as a String.
+              example: 'String content'
         UseAutoTagsField:
           type: boolean
+          description: Sets whether to use auto tagging or not.
+          example: true
         WorkflowUsersListField:
           type: array
+          description: List of users to add to the workflow.
           items:
             type: object
             required:
@@ -3741,46 +3939,99 @@ components:
             properties:
               ActionField:
                 type: integer
+                description: |
+                  The action the user should take.
+
+                  0 = SignDocument, 1 = ViewDocument, 2 = ApproveDocument
               AllowProxyField:
                 type: integer
+                description: |
+                  Whether a proxy is allowed for the user.
+
+                  0 = No, 1 = Yes
+                example: 0
+                enum:
+                  - 0
+                  - 1
               AutoSignField:
                 type: boolean
+                description: Sets if signatures will be autosigned for the signer.
+                example: true
               EmailAddressField:
                 type: string
+                description: The email address of the signer.
+                example: 'exampleuser@email.com'
               GroupStepField:
                 type: object
+                description: Configuration for group signers, when mutliple people from a group can sign.
                 properties:
                   GroupMembersField:
                     type: array
+                    description: List of group members.
                     items:
                       type: object
                       properties:
                         LanguageCodeField:
                           type: string
+                          description: |
+                            Language code for communications.
+
+                            en = English, pt-PT = Portuguese Portugal, pt-BR = Portuguese Brazil
+                          example: 'en'
                         SendCompletedEmailField:
                           type: integer
+                          description: |
+                            Sets whether to send completed email to user when document is complete.
+
+                            0 = No, 1 = Yes
+                          example: 0
+                          enum:
+                            - 0
+                            - 1
                         UserEmailField:
                           type: string
+                          description: The email of the group member.
+                          example: 'exampleuser@email.com'
                         UserFullNameField:
                           type: string
+                          description: The full name of the group member.
+                          example: 'John Doe'
                         UserMobileNumberField:
                           type: string
+                          description: Mobile number of the group member.
+                          example: '0810000000'
                   GroupNameField:
                     type: string
+                    description: Name of the group that is signing.
+                    example: 'Board Members'
                   RequiredNumberOfSignaturesField:
                     type: integer
+                    description: Number of signatures required from the group.
+                    example: 2
               LanguageCodeField:
                 type: string
+                description: |
+                  Language code for communications.
+
+                  en = English, pt-PT = Portuguese Portugal, pt-BR = Portuguese Brazil
+                example: 'en'
               LatitudeField:
                 type: string
               LongitudeField:
                 type: string
               MobileNumberField:
                 type: string
+                description: Mobile number of the signer.
+                example: '0820000000'
               PhotoAtSigningField:
                 type: integer
+                description: |
+                  Set if photo should be taken when signer signs.
+
+                  0 = CaptureSingleImage, 1 = CaptureMultipleImages, 2 = CaptureSingleImageWith3DLiveness, 3 = CaptureMultipleImagesWith3DLiveness
               PreloadedFaceToFaceSignersField:
                 type: array
+                description: Face-to-face signers that are known beforehand.
                 items:
                   type: object
                   required:
@@ -3796,8 +4047,14 @@ components:
                   properties:
                     CountryIDField:
                       type: integer
+                      description: |
+                        Indicates which country the signer is from.
+
+                        For example 137 = South Africa.
+                      example: 137
                     FieldsListField:
                       type: array
+                      description: List of fields for preloaded face to face signers.
                       items:
                         type: object
                         required:
