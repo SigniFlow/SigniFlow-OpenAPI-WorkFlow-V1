@@ -4029,6 +4029,7 @@ components:
                   Set if photo should be taken when signer signs.
 
                   0 = CaptureSingleImage, 1 = CaptureMultipleImages, 2 = CaptureSingleImageWith3DLiveness, 3 = CaptureMultipleImagesWith3DLiveness
+                example: 0
               PreloadedFaceToFaceSignersField:
                 type: array
                 description: Face-to-face signers that are known beforehand.
@@ -4062,6 +4063,11 @@ components:
                         properties:
                           CombCharacterAmountField:
                             type: integer
+                            description: |
+                              If set to number > 0 converts the field to a comb field with the provided amount of boxes.
+
+                              a Comb field is a special type of text field that automatically divides its space into equally sized boxes.
+                            example: 8
                           DateFormatField:
                             type: object
                             properties:
