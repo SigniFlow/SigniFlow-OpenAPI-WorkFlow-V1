@@ -3617,17 +3617,205 @@ components:
               CountryIDField:
                 type: integer
                 description: |
-                  Indicates which country the signer is from, using.
+                  Indicates which country the signer is from.
 
-                  For example 137 = South Africa.
+                  |CountryID|CountryName|
+                  |---|---|
+                  |1|Angola|
+                  |2|Argentina|
+                  |3|Australia (Perth)|
+                  |4|Australia (Eucla)|
+                  |5|Australia (Adelaide)|
+                  |6|Australia (Melbourne, Sydney, Brisban)|
+                  |7|Austria|
+                  |8|Belgium|
+                  |9|Botswana|
+                  |10|Brazil (Rio Branco)|
+                  |11|Brazil (Manaus)|
+                  |12|Brazil (Bel&#233;m, Brasillia, S&#227;o Paulo, Rio de Janeiro)|
+                  |13|Burundi|
+                  |14|Cameroon|
+                  |15|Canada (Vancouver, Fort St. John)|
+                  |16|Canada (Edmonton, Regina)|
+                  |17|Canada (Winnipeg, Coral Harbour)|
+                  |18|Canada (Toronto, Blanc-Sablon)|
+                  |19|Canada (Halifax)|
+                  |20|Canada (St. John&#39;s)|
+                  |21|Cape Verde|
+                  |22|Cayman Islands|
+                  |23|Central African Republic|
+                  |24|China|
+                  |25|Colombia|
+                  |26|Congo, Democratic Republic of (Kinshasa)|
+                  |27|Congo, Democratic Republic of (Mbuji-Mayi, Kisangani, Lubumbashi, Bukavu, Goma)|
+                  |28|Costa Rica|
+                  |29|Croatia (Hrvatska)|
+                  |30|Cuba|
+                  |31|Czech Republic|
+                  |32|Denmark|
+                  |33|Dominican Republic|
+                  |34|Egypt|
+                  |35|El Salvador|
+                  |36|Equatorial Guinea|
+                  |37|Ethiopia|
+                  |38|Falkland Islands (Malvinas)|
+                  |39|Faroe Islands|
+                  |40|Fiji|
+                  |41|Finland|
+                  |42|France|
+                  |43|Gabon|
+                  |44|Georgia (Sukhumi, Tskhinvali)|
+                  |45|Georgia (Batumi, Kutaisi, Tbilisi)|
+                  |46|Germany|
+                  |47|Ghana|
+                  |48|Greece|
+                  |49|Greenland (Thule Air Base)|
+                  |50|Greenland (Qaanaaq, Nuuk, Kangerlussuaq)|
+                  |51|Greenland (Ittoqqortoormiit, Danmarkshavn)|
+                  |52|Guinea|
+                  |53|Hong Kong|
+                  |54|Hungary|
+                  |55|Iceland|
+                  |56|India|
+                  |57|Indonesia (Jakarta, Bandung, Pontianak)|
+                  |58|Indonesia (Denpasar, Makassar)|
+                  |59|Indonesia (Manokwari)|
+                  |60|Iran (Islamic Republic of)|
+                  |61|Iraq|
+                  |62|Ireland|
+                  |63|Israel|
+                  |64|Italy|
+                  |65|Jamaica|
+                  |66|Japan|
+                  |67|Jordan|
+                  |68|Kenya|
+                  |69|Korea, Democratic People&#39;s Republic of (North Korea)|
+                  |70|Korea, Republic of (South Korea)|
+                  |71|Kuwait|
+                  |72|Lebanon|
+                  |73|Lesotho|
+                  |74|Liberia|
+                  |75|Liechtenstein|
+                  |76|Luxembourg|
+                  |77|Madagascar|
+                  |78|Malawi|
+                  |79|Malaysia|
+                  |80|Maldives|
+                  |81|Mali|
+                  |82|Malta|
+                  |83|Mauritius|
+                  |84|Mexico (Tijuana, Hermosillo)|
+                  |85|Mexico (Mazatlan)|
+                  |86|Mexico (Guadalajara, Aguascalientes, Mexico City, Canc&#250;n)|
+                  |87|Monaco|
+                  |88|Mongolia (Hovd)|
+                  |89|Mongolia (Bayankhongor, Erdenet, Darkhan, Ulaanbaatar, Choibalsan)|
+                  |90|Morocco|
+                  |91|Mozambique|
+                  |92|Namibia|
+                  |93|Nepal|
+                  |94|Netherlands|
+                  |95|New Zealand (Christchurch, Auckland, Wellington, Palmerston North, Tauranga)|
+                  |96|New Zealand (Chatham Islands)|
+                  |97|Nicaragua|
+                  |98|Niger|
+                  |99|Nigeria|
+                  |100|Norway|
+                  |101|Pakistan|
+                  |102|Papua New Guinea (Mount Hagen, Lae, Port Moresby, Rabaul)|
+                  |103|Papua New Guinea (Buka, Arawa)|
+                  |104|Paraguay|
+                  |105|Peru|
+                  |106|Philippines|
+                  |107|Poland|
+                  |108|Portugal (Ponta Delgada)|
+                  |109|Portugal (Cascais, Loures, Lisbon, Porto, Vila Nova de Gaia)|
+                  |110|Puerto Rico|
+                  |111|Qatar|
+                  |112|Reunion|
+                  |113|Romania|
+                  |114|Russian Federation (Kaliningrad)|
+                  |115|Russian Federation (Moscow)|
+                  |116|Russian Federation (Samara)|
+                  |117|Russian Federation (Yekaterinburg)|
+                  |118|Russian Federation (Omsk)|
+                  |119|Russian Federation (Krasnoyarsk, Novosibirsk)|
+                  |120|Russian Federation (Irkutsk)|
+                  |121|Russian Federation (Chita)|
+                  |122|Russian Federation (Vladivostok)|
+                  |123|Russian Federation (Magadan, Yuzhno-Sakhalinsk, Srednekolymsk)|
+                  |124|Russian Federation (Anadyr, Petropavlovsk-Kamchatsky)|
+                  |125|Rwanda|
+                  |126|Samoa|
+                  |127|San Marino|
+                  |128|Saudi Arabia|
+                  |129|Senegal|
+                  |130|Seychelles|
+                  |131|Sierra Leone|
+                  |132|Singapore|
+                  |133|Slovakia (Slovak Republic)|
+                  |134|Slovenia|
+                  |135|Solomon Islands|
+                  |136|Somalia|
+                  |137|South Africa|
+                  |138|Spain (Las Palmas)|
+                  |139|Spain (A Coru&#241;a, C&#243;rdoba, Madrid, Barcelona, Palma)|
+                  |140|Sri Lanka|
+                  |141|St. Helena|
+                  |142|Sudan|
+                  |143|Swaziland|
+                  |144|Sweden|
+                  |145|Switzerland|
+                  |146|Taiwan, Province of China|
+                  |147|Tanzania|
+                  |148|Thailand|
+                  |149|Tonga|
+                  |150|Turkey|
+                  |151|Uganda|
+                  |152|Ukraine|
+                  |153|United Arab Emirates|
+                  |154|United Kingdom|
+                  |155|United States (Honolulu)|
+                  |156|United States (Anchorage)|
+                  |157|United States (Los Angeles, Phoenix)|
+                  |158|United States (Salt Lake City)|
+                  |159|United States (Chicago)|
+                  |160|United States (New York)|
+                  |161|Uruguay|
+                  |162|Venezuela|
+                  |163|Viet Nam|
+                  |164|Virgin Islands (British)|
+                  |165|Virgin Islands (U.S.)|
+                  |166|Zambia|
+                  |167|Zimbabwe|
+                  |168|Chile (Easter Island)|
+                  |169|Chile (Santiago)|
+                  |170|C&#244;te d’Ivoire|
+                  |171|Lithuania|
+                  |172|Macedonia|
+                  |173|Serbia|
+                  |174|Moldova|
+                  |175|Bahrain|
+                  |176|Bulgaria|
+                  |177|Oman|
+                  |178|Myanmar (Burma)|
+                  |179|Cambodia|
+                  |180|Laos|
+                  |181|Isle of Man|
+                  |182|Guatemala|
+                  |183|Ecuador|
+                  |184|Bolivia|
+                  |185|Honduras|
+                  |186|Cyprus|
+                  |187|Albania|
                 example: 137
               IDTypeField:
                 type: integer
                 description: |
                   Indicates whether the signer has a South African ID, a passport or neither.
 
-                  0 = South African ID, 1 = Passport, 2 = None
-                example: 0 
+                  0 = South African ID, 1 = Passport, 2 = None, since this is adhoc most likely value will be 2.
+                example: 2
                 enum:
                   - 0
                   - 1
@@ -3641,19 +3829,31 @@ components:
                 example: '9405100000000'
               SignerEmailField:
                 type: string
-                description: Signers email address.
+                description: |
+                  Signer's email address.
+
+                  Since this is adhoc you can set the value to an empty string.
                 example: 'examplesigner@email.com'
               SignerFirstNameField:
                 type: string
-                description: Signers First name.
+                description: |
+                  Signers First name.
+
+                  Since this is adhoc you can set the value to an empty string.
                 example: 'String content'
               SignerLastNameField:
                 type: string
-                description: Signers Last name.
+                description: |
+                  Signers Last name.
+
+                  Since this is adhoc you can set the value to an empty string.
                 example: 'String content'
               SignerMobileField:
                 type: string
-                description: Signers mobile number.
+                description: |
+                  Signers mobile number.
+
+                  Since this is adhoc you can set the value to an empty string.
                 example: '0820000000'
         AutoExpireField:
           type: integer
@@ -3692,7 +3892,10 @@ components:
           example: 'document.pdf'
         DueDateField:
           type: string
-          description: Due date of workflow in DateTime format.
+          description: |
+            Due date of workflow in DateTime format.
+
+            Needs to be set for AutoExpire to be turned on. Needs to be date later than current date.
           example: '2026/07/02'
         ExtensionField:
           type: integer
@@ -3744,6 +3947,9 @@ components:
               description: List of entities to give access to document/portfolio.
               items:
                 type: object
+                required:
+                  - AccessField
+                  - ShareOptionField
                 properties:
                   AccessField:
                     type: integer
@@ -3773,11 +3979,14 @@ components:
                       - 3
                   UniqueIDField:
                     type: string
-                    description: The id of the entity being granted access.
+                    description: |
+                      The id of the entity being granted access.
+
+                      Required only if UserEmailField not provided.
                     example: '1234'
                   UserEmailField:
                     type: string
-                    description: Field for user email if granting access to user, without knowing their userid.
+                    description: Field for user email if granting access to user without knowing their userid.
                     example: 'exampleuser@email.com'
             CreatePortfolioField:
               type: boolean
@@ -3801,6 +4010,9 @@ components:
                     description: List of entities to give access to document/portfolio.
                     items:
                       type: object
+                      required:
+                      - AccessField
+                      - ShareOptionField
                       properties:
                         AccessField:
                           type: integer
@@ -4059,7 +4271,195 @@ components:
                       description: |
                         Indicates which country the signer is from.
 
-                        For example 137 = South Africa.
+                        |CountryID|CountryName|
+                        |---|---|
+                        |1|Angola|
+                        |2|Argentina|
+                        |3|Australia (Perth)|
+                        |4|Australia (Eucla)|
+                        |5|Australia (Adelaide)|
+                        |6|Australia (Melbourne, Sydney, Brisban)|
+                        |7|Austria|
+                        |8|Belgium|
+                        |9|Botswana|
+                        |10|Brazil (Rio Branco)|
+                        |11|Brazil (Manaus)|
+                        |12|Brazil (Bel&#233;m, Brasillia, S&#227;o Paulo, Rio de Janeiro)|
+                        |13|Burundi|
+                        |14|Cameroon|
+                        |15|Canada (Vancouver, Fort St. John)|
+                        |16|Canada (Edmonton, Regina)|
+                        |17|Canada (Winnipeg, Coral Harbour)|
+                        |18|Canada (Toronto, Blanc-Sablon)|
+                        |19|Canada (Halifax)|
+                        |20|Canada (St. John&#39;s)|
+                        |21|Cape Verde|
+                        |22|Cayman Islands|
+                        |23|Central African Republic|
+                        |24|China|
+                        |25|Colombia|
+                        |26|Congo, Democratic Republic of (Kinshasa)|
+                        |27|Congo, Democratic Republic of (Mbuji-Mayi, Kisangani, Lubumbashi, Bukavu, Goma)|
+                        |28|Costa Rica|
+                        |29|Croatia (Hrvatska)|
+                        |30|Cuba|
+                        |31|Czech Republic|
+                        |32|Denmark|
+                        |33|Dominican Republic|
+                        |34|Egypt|
+                        |35|El Salvador|
+                        |36|Equatorial Guinea|
+                        |37|Ethiopia|
+                        |38|Falkland Islands (Malvinas)|
+                        |39|Faroe Islands|
+                        |40|Fiji|
+                        |41|Finland|
+                        |42|France|
+                        |43|Gabon|
+                        |44|Georgia (Sukhumi, Tskhinvali)|
+                        |45|Georgia (Batumi, Kutaisi, Tbilisi)|
+                        |46|Germany|
+                        |47|Ghana|
+                        |48|Greece|
+                        |49|Greenland (Thule Air Base)|
+                        |50|Greenland (Qaanaaq, Nuuk, Kangerlussuaq)|
+                        |51|Greenland (Ittoqqortoormiit, Danmarkshavn)|
+                        |52|Guinea|
+                        |53|Hong Kong|
+                        |54|Hungary|
+                        |55|Iceland|
+                        |56|India|
+                        |57|Indonesia (Jakarta, Bandung, Pontianak)|
+                        |58|Indonesia (Denpasar, Makassar)|
+                        |59|Indonesia (Manokwari)|
+                        |60|Iran (Islamic Republic of)|
+                        |61|Iraq|
+                        |62|Ireland|
+                        |63|Israel|
+                        |64|Italy|
+                        |65|Jamaica|
+                        |66|Japan|
+                        |67|Jordan|
+                        |68|Kenya|
+                        |69|Korea, Democratic People&#39;s Republic of (North Korea)|
+                        |70|Korea, Republic of (South Korea)|
+                        |71|Kuwait|
+                        |72|Lebanon|
+                        |73|Lesotho|
+                        |74|Liberia|
+                        |75|Liechtenstein|
+                        |76|Luxembourg|
+                        |77|Madagascar|
+                        |78|Malawi|
+                        |79|Malaysia|
+                        |80|Maldives|
+                        |81|Mali|
+                        |82|Malta|
+                        |83|Mauritius|
+                        |84|Mexico (Tijuana, Hermosillo)|
+                        |85|Mexico (Mazatlan)|
+                        |86|Mexico (Guadalajara, Aguascalientes, Mexico City, Canc&#250;n)|
+                        |87|Monaco|
+                        |88|Mongolia (Hovd)|
+                        |89|Mongolia (Bayankhongor, Erdenet, Darkhan, Ulaanbaatar, Choibalsan)|
+                        |90|Morocco|
+                        |91|Mozambique|
+                        |92|Namibia|
+                        |93|Nepal|
+                        |94|Netherlands|
+                        |95|New Zealand (Christchurch, Auckland, Wellington, Palmerston North, Tauranga)|
+                        |96|New Zealand (Chatham Islands)|
+                        |97|Nicaragua|
+                        |98|Niger|
+                        |99|Nigeria|
+                        |100|Norway|
+                        |101|Pakistan|
+                        |102|Papua New Guinea (Mount Hagen, Lae, Port Moresby, Rabaul)|
+                        |103|Papua New Guinea (Buka, Arawa)|
+                        |104|Paraguay|
+                        |105|Peru|
+                        |106|Philippines|
+                        |107|Poland|
+                        |108|Portugal (Ponta Delgada)|
+                        |109|Portugal (Cascais, Loures, Lisbon, Porto, Vila Nova de Gaia)|
+                        |110|Puerto Rico|
+                        |111|Qatar|
+                        |112|Reunion|
+                        |113|Romania|
+                        |114|Russian Federation (Kaliningrad)|
+                        |115|Russian Federation (Moscow)|
+                        |116|Russian Federation (Samara)|
+                        |117|Russian Federation (Yekaterinburg)|
+                        |118|Russian Federation (Omsk)|
+                        |119|Russian Federation (Krasnoyarsk, Novosibirsk)|
+                        |120|Russian Federation (Irkutsk)|
+                        |121|Russian Federation (Chita)|
+                        |122|Russian Federation (Vladivostok)|
+                        |123|Russian Federation (Magadan, Yuzhno-Sakhalinsk, Srednekolymsk)|
+                        |124|Russian Federation (Anadyr, Petropavlovsk-Kamchatsky)|
+                        |125|Rwanda|
+                        |126|Samoa|
+                        |127|San Marino|
+                        |128|Saudi Arabia|
+                        |129|Senegal|
+                        |130|Seychelles|
+                        |131|Sierra Leone|
+                        |132|Singapore|
+                        |133|Slovakia (Slovak Republic)|
+                        |134|Slovenia|
+                        |135|Solomon Islands|
+                        |136|Somalia|
+                        |137|South Africa|
+                        |138|Spain (Las Palmas)|
+                        |139|Spain (A Coru&#241;a, C&#243;rdoba, Madrid, Barcelona, Palma)|
+                        |140|Sri Lanka|
+                        |141|St. Helena|
+                        |142|Sudan|
+                        |143|Swaziland|
+                        |144|Sweden|
+                        |145|Switzerland|
+                        |146|Taiwan, Province of China|
+                        |147|Tanzania|
+                        |148|Thailand|
+                        |149|Tonga|
+                        |150|Turkey|
+                        |151|Uganda|
+                        |152|Ukraine|
+                        |153|United Arab Emirates|
+                        |154|United Kingdom|
+                        |155|United States (Honolulu)|
+                        |156|United States (Anchorage)|
+                        |157|United States (Los Angeles, Phoenix)|
+                        |158|United States (Salt Lake City)|
+                        |159|United States (Chicago)|
+                        |160|United States (New York)|
+                        |161|Uruguay|
+                        |162|Venezuela|
+                        |163|Viet Nam|
+                        |164|Virgin Islands (British)|
+                        |165|Virgin Islands (U.S.)|
+                        |166|Zambia|
+                        |167|Zimbabwe|
+                        |168|Chile (Easter Island)|
+                        |169|Chile (Santiago)|
+                        |170|C&#244;te d’Ivoire|
+                        |171|Lithuania|
+                        |172|Macedonia|
+                        |173|Serbia|
+                        |174|Moldova|
+                        |175|Bahrain|
+                        |176|Bulgaria|
+                        |177|Oman|
+                        |178|Myanmar (Burma)|
+                        |179|Cambodia|
+                        |180|Laos|
+                        |181|Isle of Man|
+                        |182|Guatemala|
+                        |183|Ecuador|
+                        |184|Bolivia|
+                        |185|Honduras|
+                        |186|Cyprus|
+                        |187|Albania|
                       example: 137
                     FieldsListField:
                       type: array
