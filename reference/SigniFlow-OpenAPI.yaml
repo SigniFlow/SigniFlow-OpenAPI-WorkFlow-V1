@@ -4084,7 +4084,7 @@ components:
                             properties:
                               CustomDateValuesField:
                                 type: array
-                                description: Array containing custom format for different values of a date.
+                                description: Array containing custom format for dates.
                                 items:
                                   type: object
                                   properties:
@@ -4349,14 +4349,32 @@ components:
                   - 1
               SignerPasswordField:
                 type: string
+                description: |
+                  The signers password.
+
+                  Required only if AutoSignField is true.
               UserFirstNameField:
                 type: string
+                description: |
+                  The user's first name.
+
+                  Can only be left empty if UserFullNameField is provided.
+                example: 'String content'
               UserFullNameField:
                 type: string
+                description: |
+                  The full name of the user.
+
+                  Disregarded if UserFirstNameField and UserLastNameField are provided.
               UserLastNameField:
                 type: string
+                description: |
+                  The user's last name.
+
+                  Can only be left empty if UserFullNameField is provided.
               WorkflowUserFieldsField:
                 type: array
+                description: List of fields for added workflow user.
                 items:
                   type: object
                   required:
@@ -4374,11 +4392,18 @@ components:
                   properties:
                     CombCharacterAmountField:
                       type: integer
+                      description: |
+                        If set to number > 0 converts the field to a comb field with the provided amount of boxes.
+
+                        a Comb field is a special type of text field that automatically divides its space into equally sized boxes.
+                      example: 8
                     DateFormatField:
                       type: object
+                      description: An object containing custom formats for date input fields.
                       properties:
                         CustomDateValuesField:
                           type: array
+                          description: Array containing custom format for dates.
                           items:
                             type: object
                             properties:
@@ -4386,40 +4411,177 @@ components:
                                 type: integer
                               CustomSplitterField:
                                 type: string
+                                description: |
+                                  The custom splitter between date values.
+
+                                  **Not allowed values:** 
+                                  - d
+                                  - dd
+                                  - D
+                                  - DD
+                                  - m
+                                  - mm
+                                  - M
+                                  - MM
+                                  - yy
+                                  - yyyy
+                                  - @
+                                  - !
                         FormatField:
                           type: integer
+                          description: |
+                            Set value to available date formats or choose custom format.
+
+                            |Value|Placeholder|Example|
+                            |-|-|-|
+                            |0|Custom|01/02/2026|
+                            |1|D, dd M yy|Fri, 01 Jun 2022|
+                            |2|yy-mm-dd|2022-06-01|
+                            |3|D, d M yy|Fri, 1 Jun 22|
+                            |4|DD, dd-M-y|Friday, 01-Jun-22|
+                            |5|D, d M yy|Fri, 1 Jun 2022|
+                          example: 0
+                          enum:
+                            - 0
+                            - 1
+                            - 2
+                            - 3
+                            - 4
+                            - 5
                     FieldTypeField:
                       type: integer
+                      description: |
+                        The type of field this is.
+
+                        |Value|Field Type|
+                        |-|-|
+                        |0|Signature|
+                        |1|NameText|
+                        |2|DateText|
+                        |3|EmailAddressText|
+                        |4|ContactNumberText|
+                        |5|PlainTextMandatory|
+                        |6|PlainTextOptional|
+                        |7|FaceToface|
+                        |8|Initial|
+                        |9|CheckBox|
+                        |10|F2FInitial|
+                        |11|AddressText|
+                        |12|CompanyNameText|
+                        |13|OptionalCurrencyText|
+                        |14|MandatoryCurrencyText|
+                        |15|ReadOnlyText|
+                        |16|NumericFieldOptional|
+                        |17|NumericFieldMandatory|
+                        |18|EmailInputOptional|
+                        |19|EmailInputMandatory|
+                        |20|CompanyStamp|
+                        |21|DesignationText|
+                        |22|DateMandatory|
+                        |23|DateOptional|
+                      example: 0
+                      enum:
+                        - 0
+                        - 1
+                        - 2
+                        - 3
+                        - 4
+                        - 5
+                        - 6
+                        - 7
+                        - 8
+                        - 9
+                        - 10
+                        - 11
+                        - 12
+                        - 13
+                        - 14
+                        - 15
+                        - 16
+                        - 17
+                        - 18
+                        - 19
+                        - 20
+                        - 21
+                        - 22
+                        - 23
                     FontFamilyField:
                       type: string
+                      description: |
+                        The font for text fields.
+
+                        If not provided default font for the user connected to provided token will be used.
+                      example: 'Arial'
                     FontSizeField:
                       type: integer
+                      description: |
+                        The size of the font for text fields.
+
+                        If not provided or provide value is 0 default font size for user connected to the provided token will be used.
+                      example: 8
                     GroupUserNumberField:
                       type: integer
+                      description: |
+                        The number of users in the group.
+
+                        Required only if signers are a group, may not exceed the RequiredNumberOfSignaturesField.
+                      example: 2 
                     HeightField:
                       type: string
+                      description: The height of the field in pixels.
+                      example: '50'
                     IsInvisibleField:
                       type: boolean
+                      description: Sets whether the field should be invisible or not.
+                      example: true
                     NameField:
                       type: string
+                      description: The name of the field.
+                      example: 'SignatureLegal1'
                     PageNumberField:
                       type: integer
+                      description: |
+                        The page of the document the field should appear on.
+
+                        If 0 then it will be placed on all pages.
+                      example: 1
                     TagNameField:
                       type: string
+                      description: |
+                        If this value is filled the value will be used to place the field on the document where this value is found.
+                      example: 'String content'
                     ValidationIDField:
                       type: integer
+                      description: This is deprecated, just provide a zero or null.
+                      example: 0
+                      enum:
+                        - 0
                     ValueField:
                       type: string
+                      description: Pre-filled value for text/date fields, ignored if Signature/Initial field.
                     WidthField:
                       type: string
+                      description: The width of the field in pixels.
+                      example: '60'
                     XCoordinateField:
                       type: string
+                      description: The x coordinate on the document where the field should be placed.
                     XOffsetField:
                       type: integer
+                      description: |
+                        The amount by which the field should be offset from the provide XCoordinateField.
+
+                        This is mostly used for tag fields.
+                      example: 5
                     YCoordinateField:
                       type: string
+                      description: The y coordinate on the document where the field should be placed.
                     YOffsetField:
                       type: integer
+                      description: |
+                        The amount by which the field should be offset from the provide YCoordinateField.
+
+                        This is mostly used for tag fields.
     FullWorkflowResponse:
       description: '#### The response returned on FullWorkflow.'
       type: object
