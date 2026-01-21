@@ -929,7 +929,7 @@ paths:
         | -------------- |:---------------:|
         | **AdvancedFieldType** | 0 = DropDown, 1 = CheckBoxGroup, 2 = OptionalDropDown, 3 = RadioGroup, 4 = DateMand, 5 = DateOpt, 6 = DropDownCountry, 7 = OptionalDropDownCountry, 8 = DropDownMobilePrefix, 9 = OptionalDropDownMobilePrefix |
         | **CustomFormatValueField** | 0 = d, 1 = dd, 2 = o, 3 = oo, 4 = D, 5 = DD, 6 = m, 7 = mm, 8 = M, 9 = MM, 10 = y, 11 = yy, 12 = @, 13 = ! |
-        | **Format Field** | Visual Example in Brackets, 0 = Specify Custom Date Format, 1 = 'D,dd M yy' (Fri, 01 Jun 2022), 2 = 'yy-mm-dd' (2022-06-01), 3 = 'D,d M y' (Fri, 1 Jun 22), 4 = 'DD, dd-M-y' (Friday, 01-Jun-22) 5 = 'D, d M yy' (Fri, 1 Jun 2022)|
+        | **FormatField** | Visual Example in Brackets, 0 = Specify Custom Date Format, 1 = 'D,dd M yy' (Fri, 01 Jun 2022), 2 = 'yy-mm-dd' (2022-06-01), 3 = 'D,d M y' (Fri, 1 Jun 22), 4 = 'DD, dd-M-y' (Friday, 01-Jun-22) 5 = 'D, d M yy' (Fri, 1 Jun 2022)|
       tags:
         - WorkFlow
       parameters:
@@ -1005,7 +1005,7 @@ paths:
         | -------------- |:---------------:|
         | **DocFieldTypeField / FieldTypeField** | 0  = Signature, 1  = NameText, 2  = DateText, 3  = EmailAddressText, 4  = ContactNumberText, 5  = PlainText, 6  = PlainTextOptional, 7  = FaceToface, 8  = Initial, 9  = CheckBox, 10 = F2FInitial, 11 = AddressText, 12 = CompanyNameText, 13 = OptionalCurrencyText, 14 = MandatoryCurrencyText, 15 = ReadOnlyText, 16 = NumericFieldOpt, 17 = NumericFieldMand, 18 = EmailInputOptional, 19 = EmailInput |
         | **CustomFormatValueField** | 0 = d, 1 = dd, 2 = o, 3 = oo, 4 = D, 5 = DD, 6 = m, 7 = mm, 8 = M, 9 = MM, 10 = y, 11 = yy, 12 = @, 13 = ! |
-        | **Format Field** | Visual Example in Brackets, 0 = Specify Custom Date Format, 1 = 'D,dd M yy' (Fri, 01 Jun 2022), 2 = 'yy-mm-dd' (2022-06-01), 3 = 'D,d M y' (Fri, 1 Jun 22), 4 = 'DD, dd-M-y' (Friday, 01-Jun-22) 5 = 'D, d M yy' (Fri, 1 Jun 2022)|
+        | **FormatField** | Visual Example in Brackets, 0 = Specify Custom Date Format, 1 = 'D,dd M yy' (Fri, 01 Jun 2022), 2 = 'yy-mm-dd' (2022-06-01), 3 = 'D,d M y' (Fri, 1 Jun 22), 4 = 'DD, dd-M-y' (Friday, 01-Jun-22) 5 = 'D, d M yy' (Fri, 1 Jun 2022)|
       tags:
         - WorkFlow
       parameters:
@@ -1145,7 +1145,7 @@ paths:
                     PortfolioIDField: 2147483647
                     PortfolioNameField: String content
                   PriorityField: 0
-                  SLAField: 2147483647
+                  SLAField: 0
                   SendFirstEmailField: true
                   SendWorkflowEmailsField: true
                   SharedKeyField: String content
@@ -1256,7 +1256,7 @@ paths:
         | SignatureTypeField| 0 = Electronic Signature, 1 = Digital Signature|
         | FieldTypeField|0  = Signature, 1  = NameText, 2  = DateText, 3  = EmailAddressText, 4  = ContactNumberText, 5  = PlainText, 6  = PlainTextOptional, 7  = FaceToface, 8  = Initial, 9  = CheckBox, 10 = F2FInitial, 11 = AddressText, 12 = CompanyNameText, 13 = OptionalCurrencyText, 14 = MandatoryCurrencyText, 15 = ReadOnlyText, 16 = NumericFieldOpt, 17 = NumericFieldMand, 18 = EmailInputOptional, 19 = EmailInput ,20 = CompanyStamp, 21 = DesignationText, 22 = DateMandatory, 23 = DateOptional|
         | **CustomFormatValueField** | 0 = d, 1 = dd, 2 = o, 3 = oo, 4 = D, 5 = DD, 6 = m, 7 = mm, 8 = M, 9 = MM, 10 = y, 11 = yy, 12 = @, 13 = ! |
-        | **Format Field** | Visual Example in Brackets, 0 = Specify Custom Date Format, 1 = 'D,dd M yy' (Fri, 01 Jun 2022), 2 = 'yy-mm-dd' (2022-06-01), 3 = 'D,d M y' (Fri, 1 Jun 22), 4 = 'DD, dd-M-y' (Friday, 01-Jun-22) 5 = 'D, d M yy' (Fri, 1 Jun 2022)|       
+        | **FormatField** | Visual Example in Brackets, 0 = Specify Custom Date Format, 1 = 'D,dd M yy' (Fri, 01 Jun 2022), 2 = 'yy-mm-dd' (2022-06-01), 3 = 'D,d M y' (Fri, 1 Jun 22), 4 = 'DD, dd-M-y' (Friday, 01-Jun-22) 5 = 'D, d M yy' (Fri, 1 Jun 2022)|       
       tags:
         - WorkFlow
       parameters:
@@ -3604,7 +3604,7 @@ components:
           example: '""'
         AdhocPreloadedFaceToFaceUsersField:
           type: array
-          description: A list of face-to-face signers and their ID details and contact info.
+          description: A list of adhoc face-to-face signers and their ID details and contact info.
           items:
             type: object
             required:
@@ -3927,15 +3927,13 @@ components:
               - AutoSignField
               - EmailAddressField
               - LanguageCodeField
-              - LatitudeField
-              - LongitudeField
               - MobileNumberField
-              - PhotoAtSigningField
-              - SendCompletedEmailField
               - SignatureTypeField
               - UserFirstNameField
               - UserFullNameField
               - UserLastNameField
+              - LatitudeField
+              - LongitudeField
             properties:
               ActionField:
                 type: integer
@@ -4017,8 +4015,18 @@ components:
                 example: 'en'
               LatitudeField:
                 type: string
+                description: |
+                  Latitude coordinate for the signer, only used if the signer has AutoSignField true.
+
+                  If not an AutoSigner just pass an empty string "".
+                example: '-26.1441'
               LongitudeField:
                 type: string
+                description: |
+                  Longitude coordinate for the signer, only used if the signer has AutoSignField true.
+
+                  If not an AutoSigner just pass an empty string "".
+                example: '28.0502'
               MobileNumberField:
                 type: string
                 description: Mobile number of the signer.
@@ -4032,7 +4040,7 @@ components:
                 example: 0
               PreloadedFaceToFaceSignersField:
                 type: array
-                description: Face-to-face signers that are known beforehand.
+                description: A list of pre-known face-to-face signers and their ID details and contact info.
                 items:
                   type: object
                   required:
@@ -4060,6 +4068,8 @@ components:
                         type: object
                         required:
                           - DocFieldTypeField
+                          - HeightField
+                          - WidthField
                         properties:
                           CombCharacterAmountField:
                             type: integer
@@ -4070,72 +4080,273 @@ components:
                             example: 8
                           DateFormatField:
                             type: object
+                            description: An object containing custom formats for date input fields.
                             properties:
                               CustomDateValuesField:
                                 type: array
+                                description: Array containing custom format for different values of a date.
                                 items:
                                   type: object
                                   properties:
                                     CustomFormatValueField:
                                       type: integer
+                                      description: |
+                                        The custom format for individual date components.
+
+                                        0 = d, 1 = dd, 
                                     CustomSplitterField:
                                       type: string
+                                      description: |
+                                        The custom splitter between date values.
+
+                                        **Not allowed values:** 
+                                        - d
+                                        - dd
+                                        - D
+                                        - DD
+                                        - m
+                                        - mm
+                                        - M
+                                        - MM
+                                        - yy
+                                        - yyyy
+                                        - @
+                                        - !
                               FormatField:
                                 type: integer
+                                description: |
+                                  Set value to available date formats or choose custom format.
+
+                                  |Value|Placeholder|Example|
+                                  |-|-|-|
+                                  |0|Custom|01/02/2026|
+                                  |1|D, dd M yy|Fri, 01 Jun 2022|
+                                  |2|yy-mm-dd|2022-06-01|
+                                  |3|D, d M yy|Fri, 1 Jun 22|
+                                  |4|DD, dd-M-y|Friday, 01-Jun-22|
+                                  |5|D, d M yy|Fri, 1 Jun 2022|
+                                example: 0
+                                enum:
+                                  - 0
+                                  - 1
+                                  - 2
+                                  - 3
+                                  - 4
+                                  - 5
                           DocFieldTypeField:
                             type: integer
+                            description: |
+                              The type of field this is.
+
+                              |Value|Field Type|
+                              |-|-|
+                              |0|Signature|
+                              |1|NameText|
+                              |2|DateText|
+                              |3|EmailAddressText|
+                              |4|ContactNumberText|
+                              |5|PlainTextMandatory|
+                              |6|PlainTextOptional|
+                              |7|FaceToface|
+                              |8|Initial|
+                              |9|CheckBox|
+                              |10|F2FInitial|
+                              |11|AddressText|
+                              |12|CompanyNameText|
+                              |13|OptionalCurrencyText|
+                              |14|MandatoryCurrencyText|
+                              |15|ReadOnlyText|
+                              |16|NumericFieldOptional|
+                              |17|NumericFieldMandatory|
+                              |18|EmailInputOptional|
+                              |19|EmailInputMandatory|
+                              |20|CompanyStamp|
+                              |21|DesignationText|
+                              |22|DateMandatory|
+                              |23|DateOptional|
+                            example: 0
+                            enum:
+                              - 0
+                              - 1
+                              - 2
+                              - 3
+                              - 4
+                              - 5
+                              - 6
+                              - 7
+                              - 8
+                              - 9
+                              - 10
+                              - 11
+                              - 12
+                              - 13
+                              - 14
+                              - 15
+                              - 16
+                              - 17
+                              - 18
+                              - 19
+                              - 20
+                              - 21
+                              - 22
+                              - 23
                           FontFamilyField:
                             type: string
+                            description: |
+                              The font for text fields.
+
+                              If not provided default font for the user connected to provided token will be used.
+                            example: 'Arial'
                           FontSizeField:
                             type: integer
+                            description: |
+                              The size of the font for text fields.
+
+                              If not provided or provide value is 0 default font size for user connected to the provided token will be used.
+                            example: 8
                           HeightField:
                             type: string
+                            description: The height of the field in pixels.
+                            example: '50'
                           IsInvisibleField:
                             type: boolean
+                            description: Sets whether the field should be invisible or not.
+                            example: true
                           NameField:
                             type: string
+                            description: The name of the field.
+                            example: 'SignatureLegal1'
                           PageNumberField:
                             type: integer
+                            description: |
+                              The page of the document the field should appear on.
+
+                              If 0 then it will be placed on all pages.
+                            example: 1
                           TagNameField:
                             type: string
+                            description: |
+                              If this value is filled the value will be used to place the field on the document where this value is found.
+                            example: 'String content' 
                           ValidationIDField:
                             type: integer
+                            description: This is deprecated, just provide a zero or null.
+                            example: 0
+                            enum:
+                              - 0
                           ValueField:
                             type: string
+                            description: Pre-filled value for text/date fields, ignored if Signature/Initial field.
                           WidthField:
                             type: string
+                            description: The width of the field in pixels.
+                            example: '60'
                           XCoordinateField:
                             type: string
+                            description: The x coordinate on the document where the field should be placed.
                           XOffsetField:
                             type: integer
+                            description: |
+                              The amount by which the field should be offset from the provide XCoordinateField.
+
+                              This is mostly used for tag fields.
+                            example: 5
                           YCoordinateField:
                             type: string
+                            description: The y coordinate on the document where the field should be placed.
                           YOffsetField:
                             type: integer
+                            description: |
+                              The amount by which the field should be offset from the provide YCoordinateField.
+
+                              This is mostly used for tag fields.
                     IDTypeField:
                       type: integer
+                      description: |
+                        Indicates whether the signer has a South African ID, a passport or neither.
+
+                        0 = South African ID, 1 = Passport, 2 = None
+                      example: 0 
+                      enum:
+                        - 0
+                        - 1
+                        - 2
                     IdentificationNumberField:
                       type: string
+                      description: |
+                        Signers ID number.
+
+                        Required only if IDTypeField = 0 or 1
+                      example: '9405100000000'
                     PhotoAtSigningField:
                       type: integer
+                      description: |
+                        Set if photo should be taken when signer signs.
+
+                        0 = CaptureSingleImage, 1 = CaptureMultipleImages, 2 = CaptureSingleImageWith3DLiveness, 3 = CaptureMultipleImagesWith3DLiveness
+                      example: 0
                     SendCompletedEmailField:
                       type: integer
+                      description: |
+                        Sets whether to send completed email to user when document is complete.
+                        0 = No, 1 = Yes
+                      example: 0
+                      enum:
+                        - 0
+                        - 1
                     SendOTPField:
                       type: integer
+                      description: |
+                        Sets whether to send otp or not.
+
+                        0 = No, 1 = Yes
+                      example: 0
+                      enum:
+                        - 0
+                        - 1
                     SignerEmailField:
                       type: string
+                      description: Signers email address.
+                      example: 'examplesigner@email.com'
                     SignerFirstNameField:
                       type: string
+                      description: Signers First name.
+                      example: 'String content'
                     SignerLastNameField:
                       type: string
+                      description: Signers Last name.
+                      example: 'String content'
                     SignerMobileField:
                       type: string
+                      description: Signers mobile number.
+                      example: '0820000000'
               SendCompletedEmailField:
                 type: integer
+                description: |
+                  Sets whether or not to send completed emails.
+
+                  If not set will default to yes. 0 = No, 1 = Yes
+                example: 0
+                enum:
+                  - 0
+                  - 1
               SignReasonField:
                 type: string
+                description: |
+                  The reason for signing, must be longer than 3 characters.
+
+                  Required only if autosigner, also only used for autosigner.
+                example: 'I accept the terms.'
               SignatureTypeField:
                 type: integer
+                description: |
+                  The type of signature to use. Only used if the signer does not have force default signature enabled.
+
+                  0 = Electronic, 1 = Digital
+                example: 0
+                enum:
+                  - 0
+                  - 1
               SignerPasswordField:
                 type: string
               UserFirstNameField:
