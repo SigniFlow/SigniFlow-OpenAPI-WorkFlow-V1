@@ -3900,7 +3900,19 @@ components:
           description: |
             The document file extension type.
 
-            Check table above for types and their identifier.
+            |Value|Extension|
+            |---|---|
+            |0|pdf|
+            |1|xls|
+            |2|txt|
+            |3|xlsx|
+            |4|docx|
+            |5|doc|
+            |6|xml|
+            |7|png|
+            |8|jpg|
+            |9|gif|
+            |10|dot|
           example: 0
           enum:
             - 0
