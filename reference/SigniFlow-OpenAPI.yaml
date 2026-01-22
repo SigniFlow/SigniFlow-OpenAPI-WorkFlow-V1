@@ -1166,7 +1166,7 @@ paths:
                             UserFullNameField: String content
                             UserMobileNumberField: String content
                         GroupNameField: String content
-                        RequiredNumberOfSignaturesField: 2147483647
+                        RequiredNumberOfSignaturesField: 2
                       LanguageCodeField: String content
                       LatitudeField: String content
                       LongitudeField: String content
@@ -1175,25 +1175,25 @@ paths:
                       PreloadedFaceToFaceSignersField:
                         - CountryIDField: 0
                           FieldsListField:
-                            DateFormatField:
+                          - DateFormatField:
                               CustomDateValuesField:
-                                CustomFormatValueField: 0
+                              - CustomFormatValueField: 0
                                 CustomSplitterField: / or space or -
                               FormatField: 0
-                            DocFieldFieldTypeField: 0
+                            DocFieldTypeField: 0
                             FontFamilyField: String content
-                            FontSizeField: 2147483647
+                            FontSizeField: 8
                             HeightField: String content
                             IsInvisibleField: true
                             NameField: String content
-                            PageNumberField: 2147483647
+                            PageNumberField: 1
                             TagNameField: String content
                             ValueField: String content
                             WidthField: String content
                             XCoordinateField: String content
-                            XOffsetField: 2147483647
+                            XOffsetField: 5
                             YCoordinateField: String content
-                            YOffsetField: 2147483647
+                            YOffsetField: 5
                           IDTypeField: 0
                           IdentificationNumberField: String content
                           PhotoAtSigningField: 0
@@ -1211,26 +1211,26 @@ paths:
                       UserFullNameField: String content
                       UserLastNameField: String content
                       WorkflowUserFieldsField:
-                        DateFormatField:
+                      - DateFormatField:
                           CustomDateValuesField:
-                            CustomFormatValueField: 0
+                          - CustomFormatValueField: 0
                             CustomSplitterField: / or space or -
                           FormatField: 0
                         FieldTypeField: 0
                         FontFamilyField: String content
-                        FontSizeField: 2147483647
-                        GroupUserNumberField: 2147483647
+                        FontSizeField: 8
+                        GroupUserNumberField: 2
                         HeightField: String content
                         IsInvisibleField: true
                         NameField: String content
-                        PageNumberField: 2147483647
+                        PageNumberField: 1
                         TagNameField: String content
                         ValueField: String content
                         WidthField: String content
                         XCoordinateField: String content
-                        XOffsetField: 2147483647
+                        XOffsetField: 5
                         YCoordinateField: String content
-                        YOffsetField: 2147483647
+                        YOffsetField: 5
       description: |-
         #### Used to create a e-signature workflow with a single API Request.
         The request can contain multiple recipients, fields and signatures.
