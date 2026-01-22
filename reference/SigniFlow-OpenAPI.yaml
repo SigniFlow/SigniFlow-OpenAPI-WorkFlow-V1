@@ -1104,7 +1104,7 @@ paths:
                 value:
                   AdditionalDataField: String content
                   AdhocPreloadedFaceToFaceUsersField:
-                    - CountryIDField: 0
+                    - CountryIDField: 137
                       IDTypeField: 0
                       IdentificationNumberField: '8500000000000'
                       SignerEmailField: john@email.com
@@ -1117,10 +1117,10 @@ paths:
                   DocNameField: String content
                   DueDateField: /Date(928149600000+0000)/
                   ExtensionField: 0
-                  FlattenDocumentField: true
-                  KeepContentSecurityField: true
-                  KeepCustomPropertiesField: true
-                  KeepXMPMetadataField: true
+                  FlattenDocumentField: null
+                  KeepContentSecurityField: null
+                  KeepCustomPropertiesField: null
+                  KeepXMPMetadataField: null
                   PortfolioInformationField:
                     AccessListField:
                       - AccessField: 0
@@ -1129,7 +1129,7 @@ paths:
                         UniqueIDField: String content
                         UserEmailField: String content
                     CreatePortfolioField: true
-                    LinkToPortfolioField: true
+                    LinkToPortfolioField: false
                     PlaceholderInfoListField:
                       - AccessListField:
                           - AccessField: 0
@@ -1157,12 +1157,10 @@ paths:
                     - ActionField: 0
                       AllowProxyField: 0
                       AutoSignField: true
-                      EasiSignConfigID: 2147483647
                       EmailAddressField: String content
                       GroupStepField:
                         GroupMembersField:
-                          - EasiSignConfigID: 247483647
-                            LanguageCodeField: String content
+                          - LanguageCodeField: String content
                             SendCompletedEmailField: 0
                             UserEmailField: String content
                             UserFullNameField: String content
@@ -4004,6 +4002,8 @@ components:
               description: Placeholders for documents to be added to the portfolio later.
               items:
                 type: object
+                required:
+                  - DocumentNameField
                 properties:
                   AccessListField:
                     type: array
@@ -4112,7 +4112,6 @@ components:
           type: object
           description: Contains the authentication token.
           required:
-            - TokenExpiryField
             - TokenField
           properties:
             TokenExpiryField:
@@ -4135,10 +4134,7 @@ components:
             type: object
             required:
               - ActionField
-              - AllowProxyField
-              - AutoSignField
               - EmailAddressField
-              - LanguageCodeField
               - MobileNumberField
               - SignatureTypeField
               - UserFirstNameField
@@ -4174,12 +4170,17 @@ components:
               GroupStepField:
                 type: object
                 description: Configuration for group signers, when mutliple people from a group can sign.
+                required:
+                  - RequiredNumberOfSignaturesField
+                  - GroupNameField
                 properties:
                   GroupMembersField:
                     type: array
                     description: List of group members.
                     items:
                       type: object
+                      required:
+                        - UserEmailField
                       properties:
                         LanguageCodeField:
                           type: string
@@ -4250,6 +4251,229 @@ components:
 
                   0 = CaptureSingleImage, 1 = CaptureMultipleImages, 2 = CaptureSingleImageWith3DLiveness, 3 = CaptureMultipleImagesWith3DLiveness
                 example: 0
+              NominatedSignersField:
+                type: array
+                description: Configuration for nominated signers.
+                items:
+                  type: object
+                  required:
+                    - FieldsListField
+                  properties:
+                    SignerNicknameField:
+                      type: string
+                      description: |
+                        A nickname assigned to the nominated signer
+                      example: 'String content'
+                    FieldsListField:
+                      type: array
+                      description: List of fields for preloaded face to face signers.
+                      items:
+                        type: object
+                        required:
+                          - DocFieldTypeField
+                          - XCoordinateField
+                          - YCoordinateField
+                          - HeightField
+                          - WidthField
+                          - PageNumberField
+                        properties:
+                          CombCharacterAmountField:
+                            type: integer
+                            description: |
+                              If set to number > 0 converts the field to a comb field with the provided amount of boxes.
+
+                              a Comb field is a special type of text field that automatically divides its space into equally sized boxes.
+                            example: 8
+                          DateFormatField:
+                            type: object
+                            description: An object containing custom formats for date input fields.
+                            properties:
+                              CustomDateValuesField:
+                                type: array
+                                description: Array containing custom format for dates.
+                                items:
+                                  type: object
+                                  properties:
+                                    CustomFormatValueField:
+                                      type: integer
+                                      description: |
+                                        The custom format for individual date components.
+
+                                        0 = d, 1 = dd, 
+                                    CustomSplitterField:
+                                      type: string
+                                      description: |
+                                        The custom splitter between date values.
+
+                                        **Not allowed values:** 
+                                        - d
+                                        - dd
+                                        - D
+                                        - DD
+                                        - m
+                                        - mm
+                                        - M
+                                        - MM
+                                        - yy
+                                        - yyyy
+                                        - @
+                                        - !
+                              FormatField:
+                                type: integer
+                                description: |
+                                  Set value to available date formats or choose custom format.
+
+                                  |Value|Placeholder|Example|
+                                  |-|-|-|
+                                  |0|Custom|01/02/2026|
+                                  |1|D, dd M yy|Fri, 01 Jun 2022|
+                                  |2|yy-mm-dd|2022-06-01|
+                                  |3|D, d M yy|Fri, 1 Jun 22|
+                                  |4|DD, dd-M-y|Friday, 01-Jun-22|
+                                  |5|D, d M yy|Fri, 1 Jun 2022|
+                                example: 0
+                                enum:
+                                  - 0
+                                  - 1
+                                  - 2
+                                  - 3
+                                  - 4
+                                  - 5
+                          DocFieldTypeField:
+                            type: integer
+                            description: |
+                              The type of field this is.
+
+                              |Value|Field Type|
+                              |-|-|
+                              |0|Signature|
+                              |1|NameText|
+                              |2|DateText|
+                              |3|EmailAddressText|
+                              |4|ContactNumberText|
+                              |5|PlainTextMandatory|
+                              |6|PlainTextOptional|
+                              |7|FaceToface|
+                              |8|Initial|
+                              |9|CheckBox|
+                              |10|F2FInitial|
+                              |11|AddressText|
+                              |12|CompanyNameText|
+                              |13|OptionalCurrencyText|
+                              |14|MandatoryCurrencyText|
+                              |15|ReadOnlyText|
+                              |16|NumericFieldOptional|
+                              |17|NumericFieldMandatory|
+                              |18|EmailInputOptional|
+                              |19|EmailInputMandatory|
+                              |20|CompanyStamp|
+                              |21|DesignationText|
+                              |22|DateMandatory|
+                              |23|DateOptional|
+                            example: 0
+                            enum:
+                              - 0
+                              - 1
+                              - 2
+                              - 3
+                              - 4
+                              - 5
+                              - 6
+                              - 7
+                              - 8
+                              - 9
+                              - 10
+                              - 11
+                              - 12
+                              - 13
+                              - 14
+                              - 15
+                              - 16
+                              - 17
+                              - 18
+                              - 19
+                              - 20
+                              - 21
+                              - 22
+                              - 23
+                          FontFamilyField:
+                            type: string
+                            description: |
+                              The font for text fields.
+
+                              If not provided default font for the user connected to provided token will be used.
+                            example: 'Arial'
+                          FontSizeField:
+                            type: integer
+                            description: |
+                              The size of the font for text fields.
+
+                              If not provided or provide value is 0 default font size for user connected to the provided token will be used.
+                            example: 8
+                          HeightField:
+                            type: string
+                            description: The height of the field in pixels.
+                            example: '50'
+                          NameField:
+                            type: string
+                            description: The name of the field.
+                            example: 'SignatureLegal1'
+                          PageNumberField:
+                            type: integer
+                            description: |
+                              The page of the document the field should appear on.
+
+                              If 0 then it will be placed on all pages.
+                            example: 1
+                          ValidationIDField:
+                            type: integer
+                            description: This is deprecated, just provide a zero or null.
+                            example: 0
+                            enum:
+                              - 0
+                          ValueField:
+                            type: string
+                            description: Pre-filled value for text/date fields, ignored if Signature/Initial field.
+                          WidthField:
+                            type: string
+                            description: The width of the field in pixels.
+                            example: '60'
+                          XCoordinateField:
+                            type: string
+                            description: The x coordinate on the document where the field should be placed.
+                          XOffsetField:
+                            type: integer
+                            description: |
+                              The amount by which the field should be offset from the provide XCoordinateField.
+
+                              This is mostly used for tag fields.
+                            example: 5
+                          YCoordinateField:
+                            type: string
+                            description: The y coordinate on the document where the field should be placed.
+                          YOffsetField:
+                            type: integer
+                            description: |
+                              The amount by which the field should be offset from the provide YCoordinateField.
+
+                              This is mostly used for tag fields.
+                    PhotoAtSigningField:
+                      type: integer
+                      description: |
+                        Set if photo should be taken when signer signs.
+
+                        0 = CaptureSingleImage, 1 = CaptureMultipleImages, 2 = CaptureSingleImageWith3DLiveness, 3 = CaptureMultipleImagesWith3DLiveness
+                      example: 0
+                    SendCompletedEmailField:
+                      type: integer
+                      description: |
+                        Sets whether to send completed email to user when document is complete.
+
+                        0 = No, 1 = Yes
+                      example: 0
+                      enum:
+                        - 0
+                        - 1
               PreloadedFaceToFaceSignersField:
                 type: array
                 description: A list of pre-known face-to-face signers and their ID details and contact info.
@@ -4265,6 +4489,7 @@ components:
                     - SignerFirstNameField
                     - SignerLastNameField
                     - SignerMobileField
+                    - CountryIDField
                   properties:
                     CountryIDField:
                       type: integer
@@ -4470,6 +4695,9 @@ components:
                           - DocFieldTypeField
                           - HeightField
                           - WidthField
+                          - XCoordinateField
+                          - YCoordinateField
+                          - PageNumberField
                         properties:
                           CombCharacterAmountField:
                             type: integer
