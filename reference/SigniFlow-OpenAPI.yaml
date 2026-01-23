@@ -4278,7 +4278,7 @@ components:
                       example: 'String content'
                     FieldsListField:
                       type: array
-                      description: List of fields for preloaded face to face signers.
+                      description: List of fields for nominated signers.
                       items:
                         type: object
                         required:
