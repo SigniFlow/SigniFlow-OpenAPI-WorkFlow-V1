@@ -1172,6 +1172,30 @@ paths:
                       LongitudeField: String content
                       MobileNumberField: String content
                       PhotoAtSigningField: 0
+                      NominatedSignersField:
+                        - SignerNicknameField: 'String content'
+                          PhotoAtSigningField: 0
+                          SendCompletedEmailField: 0
+                          FieldsListField:
+                            - CombCharacterAmountField: 0
+                              DateFormatField:
+                                CustomDateValuesField:
+                                - CustomFormatValueField: 0
+                                  CustomSplitterField: / or space or -
+                                FormatField: 0
+                              DocFieldTypeField: 0
+                              FontFamilyField: 'Arial'
+                              FontSizeField: 8
+                              HeightField: '50'
+                              NameField: 'SignatureLegal1'
+                              PageNumberField: 1
+                              ValidationIDField: 0
+                              ValueField: ''
+                              WidthField: '80'
+                              XCoordinateField: '100'
+                              XOffsetField: 5
+                              YCoordinateField: '100'
+                              YOffsetField: 5
                       PreloadedFaceToFaceSignersField:
                         - CountryIDField: 0
                           FieldsListField:
@@ -4446,6 +4470,7 @@ components:
                           ValueField:
                             type: string
                             description: Pre-filled value for text/date fields, ignored if Signature/Initial field.
+                            example: 'String content'
                           WidthField:
                             type: string
                             description: The width of the field in pixels.
@@ -4877,6 +4902,7 @@ components:
                           ValueField:
                             type: string
                             description: Pre-filled value for text/date fields, ignored if Signature/Initial field.
+                            example: 'String content'
                           WidthField:
                             type: string
                             description: The width of the field in pixels.
@@ -5199,6 +5225,7 @@ components:
                     ValueField:
                       type: string
                       description: Pre-filled value for text/date fields, ignored if Signature/Initial field.
+                      example: 'String content'
                     WidthField:
                       type: string
                       description: The width of the field in pixels.
